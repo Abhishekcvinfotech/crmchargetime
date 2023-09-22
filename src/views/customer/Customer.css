@@ -6,7 +6,6 @@
 
 .fiseachicon{
   position: absolute;
-
   top: 20%;
   font-size: 22px;
   /* left: 32%; */
@@ -14,6 +13,47 @@
   right: 12%;
 }
 
+.all_customer_of_page {
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 700;
+  color: #213446;
+  margin: 0;
+}
+
+.customer_add_button{
+  background-color: #3378FF !important;
+  color: #FFFFFF;
+  min-height: 48px;
+  max-width: 190px;
+  width: 100%;
+  border-radius: 6px;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  }
+  .plusicon{
+  font-size: 20px;
+  }
+  .customer_add_button span{
+    color: #FFFFFF;
+    display: inline-block;
+
+  }
+  .customer_addbutton_wrap{
+    margin: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 /*  css for new ui changes end  */
 
@@ -593,7 +633,7 @@ input[type="file"]::before {
   font-size: 30px;
   font-weight: bolder;
   color: black;
-  margin-top: -18px;
+  margin: 0;
 }
 /* responsive */
 @media only screen and (max-width: 1040px) {
@@ -761,11 +801,11 @@ input[type="file"]::before {
     left: 25px;
     top: 207px;
   }
-  .all_customer_of_page {
+  /* .all_customer_of_page {
     font-size: 22px;
     color: black;
     font-weight: bolder;
-  }
+  } */
 }
 @media only screen and (max-width: 320px) {
   .for__marginn {
@@ -790,9 +830,9 @@ input[type="file"]::before {
   .for__price_hand {
     width: 120px;
   }
-  .all_customer_of_page {
+  /* .all_customer_of_page {
     font-size: 19px;
-  }
+  } */
   .sub_divOf_Appli {
     width: 125px;
   }
@@ -1055,8 +1095,8 @@ input::file-selector-button {
   padding-left: 8px !important;
   padding-right: 8px !important;
 }
-.btncsv {
-  padding: 6px 15px !important;
+.customer_add_button{
+color: #3378FF !important;
 }
 /* media query starts */
 @media (min-width: 887px) and (max-width: 960px) {

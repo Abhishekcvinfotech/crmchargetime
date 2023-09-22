@@ -4194,9 +4194,10 @@ const Customer = () => {
   return (
     <>
       <div className="container-fluid customer_information" style={{ position: 'relative' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h2 className="all_customer_of_page">All Customers </h2>
-          <p style={{ paddingBottom: '18px', textAlign: 'right', paddingRight:'25px' }}>
+        {/* <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}> */}
+        <div className='customer_addbutton_wrap'>
+          <h2 className="all_customer_of_page">Customers</h2>
+          {/* <p style={{ paddingBottom: '18px', textAlign: 'right', paddingRight:'25px' }}>
             Total Customers : {totalUsers} <br />
             <Link to="/">
               <span
@@ -4212,8 +4213,24 @@ const Customer = () => {
                 All Customers
               </span>
             </Link>
-          </p>
+          </p> */}
+{/*
+          <Button
+                // id="button"
+                type="primary"
+                onClick={() => setAddUserModal(true)}
+                className="customer_add_button"
+                style={{display:'flex', gap:'5px' ,alignItems:'center'}}
+              >
+                <img src={AddUser} alt="frame"  style={{ width: '15px', marginTop:'3px' }} />
+                Add User
+              </Button> */}
+              <button  onClick={() => setAddUserModal(true)}
+                className="customer_add_button">
+                <span className='plusicon'>+</span>
+                <span>Add Customer</span>
 
+              </button>
         </div>
         <CSVLink
           data={csvdata}
@@ -4337,16 +4354,7 @@ const Customer = () => {
                   required
                 /> */}
 
-              <Button
-                id="button"
-                type="primary"
-                onClick={() => setAddUserModal(true)}
-                className="btncsv"
-                style={{display:'flex', gap:'5px' ,alignItems:'center'}}
-              >
-                <img src={AddUser} alt="frame"  style={{ width: '15px', marginTop:'3px' }} />
-                Add User
-              </Button>
+
             </div>
           </div>
           <div className="filter__Active">

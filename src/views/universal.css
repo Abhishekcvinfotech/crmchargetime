@@ -38,6 +38,21 @@ margin: 0;
 
 /*  app header login image css */
 
+
+/*
+app header sticky css */
+
+.header.header-sticky {
+  box-shadow: 0px 4px 16px 0px #0000000A;
+   padding: 0;
+   margin: 0;
+}
+.mb-4{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* app hedaer sticky css */
+
 #button {
   font-weight: bolder !important;
   padding: 20px 20px !important;
