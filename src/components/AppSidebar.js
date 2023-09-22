@@ -29,23 +29,36 @@ const AppSidebar = () => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
       style={{
-        background: '#0c2556',
+        background: '#0C2556',
         boxShadow: '0 0 30px rgb(12 37 86 / 5%)',
         zIndex: '1',
       }}
     >
 
-      <Link to="/">
-        <CSidebarBrand className=" d-md-flex justify-content-start px-3" to="/">
-        <img style={{ objectFit:"contain",width:"35px",padding:"14px 0px",marginRight:"10px" }} src={logocrm} alt="chargerLogo" />
+      {/* <Link to="/">
+        <CSidebarBrand className=" d-md-flex justify-content-center px-3" to="/">
+        <div style={{width:'80px' , height: '80px' , overflow:'hidden'}}>
+        <img style={{ objectFit:"cover",width:'100%' ,height:'100%' ,}} src={logocrm} alt="chargerLogo" />
+        </div>
+
 
           <span style={{ fontSize: '20px', fontWeight: 'bolder', color: '#fff',padding:"9.2px 0px" }}>ChargeTime</span>
         </CSidebarBrand>
-      </Link>
+      </Link> */}
 
       <CSidebarNav>
         <SimpleBar>
-          <AppSidebarNav items={navigation} />
+        <Link to="/">
+        <CSidebarBrand className=" d-md-flex justify-content-center px-3  " style={{paddingTop:'24px', paddingBottom:'24px'}} to="/">
+        <div style={{width:'80px' , height: '80px' , overflow:'hidden'}}>
+        <img style={{ objectFit:"cover",width:'100%' ,height:'100%' ,}} src={logocrm} alt="chargerLogo" />
+        </div>
+
+
+          {/* <span style={{ fontSize: '20px', fontWeight: 'bolder', color: '#fff',padding:"9.2px 0px" }}>ChargeTime</span> */}
+        </CSidebarBrand>
+      </Link>
+          <AppSidebarNav items={navigation}  />
         </SimpleBar>
       </CSidebarNav>
       {/* <CSidebarToggler

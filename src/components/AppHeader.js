@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import LoginImage from '../../src/assets/images/avatars/loginimage.jpg'
+
 import {
   CContainer,
   CHeader,
@@ -99,7 +101,7 @@ const AppHeader = () => {
             </button>
           </CNavItem> */}
           <CNavItem>
-            <button
+            {/* <button
               style={{
                 marginLeft: '7px',
                 border: 'none',
@@ -111,7 +113,14 @@ const AppHeader = () => {
               onClick={handleClick}
             >
               Logout
-            </button>
+            </button> */}
+
+            <div className="login_section_wrap" onClick={handleClick}>
+              <div className="loginimage_wrap" >
+                <img src={LoginImage} />
+              </div>
+              <h6 className="loginImage_text">Karan Mishra</h6>
+            </div>
           </CNavItem>
           {/* <CNavItem>
             <button

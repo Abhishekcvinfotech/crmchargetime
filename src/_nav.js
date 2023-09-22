@@ -1,4 +1,5 @@
 import React from 'react'
+import '../src/nav.css'
 import CIcon from '@coreui/icons-react'
 import {
   cilBell,
@@ -35,6 +36,26 @@ import base from '../src/assets/images/base2.svg'
 import Notification from '../src/assets/images/notificationicon.svg'
 import appNotification from '../src/assets/images/appnotificationicon.svg'
 import splash from '../src/assets/images/splashicon.svg'
+
+// react icons start
+import { FaUsers } from 'react-icons/fa';
+import { BiSolidUser } from 'react-icons/bi';
+import {HiLocationMarker} from 'react-icons/hi';
+import {FaBuildingShield} from 'react-icons/fa6';
+import {IoNotifications} from 'react-icons/io5';
+import {FaMobileScreenButton } from 'react-icons/fa6';
+import {BiSolidMobileVibration} from 'react-icons/bi' ;
+import {FaUserGroup} from 'react-icons/fa6';
+import {ImPriceTags} from 'react-icons/im' ;
+import {RiHandCoinFill} from 'react-icons/ri';
+import {FaMoneyBills}  from 'react-icons/fa6';
+import {BiSolidUserVoice} from  'react-icons/bi';
+import {FaChargingStation } from 'react-icons/fa';
+import {FaTrashCan } from 'react-icons/fa6'
+ // import { LiaUserSolid} from 'react-icons/li';
+// import LiaUserSolidIcon from './LiaUserSolidIcon';
+
+//  react js icons end
 
 const userRole = 'admin';
 
@@ -228,7 +249,7 @@ const _nav = [
     component: CNavItem,
     name: 'Customers',
     to: '/customer',
-    icon: <img src={FramePeople} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+    icon: <FaUsers className='faiconsdashboard' />,
   },
   // {
   //   component: CNavItem,
@@ -242,7 +263,7 @@ const _nav = [
           component: CNavItem,
           name: 'Admin Accounts',
           to: '/admin',
-          icon: <img src={adminAccount} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+          icon:  <BiSolidUser className='faiconsdashboard' />,
         },
       ]
     : []),
@@ -251,35 +272,43 @@ const _nav = [
     component: CNavTitle,
     name: 'Application',
   },
-  
+
   {
     component: CNavGroup,
     name: 'Installation',
-    icon: <img src={location} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px'}} />,
+    icon: <HiLocationMarker  className='faiconsdashboard' />,
     items: [
       {
         component: CNavItem,
         name: 'Installation Base',
         to: '/location',
-        icon: <img src={base} style={{ paddingRight: '13px', paddingLeft: '20px', height: '18px'}} />,
+        icon: <FaBuildingShield  className='faiconsdashboard' />,
       },
       {
         component: CNavGroup,
         name: 'Notifications',
-        icon: <img src={Notification} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+        icon: <IoNotifications  className='faiconsdashboard'  />,
         items: [
           {
             component: CNavItem,
             name: 'Splash Screen',
             to: '/splash',
-            icon: <img src={splash} style={{ marginLeft:'2px',  paddingRight: '17px', paddingLeft: '20px', height: '18px' }} />,
+            icon: <FaMobileScreenButton className='faiconsdashboard' />,
           },
           {
             component: CNavItem,
             name: 'App Notification',
             to: '/notification',
-            icon: <img src={appNotification} style={{marginLeft:'2px', paddingRight: '12px', paddingLeft: '20px', height: '18px'}} />,
+            icon: <BiSolidMobileVibration className='faiconsdashboard' />,
           },
+
+          {
+            component: CNavItem,
+            name: 'Trash',
+            to: '/Trash',
+            icon: <FaTrashCan className='faiconsdashboard' />,
+          },
+
         ],
       },
     ],
@@ -288,7 +317,7 @@ const _nav = [
     component: CNavItem,
     name: 'Partners ',
     to: '/partner',
-    icon: <img src={partners_icon} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+    icon: <FaUserGroup className='faiconsdashboard' />,
   },
   // {
   //   component: CNavItem,
@@ -306,13 +335,13 @@ const _nav = [
     component: CNavItem,
     name: 'Price Management',
     to: '/price',
-    icon: <img src={ion_pricetags} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+    icon: <ImPriceTags className='faiconsdashboard' />,
   },
   {
     component: CNavItem,
     name: 'Assets Management',
     to: '/assets',
-    icon: <img src={asset_icon} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+    icon: <RiHandCoinFill  className='faiconsdashboard' />,
   },
 
 
@@ -364,19 +393,19 @@ const _nav = [
         {
           component: CNavGroup,
           name: 'Finance',
-          icon: <img src={financetab} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+          icon: <FaMoneyBills className='faiconsdashboard' />,
           items: [
             {
               component: CNavItem,
               name: 'Partner Invoice',
               to: '/finance',
-              icon: <img src={partnerrate} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+              icon: <BiSolidUserVoice  className='faiconsdashboard' />,
             },
             {
               component: CNavItem,
               name: 'Charging Rate',
               to: '/charging',
-              icon: <img src={chargingrate} style={{ paddingRight: '15px', paddingLeft: '20px', height: '18px' }} />,
+              icon: <FaChargingStation className='faiconsdashboard'  />,
             },
           ],
         },
