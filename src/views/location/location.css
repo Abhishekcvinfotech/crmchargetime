@@ -1,0 +1,453 @@
+.update__Location {
+  border: none;
+  background: none;
+}
+.ant-btn {
+border-radius: 6px;
+}
+.ant-modal-title {
+  font-size: 17px;
+  font-weight: bolder;
+}
+.location__information {
+  padding: 30px 0px;
+}
+.t_Name {
+  font-size: 16px;
+  font-weight: bolder;
+}
+.ant-modal-content {
+border-radius: 6px;
+  overflow: hidden;
+}
+/* paination css start  */
+.ant-pagination-item {
+border-radius: 6px;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+border-radius: 6px;
+}
+.ant-pagination-options-quick-jumper input {
+border-radius: 6px;
+}
+/* paination css end  */
+
+.location__acount {
+  font-weight: bolder;
+  font-size: 30px;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+.delete__Location__of {
+  border: none;
+  background: none;
+  padding-left: 16px;
+}
+
+.import_report {
+  color: #fff;
+border-radius: 6px;
+  padding: 8px 20px;
+  border: none;
+  font-weight: bold;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.left_arrow {
+  width: 25px;
+  padding-right: 5px;
+  padding-left: 7px;
+  margin-top: -3px;
+}
+.theadPadding_remove > :not(caption) > * > * {
+  padding: 0 !important;
+}
+.by_partner_text {
+  padding-right: 10px;
+  padding-top: 8px;
+}
+.filter_partner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#option__value_Location {
+  width: 150px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fff;
+}
+.forFilter_btn {
+  background-color: #1890ff;
+  color: #fff;
+border-radius: 6px;
+  padding: 8px 25px;
+  border: none;
+  font-weight: bold;
+  margin-left: 10px;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+.left_arrow_one {
+  display: block;
+  float: right;
+  padding-left: 10px;
+  width: 25px;
+  padding-top: 2px;
+  color: #fff;
+}
+#select_option {
+  margin-left: 10px;
+  margin-top: -12px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  width: 255px;
+  background-color: #e8e9ee !important;
+  outline: none;
+  border: none;
+}
+#option__value {
+  width: 250px;
+  padding: 8px;
+  border-radius: 6px;
+  margin: 5px 0;
+  outline: none;
+  margin-left: 10px;
+  border: none;
+  background-color: #e8e9ee;
+}
+#option__value_location {
+  width: auto;
+  height: auto;
+  padding: 8px;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+}
+.show__notShow {
+  position: fixed;
+  right: 0;
+  top: 5px;
+  height: 100vh;
+  width: 400px;
+  box-shadow: -4px 0px 10px rgb(0 0 0 / 0.2);
+  background: #ebebeb;
+  z-index: 1;
+}
+
+#create_Location {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#form__admin__locate {
+  width: 280px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 140px;
+  margin-left: 65px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+#form__admin__update {
+  width: 280px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 195px;
+  margin-left: 65px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+.nameEmail__Location {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.partner_margin {
+  margin-bottom: 0px;
+}
+.locate__input {
+  margin-left: 10px;
+  margin-top: -12px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  width: 255px;
+  background-color: #e8e9ee;
+  outline: none;
+  border: none;
+}
+.admin__input:focus {
+  outline: none;
+}
+.locate_side {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.create_new__location {
+  width: 100px;
+  height: 30px;
+  background: #1890ff;
+border-radius: 6px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1;
+  padding: 5px;
+}
+.cancel__create__location {
+  width: 100px;
+  padding: 5px;
+  background: #ebebeb;
+border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1;
+  margin-left: 15px;
+}
+.cancel__create__location:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #111;
+}
+#confirm__delete_location {
+  font-size: 22px;
+  font-weight: 700;
+  position: absolute;
+  top: 210px;
+  left: 120px;
+  letter-spacing: 1px;
+}
+#delete__Location {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  margin-left: 70px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+.delete_new__admin {
+  background: #f84e4e;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  z-index: 1;
+  padding: 5px 25px;
+}
+.delete__create {
+  z-index: 1;
+  border: none;
+  margin-left: 5px;
+  width: 50px;
+}
+.delete__create:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.user__detail__popup__location {
+  z-index: 1;
+  background: #1890ff;
+  border-radius: 6px;
+  display: flex;
+  align-content: flex-end;
+  padding: 0px 12px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 10px;
+}
+.admin_registerd__pop {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: block;
+  margin-top: 10px;
+}
+.admin__black {
+  display: block;
+  float: right;
+  padding-left: 10px;
+  width: 25px;
+  padding-top: 2px;
+  color: #fff;
+}
+#create_Location {
+  position: absolute;
+  top: 100px;
+  left: 135px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.partner_name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.add_new_location {
+  background: #1890ff;
+  color: #fff;
+border-radius: 6px;
+  padding: 8px 15px;
+  border: none;
+  font-weight: bold;
+}
+::-webkit-file-upload-button {
+  color: white;
+  background: #b1d34f;
+  border: none;
+border-radius: 6px;
+  outline: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+input::file-selector-button {
+  color: white;
+  background: #b1d34f;
+  border: none;
+border-radius: 6px;
+  outline: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.csv_input {
+  font-size: 16px;
+  background: white;
+  /* margin: auto; */
+}
+.second_mainDiv_location {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.total__location {
+  margin-right: 10px;
+}
+#dropdown_part {
+  width: 100px;
+  padding: 8px;
+  border-radius: 6px;
+  margin: 5px 0;
+  outline: none;
+  margin-left: 10px;
+  /* border: none; */
+  background-color: #fff;
+}
+@media only screen and (max-width: 930px) {
+  .show__notShow {
+    width: 300px;
+    overflow-y: auto;
+  }
+  #form__admin__locate {
+    width: 250px;
+    margin-left: 25px;
+  }
+  #form__admin__update {
+    width: 250px;
+    margin-left: 25px;
+  }
+  .locate__input {
+    width: 220px;
+  }
+  #create_Location {
+    position: absolute;
+    top: 150px;
+    left: 80px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #delete__Location {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    margin-left: 20px;
+    border-radius: 6px;
+    padding-bottom: 10px;
+  }
+  #confirm__delete_location {
+    font-size: 22px;
+    font-weight: 700;
+    position: absolute;
+    top: 210px;
+    left: 65px;
+    letter-spacing: 1px;
+  }
+  #create_Location__edit {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .second_mainDiv_location {
+    gap: 15px;
+    display: flex;
+  }
+  .import_csv_class {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .input_type_file {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .location__acount {
+    font-size: 22px;
+    color: black;
+    font-weight: bolder;
+  }
+  .total__location {
+    margin-top: -4px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .location__acount {
+    font-size: 18px;
+    color: black;
+    font-weight: bolder;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .location__acount {
+    font-size: 15px;
+  }
+}

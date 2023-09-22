@@ -1,0 +1,115 @@
+.finance_bold_text {
+  font-weight: bolder;
+  font-size: 30px;
+  color: black;
+  margin: 0;
+  padding: 0 ;
+}
+.finance_bold_text_one {
+  margin-top: -10px;
+}
+
+.icon-wrap{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.main_div_finance_partners {
+  background-color: #fff;
+}
+.filter_Finance_users {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+}
+.create_rate_btn {
+  background-color: #1890ff;
+  color: #fff;
+  border-radius: 6px;
+  padding: 20px 15px;
+  border: none;
+  font-weight: bold;
+  margin-top: -10px;
+  text-align: center;
+}
+.right_arrow {
+  width: 25px;
+  padding-right: 5px;
+
+}
+.finance_wrapper {
+  /* margin-right: 10px; */
+  display: flex;
+  justify-content:start;
+  gap: 10px;
+  flex-direction: column;
+}
+/* .finance__information {
+  padding: 30px 0px;
+} */
+
+/* paination css start  */
+.ant-pagination-item {
+border-radius: 6px;
+}
+
+.ant-pagination-options-quick-jumper input{
+border-radius: 6px;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector{
+border-radius: 6px;
+}
+/* paination css end  */
+
+.finance__popup__Invoice {
+  z-index: 1;
+  background: #1890ff;
+  border-radius: 6px;
+  display: flex;
+  align-content: flex-end;
+  padding: 0px 12px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 10px;
+}
+.dleted_text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: block;
+  margin-top: 10px;
+}
+.delete__Location_Finance {
+  border: none;
+  background: none;
+  /* padding-left: 16px; */
+}
+#option__value_two_finanace {
+  padding: 7px;
+  width: 250px;
+  height: 40px !important;
+  background-color: #fff;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+border-radius: 6px;
+}
+#option__value_two_finanace:focus {
+  background-image: url('https://w7.pngwing.com/pngs/711/104/png-transparent-computer-icons-arrow-down-arrow-up-right-left-up-up-arrow-angle-triangle-black-thumbnail.png');
+  background-size: 1rem auto;
+  background-position: right 0.6rem top 50%;
+}
+
+.finance_partner_select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(58, 114, 222, 0.1);
+  padding: 30px 24px;
+  border-bottom: 2px solid #565454;
+}

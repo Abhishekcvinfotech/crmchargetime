@@ -1,0 +1,127 @@
+.pageName{
+    font-weight: bolder;
+    font-size: 30px;
+    color: black;
+}
+.createVoucher{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    flex-wrap: wrap;
+}
+.btn{
+    background-color: #1890ff;
+    color: #fff;
+    border-radius: 6px;
+    padding: 0px 15px;
+    border: none;
+    font-weight: bold;
+}
+.main_div_createVoucher {
+    background-color: #fff;
+}
+.ant-drawer-title {
+    flex: 1 1;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 700 !important;
+    font-size: 24px!important;
+    line-height: 22px;
+    text-align: center;
+
+}
+.ant-drawer-header {
+    display: flex;
+    flex: 0 1;
+    align-items: center;
+    padding: 16px 24px;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ebebeb;
+}
+.ant-drawer-body {
+    flex: 1 1;
+    min-width: 0;
+    min-height: 0;
+    padding: 24px;
+    overflow: auto;
+    background-color: #ebebeb;
+}
+.modal_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    left: 20px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: auto;
+    max-height: 85vh;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+    margin-top: 20px;
+}
+select {
+    width: 238px;
+    padding: 6px;
+    border-radius: 6px;
+    margin: 3px 0px 10px 0px;
+    outline: none;
+    border: none;
+    background-color: #e8e9ee;
+}
+button.ant-drawer-close {
+    display: none;
+}
+.cancelReport{
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-weight: bold;
+    color: grey;
+}
+.filter__vOucher {
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: baseline; */
+    align-self: flex-end;
+    margin-bottom: -10px;
+    margin-top: 10px;
+    width: 100vw;
+    justify-content: end;
+}
+.reportmodal select:focus {
+    padding: 6px;
+    outline-offset: 0px;
+    outline: none;
+}
+.ant-drawer-body select:focus {
+    padding: 6px;
+    outline-offset: 0px;
+    outline: none;
+}
+tr:hover .actionBtn{
+    background: #ececee !important;
+}
+
+@keyframes example {
+    0%   { right:-260px; }
+    100% { right:175px; }
+  }
+
+@keyframes example2 {
+    0%   { right:175px; }
+    100% { right:-260px; }
+  }

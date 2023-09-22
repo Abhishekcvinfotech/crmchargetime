@@ -1,0 +1,129 @@
+.main_offline__one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.customer_offline {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.custmer__padd {
+  padding-right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.offline__online {
+  padding: 3px 12px;
+  color: #fff;
+  background-color: #f84e4e;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.for_img_offlne {
+  width: 20px;
+  display: inline-block;
+  margin-top: -4px;
+}
+.circle_outline_one {
+  display: inline-block;
+  width: 20px;
+  margin-top: -2px;
+  padding-right: 5px;
+}
+.mainDiv_of_One {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.sub_main {
+  display: flex;
+  padding: 10px;
+  height: 75px;
+  background: linear-gradient(180deg, #1890ff 0%, #3a72de 100%);
+  border-radius: 6px;
+}
+.sub_main__before {
+  background: linear-gradient(180deg, #3493eb 0%, #3abad7 100%);
+  display: flex;
+  padding: 10px;
+  height: 75px;
+  border-radius: 6px;
+}
+.sub_main__Times {
+  background: linear-gradient(180deg, #6218ff 0%, #3a72de 100%);
+  display: flex;
+  padding: 10px;
+  height: 75px;
+  border-radius: 16px;
+}
+.sub_main__preType {
+  background: linear-gradient(180deg, #6218ff 0%, #de60a4 100%);
+  display: flex;
+  padding: 10px;
+  height: 75px;
+  border-radius: 6px;
+}
+.sub_main___reverse {
+  background: linear-gradient(180deg, #39c481 0%, #1890ff 100%);
+  display: flex;
+  padding: 10px;
+  height: 75px;
+  border-radius: 6px;
+}
+.sub_main__two {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px 40px 10px 10px; */
+  padding-right: 40px;
+}
+.date_of_activation {
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+.member_services {
+  color: #fff;
+  font-size: 15px;
+  margin-top: -15px;
+}
+.calendar_name {
+  padding-top: 8px;
+  padding-right: 20px;
+}
+.date_picker_frame {
+  /* width: 70px; */
+}
+.for_all_data {
+  background: rgba(58, 114, 222, 0.1);
+  margin-top: 10px;
+}
+
+.for_showing_usees {
+  border-bottom: 2px solid #565454;
+  padding: 20px 20px;
+}
+.uses_usage {
+  margin: 0px;
+  font-weight: 700;
+  color: #565454;
+}
+.for_graphing_Whole {
+  background-color: #fff;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.graph_chart_one {
+  width: 90%;
+  padding-right: 20px;
+  height: 300px;
+}
+.graph_chart_Two {
+  width: 90%;
+  padding-left: 20px;
+}

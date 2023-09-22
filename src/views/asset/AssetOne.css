@@ -1,0 +1,445 @@
+.asset__management {
+  font-weight: bolder;
+  font-size: 30px;
+  /* letter-spacing: 1px; */
+  color: black;
+  margin-left: 20px;
+}
+.asset_refresh {
+  padding-left: 7px;
+
+  font-size: 14px;
+}
+
+.main_div {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  background-color: #fff;
+}
+
+.th_style {
+  padding: 5px;
+  text-align: center;
+}
+.td_style {
+  padding: 5px;
+  text-align: center;
+}
+.first_div {
+  /* background-color: #f5f5f5; */
+}
+.second_div {
+  /* background-color: rgb(255, 255, 255); */
+  overflow-y: auto;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* .third-div {
+    background-color: #f5f5f5;
+  } */
+.delte__table {
+  border: none;
+  background-color: #fff;
+  padding-left: 12px;
+}
+.for_uploading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 18px 10px;
+}
+.import_file {
+  border: none;
+  color: #fff;
+  background-color: #1890ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+.main_divof_import {
+  /* background-color: red; */
+  padding: 20px;
+}
+.last_fetched {
+  display: flex;
+  flex-direction: column;
+}
+.filter_bar_div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #79747e;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.handle_filter_bar {
+  display: flex;
+  align-items: center;
+}
+.mainDiv_assigned_unassigned {
+  /* border: 2px solid #eee;
+    border-radius: 18px; */
+  /* padding-left: 5px;
+    padding-right: 5px; */
+  /* border: none; */
+  border: 1px solid #79747e;
+  border-radius: 6px 6px 6px 6px;
+}
+.btn_of_assigned_All {
+  border: none;
+  /* border-right: 1px solid black; */
+  padding: 10px 28px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.btn_of_assigned {
+  border: none;
+  /* border-right: 1px solid black; */
+  padding: 10px 8px;
+  background-color: #fff;
+}
+.unAssi_gned {
+  border: none;
+  background-color: #fff;
+  padding: 10px 8px;
+}
+.filterBar_position {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 0px;
+  gap: 20px;
+
+  position: absolute;
+  width: 280px;
+  height: auto;
+  left: 630px;
+  top: 200px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.properties {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  padding-left: 0px;
+  color: #565454;
+}
+.shown_in_table {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  padding: 0px 15px;
+  width: 100%;
+}
+.hide_all {
+  border: 1px solid #3a72de;
+  border-radius: 100px;
+  background-color: #fff;
+  padding: 7px 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 12px;
+  color: #3a72de;
+}
+.table_shown {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 0px;
+  letter-spacing: 0.05em;
+
+  color: #565454;
+}
+.handle_dots_addres {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  width: 100%;
+}
+.address_dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.address_text {
+  font-weight: 500;
+  font-size: 13px;
+  color: #565454;
+  margin-bottom: 0px;
+}
+.eye_outlined {
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* for button */
+.main2 {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  z-index: 1;
+  /* position: absolute; */
+  display: flex;
+  width: auto;
+}
+.btn {
+  border: none !important;
+}
+.btn1 {
+  border-radius: 35px 0px 0px 35px;
+
+  padding: 12px;
+  width: 70px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+.btn3 {
+  border-radius: 0px 35px 35px 0px;
+  /* background-color: red; */
+  padding: 12px;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+.btn_mid {
+  border-left: 1px solid #79747e;
+  border-right: 1px solid #79747e;
+  border-top: none;
+  border-bottom: none;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  /* border: none; */
+}
+.import_report {
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 15px;
+  border: none;
+  font-weight: bold;
+}
+
+.left_arrow {
+  width: 25px;
+  padding-right: 5px;
+  padding-left: 7px;
+  margin-top: -5px;
+}
+
+/* Modal Popup start */
+
+.show__notShow {
+  position: fixed;
+
+  right: 0;
+  top: 5px;
+  height: 100vh;
+  width: 400px;
+
+  box-shadow: -4px 0px 10px rgb(0 0 0 / 0.2);
+
+  background: #ebebeb;
+
+  z-index: 10000;
+  overflow-y: auto;
+}
+#confirm__delete_location {
+  font-size: 22px;
+  font-weight: 700;
+  position: absolute;
+  top: 210px;
+  left: 120px;
+  letter-spacing: 1px;
+}
+#delete__Location {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  margin-left: 70px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+
+#create_Location__edit {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#create_assets__edit {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  overflow-y: auto;
+}
+#form__asset__update {
+  width: 280px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 45px;
+  margin-left: 65px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+
+#form__admin__update {
+  width: 280px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 195px;
+  margin-left: 65px;
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+.delete_new__admin {
+  background: #f84e4e;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  z-index: 1000;
+  padding: 5px 25px;
+}
+
+.cancel__create__location {
+  width: 100px;
+  padding: 5px;
+  background: #ebebeb;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1000;
+  margin-left: 15px;
+}
+.cancel__create__location:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #111;
+}
+
+.nameEmail__Location {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.locate__input {
+  margin-left: 10px;
+  margin-top: -12px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  width: 255px;
+  background-color: #e8e9ee;
+  outline: none;
+  border: none;
+}
+
+.locate_side {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.create_new__location {
+  width: 100px;
+  height: 30px;
+  background: #1890ff;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1000;
+  padding: 5px;
+}
+.update__Location {
+  border: none;
+  background: #fff;
+
+  padding-left: 16px;
+}
+.right_arrow {
+  margin-top: -3px;
+  padding-right: 5px;
+  width: 30;
+}
+
+/* Modal Popup end */
+
+/* delete update popup :start */
+
+.user__detail__popup__Price {
+  z-index: 1;
+  background: #1890ff;
+  border-radius: 6px;
+  display: flex;
+  align-content: flex-end;
+  padding: 0px 12px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 10px;
+}
+
+.admin_registerd__pop {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  /* padding-top: 10px; */
+  display: block;
+  margin-top: 10px;
+}
+/* delete update popup :end */
+/* for button */
+
+/* <div className="shown_in_table">
+                    <p className="table_shown">Hidden in table</p>
+                    <button className="hide_all">Show All</button>
+                  </div>
+                  {listOne && */
+/* listOne.map((item, index) => {
+                      return (
+                        <div
+                          className="handle_dots_addres"
+                          onDragStart={(e) => dragStart(e, index)}
+                          onDragEnter={(e) => dragEnter(e, index)}
+                          onDragEnd={dropOne}
+                          key={index}
+                          draggable
+                        >
+                          <div className="address_dots">
+                            <img src={six_dots} alt="dots-image" />
+                            <p className="address_text">{item}</p>
+                          </div>
+
+                          <button className="eye_outlined">
+                            <EyeFilled />
+                          </button>
+                        </div>
+                      )
+                    })} */

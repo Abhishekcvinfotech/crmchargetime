@@ -1,0 +1,223 @@
+#button {
+  font-weight: bolder !important;
+  padding: 20px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  background-color: #1890ff !important;
+  border: none !important;
+  color: white !important;
+  height: 40px;
+}
+/* input[type="file"] {
+  position: relative;
+
+}
+
+input[type="file"]::file-selector-button {
+  width: 120px;
+  color: #fff;
+ font-weight: bold;
+
+}
+
+
+/* start */
+input[type="file"] {
+  position: relative;
+}
+
+input[type="file"]::file-selector-button {
+  width: 136px;
+  color: transparent;
+}
+
+/* Faked label styles and icon */
+/* input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  top: 9px;
+  left: 70px;
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+} */
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  top: 11px;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+
+
+}
+input[type="file"]::after {
+  position: absolute;
+  pointer-events: none;
+  top: 10px;
+  left: 40px;
+  color: #FFF;
+  font-weight: bold;
+  content: "Choose File";
+}
+
+/* ------- From Step 1 ------- */
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 6px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  /* background-color: white; */
+  /* border: 1px solid rgba(0, 0, 0, 0.16); */
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+/* input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+} */
+
+/* file upload button active state */
+/* input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+} */
+
+/* ------------------------ */
+
+/* default boilerplate to center input */
+/* body {
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vmax;
+  box-sizing: border-box;
+} */
+/* end */
+
+
+
+
+.select_text {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.loading_part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.global__popup__div {
+  z-index: 1;
+  background: #1890ff;
+  border-radius: 6px;
+  display: flex;
+  align-content: flex-end;
+  padding: 0px 12px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 10px;
+}
+.global_popup__text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: block;
+  margin-top: 10px;
+}
+
+/* himanshu code */
+
+#clearbutton {
+  font-weight: bolder !important;
+  padding: 20px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  background-color: #0c2556 !important;
+  border: none !important;
+  color: white !important;
+  height: 40px;
+  margin-top: 0px;
+  margin-left: 10px;
+}
+.button {
+  font-weight: bolder !important;
+  padding: 20px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  background-color: #1890ff !important;
+  border: none !important;
+  color: white !important;
+  height: 40px;
+}
+
+#universalButton {
+  font-weight: bolder !important;
+  padding: 5px 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  background-color: #1890ff !important;
+  border: none !important;
+  color: white !important;
+  height: 40px;
+}
+
+#select_option__value {
+  padding: 7px;
+  width: 250px;
+  background-color: #fff;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+  border-radius: 6px;
+}
+#select_option__value:focus {
+  background-image: url('https://w7.pngwing.com/pngs/711/104/png-transparent-computer-icons-arrow-down-arrow-up-right-left-up-up-arrow-angle-triangle-black-thumbnail.png');
+  background-size: 1rem auto;
+  background-position: right 0.6rem top 50%;
+}
+
+#searchBox {
+  height: 40px !important;
+  border-radius: 6px !important;
+  margin-bottom: 13px !important;
+  border: solid #ccc 1px !important;
+  width: 200px !important;
+  padding-left: 14px !important;
+  font-size: 20px;
+}
+.global_th {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.editn_btn_global {
+  width: 15px;
+  background: none;
+}
+.delete_btn_global {
+  color: red;
+  font-size: 16px;
+}

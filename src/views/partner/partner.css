@@ -1,0 +1,471 @@
+.mainDiv_Partner {
+  background-color: blue;
+}
+.partner__acount {
+  font-weight: bolder;
+  font-size: 30px;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* paination css start  */
+.ant-pagination-item {
+border-radius: 6px;
+}
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+border-radius: 6px;
+}
+.ant-pagination-options-quick-jumper input {
+border-radius: 6px;
+}
+/* paination css end  */
+.all_partner {
+  /* font-weight: 600; */
+
+  margin-top: -12px;
+  margin-right: 10px;
+
+  border-bottom: 1px solid blue;
+  color: blue;
+  cursor: pointer;
+}
+.main_div_filters_partners {
+  background-color: #fff;
+}
+.filter_users {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+}
+.export_report {
+  background-color: #1890ff;
+  color: #fff;
+border-radius: 6px;
+  padding: 8px 15px;
+  border: none;
+  font-weight: bold;
+}
+
+.right_arrow {
+  width: 25px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.th_Name {
+  font-size: 16px;
+  font-weight: bolder;
+}
+.partner_name {
+  font-size: 16px;
+  font-weight: 600;
+}
+.theadPadding_remove > :not(caption) > * > * {
+  padding: 0 !important;
+  border-bottom: none;
+}
+.mainDiv_popup {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.thead_setting {
+  height: 20px;
+}
+.td_part {
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* Modal Popup start */
+
+.show__notShow_partner {
+  position: fixed;
+
+  right: 0;
+  top: 5px;
+  height: 100vh;
+  width: 400px;
+
+  box-shadow: -4px 0px 10px rgb(0 0 0 / 0.2);
+
+  background: #ebebeb;
+
+  z-index: 10000;
+  overflow-y: auto;
+}
+#confirm__delete_location {
+  font-size: 22px;
+  font-weight: 700;
+  position: absolute;
+  top: 210px;
+  left: 120px;
+  letter-spacing: 1px;
+}
+#delete__Location {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  margin-left: 70px;
+border-radius: 6px;
+  padding-bottom: 10px;
+}
+
+#create_Location__edit {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#create_partner__edit {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  font-size: 18px;
+  font-weight: bold;
+  overflow-y: auto;
+}
+#form__partner__update {
+  width: 300px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 45px;
+  margin-left: 55px;
+border-radius: 6px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+}
+.ant-popover-buttons {
+  display: none;
+}
+#form__admin__update {
+  width: 280px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 195px;
+  margin-left: 65px;
+border-radius: 6px;
+  padding-bottom: 10px;
+}
+.delete_new__admin {
+  background: #f84e4e;
+  border-radius: 50px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  z-index: 1000;
+  padding: 5px 25px;
+}
+
+.cancel__create__partner {
+  width: 100px;
+  padding: 5px;
+  background: #ebebeb;
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1000;
+  margin-left: 15px;
+}
+.cancel__create__partner:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #111;
+}
+
+.label__Partner {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.input__partner {
+  margin-left: 10px;
+  margin-top: -12px;
+  padding: 7px 10px;
+border-radius: 6px;
+  width: 255px;
+  background-color: #e8e9ee;
+  outline: none;
+  border: none;
+}
+
+.locate_side {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.create_new__partner {
+  width: 100px;
+  height: 30px;
+  background: #1890ff;
+border-radius: 6px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1000;
+  padding: 5px;
+}
+.update__Location {
+  border: none;
+  background: #fff;
+
+  padding-left: 16px;
+}
+.right_arrow {
+  margin-top: -3px;
+  padding-right: 5px;
+  width: 30;
+}
+#confirm__delete_partner {
+  font-size: 22px;
+  font-weight: 700;
+  position: absolute;
+  top: 210px;
+  left: 120px;
+  letter-spacing: 1px;
+}
+#delete__partner {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+  margin-left: 70px;
+border-radius: 6px;
+  padding-bottom: 10px;
+}
+.delete_new__partner {
+  background: #f84e4e;
+border-radius: 6px;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  z-index: 1000;
+  padding: 5px 25px;
+}
+.cancel__create__partner {
+  width: 100px;
+  padding: 5px;
+  background: #ebebeb;
+border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  margin-top: 20px;
+  z-index: 1000;
+  margin-left: 15px;
+}
+.cancel__create__partner:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: #111;
+}
+
+/* Modal Popup end */
+
+/* Exports Reports start */
+.mainForm_user_detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 50px;
+}
+#create_partner__export {
+  font-size: 18px;
+  font-weight: bold;
+  overflow-y: auto;
+}
+#form__partner__reports {
+  width: 350px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 5px !important;
+  /* margin-left: 55px; */
+  /* border-radius: 10px; */
+  margin: auto;
+
+  overflow-y: auto;
+}
+
+.main_div_export {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 10px 10px;
+}
+.second_div_export {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+/* .user_image {
+  padding-left: 10px;
+} */
+.export_user_details {
+  color: #1c1b1f;
+  font-weight: 400;
+  font-size: 16px;
+  padding-top: 13px;
+  padding-left: 10px;
+}
+
+/* Exports Reports end */
+
+/* Bottom popup start */
+
+.user__detail__popup__partner {
+  z-index: 1;
+  background: #1890ff;
+  border-radius: 8px;
+  display: flex;
+  align-content: flex-end;
+  padding: 0px 12px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 10px;
+}
+.partner_registerd__pop {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+
+  display: block;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 473px) {
+  #option__value_partner {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 473px) {
+  .filter_partner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #option__value_partner {
+    width: 150px;
+  }
+  .export_report {
+    margin-top: 10px;
+  }
+}
+
+/* Bottom popup send */
+
+/* html part */
+
+/* <div
+          className="show__notShow_partner"
+          style={{
+            display: isPartnerExport ? 'block' : 'none',
+           }}
+        >
+          <div className="mainForm_user_detail">
+            <div id="create_partner__export">
+              <p>Export Reports</p>
+            </div>
+            <div id="form__partner__reports">
+              <div className="main_div_export">
+                <div className="second_div_export">
+                  <img className="user_image" src={user_name} alt="user-name" />
+                  <p className="export_user_details">Users Name</p>
+                </div>
+                <div>
+                  <Checkbox defaultChecked />
+                </div>
+              </div>
+            </div>
+            <div id="form__partner__reports">
+              <div className="main_div_export">
+                <div className="second_div_export">
+                  <img className="user_image" src={device_id} alt="user-name" />
+                  <p className="export_user_details">Device ID</p>
+                </div>
+                <div>
+                  <Checkbox defaultChecked />
+                </div>
+              </div>
+            </div>
+            <div id="form__partner__reports">
+              <div className="main_div_export">
+                <div className="second_div_export">
+                  <img className="user_image" src={usuage_data} alt="user-name" />
+                  <p className="export_user_details">Usuage Data</p>
+                </div>
+                <div>
+                  <Checkbox defaultChecked />
+                </div>
+              </div>
+            </div>
+            <div id="form__partner__reports">
+              <div className="main_div_export">
+                <div className="second_div_export">
+                  <img className="user_image" src={package_details} alt="user-name" />
+                  <p className="export_user_details">Package Details </p>
+                </div>
+                <div>
+                  <Checkbox defaultChecked />
+                </div>
+              </div>
+            </div>
+            <div id="form__partner__reports">
+              <div className="main_div_export">
+                <div className="second_div_export">
+                  <img className="user_image" src={customer_id} alt="user-name" />
+                  <p className="export_user_details">Customers Unique ID</p>
+                </div>
+                <div>
+                  <Checkbox defaultChecked />
+                </div>
+              </div>
+            </div>
+            <div className="locate_side" style={{ paddingLeft: '10px' }}>
+              <button
+                type="submit"
+                className="create_new__partner"
+                //onClick={() => updatePartner(id)}
+              >
+                Update
+              </button>
+              <button
+                //onClick={cancelupdatePartners}
+                className="cancel__create__partner"
+                id="not_ShowCancel"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div> */

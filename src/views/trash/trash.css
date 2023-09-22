@@ -1,0 +1,47 @@
+.actionbtn{
+    border: none;
+    background: white;
+    }
+    tr:hover .actionbtn{
+        background: #ececee !important;
+    }
+    .trSelect .ant-select-selector{
+        border: none !important;
+    }
+    /* .trSelect:hover .ant-select-selector{
+        background: #ececee !important;
+    } */
+    .trSelect .ant-picker{
+        border: unset;
+    }
+    /* .trSelect:hover .ant-picker{
+        background: #ececee !important;
+    } */
+    /* paination css start  */
+.ant-pagination-item {
+    border-radius: 6px;
+  }
+  .ant-select-selector{
+    border-radius: 6px;
+  }
+  .ant-pagination-options-quick-jumper input{
+    border-radius: 6px;
+  }
+  /* paination css end  */
+    tr:hover .inputRender{
+        background: #ececee !important;
+    }
+    .text {
+        display: inline;
+        /* border-bottom: 3px solid; */
+        padding-bottom: 3px;
+       font-size: 16px;
+       font-weight: 600;
+       /* border-color: #1890ff; */
+    }
+    th{
+        text-align: center;
+    }
+    tr{
+        text-align: center;
+    }
