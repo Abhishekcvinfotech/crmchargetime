@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import LoginImage from '../../src/assets/images/avatars/loginimage.jpg'
+import LoginImage from '../../src/assets/images/avatars/loginimage.png'
 
 import {
   CContainer,

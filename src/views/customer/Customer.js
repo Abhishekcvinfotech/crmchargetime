@@ -69,8 +69,8 @@ import { BsCloudDownload } from 'react-icons/bs'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { IoMdClose } from 'react-icons/io'
 import { IoIosClose } from 'react-icons/io'
-import {BsPersonPlusFill} from 'react-icons/bs'
-import {RiChargingPile2Fill} from 'react-icons/ri'
+import { BsPersonPlusFill } from 'react-icons/bs'
+import { RiChargingPile2Fill } from 'react-icons/ri'
 // import swal from 'sweetalert';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import { MDBIcon} from 'mdbreact';
@@ -80,7 +80,7 @@ const Customer = () => {
   const [total, setTotal] = useState('')
   const [page, setPage] = useState(1)
   const [data, setData] = useState([])
-  const [postPerPage, setPostPerPage] = useState(10)
+  const [postPerPage, setPostPerPage] = useState(24)
   const [deleted, setDeleted] = useState(false)
   const [forRadioDelete, setForRadioDelete] = useState(false)
   const [statusfilter, setStatusfilter] = useState(false)
@@ -183,7 +183,6 @@ const Customer = () => {
   const [userPlay, setUserPlay] = useState(false)
   const [userPause, setUserPause] = useState(false)
   const [popoverVisible, setPopoverVisible] = useState({})
-
 
   //content part manish start
   const [sortingState, setSortingState] = useState({
@@ -364,22 +363,16 @@ const Customer = () => {
       })
   }
 
-
-
   useEffect(() => {
-    getUsers();
-  }, []);
-
+    getUsers()
+  }, [])
 
   const sortedDate = () => {
-
-    getUsers();
+    getUsers()
     console.log('again showing data')
-
   }
 
   const clearFilter = () => {
-
     setStatusfilter(false)
     setInstallation(false)
     setPlanData(false)
@@ -543,8 +536,8 @@ const Customer = () => {
             ? 1
             : -1
           : a[col]?.toLowerCase() < b[col]?.toLowerCase()
-            ? 1
-            : -1
+          ? 1
+          : -1
       }
     })
 
@@ -560,8 +553,6 @@ const Customer = () => {
     setBasePrice(0)
     getUsers()
   }
-
-
 
   const onstatusChange = (e) => {
     setstatusValue(e.target.value)
@@ -1137,7 +1128,7 @@ const Customer = () => {
         body: formData,
       })
         .then((response) => response.json())
-        .then((data) => { })
+        .then((data) => {})
         .catch((error) => {
           console.error('Error:', error)
         })
@@ -1435,8 +1426,8 @@ const Customer = () => {
           ''
         )}
         {item?.pwa_status == 1 ||
-          item.pwa_status == 5 ||
-          (item.pwa_status == 4 && item.pause_resume == 0) ? (
+        item.pwa_status == 5 ||
+        (item.pwa_status == 4 && item.pause_resume == 0) ? (
           <Tooltip title="Pause">
             <button
               style={{ border: 'none', backgroundColor: '#fff', width: '15px' }}
@@ -1652,7 +1643,7 @@ const Customer = () => {
               >
                 Assigned
               </button>
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
             <div className="forAlignment_Account">
               <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
@@ -1663,7 +1654,7 @@ const Customer = () => {
               >
                 Un-assigned
               </button>
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
             <div className="forAlignment_Account">
               <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
@@ -1674,7 +1665,7 @@ const Customer = () => {
               >
                 Registered
               </button>
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
             <div className="forAlignment_Account">
               <span
@@ -1690,7 +1681,7 @@ const Customer = () => {
               >
                 Active
               </button>
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
             <div className="forAlignment_Account">
               <span
@@ -1706,7 +1697,7 @@ const Customer = () => {
               >
                 In-active
               </button>
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
             <div className="forAlignment_Account">
               <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
@@ -1718,7 +1709,7 @@ const Customer = () => {
                 Paused
               </button>
               {/* <IoIosClose className='sortcross' /> */}
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
             <div className="forAlignment_Account">
               <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
@@ -1729,7 +1720,7 @@ const Customer = () => {
               >
                 Suspended
               </button>
-              <IoIosClose className='sortcross' onClick={sortedDate} />
+              <IoIosClose className="sortcross" onClick={sortedDate} />
             </div>
           </div>
         </div>
@@ -1754,12 +1745,11 @@ const Customer = () => {
 
                   {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
                 </div>
-                <div onClick={() => setIsShown(false)} >
+                <div onClick={() => setIsShown(false)}>
                   <IoMdClose className="crossicon" />
                 </div>
                 {/* <IoMdClose className="crossicon"  onClick={() => clearFilter()}    /> */}
               </div>
-
 
               <div className="add__three">
                 <div className="for__marginn">
@@ -1995,7 +1985,7 @@ const Customer = () => {
         </div>
 
         <div className="customer_wrapper">
-          <div className='table-responsive'>
+          <div className="table-responsive">
             <table className="table table-hover">
               <thead style={{ color: '#fff' }}>
                 <tr>
@@ -2072,7 +2062,9 @@ const Customer = () => {
                     </Tooltip>
                   </th>
                   <th scope="col" className="global_th " onClick={() => sorting('id')}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    >
                       <span>Id</span>
                       <span
                         style={{
@@ -2250,7 +2242,11 @@ const Customer = () => {
                   </th>
                   <th onClick={() => sorting('energy_plan')} scope="col" className="global_th">
                     <div
-                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                      }}
                     >
                       <span>Plan</span>
                       <span
@@ -2398,53 +2394,36 @@ const Customer = () => {
                             }}
                           />
                         </td>
-                        <td>
-                          <div>
-                            {/* // himanshu code ends */}
-                            {/* <td>
-                        <div className="hyphen-image-wrap">
-                          {item?.energy_plan !== null && item?.Device_Id == null ? (
-                            <div style={{ position: 'relative' }}>
-                              {' '}
-                              <span className="deviceflag_div" style={{ cursor: 'pointer' }}>
-                                <img src={noDeviceId} alt="" style={{ width: '15px' }} />
-                              </span>
-                              <span className="device_hover">Device not assigned</span>
+                            <td>
+                          {item?.energy_plan !== null && item?.Device_Id == null && item?.flag_status !== '1' ?  (
+                            <div>
+                              <AiOutlineInfoCircle id="notificationicon" />{' '}
+                              <div className="notification_dropdowncontent">
+                                {item?.energy_plan !== null && item?.Device_Id == null ? (
+                                  <div className="insidenotification" style={{ color: 'red' }}>
+                                    <BsPersonPlusFill className="noticons" />
+                                    <p>Device not assigned</p>
+                                  </div>
+                                ) : (
+                                  '-'
+                                )}
+
+                                <hr className="notifictaionline"></hr>
+
+                                {item?.flag_status == '1' ? (
+                                  <div className="insidenotification" style={{ color: '#0044CC' }}>
+                                    <RiChargingPile2Fill className="noticons" />
+                                    <p> Device partially matched with customer address</p>
+                                  </div>
+                                ) : (
+                                  ' '
+                                )}
+                              </div>
                             </div>
                           ) : (
-                            '-'
+                            <div> </div>
                           )}
-                          {item?.flag_status == '1' ? (
-                            <div style={{ position: 'relative' }}>
-                              {' '}
-                              <span className="assetflag_div" style={{ cursor: 'pointer' }}>
-
-                                <img src={partialMatched} alt="" style={{ width: '15px' }} />
-                              </span>
-                              <span className="asset_hover">
-                                Device partially matched with customer address
-                              </span>
-                            </div>
-                          ) : (
-                            ' '
-                          )}
-                        </div>
-                      </td> */}
-                            <AiOutlineInfoCircle id="notificationicon" />{' '}
-                            <div className='notification_dropdowncontent'>
-                              <div className='insidenotification'>
-                               <BsPersonPlusFill className='noticons' />
-                                <p>Device not assigned</p>
-                              </div>
-                              <hr className='notifictaionline'></hr>
-                              <div className='insidenotification'>
-                               <RiChargingPile2Fill className='noticons' />
-                                <p> Device partially matched with customer address</p>
-                              </div>
-
-                            </div>
-                          </div>
-                        </td>
+                          </td>
                         <td className="px-3">{displayedIndex}</td>
                         <td>
                           <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
@@ -2462,7 +2441,6 @@ const Customer = () => {
                             </Tooltip>
                           </div>
                         </td>
-
 
                         <td></td>
                         <td></td>
@@ -2673,8 +2651,6 @@ const Customer = () => {
             ''
           )}
           {/*   // himanshu code ends */}
-
-
         </div>
         <div
           className="user__detail__popup__Customer"
@@ -2782,11 +2758,10 @@ const Customer = () => {
       {addUserModal ? (
         <div id="addModalsecond">
           <div className="modal_heading ">
-            <div className='modal_hedaing_customer'>
+            <div className="modal_hedaing_customer">
               <h2>Create User Customer</h2>
               <IoMdClose className="crossicon" onClick={empty} />
             </div>
-
           </div>
           <div className="modal_form">
             <form className="form" onSubmit={(e) => adduser(e)}>
@@ -2811,7 +2786,6 @@ const Customer = () => {
               </div>
 
               <div>
-
                 <label htmlFor="mobile" style={{ fontWeight: '600' }}>
                   Phone Number
                 </label>
@@ -2917,8 +2891,6 @@ const Customer = () => {
                 )}
               </div>
 
-
-
               <div>
                 <label htmlFor="address" style={{ fontWeight: '600' }}>
                   Address Line 1{' '}
@@ -2987,20 +2959,19 @@ const Customer = () => {
                   onChange={handleAdd2}
                   minLength={2}
                 />
-
               </div>
               <div className="last_line">
                 <div className="part_1">
                   <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
                     Zipcode
                   </label>
-                  <input type="text" value={newZipcode} readOnly placeholder='Enter Zipcode' />
+                  <input type="text" value={newZipcode} readOnly placeholder="Enter Zipcode" />
                 </div>
                 <div className="part_2">
                   <label htmlFor="State" style={{ fontWeight: '600' }}>
                     State
                   </label>
-                  <input type="text" value={newState} readOnly placeholder='Select' />
+                  <input type="text" value={newState} readOnly placeholder="Select" />
                 </div>
               </div>
               <div
@@ -3009,7 +2980,6 @@ const Customer = () => {
                   justifyContent: 'flex-end',
                   gap: '24px',
                   width: '100%',
-
                 }}
               >
                 <button className="addcustomerform_cancel " onClick={empty}>
@@ -3018,7 +2988,6 @@ const Customer = () => {
                 <button className="addcustomerform_btn" required onChange={finalCall}>
                   Add Customer
                 </button>
-
               </div>
             </form>
           </div>

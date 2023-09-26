@@ -50,7 +50,7 @@ const AppSidebar = () => {
         <SimpleBar>
         <Link to="/">
         <CSidebarBrand className=" d-md-flex justify-content-center px-3  " style={{paddingTop:'24px', paddingBottom:'24px'}} to="/">
-        <div style={{width:'80px' , height: '80px' , overflow:'hidden'}}>
+        <div style={{  }}>
         <img style={{ objectFit:"cover",width:'100%' ,height:'100%' ,}} src={logocrm} alt="chargerLogo" />
         </div>
 
