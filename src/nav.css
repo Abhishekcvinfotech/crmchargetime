@@ -49,14 +49,24 @@
   padding: 0px 16px !important;
   border-radius: 6px !important;
 }
+/* .nav-group-items{
+  padding: 0px 16px !important;
+  border-radius: 6px !important;
+} */
 .nav-link .active{
   border-radius: 6px !important;
+}
+.nav-group-items{
+background-color: #0C2556 !important;
 }
 
 .sidebar-nav .nav-link:hover {
 
-border-radius: 6px !important;}
+border-radius: 6px !important; }
 
+.sidebar-brand{
+  background-color: #0C2556 !important;
+}
 
 /* .nav-link img{
 
