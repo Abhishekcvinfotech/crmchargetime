@@ -385,139 +385,262 @@ const Admin = () => {
       <p className="toatl_adminss">
         Total Admins : &nbsp;<span className="registration_length">{registerData.length}</span>{' '}
       </p>
-<div className='table_wrapper' >
-           <div className="admin__page">
-        {/* <button onClick={forChecking}>click</button> */}
-        {loading ? (
+      <div className='table_wrapper' >
+        <div className="admin__page">
+          {/* <button onClick={forChecking}>click</button> */}
+          {loading ? (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: '1000',
+                position: 'fixed',
+                left: '750px',
+                top: '350px',
+              }}
+            >
+              <Spin size="large" style={{ fontSize: '30px' }} />
+            </div>
+          ) : (
+            ''
+          )}
+
+          <div style={{ background: '#fff' }}></div>
+
           <div
+            className="show__notShow"
             style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              zIndex: '1000',
-              position: 'fixed',
-              left: '750px',
-              top: '350px',
+              display: isShown ? 'block' : 'none',
             }}
           >
-            <Spin size="large" style={{ fontSize: '30px' }} />
+            <form onSubmit={signUp}>
+              <div className="create_admin">
+                <label>Create New Admin</label>
+                <IoMdClose className="crossicon" />
+              </div>
+
+              <div id="form__admin_ADMIN">
+                <label className="nameEmail__admin">
+                  Name
+                </label>
+                <input
+                  className="admin__input"
+                  type="text"
+                  name="name"
+                  value={name}
+                  required
+                  placeholder="Enter Your Name"
+                  onChange={handleName}
+                />
+                {nameError ? (
+                  <div className="password__span">
+                    <span
+                      style={{
+                        fontWeight: '400',
+                        color: 'red',
+                        // paddingLeft: '20px',
+                        // fontSize: '12px',
+                      }}
+                    >
+                      {nameError}
+                    </span>
+                  </div>
+                ) : (
+                  ''
+                )}
+                <label className="nameEmail__admin">Email</label>
+                <input
+                  className="admin__input"
+                  type="email"
+                  name="email"
+                  value={email}
+                  required
+                  placeholder="Enter Your email"
+                  onChange={handleChange}
+                />
+
+                {emailError ? (
+                  <span
+                    id="email__error"
+                    style={{
+                      fontWeight: '400',
+                      color: `${colorGreen}`,
+                      paddingLeft: '20px',
+                      fontSize: '12px',
+                    }}
+                  >
+                    {emailError}
+                  </span>
+                ) : (
+                  ''
+                )}
+                <label className="nameEmail__admin">Password</label>
+                <input
+                  className="admin__input"
+                  type="password"
+                  name="password"
+                  value={password}
+                  required
+                  placeholder=" password"
+                  onChange={handleChangeed}
+                />
+
+                {errorMessage ? (
+                  <div className="password__span">
+                    <span
+                      style={{
+                        fontWeight: '400',
+                        color: `${colorRed}`,
+                        paddingLeft: '10px',
+                        fontSize: '12px',
+                      }}
+                    >
+                      {errorMessage}
+                    </span>
+                  </div>
+                ) : (
+                  ''
+                )}
+                <label className="nameEmail__admin">Confirm Password</label>
+                <input
+                  className="admin__input"
+                  type="password"
+                  name="c_password"
+                  value={c_password}
+                  required
+                  placeholder="confirm password"
+                  onChange={handleConPassword}
+                />
+
+                {handleConPassword ? (
+                  <span
+                    style={{
+                      fontWeight: '400',
+                      color: `${colorPink}`,
+                      fontSize: '12px',
+                    }}
+                  >
+                    {conPassErr}
+                  </span>
+                ) : (
+                  ''
+                )}
+
+                <div style={{ paddingLeft: '10px' }}>
+                  <button
+                    type="submit"
+                    className="create_new__admin"
+                  // onClick={signUp}
+                  // disabled={disabled}
+                  >
+                    Create Admin
+                  </button>
+                  <Button onClick={cancelCreate} className="cancel__create" id="not_ShowCancel">
+                    Cancel
+                  </Button>
+                </div>
+              </div>
+            </form>
           </div>
-        ) : (
-          ''
-        )}
-
-        <div style={{ background: '#fff' }}></div>
-
-        <div
-          className="show__notShow"
-          style={{
-            display: isShown ? 'block' : 'none',
-          }}
-        >
-          <form onSubmit={signUp}>
+          <div
+            className="show__notShow"
+            style={{
+              display: isadminShow ? 'block' : 'none',
+            }}
+          >
             <div className="create_admin">
-              <label>Create New Admin</label>
-              <IoMdClose className="crossicon" />
+              <label>Edit Admin Details</label>
             </div>
 
-            <div id="form__admin_ADMIN">
-              <label className="nameEmail__admin">
+            <div id="form__admin_Edit">
+              <label className="nameEmail__admin" style={{ paddingTop: '20px' }}>
                 Name
               </label>
               <input
                 className="admin__input"
                 type="text"
-                name="name"
-                value={name}
-                required
-                placeholder="Enter Your Name"
-                onChange={handleName}
+                placeholder="Chetan"
+                defaultValue={RowData.name}
+                onChange={handleNameUpdate}
               />
-              {nameError ? (
-                <div className="password__span">
-                  <span
-                    style={{
-                      fontWeight: '400',
-                      color: 'red',
-                      // paddingLeft: '20px',
-                      // fontSize: '12px',
-                    }}
-                  >
-                    {nameError}
-                  </span>
-                </div>
-              ) : (
-                ''
-              )}
-              <label className="nameEmail__admin">Email</label>
-              <input
-                className="admin__input"
-                type="email"
-                name="email"
-                value={email}
-                required
-                placeholder="Enter Your email"
-                onChange={handleChange}
-              />
-
-              {emailError ? (
+              {nameErrorUpdate ? (
                 <span
-                  id="email__error"
                   style={{
                     fontWeight: '400',
-                    color: `${colorGreen}`,
+                    color: 'red',
                     paddingLeft: '20px',
                     fontSize: '12px',
                   }}
                 >
-                  {emailError}
+                  {nameErrorUpdate}
                 </span>
               ) : (
                 ''
               )}
+              <div>
+                <label className="nameEmail__admin">Email</label>
+                <input
+                  className="admin__input"
+                  type="email"
+                  defaultValue={RowData.email}
+                  onChange={handleChange}
+                  placeholder="cvinfotech@gmail.com"
+                />
+                {emailError ? (
+                  <span
+                    style={{
+                      fontWeight: '400',
+                      color: `${colorGreen}`,
+                      paddingLeft: '20px',
+                      fontSize: '12px',
+                    }}
+                  >
+                    {emailError}
+                  </span>
+                ) : (
+                  ''
+                )}
+              </div>
               <label className="nameEmail__admin">Password</label>
               <input
                 className="admin__input"
                 type="password"
-                name="password"
-                value={password}
-                required
-                placeholder=" password"
+                defaultValue={password}
                 onChange={handleChangeed}
+                placeholder="Generate a new password"
               />
-
               {errorMessage ? (
-                <div className="password__span">
-                  <span
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorRed}`,
-                      paddingLeft: '10px',
-                      fontSize: '12px',
-                    }}
-                  >
-                    {errorMessage}
-                  </span>
-                </div>
+                <span
+                  style={{
+                    fontWeight: '400',
+                    color: `${colorRed}`,
+                    paddingLeft: '20px',
+                    fontSize: '12px',
+                  }}
+                >
+                  {errorMessage}
+                </span>
               ) : (
                 ''
               )}
               <label className="nameEmail__admin">Confirm Password</label>
               <input
+                id="conFirm_password"
                 className="admin__input"
                 type="password"
+                placeholder="Retype new password to confirm"
                 name="c_password"
-                value={c_password}
-                required
-                placeholder="confirm password"
+                defaultValue={c_password}
                 onChange={handleConPassword}
               />
-
               {handleConPassword ? (
                 <span
                   style={{
                     fontWeight: '400',
                     color: `${colorPink}`,
+
+                    paddingLeft: '20px',
                     fontSize: '12px',
                   }}
                 >
@@ -526,313 +649,190 @@ const Admin = () => {
               ) : (
                 ''
               )}
-
               <div style={{ paddingLeft: '10px' }}>
                 <button
-                  type="submit"
-                  className="create_new__admin"
-                  // onClick={signUp}
-                  // disabled={disabled}
+                  onClick={() => updateAdmin(id)}
+                  className="update_new__admin"
+                  disabled={disabled}
                 >
-                  Create Admin
+                  Update
                 </button>
-                <Button onClick={cancelCreate} className="cancel__create" id="not_ShowCancel">
+                <Button onClick={cancelCreateAdmin} className="cancel__create" type="submit">
                   Cancel
                 </Button>
               </div>
             </div>
-          </form>
-        </div>
-        <div
-          className="show__notShow"
-          style={{
-            display: isadminShow ? 'block' : 'none',
-          }}
-        >
-          <div className="create_admin">
-            <label>Edit Admin Details</label>
           </div>
+          <div
+            className="show__notShow"
+            style={{
+              display: isadminDelete ? 'block' : 'none',
+            }}
+          >
 
-          <div id="form__admin_Edit">
-            <label className="nameEmail__admin" style={{ paddingTop: '20px' }}>
-              Name
-            </label>
-            <input
-              className="admin__input"
-              type="text"
-              placeholder="Chetan"
-              defaultValue={RowData.name}
-              onChange={handleNameUpdate}
-            />
-            {nameErrorUpdate ? (
-              <span
-                style={{
-                  fontWeight: '400',
-                  color: 'red',
-                  paddingLeft: '20px',
-                  fontSize: '12px',
-                }}
-              >
-                {nameErrorUpdate}
-              </span>
-            ) : (
-              ''
-            )}
-            <div>
-            <label className="nameEmail__admin">Email</label>
-            <input
-              className="admin__input"
-              type="email"
-              defaultValue={RowData.email}
-              onChange={handleChange}
-              placeholder="cvinfotech@gmail.com"
-            />
-            {emailError ? (
-              <span
-                style={{
-                  fontWeight: '400',
-                  color: `${colorGreen}`,
-                  paddingLeft: '20px',
-                  fontSize: '12px',
-                }}
-              >
-                {emailError}
-              </span>
-            ) : (
-              ''
-            )}
-            </div>
-            <label className="nameEmail__admin">Password</label>
-            <input
-              className="admin__input"
-              type="password"
-              defaultValue={password}
-              onChange={handleChangeed}
-              placeholder="Generate a new password"
-            />
-            {errorMessage ? (
-              <span
-                style={{
-                  fontWeight: '400',
-                  color: `${colorRed}`,
-                  paddingLeft: '20px',
-                  fontSize: '12px',
-                }}
-              >
-                {errorMessage}
-              </span>
-            ) : (
-              ''
-            )}
-            <label className="nameEmail__admin">Confirm Password</label>
-            <input
-              id="conFirm_password"
-              className="admin__input"
-              type="password"
-              placeholder="Retype new password to confirm"
-              name="c_password"
-              defaultValue={c_password}
-              onChange={handleConPassword}
-            />
-            {handleConPassword ? (
-              <span
-                style={{
-                  fontWeight: '400',
-                  color: `${colorPink}`,
-
-                  paddingLeft: '20px',
-                  fontSize: '12px',
-                }}
-              >
-                {conPassErr}
-              </span>
-            ) : (
-              ''
-            )}
-            <div style={{ paddingLeft: '10px' }}>
-              <button
-                onClick={() => updateAdmin(id)}
-                className="update_new__admin"
-                disabled={disabled}
-              >
-                Update
-              </button>
-              <Button onClick={cancelCreateAdmin} className="cancel__create" type="submit">
-                Cancel
-              </Button>
+            <div id="delete__admin">
+              <div id="confirm__delete_Admin">
+                <p>Confirm Delete</p>
+              </div>
+              <p>Are you sure you want to delete profile</p>
+              <p style={{ marginTop: '-10px' }}>
+                of the admin <span style={{ fontWeight: 'bolder' }}>{RowData.name}</span>
+              </p>
+              <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
+              <div id="handle_Admin_Delete_cancel">
+                <button onClick={() => deleteAdmin(id)} type="submit" className="delete_new__admin">
+                  Delete
+                </button>
+                <button onClick={cancelDeleteAdmin} id="delete__create" type="submit">
+                  Cancel
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className="show__notShow"
-          style={{
-            display: isadminDelete ? 'block' : 'none',
-          }}
-        >
 
-          <div id="delete__admin">
-          <div id="confirm__delete_Admin">
-            <p>Confirm Delete</p>
+          <div className="" style={{ overflowX: 'auto' }}>
+            <table className="table table-hover">
+              <thead className="admin__information">
+                <tr>
+                  <th className="s_Name">S.No.</th>
+
+                  <th className="s_Name">Name</th>
+                  <th className="s_Name">Email</th>
+                  <th className="s_Name">Time</th>
+                  <th className="s_Name">Date</th>
+                  <th className="s_Name">Update</th>
+                  <th className="s_Name">Delete</th>
+                </tr>
+              </thead>
+
+              <tbody style={{ background: '#fff' }}>
+                {currentPosts &&
+                  currentPosts.map((item, index) => {
+                    const displayedIndex = indexOfFirstPage + index + 1
+                    function padTo2Digits(num) {
+                      return num.toString().padStart(2, '0')
+                    }
+
+                    function formatDate(date) {
+                      return [
+                        padTo2Digits(date.getDate()),
+                        padTo2Digits(date.getMonth() + 1),
+                        date.getFullYear(),
+                      ].join('-')
+                    }
+                    let numOfDaata = formatDate(new Date(item.pwa_date))
+                    return (
+                      <tr key={index}>
+                        <td>{displayedIndex}</td>
+
+                        <td>{item.name}</td>
+                        <td>{item.email}</td>
+                        <td>{item.time}</td>
+                        <td>{numOfDaata}</td>
+
+                        <td>
+                          <button
+                            onClick={() => {
+                              updateAdminID(SetRowData(item), setId(item.id))
+                            }}
+                            className="update__table_admin"
+                          >
+                            <img src={editPen} alt="edit" className="editn_btn_global" />
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            className="delte__table"
+                            onClick={() => deleteAdmined(SetRowData(item), setId(item.id))}
+                          >
+                            {/* <img src={deletePage} alt="delete" /> */}
+                            <DeleteOutlined className="delete_btn_global" />
+                          </button>
+                        </td>
+                      </tr>
+                    )
+                  })}
+              </tbody>
+            </table>
           </div>
-            <p>Are you sure you want to delete profile</p>
-            <p style={{ marginTop: '-10px' }}>
-              of the admin <span style={{ fontWeight: 'bolder' }}>{RowData.name}</span>
-            </p>
-            <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
-            <div id="handle_Admin_Delete_cancel">
-              <button onClick={() => deleteAdmin(id)} type="submit" className="delete_new__admin">
-                Delete
-              </button>
-              <button onClick={cancelDeleteAdmin} id="delete__create" type="submit">
-                Cancel
-              </button>
+          <div
+            className="user__detail__popup__Admin"
+            style={{
+              display: userAdmit ? 'block' : 'none',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                src={adminAccount}
+                alt="logo"
+                style={{
+                  paddingRight: '10px',
+                  display: 'block',
+                  marginTop: '-5px',
+                  height: '15px',
+                  objectFit: 'contain',
+                }}
+              />
+              <p className="admin_registerd__pop">A new admin is registered.</p>
             </div>
           </div>
-        </div>
-
-        <div className="" style={{ overflowX: 'auto' }}>
-          <table className="table table-hover">
-            <thead className="admin__information">
-              <tr>
-                <th className="s_Name">S.No.</th>
-
-                <th className="s_Name">Name</th>
-                <th className="s_Name">Email</th>
-                <th className="s_Name">Time</th>
-                <th className="s_Name">Date</th>
-                <th className="s_Name">Update</th>
-                <th className="s_Name">Delete</th>
-              </tr>
-            </thead>
-
-            <tbody style={{ background: '#fff' }}>
-              {currentPosts &&
-                currentPosts.map((item, index) => {
-                  const displayedIndex = indexOfFirstPage + index + 1
-                  function padTo2Digits(num) {
-                    return num.toString().padStart(2, '0')
-                  }
-
-                  function formatDate(date) {
-                    return [
-                      padTo2Digits(date.getDate()),
-                      padTo2Digits(date.getMonth() + 1),
-                      date.getFullYear(),
-                    ].join('-')
-                  }
-                  let numOfDaata = formatDate(new Date(item.pwa_date))
-                  return (
-                    <tr key={index}>
-                      <td>{displayedIndex}</td>
-
-                      <td>{item.name}</td>
-                      <td>{item.email}</td>
-                      <td>{item.time}</td>
-                      <td>{numOfDaata}</td>
-
-                      <td>
-                        <button
-                          onClick={() => {
-                            updateAdminID(SetRowData(item), setId(item.id))
-                          }}
-                          className="update__table_admin"
-                        >
-                          <img src={editPen} alt="edit" className="editn_btn_global" />
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          className="delte__table"
-                          onClick={() => deleteAdmined(SetRowData(item), setId(item.id))}
-                        >
-                          {/* <img src={deletePage} alt="delete" /> */}
-                          <DeleteOutlined className="delete_btn_global" />
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                })}
-            </tbody>
-          </table>
-        </div>
-        <div
-          className="user__detail__popup__Admin"
-          style={{
-            display: userAdmit ? 'block' : 'none',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={adminAccount}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                height: '15px',
-                objectFit: 'contain',
-              }}
-            />
-            <p className="admin_registerd__pop">A new admin is registered.</p>
+          <div
+            className="user__detail__popup__Admin"
+            style={{
+              display: userUpdate ? 'block' : 'none',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                src={adminAccount}
+                alt="logo"
+                style={{
+                  paddingRight: '10px',
+                  display: 'block',
+                  marginTop: '-5px',
+                  objectFit: 'contain',
+                  height: '15px',
+                }}
+              />
+              <p className="admin_registerd__pop">Admin details have been updated.</p>
+            </div>
           </div>
-        </div>
-        <div
-          className="user__detail__popup__Admin"
-          style={{
-            display: userUpdate ? 'block' : 'none',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={adminAccount}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                objectFit: 'contain',
-                height: '15px',
-              }}
-            />
-            <p className="admin_registerd__pop">Admin details have been updated.</p>
+          <div
+            className="user__detail__popup__Admin"
+            style={{
+              display: userDelete ? 'block' : 'none',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <DeleteOutlined
+                style={{
+                  display: 'block',
+                  color: '#fff',
+                  fontWeight: 'bolder',
+                  paddingRight: '10px',
+                  marginTop: '-5px',
+                  fontSize: '18px',
+                }}
+              />
+              <p className="admin_registerd__pop">ID has been deleted.</p>
+            </div>
           </div>
-        </div>
-        <div
-          className="user__detail__popup__Admin"
-          style={{
-            display: userDelete ? 'block' : 'none',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">ID has been deleted.</p>
-          </div>
-        </div>
 
+        </div>
+        <div className='pagination_wrap'>
+          <Pagination
+            onChange={handlePagination}
+            pageSize={postPerPage}
+            total={total}
+            current={page}
+            showSizeChanger
+            showQuickJumper
+            onShowSizeChange={onShowSizeChange}
+            itemRender={itemRender}
+            style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
+          />
+        </div>
       </div>
-<div className='pagination_wrap'>
-      <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
-        />
- </div>
- </div>
 
     </div>
   )

@@ -181,7 +181,7 @@ td[contenteditable]{
   padding: 5px;
 }
 /* paination css start  */
-.ant-pagination-item {
+/* .ant-pagination-item {
  border-radius: 6px;
 }
 .ant-select-selector{
@@ -189,7 +189,7 @@ td[contenteditable]{
 }
 .ant-pagination-options-quick-jumper input{
  border-radius: 6px;
-}
+} */
 /* paination css end  */
 .cancel__create__location {
   width: 100px;
