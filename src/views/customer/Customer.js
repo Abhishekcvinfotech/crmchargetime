@@ -1636,92 +1636,108 @@ const Customer = () => {
           </div>
           <div className="filter__Active">
             <div className="forAlignment_Account">
-              <span className="forChanging_color" style={{ background: '#DB7E06' }}></span>
+
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight, color: fontred, borderBottom: borderred }}
+                style={{ fontWeight: fontWeight, color: fontred,  }}
                 onClick={deviceAssigned}
               >
-                Assigned
+              <span className="forChanging_color" style={{ background: '#DB7E06' }}></span>
+                <span style={{borderBottom: borderred}}>Assigned</span>
+                <IoIosClose className="sortcross" onClick={sortedDate} />
               </button>
-              <IoIosClose className="sortcross" onClick={sortedDate} />
+
             </div>
             <div className="forAlignment_Account">
-              <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
+
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
+                style={{ fontWeight: fontWeight1, color: fontred1,  }}
                 onClick={deviceUnassigned}
               >
-                Un-assigned
+               <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
+               <span style={{borderBottom: borderred1}}> Un-assigned</span>
+                <IoIosClose className="sortcross" onClick={sortedDate} />
               </button>
-              <IoIosClose className="sortcross" onClick={sortedDate} />
+
             </div>
+
+
             <div className="forAlignment_Account">
-              <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
+
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
+                style={{ fontWeight: fontWeight2, color: fontred2,  }}
                 onClick={registerdAccount}
               >
-                Registered
+               <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
+               <span style={{borderBottom: borderred2}}> Registered</span>
+               <IoIosClose className="sortcross" onClick={sortedDate} />
               </button>
-              <IoIosClose className="sortcross" onClick={sortedDate} />
+
             </div>
             <div className="forAlignment_Account">
-              <span
+
+              <button
+                className="btn_for_Link"
+                style={{ fontWeight: fontWeight3, color: fontred3,  }}
+                onClick={activeAccount}
+              >
+               <span
                 className="forChanging_color"
                 style={{
                   background: '#3CB72C',
                 }}
               ></span>
-              <button
-                className="btn_for_Link"
-                style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
-                onClick={activeAccount}
-              >
-                Active
-              </button>
+              <span style={{borderBottom: borderred3}}>  Active</span>
               <IoIosClose className="sortcross" onClick={sortedDate} />
+              </button>
+
             </div>
             <div className="forAlignment_Account">
-              <span
+
+              <button
+                className="btn_for_Link"
+                style={{ fontWeight: fontWeight4, color: fontred4,  }}
+                onClick={inActivee}
+              >
+               <span
                 className="forChanging_color"
                 style={{
                   background: '#935CED ',
                 }}
               ></span>
-              <button
-                className="btn_for_Link"
-                style={{ fontWeight: fontWeight4, color: fontred4, borderBottom: borderred4 }}
-                onClick={inActivee}
-              >
-                In-active
+                <span style={{borderBottom: borderred4}}>In-active</span>
+                <IoIosClose className="sortcross" onClick={sortedDate} />
               </button>
-              <IoIosClose className="sortcross" onClick={sortedDate} />
+
             </div>
             <div className="forAlignment_Account">
-              <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
+
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight6, color: fontred6, borderBottom: borderred6 }}
+                style={{ fontWeight: fontWeight6, color: fontred6,  }}
                 onClick={Paused}
               >
-                Paused
+               <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
+               <span style={{borderBottom: borderred6}}> Paused</span>
+               <IoIosClose className="sortcross" onClick={sortedDate} />
               </button>
               {/* <IoIosClose className='sortcross' /> */}
-              <IoIosClose className="sortcross" onClick={sortedDate} />
+
             </div>
             <div className="forAlignment_Account">
-              <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
+
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight5, color: fontred5, borderBottom: borderred6 }}
+                style={{ fontWeight: fontWeight5, color: fontred5,  }}
                 onClick={AccountSuspended}
               >
-                Suspended
-              </button>
+              <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
+              <span style={{borderBottom: borderred6}}>  Suspended</span>
               <IoIosClose className="sortcross" onClick={sortedDate} />
+              </button>
+
             </div>
           </div>
         </div>

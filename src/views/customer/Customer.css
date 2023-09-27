@@ -73,29 +73,30 @@ tbody {
   position: relative;
   display: inline-block;
   z-index: 1
-
 }
-.notification_dropdowncontent{
+
+.notification_dropdowncontent {
   display: none;
   position: absolute;
   top: 58px;
   border-radius: 6px;
-  border: 1px solid  #F1F1F1;
+  border: 1px solid #F1F1F1;
   padding: 24px;
   background: #FFF;
   box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
   width: 402px;
   height: auto;
- z-index: 99999999999;
+  z-index: 99999999999;
 
 }
-.notification_dropdowncontent p{
+
+.notification_dropdowncontent p {
   font-family: DM Sans;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-margin-bottom: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
 }
 
 /* .notification_dropdowncontent a{
@@ -104,27 +105,27 @@ margin-bottom: 0;
   text-decoration: none;
   display: block;} */
 
-#notificationicon:hover + .notification_dropdowncontent {
+#notificationicon:hover+.notification_dropdowncontent {
   display: block !important;
   z-index: 99999999999;
 }
 
-.notifictaionline{
+.notifictaionline {
   height: 1px;
-color:  #F1F1F1;
-width: 100%;
+  color: #F1F1F1;
+  width: 100%;
 }
 
-.insidenotification{
-display: flex;
-align-items: center;
-gap: 16px;
+.insidenotification {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
 }
 
-.noticons{
-width: 24px;
-height: 24px;
+.noticons {
+  width: 24px;
+  height: 24px;
 }
 
 tbody tr {
@@ -333,29 +334,54 @@ tr {
 } */
 
 .forAlignment_Account {
+  /* display: flex;
+  align-items: center;
+  gap: 8px; */
+
+}
+
+.btn_for_Link {
+  color: #3378ff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 7px;
   transition: transform 0.2s, background-color 0.2s, border-radius 0.2s;
   transform-origin: center;
 }
 
-.forAlignment_Account:hover{
-  transform: scale(1.05);
+.btn_for_Link span {
+  display: inline-block;
+}
+
+.forAlignment_Account button:focus {
+  /* transform: scale(1.05); */
   background-color: #F1F1F1;
   border-radius: 4px;
+  display: initial;
+  padding: 7px;
+  display: flex;
+}
 
-  }
+.sortcross {
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+}
 
-  .sortcross{
-   font-size: 20px;
-   display: none;cursor: pointer;
-  }
+.forAlignment_Account button:focus .sortcross {
+  display: initial;
 
-  .forAlignment_Account:hover .sortcross{
-    display:initial;
-  }
+}
 
 
 .forChanging_color {
@@ -988,19 +1014,23 @@ input[type='file']::before {
 
 @media only screen and (max-width: 1240px) {
 
-  .customer_wrapper{
+  .customer_wrapper {
     padding: 12px;
   }
-  .customer_wrapper{
+
+  .customer_wrapper {
     padding: 12px;
   }
-  .all_customer_of_page{
+
+  .all_customer_of_page {
     font-size: 24px;
   }
-  .customer_add_button{
+
+  .customer_add_button {
     height: 40px;
     width: 150px;
   }
+
   .add_nine {
     flex-direction: column;
     gap: 16px;
@@ -1010,18 +1040,20 @@ input[type='file']::before {
   #searchBox {
     width: 206px;
   }
+
   .filter__Active {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
 
-  td{
+  td {
     height: unset;
   }
 
-  .trindicator{
-  height: 36px;
+  .trindicator {
+    height: 36px;
   }
+
   /* .for_respon__modal {
     width: 70%;
   }
@@ -1107,12 +1139,13 @@ input[type='file']::before {
   #searchBox {
     width: 206px;
   }
+
   /* .filter__Active {
     display: flex;
     flex-direction: column;
     margin-bottom: 0px;
   } */
-  .filter__Active{
+  .filter__Active {
     gap: 15px;
   }
 
@@ -1348,7 +1381,7 @@ input[type='file']::before {
 }
 
 #update_modal {
-  position:absolute;
+  position: absolute;
   width: 400px;
   border-radius: 6px;
   border: 1px solid #F1F1F1;
@@ -1358,7 +1391,7 @@ input[type='file']::before {
   height: auto;
   top: 50%;
   left: 50%;
-  transform: translate(-50% ,-50%);
+  transform: translate(-50%, -50%);
   margin: auto;
   z-index: 100000;
   padding: 24px;
@@ -1388,25 +1421,27 @@ input[type='file']::before {
   border: none;
   width: 100%;
   border-radius: 6px;
-  border: 1px solid  #F1F1F1;
+  border: 1px solid #F1F1F1;
   background: #FFF;
 }
-form label{
-  color:  #213446;
-font-family: DM Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+
+form label {
+  color: #213446;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-.update_modal_form  div{
+.update_modal_form div {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 8px;
 }
+
 /*
 .update_modal_heading {
   text-align: center;
@@ -1767,9 +1802,9 @@ input::file-selector-button {
     max-height: 430px;
   }
 
-  .forAlignment_Account {
+  /* .forAlignment_Account {
     width: 120px;
-  }
+  } */
 
   .asset_hover {
     font-size: 12px;
