@@ -71,6 +71,7 @@ import { IoMdClose } from 'react-icons/io'
 import { IoIosClose } from 'react-icons/io'
 import { BsPersonPlusFill } from 'react-icons/bs'
 import { RiChargingPile2Fill } from 'react-icons/ri'
+import { BiDotsVerticalRounded } from 'react-icons/bi'
 // import swal from 'sweetalert';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import { MDBIcon} from 'mdbreact';
@@ -2037,7 +2038,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '200px',
+                          width: '100px',
                         }}
                       >
                         <span>Unique Id</span>
@@ -2394,8 +2395,10 @@ const Customer = () => {
                             }}
                           />
                         </td>
-                            <td>
-                          {item?.energy_plan !== null && item?.Device_Id == null && item?.flag_status !== '1' ?  (
+                        <td>
+                          {item?.energy_plan !== null &&
+                          item?.Device_Id == null &&
+                          item?.flag_status !== '1' ? (
                             <div>
                               <AiOutlineInfoCircle id="notificationicon" />{' '}
                               <div className="notification_dropdowncontent">
@@ -2423,7 +2426,7 @@ const Customer = () => {
                           ) : (
                             <div> </div>
                           )}
-                          </td>
+                        </td>
                         <td className="px-3">{displayedIndex}</td>
                         <td>
                           <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
@@ -2507,8 +2510,15 @@ const Customer = () => {
                               open={popoverVisible[item?.id]}
                               onOpenChange={() => handlePopoverClick(item?.id)}
                             >
-                              <Button>
-                                <SettingOutlined />
+                              <Button
+                                style={{
+                                  background: 'none',
+                                  color: '#8F9FBC',
+                                  boxShadow: 'none',
+                                  outline: 'none',
+                                }}
+                              >
+                                <BiDotsVerticalRounded />
                               </Button>
                             </Popover>
                           </div>
@@ -3025,97 +3035,103 @@ const Customer = () => {
           </div>
           <div className="update_modal_form">
             <form className="update_form" onSubmit={(e) => onSub(e)}>
-              <label htmlFor="name" value={name} style={{ fontWeight: '600' }}>
-                Full Name
-              </label>
-              <input
-                type="text"
-                placeholder="Eg. John Doe"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                minLength={3}
-              />
-              <label htmlFor="email" style={{ fontWeight: '600' }}>
-                Email
-              </label>
-              <input
-                type="email"
-                placeholder="Eg.john@xyz.com"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                readOnly
-              />
-
-              <label htmlFor="mobile" style={{ fontWeight: '600' }}>
-                Phone Number
-              </label>
-              <input
-                type="number"
-                placeholder="Eg.99xxxxxxxx"
-                value={mobile}
-                name="mobile"
-                onChange={handleMobile}
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
-                  evt.preventDefault()
-                }
-                required
-                autoComplete="off"
-              />
-              {phoneError ? (
-                <span
-                  id="email__error"
-                  style={{
-                    fontWeight: '400',
-                    color: `${colorGreen}`,
-                    fontSize: '12px',
-                  }}
-                >
-                  {phoneError}
-                </span>
-              ) : (
-                ''
-              )}
-
-              <label htmlFor="address" style={{ fontWeight: '600' }}>
-                Address Line 1
-              </label>
-              <input
-                type="text"
-                placeholder="Apartment, Street Number, Block..."
-                value={add_line1}
-                name="address"
-                onChange={(e) => setAddress(e.target.value)}
-                required
-                minLength={2}
-              />
-              <label htmlFor="address2" style={{ fontWeight: '600' }}>
-                Address Line 2
-              </label>
-              <input
-                type="text"
-                placeholder="Apartment, Street Number, Block..."
-                value={add_line2}
-                name="address2"
-                onChange={(e) => setAddress2(e.target.value)}
-                minLength={2}
-              />
-
+              <div>
+                <label htmlFor="name" value={name} style={{ fontWeight: '600' }}>
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Eg. John Doe"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  minLength={3}
+                />
+              </div>
+              <div>
+                <label htmlFor="email" style={{ fontWeight: '600' }}>
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="Eg.john@xyz.com"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  readOnly
+                />
+              </div>
+              <div>
+                <label htmlFor="mobile" style={{ fontWeight: '600' }}>
+                  Phone Number
+                </label>
+                <input
+                  type="number"
+                  placeholder="Eg.99xxxxxxxx"
+                  value={mobile}
+                  name="mobile"
+                  onChange={handleMobile}
+                  onKeyDown={(evt) =>
+                    (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
+                    evt.preventDefault()
+                  }
+                  required
+                  autoComplete="off"
+                />
+                {phoneError ? (
+                  <span
+                    id="email__error"
+                    style={{
+                      fontWeight: '400',
+                      color: `${colorGreen}`,
+                      fontSize: '12px',
+                    }}
+                  >
+                    {phoneError}
+                  </span>
+                ) : (
+                  ''
+                )}
+              </div>
+              <div>
+                <label htmlFor="address" style={{ fontWeight: '600' }}>
+                  Address Line 1
+                </label>
+                <input
+                  type="text"
+                  placeholder="Apartment, Street Number, Block..."
+                  value={add_line1}
+                  name="address"
+                  onChange={(e) => setAddress(e.target.value)}
+                  required
+                  minLength={2}
+                />
+              </div>
+              <div>
+                <label htmlFor="address2" style={{ fontWeight: '600' }}>
+                  Address Line 2
+                </label>
+                <input
+                  type="text"
+                  placeholder="Apartment, Street Number, Block..."
+                  value={add_line2}
+                  name="address2"
+                  onChange={(e) => setAddress2(e.target.value)}
+                  minLength={2}
+                />
+              </div>
               <div
                 style={{
-                  display: 'flex',
-                  gap: '20px',
-                  borderTop: '2px dotted darkgrey',
-                  paddingTop: '10px',
-                  justifyContent: 'center',
-                  paddingBottom: '10px',
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'space-between',
+                  flexDirection:'unset',
+                  width:'100%',
                 }}
               >
-                <button type="submit" className="btn2 update_btn">
+                <button type="submit" className="btn2 upda,e_btn">
                   Update
                 </button>
                 <button className="btn_cancel" onClick={updateCancel}>

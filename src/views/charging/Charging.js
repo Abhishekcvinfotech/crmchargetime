@@ -69,7 +69,7 @@ const Charging = () => {
       .get(`${troesAPi}/allpartner`)
       .then((res) => {
         setPartnerData(res.data)
-       
+
       })
       .catch((err) => console.log(err))
   }
@@ -88,8 +88,8 @@ const Charging = () => {
   }
   useEffect(() => {
     getData()
-  }, [])    
-  
+  }, [])
+
   const getLocationData = (e) => {
     axios
       .get(`${troesAPi}/partnerinstallation`)
@@ -101,7 +101,7 @@ const Charging = () => {
   useEffect(() => {
     getLocationData()
   }, [])
-  
+
   const onDeleteUser = async (id) => {
     setLoading(true)
     if (window.confirm('Are you sure? The charging rate will get deleted permanently!!')) {
@@ -124,7 +124,7 @@ const Charging = () => {
       setLoading(false)
     }
   }
-  
+
 
 
   const handleSelected = (e) => {
@@ -186,7 +186,7 @@ if(installation && partner_id && partner && kwh && rate){
   else{
     alert('Please select Installation and create charging rate again. ')
     setLoading(false)
- 
+
   }
 }
   useEffect(() => {
@@ -226,7 +226,7 @@ if(installation && partner_id && partner && kwh && rate){
     }
   }
   const handleSelect = (e) => {
-    
+
     setLoading(true)
     if(e.target.value !== 'all'){
     axios
@@ -235,7 +235,7 @@ if(installation && partner_id && partner && kwh && rate){
     })
       .then((res) => {
         setData(res.data)
-        setLoading(false) 
+        setLoading(false)
       })
       .catch((err) => {
         setLoading(false)
@@ -305,7 +305,7 @@ if(installation && partner_id && partner && kwh && rate){
         <button type="primary"  id='universalButton' onClick={showDrawer}>
         <img src={right_arrow} alt="edit" style={{width:"22px",height:"15px",paddingRight:"4px"}} />
           Create Rate
-         
+
         </button>
       </div>
       <div className="finance_partner_select" style={{ display: 'flex', alignItems: 'center' }}>
@@ -324,10 +324,10 @@ if(installation && partner_id && partner && kwh && rate){
                   </option>
                 )
               })}
-             
+
           </select>
         </div>
-       
+
         <Drawer
           title="Create Rate"
           placement="right"

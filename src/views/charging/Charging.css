@@ -185,7 +185,7 @@ tr:hover .actionBtn{
 
 }
 /* paination css start  */
-.ant-pagination-item {
+/* .ant-pagination-item {
   border-radius: 9px;
 }
 .ant-select:not(.ant-select-customize-input) .ant-select-selector{
@@ -193,5 +193,5 @@ tr:hover .actionBtn{
 }
 .ant-pagination-options-quick-jumper input{
   border-radius: 9px;
-}
+} */
 /* paination css end  */

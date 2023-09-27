@@ -342,7 +342,7 @@ tr {
 }
 
 .forAlignment_Account:hover{
-  transform: scale(1.05); /* Scale the element on hover */
+  transform: scale(1.05);
   background-color: #F1F1F1;
   border-radius: 4px;
 
@@ -543,9 +543,9 @@ tr {
 
 /* Add filter */
 .crossicon {
-  color: #6c757d;
-  width: 24px;
-  height: 24px;
+  color: black;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -1348,54 +1348,71 @@ input[type='file']::before {
 }
 
 #update_modal {
-  position: fixed;
+  position:absolute;
   width: 400px;
-  background-color: #ebebeb;
+  border-radius: 6px;
+  border: 1px solid #F1F1F1;
+  background: #FFF;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
   justify-content: center;
-  height: 100vh;
-  top: 0;
-  right: 0;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
   margin: auto;
   z-index: 100000;
+  padding: 24px;
 }
 
-.update_modal_form {
+/* .update_modal_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
   background-color: white;
   border: none;
   border-radius: 6px;
-  left: 55px;
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  overflow-y: auto;
-  max-height: 540px;
-}
+
+} */
 
 .update_form {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  max-height: 500px;
+  max-height: 500px; */
 }
 
 .update_form input {
-  padding: 5px;
-  border-radius: 6px;
+  padding: 5px 15px;
   margin: 3px 0px 10px 0px;
   outline: none;
   border: none;
-  background-color: #e8e9ee;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid  #F1F1F1;
+  background: #FFF;
+}
+form label{
+  color:  #213446;
+font-family: DM Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 
+.update_modal_form  div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+}
+/*
 .update_modal_heading {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
-}
+} */
 
 .update_modal_heading h2 {
   font-size: 20px;
