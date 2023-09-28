@@ -3,6 +3,12 @@
 .searchplaceholder {
   position: relative;
 }
+form input{
+  height: 48px !important;
+}
+form select{
+  height: 48px !important;
+}
 
 .fiseachicon {
   position: absolute;
@@ -205,11 +211,25 @@ td {
   display: inline-block;
 }
 
+.totalcustomer{
+  color:  #324253;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 16px;
+
+}
+
+.totalcustomer span{
+font-weight: 700;
+}
 .customer_addbutton_wrap {
   margin: 12px 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
 }
 
 /*  css for new ui changes end  */
@@ -235,6 +255,32 @@ select:focus {
   outline-offset: 0px;
   outline: none;
 }
+
+
+.commonbutton{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.commonbutton span {
+  display: inline-block;
+
+}
+
+.for__marginn {
+  display: flex;
+  gap: 12px;
+}
+
+.for__marginn button {
+  outline: none;
+  border: none;
+  height: 32px;
+  padding: 0px 12px;
+  border-radius: 4px;
+}
+
+
 
 /* paination css start  */
 /* .ant-pagination-item {
@@ -494,6 +540,7 @@ tr {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 12px;
 }
 
 .add__eleven {
@@ -524,7 +571,16 @@ tr {
 .delete_outline_one {
   color: red;
   padding: 0px 7px;
-  margin-top: -9px;
+
+}
+p{
+  /* margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px; */
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .add__eight {
@@ -534,51 +590,41 @@ tr {
   padding-right: 5px; */
 }
 
-.for__marginn {
-  display: flex;
-  gap: 12px;
-}
 
-.for__marginn button {
-  outline: none;
-  border: none;
-  height: 32px;
-  padding: 0px 12px;
-  border-radius: 4px;
-}
 
 .add__three {
   display: flex;
   justify-content: space-between;
+  margin-top: 24px;
 }
 
 .for_respon__modal_first {
+  left: 31.9%;
   position: absolute;
-
-  z-index: 9;
-  top: 16%;
-  left: 43%;
-  transform: translate(-50%, -50%);
+  top: 170px;
+  z-index: 1;
   border-radius: 6px;
   border: 1px solid var(--border-border-secondary, #f1f1f1);
   background: #fff;
   box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
-
-  height: auto;
 }
 
 /* Add filter */
 .crossicon {
-  color: black;
+  color: #213446;
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
 
 .add_filter_1 {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  color: #213446;
   font-weight: bolder;
   display: inline-block;
+
 }
 
 .add_filter1wrap {
@@ -590,7 +636,7 @@ tr {
 .add_filter1wrap_cross {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .u_looking_for {
@@ -608,7 +654,7 @@ tr {
 }
 
 .for_campaign_act {
-  margin-right: 10px;
+
   background-color: #1890ff;
   color: #fff;
   border-radius: 6px;
@@ -773,6 +819,7 @@ tr {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 12px;
 }
 
 .mainDivOf_apply {
@@ -1003,14 +1050,20 @@ input[type='file']::before {
   display: flex;
 }
 
-.all_customer_of_page {
-  font-size: 30px;
+/* .all_customer_of_page {
+  font-size: 24px;
   font-weight: bolder;
   color: black;
   margin: 0;
-}
+} */
 
 /* responsive */
+
+@media only screen and (max-width: 1400px) {
+
+  .for_respon__modal_first{
+left: 10%;
+  }}
 
 @media only screen and (max-width: 1240px) {
 
@@ -1320,10 +1373,10 @@ input[type='file']::before {
     width: 126px;
   }
 
-  .for_campaign_act {
+  /* .for_campaign_act {
     width: 120px;
     margin: 3px 0px 8px 0px;
-  }
+  } */
 
   .for__price_hand {
     width: 120px;
@@ -1432,6 +1485,7 @@ form label {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 12px;
 }
 
 .update_modal_form div {
@@ -1439,7 +1493,16 @@ form label {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 8px;
+  gap: 8px 0;
+
+}
+.update_button{
+  flex-direction: initial;
+  display: flex;
+    justify-content: space-between;
+}
+.update_button button{
+  width: 48%;
 }
 
 /*
@@ -1533,11 +1596,12 @@ form label {
 #addModalsecond form {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  justify-content: space-between;
 }
 
 #addModalsecond form div {
-  width: 46%;
+  width: 48%;
+  gap: 12px 0;
 }
 
 #addModalsecond .modal_form {}
@@ -1551,11 +1615,11 @@ form label {
   outline: none;
   box-shadow: none;
   border-radius: 6px;
-  color: #8F9FBC;
+  color: #FFFFFF;
   background: none;
   border-radius: 6px;
   border: 1px solid #8F9FBC;
-  background-color: none !important;
+  background-color:#8F9FBC;
 }
 
 .addcustomerform_btn {
@@ -1574,7 +1638,6 @@ form label {
 
 .modal_hedaing_customer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 

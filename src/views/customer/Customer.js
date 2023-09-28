@@ -66,12 +66,17 @@ import validator from 'validator'
 import { HiFilter } from 'react-icons/hi'
 import { FiSearch } from 'react-icons/fi'
 import { BsCloudDownload } from 'react-icons/bs'
-import { AiOutlineInfoCircle } from 'react-icons/ai'
+import {  AiFillInfoCircle } from 'react-icons/ai'
 import { IoMdClose } from 'react-icons/io'
 import { IoIosClose } from 'react-icons/io'
 import { BsPersonPlusFill } from 'react-icons/bs'
 import { RiChargingPile2Fill } from 'react-icons/ri'
 import { BiDotsVerticalRounded } from 'react-icons/bi'
+import {MdEditDocument} from 'react-icons/md'
+import {IoPricetags} from 'react-icons/io5'
+import {IoIosPaper} from 'react-icons/io'
+import {IoLocationSharp} from 'react-icons/io5'
+
 // import swal from 'sweetalert';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import { MDBIcon} from 'mdbreact';
@@ -1482,10 +1487,14 @@ const Customer = () => {
   }
   return (
     <>
-      <div className="container-fluid customer_information" style={{ position: 'relative' }}>
+      <div className="container-fluid customer_information" style={{position:'relative'}} >
         {/* <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}> */}
         <div className="customer_addbutton_wrap">
-          <h2 className="all_customer_of_page">Customers</h2>
+        <div>
+        <h2 className="all_customer_of_page">Customers</h2>
+        <p className='totalcustomer'> Total Customers : <span>  {totalUsers} </span> </p>
+        </div>
+
           {/* <p style={{ paddingBottom: '18px', textAlign: 'right', paddingRight:'25px' }}>
             Total Customers : {totalUsers} <br />
             <Link to="/">
@@ -1519,6 +1528,7 @@ const Customer = () => {
             <span>Add Customer</span>
           </button>
         </div>
+
         <CSVLink
           data={csvdata}
           //headers={headers}
@@ -1526,7 +1536,7 @@ const Customer = () => {
           target="_blank"
           ref={csvDownloadRef}
         />
-        <div className="search_heading">
+        <div className="search_heading" style={{position:'relative',}}>
           <div className="add_nine">
             <div className="filter_serach">
               <div className="searchplaceholder">
@@ -1542,17 +1552,11 @@ const Customer = () => {
               <div className="uI_hndle">
                 {/* <Button id="handle__addFilter" type="primary" onClick={handleClicked}> */}
                 <button id="handle__addFilter" className="filter_button" onClick={handleClicked}>
-                  {' '}
+
                   <span className="filter_span">Filter</span>
-                  {/* <FilterFilled
-                  style={{
-                    // color: '#fff',
-                    // fontSize: '20px',
-                    // fontWeight: 'bolder',
-                    // display: 'block',
-                    // float: 'left',
-                  }}
-                /> */}
+
+
+
                   <HiFilter />
                 </button>
                 {clearData ? (
@@ -1748,7 +1752,8 @@ const Customer = () => {
         ) : (
           ''
         )}
-        <div
+
+     <div
           className="for_respon__modal_first"
           style={{
             display: isShown ? 'block' : 'none',
@@ -1770,30 +1775,27 @@ const Customer = () => {
 
               <div className="add__three">
                 <div className="for__marginn">
-                  <Button id="status_filter" onClick={statusFilter} className="for_campaign_act">
-                    <img
-                      src={status}
-                      alt="frame"
-                      className="for_img_two"
-                      style={{ width: '26px', height: '23px' }}
-                    />
-                    Status
+                  <Button id="status_filter" onClick={statusFilter} className="for_campaign_act commonbutton">
+
+                    <MdEditDocument />
+                    <span>Status</span>
                   </Button>
                   <Button
                     id="campaign_activity"
                     onClick={campaignActivity}
-                    className="for_campaign_act"
+                    className="for_campaign_act commonbutton"
+
                   >
-                    <img src={FrameTwo} alt="frame" className="for_img_two" />
-                    Location
+                    <IoLocationSharp />
+                    <span>Location</span>
                   </Button>
-                  <Button id="location" onClick={location} className="for_campaign_act">
-                    <img src={FrameOne} alt="frame" className="for__plan_hand" />
-                    Plan
+                  <Button id="location" onClick={location} className="for_campaign_act commonbutton">
+                   <IoIosPaper />
+                    <span>Plan</span>
                   </Button>
-                  <Button id="price_handle" onClick={priceHandle} className="for__price_hand">
-                    <img src={Frame} alt="frame" className="for_img_two" />
-                    Price
+                  <Button id="price_handle" onClick={priceHandle} className="for__price_hand commonbutton ">
+                    <IoPricetags />
+                    <span>Price</span>
                   </Button>
                 </div>
               </div>
@@ -1999,7 +2001,14 @@ const Customer = () => {
               </div>
             </div>
           </form>
-        </div>
+                 </div>
+
+
+
+
+
+
+
 
         <div className="customer_wrapper">
           <div className="table-responsive">
@@ -2011,7 +2020,7 @@ const Customer = () => {
                   <th scope="col" className="global_th">
                     <span>S.No.</span>
                   </th>
-                  <th>File</th>
+                  <th scope="col" className="global_th"><span>File</span></th>
                   <th></th>
                   <th></th>
                   <th></th>
@@ -2416,7 +2425,7 @@ const Customer = () => {
                           item?.Device_Id == null &&
                           item?.flag_status !== '1' ? (
                             <div>
-                              <AiOutlineInfoCircle id="notificationicon" />{' '}
+                              <AiFillInfoCircle id="notificationicon" />{' '}
                               <div className="notification_dropdowncontent">
                                 {item?.energy_plan !== null && item?.Device_Id == null ? (
                                   <div className="insidenotification" style={{ color: 'red' }}>
@@ -2451,8 +2460,8 @@ const Customer = () => {
                                 src={sheet}
                                 alt="upload_img"
                                 style={{
-                                  width: '20px',
-                                  marginTop: '-7px',
+                                  width: '24px',
+                                  height:'24px',
                                   // marginLeft: '4px',
                                   cursor: 'pointer',
                                 }}
@@ -2508,7 +2517,7 @@ const Customer = () => {
                         <td>{item?.pwa_state}</td>
                         <td>{item?.pwa_choice}</td>
                         <td>{item?.energy_plan ? item?.energy_plan : ' - '}</td>
-                        <td>{item?.energy_price ? '$' + item?.energy_price / 100 : ' - '}</td>
+                        <td>{item?.energy_price ? '$' + (item?.energy_price / 100).toFixed(2) : ' - '}</td>
                         <td>{item?.pwa_mobile}</td>
                         <td>{numOfDaata}</td>
                         <td>{item?.time}</td>
@@ -2811,6 +2820,24 @@ const Customer = () => {
                 />
               </div>
 
+
+              <div>
+                <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
+                  Select installation from choices:
+                </label>
+                <select id="option__value" onChange={handleSelect}>
+                  <option value="">{`Select installation  from choices:`}</option>
+                  {locateData &&
+                    locateData.map((item, index) => {
+                      return (
+                        <option key={index} data-name={item.id} value={item.location}>
+                          {item.location}
+                        </option>
+                      )
+                    })}
+                </select>
+              </div>
+
               <div>
                 <label htmlFor="mobile" style={{ fontWeight: '600' }}>
                   Phone Number
@@ -2845,6 +2872,21 @@ const Customer = () => {
               </div>
 
               <div>
+                <label htmlFor="address" style={{ fontWeight: '600' }}>
+                  Address Line 1{' '}
+                </label>
+                <input
+                  type="text"
+                  placeholder="Apartment, Street Number, Block..."
+                  value={add_line1}
+                  name="address"
+                  required
+                  onChange={handleAdd1}
+                  minLength={2}
+                />
+              </div>
+
+              <div>
                 <label htmlFor="email" style={{ fontWeight: '600' }}>
                   Email
                 </label>
@@ -2872,22 +2914,22 @@ const Customer = () => {
                   ''
                 )}
               </div>
+
               <div>
-                <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
-                  Select installation from choices:
+                <label htmlFor="address2" style={{ fontWeight: '600' }}>
+                  Address Line 2{' '}
                 </label>
-                <select id="option__value" onChange={handleSelect}>
-                  <option value="">{`Select installation  from choices:`}</option>
-                  {locateData &&
-                    locateData.map((item, index) => {
-                      return (
-                        <option key={index} data-name={item.id} value={item.location}>
-                          {item.location}
-                        </option>
-                      )
-                    })}
-                </select>
+                <input
+                  type="text"
+                  placeholder="Apartment, Street Number, Block..."
+                  value={add_line2}
+                  name="address2"
+                  onChange={handleAdd2}
+                  minLength={2}
+                />
               </div>
+
+
               <div>
                 <label htmlFor="password" style={{ fontWeight: '600' }}>
                   Password
@@ -2917,20 +2959,22 @@ const Customer = () => {
                 )}
               </div>
 
-              <div>
-                <label htmlFor="address" style={{ fontWeight: '600' }}>
-                  Address Line 1{' '}
-                </label>
-                <input
-                  type="text"
-                  placeholder="Apartment, Street Number, Block..."
-                  value={add_line1}
-                  name="address"
-                  required
-                  onChange={handleAdd1}
-                  minLength={2}
-                />
+
+              <div className="last_line">
+                <div className="part_1">
+                  <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
+                    Zipcode
+                  </label>
+                  <input type="text" value={newZipcode} readOnly placeholder="Enter Zipcode" />
+                </div>
+                <div className="part_2">
+                  <label htmlFor="State" style={{ fontWeight: '600' }}>
+                    State
+                  </label>
+                  <input type="text" value={newState} readOnly placeholder="Select" />
+                </div>
               </div>
+
 
               <div>
                 <label htmlFor="conpassword" style={{ fontWeight: '600' }}>
@@ -2973,33 +3017,10 @@ const Customer = () => {
                 </span>
               </div>
 
-              <div>
-                <label htmlFor="address2" style={{ fontWeight: '600' }}>
-                  Address Line 2{' '}
-                </label>
-                <input
-                  type="text"
-                  placeholder="Apartment, Street Number, Block..."
-                  value={add_line2}
-                  name="address2"
-                  onChange={handleAdd2}
-                  minLength={2}
-                />
-              </div>
-              <div className="last_line">
-                <div className="part_1">
-                  <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
-                    Zipcode
-                  </label>
-                  <input type="text" value={newZipcode} readOnly placeholder="Enter Zipcode" />
-                </div>
-                <div className="part_2">
-                  <label htmlFor="State" style={{ fontWeight: '600' }}>
-                    State
-                  </label>
-                  <input type="text" value={newState} readOnly placeholder="Select" />
-                </div>
-              </div>
+
+
+
+
               <div
                 style={{
                   display: 'flex',
@@ -3015,6 +3036,8 @@ const Customer = () => {
                   Add Customer
                 </button>
               </div>
+
+
             </form>
           </div>
         </div>
@@ -3138,14 +3161,8 @@ const Customer = () => {
                   minLength={2}
                 />
               </div>
-              <div
-                style={{
-                  display:'flex',
-                  alignItems:'center',
-                  justifyContent:'space-between',
-                  flexDirection:'unset',
-                  width:'100%',
-                }}
+              <section
+                className='update_button'
               >
                 <button type="submit" className="btn2 upda,e_btn">
                   Update
@@ -3153,7 +3170,7 @@ const Customer = () => {
                 <button className="btn_cancel" onClick={updateCancel}>
                   Cancel
                 </button>
-              </div>
+              </section>
             </form>
           </div>
         </div>

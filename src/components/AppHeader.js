@@ -119,7 +119,7 @@ const AppHeader = () => {
               <div className="loginimage_wrap" >
                 <img src={LoginImage} />
               </div>
-              <h6 className="loginImage_text">Karan Mishra</h6>
+              <h6 className="loginImage_text">Admin</h6>
             </div>
           </CNavItem>
           {/* <CNavItem>
