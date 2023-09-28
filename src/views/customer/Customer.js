@@ -1104,7 +1104,7 @@ const Customer = () => {
     let cursorPointer = 'pointer'
     setBgColor(purple)
     setcsvTextColor('black')
-    setcsvwidth('210px')
+    setcsvwidth('314px')
   }
 
   const [uploaded_file, setUploaded_file] = useState(null)
@@ -1600,14 +1600,8 @@ const Customer = () => {
                 style={{ display: 'flex', gap: '6px', alignItems: 'center' }}
                 className="csv_form"
               >
-                {/* <Upload>
-    <Button icon={<UploadOutlined />}  onChange={handleFileChange}  className="w-55 input_type_file"
-                  accept=".csv"
-                  required>Choose File</Button>
-  </Upload> */}
 
-                {/* choose file html */}
-                {/* <input
+                <input
                   ref={inputRef}
                   type="file"
                   style={{ width: csvwidth, color: csvTextColor }}
@@ -1615,13 +1609,11 @@ const Customer = () => {
 
                   accept=".csv"
                   required
-                /> */}
-
-                {/* choose file css ends */}
+                />
 
                 <button
                   type="submit"
-                  // id="button"
+
                   className="import_report"
                 >
                   <BsCloudDownload className="cloud_downlaod_icon" />
@@ -2799,6 +2791,7 @@ const Customer = () => {
               <IoMdClose className="crossicon" onClick={empty} />
             </div>
           </div>
+          <hr className='cretaecustomerline'></hr>
           <div className="modal_form">
             <form className="form" onSubmit={(e) => adduser(e)}>
               {/* <div style={{ display: 'none' }}>

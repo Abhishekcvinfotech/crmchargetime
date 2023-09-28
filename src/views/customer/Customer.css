@@ -40,6 +40,7 @@ form select{
   align-items: center;
   gap: 8px;
   border: 1px solid #8f9fbc;
+  margin-bottom: 7px;
 }
 
 .cloud_downlaod_icon {
@@ -354,6 +355,14 @@ tr {
   font-weight: 500;
 }
 
+.cretaecustomerline{
+
+  width: 100%;
+  margin: 12px 0;
+  color:  #F1F1F1;
+
+}
+
 .user__detail__popup__Customer {
   z-index: 1;
   background: #1890ff;
@@ -612,6 +621,19 @@ p{
   box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
 }
 
+.for_respon__modal_first_third{
+  left: 791px;
+  position: absolute;
+  top: 265px;
+  max-width: 721px;
+  width: 100%;
+  z-index: 1;
+  border-radius: 6px;
+  border: 1px solid var(--border-border-secondary, #f1f1f1);
+  background: #fff;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
+
+}
 /* Add filter */
 .crossicon {
   color: #213446;
@@ -1504,8 +1526,18 @@ form label {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 8px 0;
+  gap: 12px 0;
 
+}
+
+.update_modal_form form label {
+  color: #213446;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+ margin: 0 !important;
 }
 .update_button{
   flex-direction: initial;
@@ -1718,7 +1750,7 @@ select {
 }
 
 .ant-notification-topRight {
-  top: 70px !important;
+  top: 121px !important;
 }
 
 .App {
@@ -1736,7 +1768,7 @@ select {
 
 ::-webkit-file-upload-button {
   color: white;
-  background: #b1d34f;
+  background:#3378ff;
   border: none;
   border-radius: 6px;
   outline: none;
@@ -1748,7 +1780,7 @@ select {
 
 input::file-selector-button {
   color: white;
-  background: #b1d34f;
+  background: #3378ff;
   border: none;
   border-radius: 6px;
   outline: none;
