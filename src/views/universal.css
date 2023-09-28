@@ -433,10 +433,10 @@ input[type="file"]::file-selector-button {
         .ant-pagination-options{
                width: unset;
         }
-        #searchBox {
+        /* #searchBox {
           max-width: 300px;
           width: 100%;
-        }
+        } */
 
       }
   /* pagination css end */

@@ -500,7 +500,7 @@ tr {
 /* Add filter */
 .add__one {
   padding: 24px;
-  width: 721px;
+
 }
 
 .add_nine {
@@ -599,9 +599,12 @@ p{
 }
 
 .for_respon__modal_first {
-  left: 31.9%;
+  left: 791px;
+
   position: absolute;
-  top: 170px;
+  top: 265px;
+  max-width: 721px;
+  width: 100%;
   z-index: 1;
   border-radius: 6px;
   border: 1px solid var(--border-border-secondary, #f1f1f1);
@@ -1059,11 +1062,19 @@ input[type='file']::before {
 
 /* responsive */
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1540px) {
+
+   .for_respon__modal_first{
+max-width: 580px;
+  }}
+
+
+@media only screen and (max-width: 1540px) {
 
   .for_respon__modal_first{
-left: 10%;
-  }}
+left: 314px;
+ }}
+
 
 @media only screen and (max-width: 1240px) {
 

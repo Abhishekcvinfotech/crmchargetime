@@ -1487,7 +1487,8 @@ const Customer = () => {
   }
   return (
     <>
-      <div className="container-fluid customer_information" style={{position:'relative'}} >
+      <div className="container-fluid customer_information" >
+      {/* <div className="container-fluid customer_information" style={{position:'relative'}} > */}
         {/* <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}> */}
         <div className="customer_addbutton_wrap">
         <div>
@@ -1551,7 +1552,7 @@ const Customer = () => {
               </div>
               <div className="uI_hndle">
                 {/* <Button id="handle__addFilter" type="primary" onClick={handleClicked}> */}
-                <button id="handle__addFilter" className="filter_button" onClick={handleClicked}>
+                <button id="handle__addFilter" className="filter_button" onClick={handleClicked} style={{position:'relative',}}>
 
                   <span className="filter_span">Filter</span>
 
