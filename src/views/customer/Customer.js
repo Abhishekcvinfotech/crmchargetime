@@ -344,8 +344,10 @@ const Customer = () => {
       document.getElementById('price_handle').style.backgroundColor = '#1890ff'
     }
   }
-  const onChangeed = (value) => {
-    setBasePrice(value)
+  const onChangeed = (e) => {
+    console.log("value sof proice is " , e)
+    const newValue = parseInt(e.target.value, 10);
+    setBasePrice(newValue)
   }
   const handleClicked = (event) => {
     setIsShown((current) => !current)
@@ -520,7 +522,8 @@ const Customer = () => {
       if (basePrice !== 0) {
         valueToPush['energy_price'] = basePrice
       }
-      document.getElementById('handle__addFilter').style.background = '#0c2556'
+      document.getElementById('handle__addFilter').style.background = '#f1f1f1'
+      // document.getElementById('handle__addFilter').style.background = 'red'
       setclearData(true)
       axios({
         url: `${troesAPi}/filter1`,
@@ -580,7 +583,8 @@ const Customer = () => {
   }
 
   const clearFiltererd = () => {
-    document.getElementById('handle__addFilter').style.background = '#1890ff'
+    document.getElementById('handle__addFilter').style.background = '#f1f1f1'
+    // document.getElementById('handle__addFilter').style.background = 'red'
     setclearData(false)
     setValue(0)
     setstatusValue(0)
@@ -1686,7 +1690,7 @@ const Customer = () => {
                       />
 
                       <div className="fileimport_btn">
-                        <button className="fileimport_cancel" onClick={() => setModal2Open(false)}>
+                        <button  type="button" className="fileimport_cancel" onClick={() => setModal2Open(false)}>
                           {' '}
                           <span>Cancel</span>{' '}
                         </button>
@@ -2165,7 +2169,7 @@ const Customer = () => {
               )}
               {priceData ? (
                 <div className="price__div">
-                  <span className="main_div_of_pric">Price</span>
+                  <span className="main_div_of_pric">Priceee</span>
                   <input
                     id="basePrice"
                     type="number"

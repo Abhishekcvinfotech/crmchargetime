@@ -1,9 +1,10 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch  } from 'react-redux'
 import { Link } from 'react-router-dom'
 // import chargeLogo from "../assets/images/chargeLogo.svg"
-import logocrm from "../assets/images/logocrm.png"
+import logocrm from "../assets/images/logocrm.svg"
 import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
+
 
 import { AppSidebarNav } from './AppSidebarNav'
 
@@ -13,6 +14,7 @@ import '../../src/views/customer/Customer.css'
 
 // sidebar nav config
 import navigation from '../_nav'
+import { useState } from 'react'
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
@@ -49,13 +51,13 @@ const AppSidebar = () => {
       <CSidebarNav>
         <SimpleBar>
         <Link to="/">
-        <CSidebarBrand className=" d-md-flex justify-content-center px-3  " style={{paddingTop:'24px', paddingBottom:'24px'}} to="/">
+        <CSidebarBrand className=" d-md-flex justify-content-center px-3  " style={{paddingTop:'8px', alignItems:'center' , gap:'8px'}} to="/">
         <div style={{  }}>
         <img style={{ objectFit:"cover",width:'100%' ,height:'100%' ,}} src={logocrm} alt="chargerLogo" />
         </div>
 
 
-          {/* <span style={{ fontSize: '20px', fontWeight: 'bolder', color: '#fff',padding:"9.2px 0px" }}>ChargeTime</span> */}
+          <span style={{ fontSize: '20px', fontWeight: 'bolder', color: '#fff',padding:"9.2px 0px" }}>ChargeTime</span>
         </CSidebarBrand>
       </Link>
           <AppSidebarNav items={navigation}  />

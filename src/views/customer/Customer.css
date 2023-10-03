@@ -1206,13 +1206,14 @@ background-color: #E5E5E5;
 }
 
 .for_Filter_Clear {
-  background-color: #0c2556;
+  background-color: #E5E5E5;
   color: #fff;
   border-radius: 6px;
   font-weight: bolder;
   height: 39px;
   padding: 4px 20px;
-  margin-top: -7px;
+height: 48px !important;
+padding: 12px 16px;
 }
 
 .for_packg__one {

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import LoginImage from '../../src/assets/images/avatars/loginimage.png'
+import LoginImage from '../../src/assets/images/loginimage.svg'
+import Tabler_logout from '../../src/assets/images/tabler_logout.svg'
 
 import {
   CContainer,
@@ -24,6 +25,10 @@ import { AppHeaderDropdown } from './header/index'
 import { logo } from 'src/assets/brand/logo'
 
 const AppHeader = () => {
+  const [isOpen, setOpen] = useState(false)
+  const toggleDropdown = () => {
+    setOpen(!isOpen)
+  }
   const dispatch = useDispatch()
   const sidebarShow = useSelector((state) => state.sidebarShow)
   let navigate = useNavigate()
@@ -115,11 +120,22 @@ const AppHeader = () => {
               Logout
             </button> */}
 
-            <div className="login_section_wrap" onClick={handleClick}>
-              <div className="loginimage_wrap" >
+            <div className=" logoutdropdownn" onClick={toggleDropdown}>
+              <div className='login_section_wrap'>
+              <div className="loginimage_wrap">
                 <img src={LoginImage} />
               </div>
               <h6 className="loginImage_text">Admin</h6>
+              </div>
+              {isOpen && (
+                <div className="logoutdropdown-content" onClick={handleClick}>
+                <div>
+
+                  <img src={Tabler_logout} alt="Logout" />
+                </div>
+                  <h6>Logout </h6>
+                </div>
+              )}
             </div>
           </CNavItem>
           {/* <CNavItem>
