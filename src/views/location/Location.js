@@ -563,7 +563,7 @@ const Location = () => {
             Add New Installation
           </button>
         </div>
-        <p className="total__location">Total Installation : {locationData.length}</p>
+        <p className="total__location">Total Installation : {locationData?.length}</p>
 
         <div>
           <div className="second_mainDiv_location">
