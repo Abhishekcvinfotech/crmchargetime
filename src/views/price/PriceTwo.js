@@ -1177,7 +1177,7 @@ const PriceTwo = () => {
 
         <div className="">
           <div className="location_wrapper">
-            <label className="select_text">Select Location:</label>
+
             <select id="select_option__value" onChange={handleSelect}>
               <option value="">Select Location</option>
               {locationData &&
@@ -1194,8 +1194,9 @@ const PriceTwo = () => {
                   )
                 })}
             </select>
-            
-            {forSelect ? '' : <span className="plezz_select">Please select location</span>}
+
+            {/* {forSelect ? '' : <span className="plezz_select">Please select location</span>} */}
+
           </div>
 
           <div className="upper">

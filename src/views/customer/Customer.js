@@ -60,22 +60,29 @@ import editPen from '../../assets/images/editPen.svg'
 import sheet from '../../assets/images/sheets.png'
 import import_one from '../../assets/images/import_one.svg'
 import status from '../../assets/images/Group.svg'
+import InformationCircleOutline from '../../assets/images/InformationCircleOutline.svg'
+import Excelicon from '../../assets/images/excelicon.svg'
+import Threedots from '../../assets/images/threedots.svg'
+import Rightarrow from '../../assets/images/Rightarrow.svg'
+import XOutline from '../../assets/images/XOutline.svg'
+import Bxs_copy from '../../assets/images/bxs_copy.svg'
 import useCopy from 'use-copy'
 import { useRef } from 'react'
 import validator from 'validator'
 import { HiFilter } from 'react-icons/hi'
 import { FiSearch } from 'react-icons/fi'
 import { BsCloudDownload } from 'react-icons/bs'
-import {  AiFillInfoCircle } from 'react-icons/ai'
+import { AiFillInfoCircle } from 'react-icons/ai'
 import { IoMdClose } from 'react-icons/io'
 import { IoIosClose } from 'react-icons/io'
 import { BsPersonPlusFill } from 'react-icons/bs'
 import { RiChargingPile2Fill } from 'react-icons/ri'
 import { BiDotsVerticalRounded } from 'react-icons/bi'
-import {MdEditDocument} from 'react-icons/md'
-import {IoPricetags} from 'react-icons/io5'
-import {IoIosPaper} from 'react-icons/io'
-import {IoLocationSharp} from 'react-icons/io5'
+import { MdEditDocument } from 'react-icons/md'
+import { IoPricetags } from 'react-icons/io5'
+import { IoIosPaper } from 'react-icons/io'
+import { IoLocationSharp } from 'react-icons/io5'
+import { CenterFocusStrong } from '@mui/icons-material'
 
 // import swal from 'sweetalert';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
@@ -153,6 +160,7 @@ const Customer = () => {
   const [fontWeight5, setFontWeight5] = useState('400')
   const [fontWeight6, setFontWeight6] = useState('400')
   const [fontred, setFontred] = useState('blue')
+
   const [fontred1, setFontred1] = useState('blue')
   const [fontred2, setFontred2] = useState('blue')
   const [fontred3, setFontred3] = useState('blue')
@@ -189,7 +197,8 @@ const Customer = () => {
   const [userPlay, setUserPlay] = useState(false)
   const [userPause, setUserPause] = useState(false)
   const [popoverVisible, setPopoverVisible] = useState({})
-
+  // const [showPadding, setShowPadding] = useState(false);
+  const [showCrossIcon, setShowCrossIcon] = useState(false)
   //content part manish start
   const [sortingState, setSortingState] = useState({
     Device_Id: 'ASC',
@@ -203,6 +212,21 @@ const Customer = () => {
     energy_price: 'ASC',
     id: 'ASC',
   })
+  const [btnpadding, setBtnpadding] = useState('0px')
+  const [paddingcolor, setPaddingcolor] = useState('none')
+  const [borderRadius, setBorderRadius] = useState('')
+  const [clickedButton, setClickedButton] = useState(null)
+
+  const [modal2Open, setModal2Open] = useState(false)
+
+  const handleIconPaddingClick = (buttonId) => {
+    setClickedButton(buttonId)
+    console.log('button is clicked')
+    setBtnpadding('7px 8px')
+    setPaddingcolor('#F1F1F1')
+    setBorderRadius('6px')
+    setShowCrossIcon(true)
+  }
 
   const openNotification = () => {
     notification.open({
@@ -375,6 +399,11 @@ const Customer = () => {
 
   const sortedDate = () => {
     getUsers()
+    setShowCrossIcon(false)
+    setBtnpadding('0px')
+    setPaddingcolor('white')
+    setClickedButton(null)
+
     console.log('again showing data')
   }
 
@@ -1487,14 +1516,29 @@ const Customer = () => {
   }
   return (
     <>
-      <div className="container-fluid customer_information" >
-      {/* <div className="container-fluid customer_information" style={{position:'relative'}} > */}
+      <div className="container-fluid customer_information">
+        {/* <div className="container-fluid customer_information" style={{position:'relative'}} > */}
         {/* <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}> */}
         <div className="customer_addbutton_wrap">
-        <div>
-        <h2 className="all_customer_of_page">Customers</h2>
-        <p className='totalcustomer'> Total Customers : <span>  {totalUsers} </span> </p>
-        </div>
+          <div className="tcount">
+            <h2 className="all_customer_of_page">
+              {' '}
+              <span className="customer_first_span"> Customers </span>{' '}
+              <span className="totalcustomer"> ({totalUsers}) </span>{' '}
+            </h2>
+            <h5 className="linktotalcustomer">
+              {' '}
+              <span className="arrow_customers">
+                <Link to="/"> Total Customer </Link>
+              </span>{' '}
+              <span>
+                {' '}
+                <img src={Rightarrow} alt=" right arrow" />{' '}
+              </span>
+            </h5>
+
+            {/* </Link> </span> </p> */}
+          </div>
 
           {/* <p style={{ paddingBottom: '18px', textAlign: 'right', paddingRight:'25px' }}>
             Total Customers : {totalUsers} <br />
@@ -1537,7 +1581,7 @@ const Customer = () => {
           target="_blank"
           ref={csvDownloadRef}
         />
-        <div className="search_heading" style={{position:'relative',}}>
+        <div className="search_heading" style={{ position: 'relative' }}>
           <div className="add_nine">
             <div className="filter_serach">
               <div className="searchplaceholder">
@@ -1552,11 +1596,13 @@ const Customer = () => {
               </div>
               <div className="uI_hndle">
                 {/* <Button id="handle__addFilter" type="primary" onClick={handleClicked}> */}
-                <button id="handle__addFilter" className="filter_button" onClick={handleClicked} style={{position:'relative',}}>
-
+                <button
+                  id="handle__addFilter"
+                  className="filter_button"
+                  onClick={handleClicked}
+                  style={{ position: 'relative' }}
+                >
                   <span className="filter_span">Filter</span>
-
-
 
                   <HiFilter />
                 </button>
@@ -1595,31 +1641,66 @@ const Customer = () => {
               // }}
               className="csv_box"
             >
-              <form
+              {/* <form
                 onSubmit={handleSubmit}
                 style={{ display: 'flex', gap: '6px', alignItems: 'center' }}
                 className="csv_form"
               >
-
                 <input
                   ref={inputRef}
                   type="file"
                   style={{ width: csvwidth, color: csvTextColor }}
                   onChange={handleFileChange}
-
                   accept=".csv"
                   required
                 />
 
-                <button
-                  type="submit"
-
-                  className="import_report"
-                >
+                <button type="submit" className="import_report">
                   <BsCloudDownload className="cloud_downlaod_icon" />
                   <span className="downlaodtext"> Import CSV File </span>
                 </button>
-              </form>
+              </form> */}
+              <div id="file_uplaoder_modal">
+                <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
+                  <BsCloudDownload className="cloud_downlaod_icon" />
+                  <span className="downlaodtext"> Import CSV File </span>
+                </button>
+
+                <Modal
+                  title="Import File"
+                  centered
+                  visible={modal2Open}
+                  onOk={() => setModal2Open(false)}
+                  onCancel={() => setModal2Open(false)}
+                  width={1000}
+                >
+                  <div>
+                    <form onSubmit={handleSubmit} className="csv_form">
+                      <input
+                        ref={inputRef}
+                        type="file"
+                        style={{ width: csvwidth, color: csvTextColor }}
+                        onChange={handleFileChange}
+                        accept=".csv"
+                        required
+                      />
+
+                      <div className="fileimport_btn">
+                        <button className="fileimport_cancel" onClick={() => setModal2Open(false)}>
+                          {' '}
+                          <span>Cancel</span>{' '}
+                        </button>
+
+                        <button type="submit" className="fileimportok_btn">
+                          {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
+                          <span> Import </span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </Modal>
+              </div>
+
               {/* <input
                   ref={inputRef}
                   type="file"
@@ -1632,109 +1713,206 @@ const Customer = () => {
             </div>
           </div>
           <div className="filter__Active">
-            <div className="forAlignment_Account">
-
+            <div
+              className="forAlignment_Account"
+              style={{
+                padding: clickedButton === 'Assigned' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'Assigned' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+              }}
+            >
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight, color: fontred,  }}
-                onClick={deviceAssigned}
-              >
-              <span className="forChanging_color" style={{ background: '#DB7E06' }}></span>
-                <span style={{borderBottom: borderred}}>Assigned</span>
-                <IoIosClose className="sortcross" onClick={sortedDate} />
-              </button>
-
-            </div>
-            <div className="forAlignment_Account">
-
-              <button
-                className="btn_for_Link"
-                style={{ fontWeight: fontWeight1, color: fontred1,  }}
-                onClick={deviceUnassigned}
-              >
-               <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
-               <span style={{borderBottom: borderred1}}> Un-assigned</span>
-                <IoIosClose className="sortcross" onClick={sortedDate} />
-              </button>
-
-            </div>
-
-
-            <div className="forAlignment_Account">
-
-              <button
-                className="btn_for_Link"
-                style={{ fontWeight: fontWeight2, color: fontred2,  }}
-                onClick={registerdAccount}
-              >
-               <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
-               <span style={{borderBottom: borderred2}}> Registered</span>
-               <IoIosClose className="sortcross" onClick={sortedDate} />
-              </button>
-
-            </div>
-            <div className="forAlignment_Account">
-
-              <button
-                className="btn_for_Link"
-                style={{ fontWeight: fontWeight3, color: fontred3,  }}
-                onClick={activeAccount}
-              >
-               <span
-                className="forChanging_color"
-                style={{
-                  background: '#3CB72C',
+                style={{ fontWeight: fontWeight, color: fontred }}
+                onClick={() => {
+                  deviceAssigned()
+                  handleIconPaddingClick('Assigned')
                 }}
-              ></span>
-              <span style={{borderBottom: borderred3}}>  Active</span>
-              <IoIosClose className="sortcross" onClick={sortedDate} />
-              </button>
-
-            </div>
-            <div className="forAlignment_Account">
-
-              <button
-                className="btn_for_Link"
-                style={{ fontWeight: fontWeight4, color: fontred4,  }}
-                onClick={inActivee}
               >
-               <span
-                className="forChanging_color"
-                style={{
-                  background: '#935CED ',
-                }}
-              ></span>
-                <span style={{borderBottom: borderred4}}>In-active</span>
+                <span className="forChanging_color" style={{ background: '#DB7E06' }}></span>
+                <span style={{ borderBottom: borderred }}>Assigned</span>
+              </button>
+              {clickedButton === 'Assigned' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
-              </button>
-
+              )}
             </div>
-            <div className="forAlignment_Account">
 
+            <div className="forAlignment_Account">
+              <div
+                style={{
+                  padding: clickedButton === 'Un-assigned' ? btnpadding : 0,
+                  backgroundColor: clickedButton === 'Un-assigned' ? paddingcolor : 'transparent',
+                  borderRadius: borderRadius,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  boxSizing: 'border-box',
+                }}
+              >
+                <button
+                  className="btn_for_Link"
+                  style={{ fontWeight: fontWeight1, color: fontred1 }}
+                  onClick={() => {
+                    deviceUnassigned()
+                    handleIconPaddingClick('Un-assigned')
+                  }}
+                >
+                  <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
+                  <span style={{ borderBottom: borderred1 }}> Un-assigned</span>
+                </button>
+                {clickedButton === 'Un-assigned' && (
+                  <IoIosClose className="sortcross" onClick={sortedDate} />
+                )}
+              </div>
+            </div>
+            <div
+              className="forAlignment_Account"
+              style={{
+                padding: clickedButton === 'Registered' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'Registered' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+              }}
+            >
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight6, color: fontred6,  }}
-                onClick={Paused}
+                style={{ fontWeight: fontWeight2, color: fontred2 }}
+                onClick={() => {
+                  registerdAccount()
+                  handleIconPaddingClick('Registered')
+                }}
               >
-               <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
-               <span style={{borderBottom: borderred6}}> Paused</span>
-               <IoIosClose className="sortcross" onClick={sortedDate} />
+                <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
+                <span style={{ borderBottom: borderred2 }}> Registered</span>
               </button>
-              {/* <IoIosClose className='sortcross' /> */}
-
+              {clickedButton === 'Registered' && (
+                <IoIosClose className="sortcross" onClick={sortedDate} />
+              )}
             </div>
-            <div className="forAlignment_Account">
-
+            <div
+              className="forAlignment_Account"
+              style={{
+                padding: clickedButton === 'Active' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'Active' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+              }}
+            >
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight5, color: fontred5,  }}
-                onClick={AccountSuspended}
+                style={{ fontWeight: fontWeight3, color: fontred3 }}
+                onClick={() => {
+                  activeAccount()
+                  handleIconPaddingClick('Active')
+                }}
               >
-              <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
-              <span style={{borderBottom: borderred6}}>  Suspended</span>
-              <IoIosClose className="sortcross" onClick={sortedDate} />
+                <span
+                  className="forChanging_color"
+                  style={{
+                    background: '#3CB72C',
+                  }}
+                ></span>
+                <span style={{ borderBottom: borderred3 }}> Active</span>
               </button>
-
+              {clickedButton === 'Active' && (
+                <IoIosClose className="sortcross" onClick={sortedDate} />
+              )}
+            </div>
+            <div
+              className="forAlignment_Account"
+              style={{
+                padding: clickedButton === 'In-active' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'In-active' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+              }}
+            >
+              <button
+                className="btn_for_Link"
+                style={{ fontWeight: fontWeight4, color: fontred4 }}
+                onClick={() => {
+                  inActivee()
+                  handleIconPaddingClick('In-active')
+                }}
+              >
+                <span
+                  className="forChanging_color"
+                  style={{
+                    background: '#935CED ',
+                  }}
+                ></span>
+                <span style={{ borderBottom: borderred4 }}>In-active</span>
+              </button>
+              {clickedButton === 'In-active' && (
+                <IoIosClose className="sortcross" onClick={sortedDate} />
+              )}
+            </div>
+            <div
+              className="forAlignment_Account"
+              style={{
+                padding: clickedButton === 'Paused' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'Paused' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+              }}
+            >
+              <button
+                className="btn_for_Link"
+                style={{ fontWeight: fontWeight6, color: fontred6 }}
+                onClick={() => {
+                  Paused()
+                  handleIconPaddingClick('Paused')
+                }}
+              >
+                <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
+                <span style={{ borderBottom: borderred6 }}> Paused</span>
+              </button>
+              {clickedButton === 'Paused' && (
+                <IoIosClose className="sortcross" onClick={sortedDate} />
+              )}
+            </div>
+            <div
+              className="forAlignment_Account"
+              style={{
+                padding: clickedButton === 'Suspended' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'Suspended' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+              }}
+            >
+              <button
+                className="btn_for_Link"
+                style={{ fontWeight: fontWeight5, color: fontred5 }}
+                onClick={() => {
+                  AccountSuspended()
+                  handleIconPaddingClick('Suspended')
+                }}
+              >
+                <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
+                <span style={{ borderBottom: borderred6 }}> Suspended</span>
+              </button>
+              {clickedButton === 'Suspended' && (
+                <IoIosClose className="sortcross" onClick={sortedDate} />
+              )}
             </div>
           </div>
         </div>
@@ -1746,8 +1924,14 @@ const Customer = () => {
           ''
         )}
 
-     <div
-          className="for_respon__modal_first"
+        <div>
+  {isShown && (
+    <div className="modal-backdrop" onClick={() => setIsShown(false)}>
+      {/* Backdrop content (if needed) */}
+    </div>
+  )}
+        <div
+          className={`for_respon__modal_first ${isShown ? 'modal-open' : ''}`}
           style={{
             display: isShown ? 'block' : 'none',
           }}
@@ -1768,8 +1952,12 @@ const Customer = () => {
 
               <div className="add__three">
                 <div className="for__marginn">
-                  <Button id="status_filter" onClick={statusFilter} className="for_campaign_act commonbutton">
-
+                  <Button
+                    id="status_filter"
+                    onClick={statusFilter}
+                    className="for_campaign_act commonbutton"
+                    style={{ backgroundColor: '#3378FF' }}
+                  >
                     <MdEditDocument />
                     <span>Status</span>
                   </Button>
@@ -1777,16 +1965,26 @@ const Customer = () => {
                     id="campaign_activity"
                     onClick={campaignActivity}
                     className="for_campaign_act commonbutton"
-
+                    style={{ backgroundColor: '#3378FF' }}
                   >
                     <IoLocationSharp />
                     <span>Location</span>
                   </Button>
-                  <Button id="location" onClick={location} className="for_campaign_act commonbutton">
-                   <IoIosPaper />
+                  <Button
+                    id="location"
+                    onClick={location}
+                    className="for_campaign_act commonbutton"
+                    style={{ backgroundColor: '#3378FF' }}
+                  >
+                    <IoIosPaper />
                     <span>Plan</span>
                   </Button>
-                  <Button id="price_handle" onClick={priceHandle} className="for__price_hand commonbutton ">
+                  <Button
+                    id="price_handle"
+                    onClick={priceHandle}
+                    className="for__price_hand commonbutton "
+                    style={{ backgroundColor: '#3378FF' }}
+                  >
                     <IoPricetags />
                     <span>Price</span>
                   </Button>
@@ -1994,15 +2192,8 @@ const Customer = () => {
               </div>
             </div>
           </form>
-                 </div>
-
-
-
-
-
-
-
-
+        </div>
+</div>
         <div className="customer_wrapper">
           <div className="table-responsive">
             <table className="table table-hover">
@@ -2011,9 +2202,15 @@ const Customer = () => {
                   <th></th>
                   <th></th>
                   <th scope="col" className="global_th">
-                    <span>S.No.</span>
+                    <div style={{ width: '80px' }}>
+                      {' '}
+                      <span>S.No.</span>
+                    </div>
                   </th>
-                  <th scope="col" className="global_th"><span>File</span></th>
+                  <th scope="col" className="global_th">
+                    {' '}
+                    <span>File</span>
+                  </th>
                   <th></th>
                   <th></th>
                   <th></th>
@@ -2025,7 +2222,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '100px',
+                          width: '300px',
                         }}
                       >
                         <span>Device Id</span>
@@ -2056,7 +2253,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '100px',
+                          width: '150px',
                         }}
                       >
                         <span>Unique Id</span>
@@ -2082,7 +2279,12 @@ const Customer = () => {
                   </th>
                   <th scope="col" className="global_th " onClick={() => sorting('id')}>
                     <div
-                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        width: '100px',
+                      }}
                     >
                       <span>Id</span>
                       <span
@@ -2206,6 +2408,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
+                          width: '100px',
                         }}
                       >
                         <span>State</span>
@@ -2236,6 +2439,7 @@ const Customer = () => {
                           display: 'flex',
                           justifyContent: 'flex-start',
                           alignItems: 'center',
+                          width: '200px',
                         }}
                       >
                         <span>Installation</span>
@@ -2265,6 +2469,7 @@ const Customer = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
+                        width: '200px',
                       }}
                     >
                       <span>Plan</span>
@@ -2293,6 +2498,7 @@ const Customer = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
+                        width: '200px',
                       }}
                     >
                       <span>Price</span>
@@ -2322,6 +2528,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
+                          width: '200px',
                         }}
                       >
                         <span>Mobile</span>
@@ -2335,6 +2542,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
+                          width: '200px',
                         }}
                       >
                         <span>Date</span>
@@ -2348,6 +2556,7 @@ const Customer = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
+                          width: '200px',
                         }}
                       >
                         <span>Time</span>
@@ -2418,10 +2627,15 @@ const Customer = () => {
                           item?.Device_Id == null &&
                           item?.flag_status !== '1' ? (
                             <div>
-                              <AiFillInfoCircle id="notificationicon" />{' '}
-                              <div className="notification_dropdowncontent">
+                              {/* <AiFillInfoCircle id="notificationicon" />{' '} */}
+
+                              <img src={InformationCircleOutline} id="notificationicon" />
+                              <div className="notification_dropdowncontent ">
                                 {item?.energy_plan !== null && item?.Device_Id == null ? (
-                                  <div className="insidenotification" style={{ color: 'red' }}>
+                                  <div
+                                    className="insidenotification  "
+                                    style={{ color: '#B30000' }}
+                                  >
                                     <BsPersonPlusFill className="noticons" />
                                     <p>Device not assigned</p>
                                   </div>
@@ -2429,10 +2643,11 @@ const Customer = () => {
                                   '-'
                                 )}
 
-                                <hr className="notifictaionline"></hr>
-
                                 {item?.flag_status == '1' ? (
-                                  <div className="insidenotification" style={{ color: '#0044CC' }}>
+                                  <div
+                                    className="insidenotification notifictaionline notificationmargin"
+                                    style={{ color: '#0044CC' }}
+                                  >
                                     <RiChargingPile2Fill className="noticons" />
                                     <p> Device partially matched with customer address</p>
                                   </div>
@@ -2449,16 +2664,7 @@ const Customer = () => {
                         <td>
                           <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
                             <Tooltip placement="topLeft" title={textOne}>
-                              <img
-                                src={sheet}
-                                alt="upload_img"
-                                style={{
-                                  width: '24px',
-                                  height:'24px',
-                                  // marginLeft: '4px',
-                                  cursor: 'pointer',
-                                }}
-                              />
+                              <img src={Excelicon} alt="upload_img" />
                             </Tooltip>
                           </div>
                         </td>
@@ -2510,7 +2716,9 @@ const Customer = () => {
                         <td>{item?.pwa_state}</td>
                         <td>{item?.pwa_choice}</td>
                         <td>{item?.energy_plan ? item?.energy_plan : ' - '}</td>
-                        <td>{item?.energy_price ? '$' + (item?.energy_price / 100).toFixed(2) : ' - '}</td>
+                        <td>
+                          {item?.energy_price ? '$' + (item?.energy_price / 100).toFixed(2) : ' - '}
+                        </td>
                         <td>{item?.pwa_mobile}</td>
                         <td>{numOfDaata}</td>
                         <td>{item?.time}</td>
@@ -2536,7 +2744,7 @@ const Customer = () => {
                                   outline: 'none',
                                 }}
                               >
-                                <BiDotsVerticalRounded />
+                                <img src={Threedots} alt="alt Image" />
                               </Button>
                             </Popover>
                           </div>
@@ -2572,52 +2780,55 @@ const Customer = () => {
             <div className="modal display-block">
               <section className="modal-main">
                 <div className="App">
-                  <img src={FrameTwo} alt="frame" style={{ paddingRight: '10px' }} />
-                  <b style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
-                    {' '}
-                    Device id: &nbsp;&nbsp;&nbsp;
-                  </b>{' '}
-                  <p
-                    style={{
-                      color: 'white',
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: 'auto',
-                    }}
-                  >
-                    {selectedData}
+                  {/* <img src={FrameTwo} alt="frame" style={{ paddingRight: '10px' }} /> */}
+                  <p className="small_modal">Device ID :</p> &nbsp;
+                  <p className="small_modal">
+                    <span> {selectedData} </span>
                   </p>
                 </div>
-                <button
+                <div
                   style={{
-                    background: 'white',
-                    color: '#3A72DE',
-                    borderRadius: '8px',
-                    padding: '8px 16px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '12px',
-                  }}
-                  onClick={() => {
-                    copyText()
+                    gap: '40px',
                   }}
                 >
-                  <CopyFilled style={{ color: 'blue' }} />
-                  {copied ? <span style={{ color: 'blue' }}>Copied</span> : 'Copy ID'}
-                </button>
-                <p
+                  <button
+                    style={{
+                      background: 'white',
+                      color: '#3A72DE',
+                      borderRadius: '8px',
+                      padding: '8px 16px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                    }}
+                    onClick={() => {
+                      copyText()
+                    }}
+                  >
+                    {/* <CopyFilled style={{ color: 'blue' }} /> */}
+                    <img src={Bxs_copy} alt="Copied Icon" />
+                    {copied ? <span style={{ color: 'blue' }}>Copied</span> : 'Copy ID'}
+                  </button>
+                  {/* <p
                   style={{
                     color: 'white',
-                    marginTop: '-10px',
-                    marginLeft: '10px',
                     cursor: 'pointer',
+                    margin:'0',
                   }}
                   onClick={() => {
                     setShow(false)
                   }}
                 >
                   X
-                </p>
+                </p>  */}
+
+                  <div style={{ cursor: 'pointer' }} onClick={() => setShow(false)}>
+                    {' '}
+                    <img src={XOutline} alt="cross icon" />{' '}
+                  </div>
+                </div>
               </section>
             </div>
           ) : (
@@ -2627,11 +2838,11 @@ const Customer = () => {
             <div className="modal display-block">
               <section className="modal-main">
                 <div className="App">
-                  <img src={FrameTwo} alt="frame" style={{ paddingRight: '10px' }} />
-                  <b style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
+                  {/* <img src={FrameTwo} alt="frame" style={{ paddingRight: '10px' }} /> */}
+                  <p style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
                     {' '}
-                    Unique id: &nbsp;&nbsp;&nbsp;
-                  </b>{' '}
+                    Unique id:
+                  </p>{' '}
                   <p
                     style={{
                       color: 'white',
@@ -2657,10 +2868,14 @@ const Customer = () => {
                     copyUniqueText()
                   }}
                 >
-                  <CopyFilled style={{ color: 'blue' }} />
+                  {/* <CopyFilled style={{ color: 'blue' }} /> */}
+                  <div style={{ cursor: 'pointer' }} onClick={() => setShow(false)}>
+                    {' '}
+                    <img src={XOutline} alt="cross icon" />{' '}
+                  </div>
                   {uniquecopied ? <span style={{ color: 'blue' }}>Copied</span> : 'Copy ID'}
                 </button>
-                <p
+                {/* <p
                   style={{
                     color: 'white',
                     marginTop: '-10px',
@@ -2672,7 +2887,12 @@ const Customer = () => {
                   }}
                 >
                   X
-                </p>
+                </p> */}
+
+                <div style={{ cursor: 'pointer' }} onClick={() => setUniqueShow(false)}>
+                    {' '}
+                    <img src={XOutline} alt="cross icon" />{' '}
+                  </div>
               </section>
             </div>
           ) : (
@@ -2784,6 +3004,7 @@ const Customer = () => {
       {/* // himanshu code starts */}
       {/* add user modal starts */}
       {addUserModal ? (
+        <div className='modal-backdrop'>
         <div id="addModalsecond">
           <div className="modal_heading ">
             <div className="modal_hedaing_customer">
@@ -2791,7 +3012,7 @@ const Customer = () => {
               <IoMdClose className="crossicon" onClick={empty} />
             </div>
           </div>
-          <hr className='cretaecustomerline'></hr>
+          <hr className="cretaecustomerline"></hr>
           <div className="modal_form">
             <form className="form" onSubmit={(e) => adduser(e)}>
               {/* <div style={{ display: 'none' }}>
@@ -2813,7 +3034,6 @@ const Customer = () => {
                   maxLength={20}
                 />
               </div>
-
 
               <div>
                 <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
@@ -2923,7 +3143,6 @@ const Customer = () => {
                 />
               </div>
 
-
               <div>
                 <label htmlFor="password" style={{ fontWeight: '600' }}>
                   Password
@@ -2953,7 +3172,6 @@ const Customer = () => {
                 )}
               </div>
 
-
               <div className="last_line">
                 <div className="part_1">
                   <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
@@ -2968,7 +3186,6 @@ const Customer = () => {
                   <input type="text" value={newState} readOnly placeholder="Select" />
                 </div>
               </div>
-
 
               <div>
                 <label htmlFor="conpassword" style={{ fontWeight: '600' }}>
@@ -3011,10 +3228,6 @@ const Customer = () => {
                 </span>
               </div>
 
-
-
-
-
               <div
                 style={{
                   display: 'flex',
@@ -3023,17 +3236,16 @@ const Customer = () => {
                   width: '100%',
                 }}
               >
-                <button className="addcustomerform_cancel " onClick={empty}>
+                <button className="addcustomerform_cancel" onClick={empty}>
                   Cancel
                 </button>
                 <button className="addcustomerform_btn" required onChange={finalCall}>
                   Add Customer
                 </button>
               </div>
-
-
             </form>
           </div>
+        </div>
         </div>
       ) : (
         ''
@@ -3062,6 +3274,7 @@ const Customer = () => {
 
       {/* update modal starts */}
       {updateModal ? (
+        <div className='modal-backdrop'>
         <div id="update_modal">
           <div className="update_modal_heading">
             <h2>Edit Customer Details</h2>
@@ -3069,7 +3282,7 @@ const Customer = () => {
           <div className="update_modal_form">
             <form className="update_form" onSubmit={(e) => onSub(e)}>
               <div>
-                <label htmlFor="name" value={name} style={{ fontWeight: '600' }}>
+                <label htmlFor="name" value={name} style={{ fontWeight: '600', marginTop: '0px' }}>
                   Full Name
                 </label>
                 <input
@@ -3155,19 +3368,25 @@ const Customer = () => {
                   minLength={2}
                 />
               </div>
-              <section
-                className='update_button'
-              >
-                <button type="submit" className="btn2 upda,e_btn">
+              <section className="update_button">
+                <button
+                  type="submit"
+                  className="btn2updae_btn"
+                  style={{ backgroundColor: '#3378FF' }}
+                >
                   Update
                 </button>
-                <button className="btn_cancel" onClick={updateCancel}>
+                <button
+                  className="btn_cancel"
+                  onClick={updateCancel}
+                  style={{ backgroundColor: '#8F9FBC', color: '#FFFFFF' }}
+                >
                   Cancel
                 </button>
               </section>
             </form>
           </div>
-        </div>
+        </div> </div>
       ) : (
         ''
       )}

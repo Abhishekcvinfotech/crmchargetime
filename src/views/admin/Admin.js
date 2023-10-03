@@ -370,7 +370,7 @@ const Admin = () => {
   // pagination end
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative',  }} className='admin_main_wrap'>
       <div className="admin_account_wrap" >
         <p className="admin__acount">Admin Account</p>
         <div>
@@ -466,7 +466,7 @@ const Admin = () => {
                     style={{
                       fontWeight: '400',
                       color: `${colorGreen}`,
-                      paddingLeft: '20px',
+
                       fontSize: '12px',
                     }}
                   >
@@ -592,7 +592,7 @@ const Admin = () => {
                     style={{
                       fontWeight: '400',
                       color: `${colorGreen}`,
-                      paddingLeft: '20px',
+
                       fontSize: '12px',
                     }}
                   >

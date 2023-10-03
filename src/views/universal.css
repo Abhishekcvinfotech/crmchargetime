@@ -2,6 +2,10 @@ body {
   font-family: 'DM Sans', sans-serif !important;
 }
 
+.header.header-sticky{
+  z-index: 9;
+}
+
 td{
 
   font-family: 'DM Sans';
@@ -9,8 +13,27 @@ td{
   font-size: 16px;
   line-height: 21px;
   color:#213446;
+
+}
+table {
+
+  border-spacing: 100px;
 }
 
+thead th{
+  height: 56px;
+}
+
+thead  tr{
+ vertical-align: middle;
+}
+
+.header{
+  border-bottom: none;
+}
+.body{
+  background-color: #F9FBFE;;
+}
 
 /* pagination css start */
 
@@ -110,12 +133,12 @@ td{
 }
 
 .loginimage_wrap {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid whitesmoke;
-  margin: 12px 0;
+  margin: 15px 0;
 }
 
 .loginimage_wrap img {

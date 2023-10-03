@@ -9,11 +9,16 @@ import { CloseOutlined } from '@mui/icons-material'
 import '../universal.css'
 import axios from 'axios'
 import { troesAPi } from 'src/api'
-import { DeleteOutlined, MessageOutlined,SaveOutlined } from '@ant-design/icons'
+import { DeleteOutlined, MessageOutlined, SaveOutlined } from '@ant-design/icons'
 import editPen from '../../assets/images/editPen.svg'
 import { CListGroup } from '@coreui/react'
-import partnerrate from "../../assets/images/partnerrate.svg"
+import partnerrate from '../../assets/images/partnerrate.svg'
 import AddMessage from '../../assets/images/addMessage.svg'
+import { BiSolidMessageSquareAdd } from 'react-icons/bi'
+import { MdDeleteForever } from 'react-icons/md'
+import { BsEyeFill } from 'react-icons/bs'
+import { IoMdClose } from 'react-icons/io'
+
 const Splash = () => {
   const [startDateTime, setStartDateTime] = useState(null)
 
@@ -41,7 +46,6 @@ const Splash = () => {
   const [postPerPage, setPostPerPage] = useState(10)
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState('')
-
 
   const getLocationData = (e) => {
     setLoading(true)
@@ -95,7 +99,7 @@ const Splash = () => {
 
   useEffect(() => {
     getAllSplashData()
-  }, [resetDateTime,deleted])
+  }, [resetDateTime, deleted])
   const addSplahFunction = async (e) => {
     setHardRefresh(true)
     const formData = new FormData()
@@ -120,7 +124,7 @@ const Splash = () => {
           alert(res.message)
           getAllSplashData()
         }
-        setClearDateTime(true);
+        setClearDateTime(true)
         setHardRefresh(false)
         setResetDateTime((data) => !data)
         setLoading(false)
@@ -177,7 +181,6 @@ const Splash = () => {
       formData.append('message', message)
     }
 
-
     try {
       let result = await fetch(`${troesAPi}/updatesplash/${id}`, {
         method: 'POST',
@@ -208,21 +211,21 @@ const Splash = () => {
   const deleteSplashData = (id) => {
     setLoading(true)
     if (window.confirm('Are you sure? Message is deleted permanently? ')) {
-    axios
-      .delete(`${troesAPi}/deletesplash/${id}`)
-      .then((res) => {
-        setLoading(false)
-        setDeleted((data) => !data)
-        setDeleteSplash(true)
-        setTimeout(() => {
-          setDeleteSplash(false)
-        }, 2000)
-      })
-      .catch((err) => {
-        setLoading(false)
-        console.log(err)
-      })
-    }else{
+      axios
+        .delete(`${troesAPi}/deletesplash/${id}`)
+        .then((res) => {
+          setLoading(false)
+          setDeleted((data) => !data)
+          setDeleteSplash(true)
+          setTimeout(() => {
+            setDeleteSplash(false)
+          }, 2000)
+        })
+        .catch((err) => {
+          setLoading(false)
+          console.log(err)
+        })
+    } else {
       setLoading(false)
     }
   }
@@ -246,7 +249,6 @@ const Splash = () => {
   const indexOfFirstPage = indexOfLastPage - postPerPage
   const currentPosts = allSplshData?.slice(indexOfFirstPage, indexOfLastPage)
   const onShowSizeChange = (current, pageSize) => {
-
     setPostPerPage(pageSize)
   }
 
@@ -261,12 +263,11 @@ const Splash = () => {
     return originalElement
   }
 
-
   // pagination end
 
   return (
     <>
-      <div style={{position:"relative"}}>
+      <div style={{ position: 'relative' }}>
         {loading ? (
           <div className="loading_part">
             <Spin size="large" />
@@ -275,23 +276,19 @@ const Splash = () => {
           ''
         )}
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent:'space-between',
-            alignItems: 'center',
-            marginBottom:'24px',
-          }}
-        >
+        <div className="splash_text_wrap">
           <p className="para_splash">Splash Screen </p>
 
           <div>
-            <button id="universalButton" onClick={() => setMessageModal(true)} style={{display: 'flex', gap:'10px'}}>
-            <img src={AddMessage} alt="frame" style={{ width: '22px', height: '15px' }} />
-              Add Message
+            <button
+              className="add_mesage_btn"
+              onClick={() => setMessageModal(true)}
+              style={{ display: 'flex', gap: '10px' }}
+            >
+              <span className="plus_sign">+</span>
+              <span>Add Messages</span>
             </button>
           </div>
-
         </div>
         {mobileSplash ? (
           <div
@@ -302,29 +299,36 @@ const Splash = () => {
               flexDirection: 'column',
               position: 'absolute',
               zIndex: '1',
-              maxWidth:"100%",
-               top: '0px',
+              maxWidth: '100%',
+              top: '0px',
               // background:'red',
-                 width: '100%',
+              width: '100%',
             }}
           >
-   <div style={{position:'absolute',top:'25px',zIndex: "2"}}>
-           <button className="close_btn_splash"  onClick={() => setMobileSplash(false)}  >
-              <CloseOutlined style={{ color: '#fff' }} />
-            </button>
+            <div style={{ position: 'absolute', top: '25px', zIndex: '2' }}>
+              <button className="close_btn_splash" onClick={() => setMobileSplash(false)}>
+                <CloseOutlined style={{ color: '#fff' }} />
+              </button>
             </div>
-            <div style={{width:'400px', position:'relative'}}>
-
+            <div style={{ width: '400px', position: 'relative' }}>
               <img
                 src={Mockup}
                 alt="edit"
-                style={{ objectFit: 'cover', width: '100%',overflow:"hidden" }}
+                style={{ objectFit: 'cover', width: '100%', overflow: 'hidden' }}
               />
-            <div style={{position:'absolute', top:'310px', left:'100px', width: '210px', wordWrap:'break-word',overflowY:"auto",height:"280px"}}>
-              <p>
-                {inputText !== null ? inputText : ''}
-              </p>
-            </div>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '310px',
+                  left: '100px',
+                  width: '210px',
+                  wordWrap: 'break-word',
+                  overflowY: 'auto',
+                  height: '280px',
+                }}
+              >
+                <p>{inputText !== null ? inputText : ''}</p>
+              </div>
             </div>
           </div>
         ) : (
@@ -333,7 +337,7 @@ const Splash = () => {
 
         <div className="splash_middle_div">
           <div className="splash_wrapper">
-            <label className="select_text">Select Installation:</label>
+            {/* <label className="select_text">Select Installation:</label> */}
             <select id="select_option__value" onChange={handleSelect}>
               {hardRefresh ? (
                 <option value="">Select Installation</option>
@@ -352,9 +356,9 @@ const Splash = () => {
               )}
             </select>
           </div>
-          <div className='datepickerwrap'>
+          {/* <div className='datepickerwrap'> */}
 
-          <label className="select_text">Select  Start Date</label>
+          {/* <label className="select_text">Select  Start Date</label> */}
           <div
             className="time-picker-container"
             style={{ position: 'relative', display: 'inline-block' }}
@@ -362,11 +366,11 @@ const Splash = () => {
             <DateTimePickerStart data={setStartDateTime} formSubmitted={clearDateTime} />
           </div>
 
-          </div>
+          {/* </div> */}
 
-         <div className='datepickerwrap'>
+          {/* <div className='datepickerwrap'> */}
 
-         <label className="select_text">Select End Date</label>
+          {/* <label className="select_text">Select End Date</label> */}
           <div
             className="time-picker-container"
             style={{ position: 'relative', display: 'inline-block' }}
@@ -374,7 +378,7 @@ const Splash = () => {
             <DateTimePickerEnd data={setEndDateTime} formSubmitted={clearDateTime} />
           </div>
 
-          </div>
+          {/* </div> */}
 
           {messageModal ? (
             <div
@@ -387,56 +391,84 @@ const Splash = () => {
                 top: '50%',
                 left: '50%',
                 width: '50%',
-                transform: "translate(-50%, -50%)",
-
+                transform: 'translate(-50%, -50%)',
               }}
             >
-              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', padding:'30px' , backgroundColor:'white' , borderRadius:'9px'    }}>
+              <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                  padding: '30px',
+                  backgroundColor: 'white',
+                  borderRadius: '6px',
+                }}
+              >
+                <div className="messagemodal_heading">
+                  <h5>Add Message </h5>
+                  <IoMdClose className="crossicon"   onClick={() => {
+                      setMessageModal(false), setUpdateModal(false)
+                      //setInputText('')
+                    }}/>
+                </div>
+                <hr className='cretaecustomerline'></hr>
+
                 <TextArea
                   size="sm"
-                  className='modaltextarea'
+                  className="modaltextarea"
                   rows={6}
                   cols={3}
                   name="Solid"
                   placeholder="Try to put text minimum than 1000 words."
                   variant="outlined"
                   value={inputText}
-                  style={{ borderRadius: '9px',  }}
+                  style={{ borderRadius: '6px' }}
                   onChange={(e) => handleInputChange(e)}
                 />
-                <p style={{ color: 'red', paddingTop: '9px' }}>
+                <p className="word_renamings">
                   Words remaining: {1000 - inputText?.length + '/' + '1000'}
                 </p>
-                <div style={{ paddingTop: '10px', display: 'flex' }}>
+                <div className="modal_btn_wrap">
                   <button
-                    id="universalButton"
-                    style={{ marginRight: '10px' }}
+                    className="preview_btn"
                     onClick={() => {
                       setMobileSplash(true), setMessageModal(false)
                     }}
                   >
-                    Preview
+                    <BsEyeFill />
+                    <span> Preview</span>
                   </button>
-                  <button
-                    id="universalButton"
-                    onClick={() => {
-                      setMessageModal(false),
-                        addSplahFunction(),
-                        setClearDateTime((data) => !data),
-                        setInputText('')
-                    }}
-                    style={{ marginRight: '10px' }}
-                  >
-                    OK
-                  </button>
-                  <button
-                    id="universalButton"
-                    onClick={() => {
-                      setMessageModal(false), setInputText('')
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '16px',
+                      flexDirection: 'row-reverse',
                     }}
                   >
-                    Cancel
-                  </button>
+                    <button
+                      // id="universalButton"
+                      className="modal_send_message"
+                      onClick={() => {
+                        setMessageModal(false),
+                          addSplahFunction(),
+                          setClearDateTime((data) => !data),
+                          setInputText('')
+                      }}
+                    >
+                      <span>Send Message</span>
+                    </button>
+                    <button
+                      // id="universalButton"
+                      className="modal_cancel_btn"
+                      onClick={() => {
+                        setMessageModal(false), setInputText('')
+                      }}
+                    >
+                      <span> Cancel</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -449,17 +481,35 @@ const Splash = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                position:"fixed",
+                position: 'fixed',
                 zIndex: '1',
                 top: '50%',
                 left: '50%',
                 width: '50%',
-                transform: "translate(-50%, -50%)",
+                transform: 'translate(-50%, -50%)',
               }}
             >
-              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', padding:'30px' , backgroundColor:'white' , borderRadius:'9px'  }}>
+              <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                  padding: '30px',
+                  backgroundColor: 'white',
+                  borderRadius: '6px',
+                }}
+              >
+                <div className="messagemodal_heading">
+                  <h5>Add Message </h5>
+                  <IoMdClose className="crossicon"   onClick={() => {
+                      setMessageModal(false), setUpdateModal(false)
+                      //setInputText('')
+                    }}/>
+                </div>
+                <hr className='cretaecustomerline'></hr>
                 <TextArea
-                className='modaltextarea'
+                  className="modaltextarea"
                   size="sm"
                   rows={6}
                   cols={3}
@@ -467,31 +517,30 @@ const Splash = () => {
                   placeholder="Try to put text minimum than 1000 words."
                   variant="outlined"
                   value={inputText}
-                  style={{ borderRadius: '9px', }}
+                  style={{ borderRadius: '6px' }}
                   onChange={(e) => handleInputChangeForUpdate(e)}
                 />
-                <p style={{ color: 'red', paddingTop: '9px' }}>
+                <p className="word_renamings">
                   Words remaining: {1000 - inputText?.length + '/' + '1000'}
                 </p>
-                <div style={{ paddingTop: '10px', display: 'flex' }}>
+                <div className="modal_btn_wrap">
                   <button
-                    style={{ marginRight: '10px' }}
-                    id="universalButton"
+                    className="preview_btn"
                     onClick={() => {
                       setMobileSplash(true), setMessageModal(false), setUpdateModal(false)
                     }}
                   >
-                    Preview
+                    <BsEyeFill />
+                    <span> Preview</span>
                   </button>
                   <button
+                    className="modal_cancel_btn"
                     onClick={() => {
-                      setMessageModal(false),  setUpdateModal(false)
+                      setMessageModal(false), setUpdateModal(false)
                       //setInputText('')
                     }}
-                    style={{ marginRight: '10px' }}
-                    id="universalButton"
                   >
-                    Close
+                    <span>Close</span>
                   </button>
                 </div>
               </div>
@@ -500,21 +549,23 @@ const Splash = () => {
             ''
           )}
         </div>
-        <div style={{overflowX:"auto",whiteSpace:"nowrap"}}>
-          <table className="table table-hover" style={{ position: 'relative' }}>
-            <thead className="splash__information">
-              <tr>
-                <th className=" global_th">S.No.</th>
-                <th className="text-left global_th" style={{width: '350px' ,}}>Installation</th>
-                <th className="text-left global_th">Start Date</th>
-                <th className="text-left global_th">End Date</th>
-                <th className="text-center global_th">Message</th>
-                <th className="text-left global_th">Action</th>
-              </tr>
-            </thead>
-            <tbody style={{ backgroundColor: '#fff' }}>
-              {
-                 currentPosts &&
+        <div style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+          <div className="table_wrapper">
+            <table className="table table-hover" style={{ position: 'relative' }}>
+              <thead className="splash__information">
+                <tr>
+                  <th className=" global_th">S.No.</th>
+                  <th className="text-left global_th" style={{ width: '350px' }}>
+                    Installation
+                  </th>
+                  <th className="text-left global_th">Start Date</th>
+                  <th className="text-left global_th">End Date</th>
+                  <th className="text-center global_th">Message</th>
+                  <th className="text-left global_th">Action</th>
+                </tr>
+              </thead>
+              <tbody style={{ backgroundColor: '#fff' }}>
+                {currentPosts &&
                   currentPosts?.map((item, ind) => {
                     const displayedIndex = indexOfFirstPage + ind + 1
                     return (
@@ -522,20 +573,22 @@ const Splash = () => {
                         <td className="px-4">{displayedIndex}</td>
 
                         <td className={`ind_${ind} text-left`}>
-                        <div className="my-select-container">
-                          <Select
-                            showSearch
-                            style={{ width: '300px',  }}
-                            value={`ind_${ind}` == indexMatch ? location_id : item.location}
-                            placeholder="Search to Select"
-                            optionFilterProp="children"
-                            onChange={(value, e, label) => handleLocation(value, e, label, ind)}
-                            filterOption={(input, option) => (option?.label ?? '').includes(input)}
-                            options={((locationData && locationData) || []).map((d) => ({
-                              value: d.id,
-                              label: d.location,
-                            }))}
-                          />
+                          <div className="my-select-container">
+                            <Select
+                              showSearch
+                              style={{ width: '300px' }}
+                              value={`ind_${ind}` == indexMatch ? location_id : item.location}
+                              placeholder="Search to Select"
+                              optionFilterProp="children"
+                              onChange={(value, e, label) => handleLocation(value, e, label, ind)}
+                              filterOption={(input, option) =>
+                                (option?.label ?? '').includes(input)
+                              }
+                              options={((locationData && locationData) || []).map((d) => ({
+                                value: d.id,
+                                label: d.location,
+                              }))}
+                            />
                           </div>
                         </td>
                         <td
@@ -565,7 +618,7 @@ const Splash = () => {
                                 setIndexUpdate(`ind_${ind}`)
                             }}
                           >
-                            <MessageOutlined />
+                            <BiSolidMessageSquareAdd className="mesageicon" />
                           </button>
                         </td>
                         <td className={` ind_${ind} text-left`}>
@@ -585,13 +638,13 @@ const Splash = () => {
                                 }
                               >
                                 {/* <img src={editPen} alt="edit" style={{ width: '20px' }} /> */}
-                                <SaveOutlined style={{ color:"#1890ff",fontSize: '16px', }} />
+                                <SaveOutlined style={{ color: '#1890ff', fontSize: '16px' }} />
                               </button>
                             ) : (
                               <button
                                 className={`update__table_one  actionbtn td_${ind}  `}
                                 // className={`update__table  actionbtn td_${ind} `}
-                                style={{ visibility: 'hidden',paddingRight: '10px'  }}
+                                style={{ visibility: 'hidden', paddingRight: '10px' }}
                                 onClick={() =>
                                   updateSplash(
                                     item.id,
@@ -603,25 +656,38 @@ const Splash = () => {
                                 }
                               >
                                 {/* <img src={editPen} alt="edit" style={{ width: '20px' }} /> */}
-                                <SaveOutlined style={{  color:"#1890ff",fontSize: '16px', }} />
+                                <SaveOutlined style={{ color: '#1890ff', fontSize: '16px' }} />
                               </button>
                             )}
                             <button
                               className="delte__table_one actionbtn "
                               onClick={() => deleteSplashData(item.id)}
                             >
-                              <DeleteOutlined
-                                className='delete_btn_global'
-                              />
+                              {/* <DeleteOutlined className="delete_btn_global" /> */}
+                              <MdDeleteForever className="delete_icon" />
                             </button>
                           </div>
                         </td>
                       </tr>
                     )
-              }) }
+                  })}
+              </tbody>
+            </table>
 
-            </tbody>
-          </table>
+            <div className="pagination_wrap">
+              <Pagination
+                onChange={handlePagination}
+                pageSize={postPerPage}
+                total={total}
+                current={page}
+                showSizeChanger
+                showQuickJumper
+                onShowSizeChange={onShowSizeChange}
+                itemRender={itemRender}
+                style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
+              />
+            </div>
+          </div>
         </div>
         <div
           className="global__popup__div"
@@ -631,7 +697,7 @@ const Splash = () => {
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img
-               src={partnerrate}
+              src={partnerrate}
               alt="logo"
               style={{
                 paddingRight: '10px',
@@ -652,7 +718,7 @@ const Splash = () => {
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img
-               src={partnerrate}
+              src={partnerrate}
               alt="logo"
               style={{
                 paddingRight: '10px',
@@ -662,7 +728,7 @@ const Splash = () => {
                 height: '15px',
               }}
             />
-            <p className="global_popup__text">Splash Screen  updated.</p>
+            <p className="global_popup__text">Splash Screen updated.</p>
           </div>
         </div>
         <div
@@ -685,17 +751,6 @@ const Splash = () => {
             <p className="global_popup__text">Splash Data has been deleted.</p>
           </div>
         </div>
-        <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
-        />
       </div>
     </>
   )

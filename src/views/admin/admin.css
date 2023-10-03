@@ -9,10 +9,12 @@
   /* background-color: rgba(58, 114, 222, 0.1); */
   padding: 30px 0px;
 }
-form input{
+
+form input {
   height: 48px !important;
 }
-form select{
+
+form select {
   height: 48px !important;
 }
 
@@ -68,6 +70,7 @@ form select{
 .admin__input:focus {
   outline: none;
 }
+
 /* .nameEmail__admin {
   padding-left: 10px;
   padding-top: 10px;
@@ -85,6 +88,7 @@ form select{
   z-index: 1000;
   padding: 2px 9px;
 }
+
 .cancel__create {
   width: 100px;
   height: 30px;
@@ -96,14 +100,17 @@ form select{
   z-index: 1000;
   margin-left: 15px;
 }
+
 .cancel__create:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
 #delete__create:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
 .update_new__admin {
   height: 30px;
   background: #1890ff;
@@ -115,6 +122,7 @@ form select{
   z-index: 1000;
   padding: 5px 20px;
 }
+
 .update_new__admin:hover {
   box-shadow: rgba(48, 67, 150, 0.4) 0px 7px 29px 0px;
 }
@@ -151,6 +159,7 @@ form select{
   z-index: 1000;
   padding: 5px 25px;
 }
+
 #delete__create {
   padding: 5px 15px;
   border-radius: 6px;
@@ -163,16 +172,19 @@ form select{
   margin-left: 15px;
   border: none;
 }
+
 .update__table_admin {
   border: none;
   background: none;
   padding-left: 17px;
 }
+
 .delte__table {
   border: none;
   background: none;
   padding-left: 12px;
 }
+
 .delete__update {
   border: none;
   background-color: #fff;
@@ -192,6 +204,7 @@ form select{
   bottom: 10px;
   margin-left: 10px;
 }
+
 .admin_registerd__pop {
   color: #fff;
   font-size: 14px;
@@ -199,10 +212,12 @@ form select{
   display: block;
   margin-top: 10px;
 }
+
 .s_Name {
   font-size: 16px;
   font-weight: bolder;
 }
+
 .password__span {
   display: flex;
   justify-content: center;
@@ -210,12 +225,14 @@ form select{
   padding-left: 10px;
   padding-right: 10px;
 }
+
 #handle_Admin_Delete_cancel {
   display: flex;
   justify-content: space-around;
   align-items: center;
   /* width: 200px; */
 }
+
 /* .toatl_adminss {
   margin-top: -15px;
   margin-right: 10px;
@@ -226,7 +243,8 @@ form select{
   justify-content: space-between;
   align-items: center;
   margin-top: 24px;
-  padding: 0 8px;
+  /* padding: 0 8px; */
+
 }
 
 .admin__acount {
@@ -236,7 +254,7 @@ form select{
   color: #213446;
   margin: 0;
   padding: 0;
-  padding: 0 3px;
+
 }
 
 .toatl_adminss {
@@ -244,8 +262,9 @@ form select{
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  padding: 10px;
+  padding: 10px 0;
 }
+
 .registration_length {
   font-weight: 700;
   color: #324253;
@@ -260,6 +279,7 @@ td {
   text-overflow: ellipsis;
   height: 80px;
 }
+
 .registration_admin_btn {
   display: inline-flex;
   height: 48px;
@@ -274,6 +294,7 @@ td {
   outline: none;
   box-shadow: none;
 }
+
 .registration_admin_btn span {
   display: inline-block;
   color: #ffffff;
@@ -281,10 +302,16 @@ td {
   font-weight: 500;
   line-height: 21px;
 }
+
 .table_wrapper {
   background-color: #ffff;
   border-radius: 6px;
-  padding: 10px;
+  padding: 24px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,.04)
+}
+
+.container-lg{
+  padding: 0 24px;
 }
 .pagination_wrap {
   margin: 24px 0;
@@ -304,33 +331,35 @@ td {
   border: none;
   width: 100%;
   border-radius: 6px;
-  border: 1px solid  #F1F1F1;
-  background: #FFF;}
+  border: 1px solid #F1F1F1;
+  background: #FFF;
+}
 
-  #form__admin_Edit label{
-    color:  #213446;
+#form__admin_Edit label {
+  color: #213446;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  }
-  #confirm__delete_Admin p{
-    color:  #213446;
-    font-family: DM Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+}
 
-  }
+#confirm__delete_Admin p {
+  color: #213446;
+  font-family: DM Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 
-  .crossicon {
-    color: #6c757d;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-  }
+}
+
+.crossicon {
+  color: #6c757d;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
 
 /* css end by abhishek singh */
 
@@ -339,23 +368,28 @@ td {
     height: unset;
     padding: 10px;
   }
+
   .registration_admin_btn span {
     font-size: 13px;
   }
 }
+
 @media only screen and (max-width: 930px) {
   .show__notShow {
     width: 300px;
     overflow-y: auto;
   }
+
   #form__admin_ADMIN {
     width: 250px;
     margin-left: 25px;
   }
+
   #form__admin_Edit {
     width: 250px;
     margin-left: 25px;
   }
+
   .admin__input {
     width: 220px;
   }
@@ -363,6 +397,7 @@ td {
   #confirm__delete_Admin {
     left: 70px;
   }
+
   #delete__admin {
     width: 260px;
 
@@ -375,12 +410,14 @@ td {
     border-radius: 6px;
     padding-bottom: 10px;
   }
+
   #handle_Admin_Delete_cancel {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 200px;
   }
+
   .confirm__delete {
     font-size: 22px;
     font-weight: 700;
@@ -390,12 +427,14 @@ td {
     letter-spacing: 1px;
   }
 }
+
 @media only screen and (max-width: 375px) {
   .admin__acount {
     font-size: 22px;
     color: black;
     font-weight: bolder;
   }
+
   .show__notShow {
     overflow-y: auto;
   }
@@ -405,6 +444,7 @@ td {
   .admin__acount {
     font-size: 16px;
   }
+
   .toatl_adminss {
     margin-top: 0px;
   }
