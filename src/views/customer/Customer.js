@@ -1248,6 +1248,7 @@ const Customer = () => {
           newState,
         }),
       })
+
       let res = await result.json()
       if (res.error) {
         setUserAdded('none')
@@ -1275,6 +1276,7 @@ const Customer = () => {
       console.log(err)
     }
   }
+  console.log(newZipcode,'newZipcode')
   useEffect(() => {
     setName('')
     setEmail('')
@@ -1308,9 +1310,13 @@ const Customer = () => {
     axios
       .get(`${troesAPi}/installation/${e.target.selectedOptions[0].getAttribute('data-name')}`)
       .then((res) => {
-        setNewZipcode(res.data.ZIP_code)
 
-        setNewState(res.data.state)
+        const firstData = res.data[0];
+        // console.log(firstData.ZIP_code, "data.ZIP_code");
+        // console.log(firstData.state);
+
+        setNewZipcode(firstData.ZIP_code)
+        setNewState(firstData.state)
         setLocationId(+res.data.id)
       })
       .catch((err) => {
@@ -3181,13 +3187,13 @@ const Customer = () => {
                   <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
                     Zipcode
                   </label>
-                  <input type="text" value={newZipcode} readOnly placeholder="Enter Zipcode" />
+                  <input type="text" value={newZipcode}  placeholder="Enter Zipcode" readOnly />
                 </div>
                 <div className="part_2">
                   <label htmlFor="State" style={{ fontWeight: '600' }}>
                     State
                   </label>
-                  <input type="text" value={newState} readOnly placeholder="Select" />
+                  <input type="text" value={newState}  placeholder="Select" readOnly />
                 </div>
               </div>
 

@@ -1696,6 +1696,9 @@ margin: 0;
   background: #FFF;
 }
 
+.update_form label{
+margin-bottom: 12px !important;
+}
 form label {
   color: #213446;
   font-family: DM Sans;
@@ -1711,8 +1714,25 @@ form label {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 12px 0;
+  /* gap: 12px 0; */
 
+}
+
+#addModalsecond input,
+select {
+  padding: 5px 15px;
+  /* margin: 3px 0px 10px 0px; */
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--border-border-secondary, #F1F1F1);
+  background: #FFF;
+   margin-bottom: 24px;
+}
+
+#addModalsecond .ant-input {
+  background-color: none !important;
 }
 
 .update_modal_form form label {
@@ -1840,7 +1860,7 @@ line-height: 21px;
 
 #addModalsecond form div {
   width: 48%;
-  gap: 12px 0;
+  /* gap: 12px 0; */
 }
 
 #addModalsecond .modal_form {}
@@ -1889,24 +1909,7 @@ background-color: #6D84AD;
 }
 
 
-#addModalsecond input,
-select {
-  padding: 5px 15px;
-  margin: 3px 0px 10px 0px;
-  outline: none;
-  border: none;
-  width: 100%;
 
-
-  border-radius: 6px;
-  border: 1px solid var(--border-border-secondary, #F1F1F1);
-  background: #FFF;
-
-}
-
-#addModalsecond .ant-input {
-  background-color: none !important;
-}
 
 /* .modal_heading {
   text-align: center;
@@ -2192,7 +2195,7 @@ background-color: #2062E3;
   margin: 0px !important;
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 16px;
 }
 
 #flag {
@@ -2271,7 +2274,7 @@ input::file-selector-button {
 }
 
 .ant-input-password-icon.anticon {
-  margin-top: -8px;
+
 }
 
 /* .hoverChange:hover{
