@@ -26,7 +26,10 @@ form select {
   align-items: center;
   gap: 16px;
 }
+.customer_information{
+margin: 0 !important;
 
+}
 .filter__Active {
   display: flex;
   align-items: center;
@@ -1206,7 +1209,7 @@ background-color: #E5E5E5;
 }
 
 .for_Filter_Clear {
-  background-color: #E5E5E5;
+  background-color:#f1f1f1 !important;
   color: #fff;
   border-radius: 6px;
   font-weight: bolder;

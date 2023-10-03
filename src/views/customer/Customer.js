@@ -2169,7 +2169,7 @@ const Customer = () => {
               )}
               {priceData ? (
                 <div className="price__div">
-                  <span className="main_div_of_pric">Priceee</span>
+                  <span className="main_div_of_pric">Price</span>
                   <input
                     id="basePrice"
                     type="number"

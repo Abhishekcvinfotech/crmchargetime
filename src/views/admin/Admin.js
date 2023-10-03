@@ -12,8 +12,9 @@ import validator from 'validator'
 import { homeApi } from '../../api'
 import { troesAPi } from '../../api'
 import { troesAPiTwo } from '../../api'
-import { IoMdClose } from 'react-icons/io';
-
+import { IoMdClose } from 'react-icons/io'
+import Rightarrow from '../../assets/images/Rightarrow.svg'
+// import { useNavigate, Link } from 'react-router-dom'
 
 const Admin = () => {
   const [id, setId] = useState('')
@@ -370,22 +371,32 @@ const Admin = () => {
   // pagination end
 
   return (
-    <div style={{ position: 'relative',  }} className='admin_main_wrap'>
-      <div className="admin_account_wrap" >
-        <p className="admin__acount">Admin Account</p>
+    <div style={{ position: 'relative' }} className="admin_main_wrap">
+      <div className="admin_account_wrap">
+        <div className="admin_Parent_wrap">
+          <p className="admin__acount">
+            <span> Admin Account </span>{' '}
+            <span className="registration_length"> ({registerData.length})</span>
+          </p>
+          <p className="toatl_adminss">
+            <span> Total Admins </span>{' '}
+            <span>
+              {' '}
+              <img src={Rightarrow} alt=" right arrow" />{' '}
+            </span>
+          </p>
+        </div>
+
         <div>
           <button className="registration_admin_btn" onClick={handleClicked}>
             {/* <img  src={adminAccount} alt="logo" style={{width: '22px', height: '15px'}} /> */}
-            <span style={{ width: '16px', height: '16px' }}>+</span>
+            <span style={{ fontSize: '20px' }}>+</span>
             <span>Register New Admin</span>
           </button>
         </div>
       </div>
 
-      <p className="toatl_adminss">
-        Total Admins : &nbsp;<span className="registration_length">{registerData.length}</span>{' '}
-      </p>
-      <div className='table_wrapper' >
+      <div className="table_wrapper">
         <div className="admin__page">
           {/* <button onClick={forChecking}>click</button> */}
           {loading ? (
@@ -406,288 +417,328 @@ const Admin = () => {
             ''
           )}
 
-          <div style={{ background: '#fff' }}></div>
-
-          <div
-            className="show__notShow"
-            style={{
-              display: isShown ? 'block' : 'none',
-            }}
-          >
-            <form onSubmit={signUp}>
-              <div className="create_admin">
-                <label>Create New Admin</label>
-                <IoMdClose className="crossicon" />
+          <div>
+            {isShown && (
+              <div className="modal-backdrop" onClick={() => setIsShown(false)}>
+                {/* Backdrop content (if needed) */}
               </div>
+            )}
+            <div
+              className="show__notShow"
+              style={{
+                display: isShown ? 'block' : 'none',
+              }}
+            >
+              <form onSubmit={signUp}>
+                <div className="create_admin">
+                  <label>Create New Admin</label>
+                  <IoMdClose className="crossicon" onClick={cancelCreate} />
+                </div>
 
-              <div id="form__admin_ADMIN">
-                <label className="nameEmail__admin">
-                  Name
-                </label>
-                <input
-                  className="admin__input"
-                  type="text"
-                  name="name"
-                  value={name}
-                  required
-                  placeholder="Enter Your Name"
-                  onChange={handleName}
-                />
-                {nameError ? (
-                  <div className="password__span">
+                <div id="form__admin_admin">
+                  <label className="nameEmail__admin">Name</label>
+                  <input
+                    className="admin__input"
+                    type="text"
+                    name="name"
+                    value={name}
+                    required
+                    placeholder="Enter Your Name"
+                    onChange={handleName}
+                  />
+                  {nameError ? (
+                    <div className="password__span">
+                      <span
+                        style={{
+                          fontWeight: '400',
+                          color: 'red',
+                          // paddingLeft: '20px',
+                          // fontSize: '12px',
+                        }}
+                      >
+                        {nameError}
+                      </span>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                  <label className="nameEmail__admin">Email</label>
+                  <input
+                    className="admin__input"
+                    type="email"
+                    name="email"
+                    value={email}
+                    required
+                    placeholder="Enter Your email"
+                    onChange={handleChange}
+                  />
+
+                  {emailError ? (
                     <span
+                      id="email__error"
                       style={{
                         fontWeight: '400',
-                        color: 'red',
-                        // paddingLeft: '20px',
-                        // fontSize: '12px',
-                      }}
-                    >
-                      {nameError}
-                    </span>
-                  </div>
-                ) : (
-                  ''
-                )}
-                <label className="nameEmail__admin">Email</label>
-                <input
-                  className="admin__input"
-                  type="email"
-                  name="email"
-                  value={email}
-                  required
-                  placeholder="Enter Your email"
-                  onChange={handleChange}
-                />
+                        color: `${colorGreen}`,
 
-                {emailError ? (
-                  <span
-                    id="email__error"
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorGreen}`,
-
-                      fontSize: '12px',
-                    }}
-                  >
-                    {emailError}
-                  </span>
-                ) : (
-                  ''
-                )}
-                <label className="nameEmail__admin">Password</label>
-                <input
-                  className="admin__input"
-                  type="password"
-                  name="password"
-                  value={password}
-                  required
-                  placeholder=" password"
-                  onChange={handleChangeed}
-                />
-
-                {errorMessage ? (
-                  <div className="password__span">
-                    <span
-                      style={{
-                        fontWeight: '400',
-                        color: `${colorRed}`,
-                        paddingLeft: '10px',
                         fontSize: '12px',
                       }}
                     >
-                      {errorMessage}
+                      {emailError}
                     </span>
-                  </div>
-                ) : (
-                  ''
-                )}
-                <label className="nameEmail__admin">Confirm Password</label>
-                <input
-                  className="admin__input"
-                  type="password"
-                  name="c_password"
-                  value={c_password}
-                  required
-                  placeholder="confirm password"
-                  onChange={handleConPassword}
-                />
+                  ) : (
+                    ''
+                  )}
+                  <label className="nameEmail__admin">Password</label>
+                  <input
+                    className="admin__input"
+                    type="password"
+                    name="password"
+                    value={password}
+                    required
+                    placeholder=" password"
+                    onChange={handleChangeed}
+                  />
 
-                {handleConPassword ? (
-                  <span
+                  {errorMessage ? (
+                    <div className="password__span">
+                      <span
+                        style={{
+                          fontWeight: '400',
+                          color: `${colorRed}`,
+                          paddingLeft: '10px',
+                          fontSize: '12px',
+                        }}
+                      >
+                        {errorMessage}
+                      </span>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                  <label className="nameEmail__admin">Confirm Password</label>
+                  <input
+                    className="admin__input"
+                    type="password"
+                    name="c_password"
+                    value={c_password}
+                    required
+                    placeholder="confirm password"
+                    onChange={handleConPassword}
+                  />
+
+                  {handleConPassword ? (
+                    <span
+                      style={{
+                        fontWeight: '400',
+                        color: `${colorPink}`,
+                        fontSize: '12px',
+                      }}
+                    >
+                      {conPassErr}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+
+                  <div
                     style={{
-                      fontWeight: '400',
-                      color: `${colorPink}`,
-                      fontSize: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
                     }}
                   >
-                    {conPassErr}
-                  </span>
-                ) : (
-                  ''
-                )}
+                    <button onClick={cancelCreate} className="cancel__create" id="not_ShowCancel">
+                      Cancel
+                    </button>
 
-                <div style={{ paddingLeft: '10px' }}>
-                  <button
-                    type="submit"
-                    className="create_new__admin"
-                  // onClick={signUp}
-                  // disabled={disabled}
-                  >
-                    Create Admin
-                  </button>
-                  <Button onClick={cancelCreate} className="cancel__create" id="not_ShowCancel">
-                    Cancel
-                  </Button>
+                    <button
+                      type="submit"
+                      className="create_new__admin"
+                      // onClick={signUp}
+                      // disabled={disabled}
+                    >
+                      Create Admin
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div>
+            {isadminShow && (
+              <div>
+                <div className="modal-backdrop" onClick={cancelCreateAdmin}></div>
+                <div
+                  className="show__notShow"
+                  style={{
+                    display: isadminShow ? 'block' : 'none',
+                  }}
+                >
+                  <div className="create_admin">
+                    <label>Edit Admin Details</label>
+                    <IoMdClose className="crossicon" onClick={cancelCreateAdmin} />
+                  </div>
+
+                  <div id="form__admin_Edit">
+                    <label className="nameEmail__admin" style={{ paddingTop: '20px' }}>
+                      Name
+                    </label>
+                    <input
+                      className="admin__input"
+                      type="text"
+                      placeholder="Chetan"
+                      defaultValue={RowData.name}
+                      onChange={handleNameUpdate}
+                    />
+                    {nameErrorUpdate ? (
+                      <span
+                        style={{
+                          fontWeight: '400',
+                          color: 'red',
+                          paddingLeft: '20px',
+                          fontSize: '12px',
+                        }}
+                      >
+                        {nameErrorUpdate}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                    <div>
+                      <label className="nameEmail__admin">Email</label>
+                      <input
+                        className="admin__input"
+                        type="email"
+                        defaultValue={RowData.email}
+                        onChange={handleChange}
+                        placeholder="cvinfotech@gmail.com"
+                      />
+                      {emailError ? (
+                        <span
+                          style={{
+                            fontWeight: '400',
+                            color: `${colorGreen}`,
+
+                            fontSize: '12px',
+                          }}
+                        >
+                          {emailError}
+                        </span>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+                    <label className="nameEmail__admin">Password</label>
+                    <input
+                      className="admin__input"
+                      type="password"
+                      defaultValue={password}
+                      onChange={handleChangeed}
+                      placeholder="Generate a new password"
+                    />
+                    {errorMessage ? (
+                      <span
+                        style={{
+                          fontWeight: '400',
+                          color: `${colorRed}`,
+                          paddingLeft: '20px',
+                          fontSize: '12px',
+                        }}
+                      >
+                        {errorMessage}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                    <label className="nameEmail__admin">Confirm Password</label>
+                    <input
+                      id="conFirm_password"
+                      className="admin__input"
+                      type="password"
+                      placeholder="Retype new password to confirm"
+                      name="c_password"
+                      defaultValue={c_password}
+                      onChange={handleConPassword}
+                    />
+                    {handleConPassword ? (
+                      <span
+                        style={{
+                          fontWeight: '400',
+                          color: `${colorPink}`,
+
+                          paddingLeft: '20px',
+                          fontSize: '12px',
+                        }}
+                      >
+                        {conPassErr}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <button onClick={cancelCreateAdmin} className="cancel__create" type="submit">
+                        Cancel
+                      </button>
+                      <button
+                        onClick={() => updateAdmin(id)}
+                        className="create_new__admin"
+                        disabled={disabled}
+                      >
+                        Update
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </form>
+            )}
           </div>
-          <div
-            className="show__notShow"
-            style={{
-              display: isadminShow ? 'block' : 'none',
-            }}
-          >
-            <div className="create_admin">
-              <label>Edit Admin Details</label>
-            </div>
 
-            <div id="form__admin_Edit">
-              <label className="nameEmail__admin" style={{ paddingTop: '20px' }}>
-                Name
-              </label>
-              <input
-                className="admin__input"
-                type="text"
-                placeholder="Chetan"
-                defaultValue={RowData.name}
-                onChange={handleNameUpdate}
-              />
-              {nameErrorUpdate ? (
-                <span
-                  style={{
-                    fontWeight: '400',
-                    color: 'red',
-                    paddingLeft: '20px',
-                    fontSize: '12px',
-                  }}
-                >
-                  {nameErrorUpdate}
-                </span>
-              ) : (
-                ''
-              )}
+            <div>
+{ isadminDelete &&(
+
+
               <div>
-                <label className="nameEmail__admin">Email</label>
-                <input
-                  className="admin__input"
-                  type="email"
-                  defaultValue={RowData.email}
-                  onChange={handleChange}
-                  placeholder="cvinfotech@gmail.com"
-                />
-                {emailError ? (
-                  <span
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorGreen}`,
-
-                      fontSize: '12px',
-                    }}
-                  >
-                    {emailError}
-                  </span>
-                ) : (
-                  ''
-                )}
-              </div>
-              <label className="nameEmail__admin">Password</label>
-              <input
-                className="admin__input"
-                type="password"
-                defaultValue={password}
-                onChange={handleChangeed}
-                placeholder="Generate a new password"
-              />
-              {errorMessage ? (
-                <span
-                  style={{
-                    fontWeight: '400',
-                    color: `${colorRed}`,
-                    paddingLeft: '20px',
-                    fontSize: '12px',
-                  }}
-                >
-                  {errorMessage}
-                </span>
-              ) : (
-                ''
-              )}
-              <label className="nameEmail__admin">Confirm Password</label>
-              <input
-                id="conFirm_password"
-                className="admin__input"
-                type="password"
-                placeholder="Retype new password to confirm"
-                name="c_password"
-                defaultValue={c_password}
-                onChange={handleConPassword}
-              />
-              {handleConPassword ? (
-                <span
-                  style={{
-                    fontWeight: '400',
-                    color: `${colorPink}`,
-
-                    paddingLeft: '20px',
-                    fontSize: '12px',
-                  }}
-                >
-                  {conPassErr}
-                </span>
-              ) : (
-                ''
-              )}
-              <div style={{ paddingLeft: '10px' }}>
-                <button
-                  onClick={() => updateAdmin(id)}
-                  className="update_new__admin"
-                  disabled={disabled}
-                >
-                  Update
-                </button>
-                <Button onClick={cancelCreateAdmin} className="cancel__create" type="submit">
-                  Cancel
-                </Button>
-              </div>
-            </div>
-          </div>
+              <div className="modal-backdrop" onClick={cancelDeleteAdmin}>
+               </div>
           <div
             className="show__notShow"
             style={{
               display: isadminDelete ? 'block' : 'none',
             }}
           >
-
             <div id="delete__admin">
               <div id="confirm__delete_Admin">
                 <p>Confirm Delete</p>
+                <IoMdClose className="crossicon" onClick={cancelDeleteAdmin} />
               </div>
               <p>Are you sure you want to delete profile</p>
-              <p style={{ marginTop: '-10px' }}>
+              <p style={{  }}>
                 of the admin <span style={{ fontWeight: 'bolder' }}>{RowData.name}</span>
               </p>
-              <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
+              <p style={{  }}> This process is Irreversible</p>
               <div id="handle_Admin_Delete_cancel">
+
+                <button onClick={cancelDeleteAdmin}   className='cancel__confirm' type="submit">
+                  Cancel
+                </button>
+
                 <button onClick={() => deleteAdmin(id)} type="submit" className="delete_new__admin">
                   Delete
                 </button>
-                <button onClick={cancelDeleteAdmin} id="delete__create" type="submit">
-                  Cancel
-                </button>
+
               </div>
             </div>
+          </div>
+          </div>
+)}
+
           </div>
 
           <div className="" style={{ overflowX: 'auto' }}>
@@ -817,9 +868,8 @@ const Admin = () => {
               <p className="admin_registerd__pop">ID has been deleted.</p>
             </div>
           </div>
-
         </div>
-        <div className='pagination_wrap'>
+        <div className="pagination_wrap">
           <Pagination
             onChange={handlePagination}
             pageSize={postPerPage}
@@ -833,7 +883,6 @@ const Admin = () => {
           />
         </div>
       </div>
-
     </div>
   )
 }
