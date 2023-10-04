@@ -345,8 +345,8 @@ const Customer = () => {
     }
   }
   const onChangeed = (e) => {
-    console.log("value sof proice is " , e)
-    const newValue = parseInt(e.target.value, 10);
+    console.log('value sof proice is ', e)
+    const newValue = parseInt(e.target.value, 10)
     setBasePrice(newValue)
   }
   const handleClicked = (event) => {
@@ -1691,7 +1691,11 @@ const Customer = () => {
                       />
 
                       <div className="fileimport_btn">
-                        <button  type="button" className="fileimport_cancel" onClick={() => setModal2Open(false)}>
+                        <button
+                          type="button"
+                          className="fileimport_cancel"
+                          onClick={() => setModal2Open(false)}
+                        >
                           {' '}
                           <span>Cancel</span>{' '}
                         </button>
@@ -1930,275 +1934,288 @@ const Customer = () => {
         )}
 
         <div>
-  {isShown && (
-    <div className="modal-backdrop" onClick={() => setIsShown(false)}>
-      {/* Backdrop content (if needed) */}
-    </div>
-  )}
-        <div
-          className={`for_respon__modal_first ${isShown ? 'modal-open' : ''}`}
-          style={{
-            display: isShown ? 'block' : 'none',
-          }}
-        >
-          <form onSubmit={applyFilter}>
-            <div className="add__one">
-              <div className="add_filter1wrap_cross">
-                <div className="add_filter1wrap">
-                  <span className="add_filter_1">Add Filter</span>
+          {isShown && (
+            <div className="modal-backdrop" onClick={() => setIsShown(false)}>
+              {/* Backdrop content (if needed) */}
+            </div>
+          )}
+          <div
+            className={`for_respon__modal_first ${isShown ? 'modal-open' : ''}`}
+            style={{
+              display: isShown ? 'block' : 'none',
+            }}
+          >
+            <form onSubmit={applyFilter}>
+              <div className="add__one">
+                <div className="add_filter1wrap_cross">
+                  <div className="add_filter1wrap">
+                    <span className="add_filter_1">Add Filter</span>
 
-                  {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
+                    {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
+                  </div>
+                  <div onClick={() => setIsShown(false)}>
+                    <IoMdClose className="crossicon" />
+                  </div>
+                  {/* <IoMdClose className="crossicon"  onClick={() => clearFilter()}    /> */}
                 </div>
-                <div onClick={() => setIsShown(false)}>
-                  <IoMdClose className="crossicon" />
-                </div>
-                {/* <IoMdClose className="crossicon"  onClick={() => clearFilter()}    /> */}
-              </div>
 
-              <div className="add__three">
-                <div className="for__marginn">
-                  <Button
-                    id="status_filter"
-                    onClick={statusFilter}
-                    className="for_campaign_act commonbutton"
-                    style={{ backgroundColor: '#3378FF' }}
-                  >
-                    <MdEditDocument />
-                    <span>Status</span>
-                  </Button>
-                  <Button
-                    id="campaign_activity"
-                    onClick={campaignActivity}
-                    className="for_campaign_act commonbutton"
-                    style={{ backgroundColor: '#3378FF' }}
-                  >
-                    <IoLocationSharp />
-                    <span>Location</span>
-                  </Button>
-                  <Button
-                    id="location"
-                    onClick={location}
-                    className="for_campaign_act commonbutton"
-                    style={{ backgroundColor: '#3378FF' }}
-                  >
-                    <IoIosPaper />
-                    <span>Plan</span>
-                  </Button>
-                  <Button
-                    id="price_handle"
-                    onClick={priceHandle}
-                    className="for__price_hand commonbutton "
-                    style={{ backgroundColor: '#3378FF' }}
-                  >
-                    <IoPricetags />
-                    <span>Price</span>
-                  </Button>
-                </div>
-              </div>
-              <hr
-                style={{ width: '100%', marginTop: '12px', color: '#F1F1F1', marginBottom: '12px' }}
-              />
-              {statusfilter || installation || planData || priceData ? (
-                ''
-              ) : (
-                <div className="add__four">
-                  <p>
-                    <MinusOutlined className="minus_outlined_one" />
-                    No Filters applied
-                  </p>
-                  <p>Add one of the above filters to narrow down your User list</p>
-                </div>
-              )}
-              {statusfilter ? (
-                <div className="add_five">
-                  <div className="add__eleven">
-                    <span className="add__forteen">Status</span>
-                    <Radio.Group onChange={onstatusChange} value={statusvalue} className="base_PP2">
-                      <Radio value="5" id="amul">
-                        <p id="">Assigned</p>
-                      </Radio>
-
-                      <Radio value="4" id="amul">
-                        <p id="">Un-Assigned</p>
-                      </Radio>
-
-                      <Radio value="0" id="amul">
-                        <p id="">Registered</p>
-                      </Radio>
-
-                      <Radio value="1" id="amul">
-                        <p id="">Active</p>
-                      </Radio>
-
-                      <Radio value="2" id="amul">
-                        <p id="">In-Active</p>
-                      </Radio>
-
-                      <Radio value="6" id="amul">
-                        <p id="">Paused</p>
-                      </Radio>
-
-                      <Radio value="3" id="amul">
-                        <p id="">Suspended</p>
-                      </Radio>
-                    </Radio.Group>
+                <div className="add__three">
+                  <div className="for__marginn">
+                    <Button
+                      id="status_filter"
+                      onClick={statusFilter}
+                      className="for_campaign_act commonbutton"
+                      style={{ backgroundColor: '#3378FF' }}
+                    >
+                      <MdEditDocument />
+                      <span>Status</span>
+                    </Button>
+                    <Button
+                      id="campaign_activity"
+                      onClick={campaignActivity}
+                      className="for_campaign_act commonbutton"
+                      style={{ backgroundColor: '#3378FF' }}
+                    >
+                      <IoLocationSharp />
+                      <span>Location</span>
+                    </Button>
+                    <Button
+                      id="location"
+                      onClick={location}
+                      className="for_campaign_act commonbutton"
+                      style={{ backgroundColor: '#3378FF' }}
+                    >
+                      <IoIosPaper />
+                      <span>Plan</span>
+                    </Button>
+                    <Button
+                      id="price_handle"
+                      onClick={priceHandle}
+                      className="for__price_hand commonbutton "
+                      style={{ backgroundColor: '#3378FF' }}
+                    >
+                      <IoPricetags />
+                      <span>Price</span>
+                    </Button>
                   </div>
                 </div>
-              ) : (
-                ''
-              )}
-              {statusfilter ? (
-                <div>
-                  <hr
-                    style={{
-                      width: '100%',
-                      marginTop: '12px',
-                      color: '#F1F1F1',
-                      marginBottom: '12px',
-                    }}
-                  />
-                </div>
-              ) : (
-                ''
-              )}
-              {installation ? (
-                <div className="add_five">
-                  <div className="add__eleven">
-                    <span className="add__forteen">Location</span>
-
-                    <Radio.Group onChange={onChangePlan} value={value} className="base_PP2location">
-                      {locateData.map((item, index) => {
-                        return (
-                          <Radio key={index} value={item.location} id="amul">
-                            <p id=""> {item.location}</p>
-                          </Radio>
-                        )
-                      })}
-                    </Radio.Group>
+                <hr
+                  style={{
+                    width: '100%',
+                    marginTop: '12px',
+                    color: '#F1F1F1',
+                    marginBottom: '12px',
+                  }}
+                />
+                {statusfilter || installation || planData || priceData ? (
+                  ''
+                ) : (
+                  <div className="add__four">
+                    <p>
+                      <MinusOutlined className="minus_outlined_one" />
+                      No Filters applied
+                    </p>
+                    <p>Add one of the above filters to narrow down your User list</p>
                   </div>
-                  {/* <span className="plan__uncheck_one" onClick={RadioPlan}>
-                    <CloseOutlined />
-                  </span> */}
-                </div>
-              ) : (
-                ''
-              )}
-              {installation ? (
-                <div>
-                  <hr
-                    style={{
-                      width: '100%',
-                      marginTop: '12px',
-                      color: '#F1F1F1',
-                      marginBottom: '12px',
-                    }}
-                  />
-                </div>
-              ) : (
-                ''
-              )}
-              {planData ? (
-                <div className="add__eight">
-                  <div className="add_twelve">
-                    <h6 className="add__sixx">Plan</h6>
-                    <div className="add_twenty">
-                      <Radio.Group onChange={onChangeBase} value={planValue} className="base_yy2">
-                        {radioValue.map((item, index) => {
+                )}
+                {statusfilter ? (
+                  <div className="add_five">
+                    <div className="add__eleven">
+                      <span className="add__forteen">Status</span>
+                      <Radio.Group
+                        onChange={onstatusChange}
+                        value={statusvalue}
+                        className="base_PP2"
+                      >
+                        <Radio value="5" id="amul">
+                          <p id="">Assigned</p>
+                        </Radio>
+
+                        <Radio value="4" id="amul">
+                          <p id="">Un-Assigned</p>
+                        </Radio>
+
+                        <Radio value="0" id="amul">
+                          <p id="">Registered</p>
+                        </Radio>
+
+                        <Radio value="1" id="amul">
+                          <p id="">Active</p>
+                        </Radio>
+
+                        <Radio value="2" id="amul">
+                          <p id="">In-Active</p>
+                        </Radio>
+
+                        <Radio value="6" id="amul">
+                          <p id="">Paused</p>
+                        </Radio>
+
+                        <Radio value="3" id="amul">
+                          <p id="">Suspended</p>
+                        </Radio>
+                      </Radio.Group>
+                    </div>
+                  </div>
+                ) : (
+                  ''
+                )}
+                {statusfilter ? (
+                  <div>
+                    <hr
+                      style={{
+                        width: '100%',
+                        marginTop: '12px',
+                        color: '#F1F1F1',
+                        marginBottom: '12px',
+                      }}
+                    />
+                  </div>
+                ) : (
+                  ''
+                )}
+                {installation ? (
+                  <div className="add_five">
+                    <div className="add__eleven">
+                      <span className="add__forteen">Location</span>
+
+                      <Radio.Group
+                        onChange={onChangePlan}
+                        value={value}
+                        className="base_PP2location"
+                      >
+                        {locateData.map((item, index) => {
                           return (
-                            <Radio key={index} value={item.package_plan} id="amul">
-                              <div
-                                style={{
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                }}
-                              >
-                                <p id=""> {item.package_plan}</p>
-                                <p
-                                  className="delete_outline_one"
-                                  onClick={() => onDeleteRadio(item.id)}
-                                >
-                                  <DeleteOutlined style={{ display: 'block' }} />
-                                </p>
-                              </div>
+                            <Radio key={index} value={item.location} id="amul">
+                              <p id=""> {item.location}</p>
                             </Radio>
                           )
                         })}
                       </Radio.Group>
-                      <div className="for__margin__two" style={{ zIndex: '2' }}>
-                        <Modal
-                          title="Add Plan"
-                          open={isModalOpen}
-                          onOk={handleOk}
-                          onCancel={handleCancel}
-                        >
-                          <input
-                            onChange={(e) => setPackagePlan(e.target.value)}
-                            type="text"
-                            name="package_plan"
-                            id=""
-                            value={package_plan}
-                            className="package__plan"
-                            placeholder="Add a Package"
-                          />
-                        </Modal>
-                        <button className="dynamic__button" onClick={showModal}>
-                          <PlusOutlined className="plus__outlined" />
-                        </button>
-                        {/* <span className="plan__uncheck" onClick={RadioBase}>
+                    </div>
+                    {/* <span className="plan__uncheck_one" onClick={RadioPlan}>
+                    <CloseOutlined />
+                  </span> */}
+                  </div>
+                ) : (
+                  ''
+                )}
+                {installation ? (
+                  <div>
+                    <hr
+                      style={{
+                        width: '100%',
+                        marginTop: '12px',
+                        color: '#F1F1F1',
+                        marginBottom: '12px',
+                      }}
+                    />
+                  </div>
+                ) : (
+                  ''
+                )}
+                {planData ? (
+                  <div className="add__eight">
+                    <div className="add_twelve">
+                      <h6 className="add__sixx">Plan</h6>
+                      <div className="add_twenty">
+                        <Radio.Group onChange={onChangeBase} value={planValue} className="base_yy2">
+                          {radioValue.map((item, index) => {
+                            return (
+                              <Radio key={index} value={item.package_plan} id="amul">
+                                <div
+                                  style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                  }}
+                                >
+                                  <p id=""> {item.package_plan}</p>
+                                  <p
+                                    className="delete_outline_one"
+                                    onClick={() => onDeleteRadio(item.id)}
+                                  >
+                                    <DeleteOutlined style={{ display: 'block' }} />
+                                  </p>
+                                </div>
+                              </Radio>
+                            )
+                          })}
+                        </Radio.Group>
+                        <div className="for__margin__two" style={{ zIndex: '2' }}>
+                          <Modal
+                            title="Add Plan"
+                            open={isModalOpen}
+                            onOk={handleOk}
+                            onCancel={handleCancel}
+                          >
+                            <input
+                              onChange={(e) => setPackagePlan(e.target.value)}
+                              type="text"
+                              name="package_plan"
+                              id=""
+                              value={package_plan}
+                              className="package__plan"
+                              placeholder="Add a Package"
+                            />
+                          </Modal>
+                          <button className="dynamic__button" onClick={showModal}>
+                            <PlusOutlined className="plus__outlined" />
+                          </button>
+                          {/* <span className="plan__uncheck" onClick={RadioBase}>
                           <CloseOutlined />
                         </span> */}
+                        </div>
                       </div>
                     </div>
                   </div>
+                ) : (
+                  ''
+                )}
+                {planData ? (
+                  <div>
+                    <hr
+                      style={{
+                        width: '100%',
+                        marginTop: '12px',
+                        color: '#F1F1F1',
+                        marginBottom: '12px',
+                      }}
+                    />
+                  </div>
+                ) : (
+                  ''
+                )}
+                {priceData ? (
+                  <div className="price__div">
+                    <span className="main_div_of_pric">Price</span>
+                    <input
+                      id="basePrice"
+                      type="number"
+                      className="inputprice"
+                      min={1}
+                      value={basePrice}
+                      max={10000}
+                      defaultValue={0}
+                      onChange={onChangeed}
+                    />
+                  </div>
+                ) : (
+                  ''
+                )}
+                <div className="mainDivOf_apply">
+                  <button className="sub_divOf_Appli" id="apply__filter">
+                    {/* <FilterFilled className="filter_outlined" /> */}
+                    Apply Filters
+                  </button>
+                  <button onClick={() => clearFilter()} className="claer_filter">
+                    {/* <ClearOutlined className="delete_outlinedd" /> */}
+                    Clear All
+                  </button>
                 </div>
-              ) : (
-                ''
-              )}
-              {planData ? (
-                <div>
-                  <hr
-                    style={{
-                      width: '100%',
-                      marginTop: '12px',
-                      color: '#F1F1F1',
-                      marginBottom: '12px',
-                    }}
-                  />
-                </div>
-              ) : (
-                ''
-              )}
-              {priceData ? (
-                <div className="price__div">
-                  <span className="main_div_of_pric">Price</span>
-                  <input
-                    id="basePrice"
-                    type="number"
-                    className="inputprice"
-                    min={1}
-                    value={basePrice}
-                    max={10000}
-                    defaultValue={0}
-                    onChange={onChangeed}
-                  />
-                </div>
-              ) : (
-                ''
-              )}
-              <div className="mainDivOf_apply">
-                <button className="sub_divOf_Appli" id="apply__filter">
-                  {/* <FilterFilled className="filter_outlined" /> */}
-                  Apply Filters
-                </button>
-                <button onClick={() => clearFilter()} className="claer_filter">
-                  {/* <ClearOutlined className="delete_outlinedd" /> */}
-                  Clear All
-                </button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-</div>
         <div className="customer_wrapper">
           <div className="table-responsive">
             <table className="table table-hover">
@@ -2895,9 +2912,9 @@ const Customer = () => {
                 </p> */}
 
                 <div style={{ cursor: 'pointer' }} onClick={() => setUniqueShow(false)}>
-                    {' '}
-                    <img src={XOutline} alt="cross icon" />{' '}
-                  </div>
+                  {' '}
+                  <img src={XOutline} alt="cross icon" />{' '}
+                </div>
               </section>
             </div>
           ) : (
@@ -3009,248 +3026,251 @@ const Customer = () => {
       {/* // himanshu code starts */}
       {/* add user modal starts */}
       {addUserModal ? (
-        <div className='modal-backdrop'>
-        <div id="addModalsecond">
-          <div className="modal_heading ">
-            <div className="modal_hedaing_customer">
-              <h2>Create User Customer</h2>
-              <IoMdClose className="crossicon" onClick={empty} />
+        <div className="modal-backdrop">
+          <div id="addModalsecond">
+            <div className="modal_heading ">
+              <div className="modal_hedaing_customer">
+                <h2>Create User Customer</h2>
+                <IoMdClose className="crossicon" onClick={empty} />
+              </div>
             </div>
-          </div>
-          <hr className="cretaecustomerline"></hr>
-          <div className="modal_form">
-            <form className="form" onSubmit={(e) => adduser(e)}>
-              {/* <div style={{ display: 'none' }}>
+            <hr className="cretaecustomerline"></hr>
+            <div className="modal_form">
+              <form className="form" onSubmit={(e) => adduser(e)}>
+                {/* <div style={{ display: 'none' }}>
                 <input type="email" />
                 <input type="password" />
               </div> */}
-              <div>
-                <label htmlFor="name" style={{ fontWeight: '600' }}>
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Eg. John Doe"
-                  name="name"
-                  value={name}
-                  required
-                  onChange={(e) => setName(e.target.value)}
-                  minLength={3}
-                  maxLength={20}
-                />
-              </div>
-
-              <div>
-                <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
-                  Select installation from choices:
-                </label>
-                <select id="option__value" onChange={handleSelect}>
-                  <option value="">{`Select installation  from choices:`}</option>
-                  {locateData &&
-                    locateData.map((item, index) => {
-                      return (
-                        <option key={index} data-name={item.id} value={item.location}>
-                          {item.location}
-                        </option>
-                      )
-                    })}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="mobile" style={{ fontWeight: '600' }}>
-                  Phone Number
-                </label>
-                <input
-                  type="number"
-                  placeholder="Eg.99xxxxxxxx"
-                  value={mobile}
-                  name="name"
-                  required
-                  onChange={handleMobile}
-                  onKeyDown={(evt) =>
-                    (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
-                    evt.preventDefault()
-                  }
-                  autoComplete="off"
-                />
-                {phoneError ? (
-                  <span
-                    id="email__error"
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorGreen}`,
-                      fontSize: '12px',
-                    }}
-                  >
-                    {phoneError}
-                  </span>
-                ) : (
-                  ''
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="address" style={{ fontWeight: '600' }}>
-                  Address Line 1{' '}
-                </label>
-                <input
-                  type="text"
-                  placeholder="Apartment, Street Number, Block..."
-                  value={add_line1}
-                  name="address"
-                  required
-                  onChange={handleAdd1}
-                  minLength={2}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" style={{ fontWeight: '600' }}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder={`Eg.john@xyz.com ${forautoFill}`}
-                  name={forautoFill}
-                  value={email}
-                  required
-                  onChange={handleChange}
-                  autoComplete="off"
-                />
-                {emailError ? (
-                  <span
-                    id="email__error"
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorGreen}`,
-                      fontSize: '12px',
-                    }}
-                  >
-                    {emailError}
-                  </span>
-                ) : (
-                  ''
-                )}
-              </div>
-
-              <div>
-                <label htmlFor="address2" style={{ fontWeight: '600' }}>
-                  Address Line 2{' '}
-                </label>
-                <input
-                  type="text"
-                  placeholder="Apartment, Street Number, Block..."
-                  value={add_line2}
-                  name="address2"
-                  onChange={handleAdd2}
-                  minLength={2}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="password" style={{ fontWeight: '600' }}>
-                  Password
-                </label>
-                <Input.Password
-                  value={password}
-                  name={forautoFill}
-                  onChange={handlePassword}
-                  minLength={8}
-                  placeholder="Create a strong password"
-                  iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                  required
-                />
-                {errorMessage ? (
-                  <span
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorRed}`,
-                      width: '235px',
-                      fontSize: '12px',
-                    }}
-                  >
-                    {errorMessage}
-                  </span>
-                ) : (
-                  ''
-                )}
-              </div>
-
-              <div className="last_line">
-                <div className="part_1">
-                  <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
-                    Zipcode
+                <div>
+                  <label htmlFor="name" style={{ fontWeight: '600' }}>
+                    Full Name
                   </label>
-                  <input type="text" value={newZipcode}  placeholder="Enter Zipcode" readOnly />
+                  <input
+                    type="text"
+                    placeholder="Eg. John Doe"
+                    name="name"
+                    value={name}
+                    required
+                    onChange={(e) => setName(e.target.value)}
+                    minLength={3}
+                    maxLength={20}
+                  />
                 </div>
-                <div className="part_2">
-                  <label htmlFor="State" style={{ fontWeight: '600' }}>
-                    State
+
+                <div>
+                  <label
+                    className="htmlFor_respn"
+                    style={{ marginRight: '10px', fontWeight: '600' }}
+                  >
+                    Select installation from choices:
                   </label>
-                  <input type="text" value={newState}  placeholder="Select" readOnly />
+                  <select id="option__value" onChange={handleSelect}>
+                    <option value="">{`Select installation  from choices:`}</option>
+                    {locateData &&
+                      locateData.map((item, index) => {
+                        return (
+                          <option key={index} data-name={item.id} value={item.location}>
+                            {item.location}
+                          </option>
+                        )
+                      })}
+                  </select>
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="conpassword" style={{ fontWeight: '600' }}>
-                  Confirm Password
-                </label>
-                <Input.Password
-                  placeholder="Retype the Password"
-                  value={conpassword}
-                  name="conpassword"
-                  onChange={passwordcheck}
-                  minLength={8}
-                  iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-                  required
-                />
-                <p style={{ color: 'red', display: display, fontSize: '12px' }}>
-                  Password did not match❗
-                </p>
+                <div>
+                  <label htmlFor="mobile" style={{ fontWeight: '600' }}>
+                    Phone Number
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Eg.99xxxxxxxx"
+                    value={mobile}
+                    name="name"
+                    required
+                    onChange={handleMobile}
+                    onKeyDown={(evt) =>
+                      (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
+                      evt.preventDefault()
+                    }
+                    autoComplete="off"
+                  />
+                  {phoneError ? (
+                    <span
+                      id="email__error"
+                      style={{
+                        fontWeight: '400',
+                        color: `${colorGreen}`,
+                        fontSize: '12px',
+                      }}
+                    >
+                      {phoneError}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </div>
 
-                <span
-                  onClick={generatePassword}
+                <div>
+                  <label htmlFor="address" style={{ fontWeight: '600' }}>
+                    Address Line 1{' '}
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Apartment, Street Number, Block..."
+                    value={add_line1}
+                    name="address"
+                    required
+                    onChange={handleAdd1}
+                    minLength={2}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" style={{ fontWeight: '600' }}>
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder={`Eg.john@xyz.com ${forautoFill}`}
+                    name={forautoFill}
+                    value={email}
+                    required
+                    onChange={handleChange}
+                    autoComplete="off"
+                  />
+                  {emailError ? (
+                    <span
+                      id="email__error"
+                      style={{
+                        fontWeight: '400',
+                        color: `${colorGreen}`,
+                        fontSize: '12px',
+                      }}
+                    >
+                      {emailError}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="address2" style={{ fontWeight: '600' }}>
+                    Address Line 2{' '}
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Apartment, Street Number, Block..."
+                    value={add_line2}
+                    name="address2"
+                    onChange={handleAdd2}
+                    minLength={2}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="password" style={{ fontWeight: '600' }}>
+                    Password
+                  </label>
+                  <Input.Password
+                    value={password}
+                    name={forautoFill}
+                    onChange={handlePassword}
+                    minLength={8}
+                    placeholder="Create a strong password"
+                    iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                    required
+                  />
+                  {errorMessage ? (
+                    <span
+                      style={{
+                        fontWeight: '400',
+                        color: `${colorRed}`,
+                        width: '235px',
+                        fontSize: '12px',
+                      }}
+                    >
+                      {errorMessage}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </div>
+
+                <div className="last_line">
+                  <div className="part_1">
+                    <label htmlFor="zipcode" style={{ fontWeight: '600' }}>
+                      Zipcode
+                    </label>
+                    <input type="text" value={newZipcode} placeholder="Enter Zipcode" readOnly />
+                  </div>
+                  <div className="part_2">
+                    <label htmlFor="State" style={{ fontWeight: '600' }}>
+                      State
+                    </label>
+                    <input type="text" value={newState} placeholder="Select" readOnly />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="conpassword" style={{ fontWeight: '600' }}>
+                    Confirm Password
+                  </label>
+                  <Input.Password
+                    placeholder="Retype the Password"
+                    value={conpassword}
+                    name="conpassword"
+                    onChange={passwordcheck}
+                    minLength={8}
+                    iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                    required
+                  />
+                  <p style={{ color: 'red', display: display, fontSize: '12px' }}>
+                    Password did not match❗
+                  </p>
+
+                  <span
+                    onClick={generatePassword}
+                    style={{
+                      cursor: 'pointer',
+                      // background: 'rgb(24, 144, 255)',
+                      // color: 'rgb(255, 255, 255)',
+                      display: 'flex',
+                      justifyContent: 'flex-end',
+                      color: '#3378FF',
+                      textDecoration: 'underline',
+                      paddingBottom: '1px',
+
+                      // color: 'white',
+                      // padding: '5px 10px',
+                      // borderRadius: '7px',
+                      // width: 'fit-content',
+                      // margin: '0',
+                      // marginBottom: '3px',
+                    }}
+                  >
+                    Generate Password
+                  </span>
+                </div>
+
+                <div
                   style={{
-                    cursor: 'pointer',
-                    // background: 'rgb(24, 144, 255)',
-                    // color: 'rgb(255, 255, 255)',
                     display: 'flex',
                     justifyContent: 'flex-end',
-                    color: '#3378FF',
-                    textDecoration: 'underline',
-                    paddingBottom: '1px',
-
-                    // color: 'white',
-                    // padding: '5px 10px',
-                    // borderRadius: '7px',
-                    // width: 'fit-content',
-                    // margin: '0',
-                    // marginBottom: '3px',
+                    gap: '24px',
+                    width: '100%',
                   }}
                 >
-                  Generate Password
-                </span>
-              </div>
-
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                  gap: '24px',
-                  width: '100%',
-                }}
-              >
-                <button className="addcustomerform_cancel" onClick={empty}>
-                  Cancel
-                </button>
-                <button className="addcustomerform_btn" required onChange={finalCall}>
-                  Add Customer
-                </button>
-              </div>
-            </form>
+                  <button className="addcustomerform_cancel" onClick={empty}>
+                    Cancel
+                  </button>
+                  <button className="addcustomerform_btn" required onChange={finalCall}>
+                    Add Customer
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
         </div>
       ) : (
         ''
@@ -3279,120 +3299,125 @@ const Customer = () => {
 
       {/* update modal starts */}
       {updateModal ? (
-        <div className='modal-backdrop'>
-        <div id="update_modal">
-          <div className="update_modal_heading">
-            <h2>Edit Customer Details</h2>
-            <IoMdClose className="crossicon"  onClick={updateCancel} />
-          </div>
-          <div className="update_modal_form">
-            <form className="update_form" onSubmit={(e) => onSub(e)}>
-              <div>
-                <label htmlFor="name" value={name} style={{ fontWeight: '600', marginTop: '0px' }}>
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Eg. John Doe"
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  minLength={3}
-                />
-              </div>
-              <div>
-                <label htmlFor="email" style={{ fontWeight: '600' }}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="Eg.john@xyz.com"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  readOnly
-                />
-              </div>
-              <div>
-                <label htmlFor="mobile" style={{ fontWeight: '600' }}>
-                  Phone Number
-                </label>
-                <input
-                  type="number"
-                  placeholder="Eg.99xxxxxxxx"
-                  value={mobile}
-                  name="mobile"
-                  onChange={handleMobile}
-                  onKeyDown={(evt) =>
-                    (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
-                    evt.preventDefault()
-                  }
-                  required
-                  autoComplete="off"
-                />
-                {phoneError ? (
-                  <span
-                    id="email__error"
-                    style={{
-                      fontWeight: '400',
-                      color: `${colorGreen}`,
-                      fontSize: '12px',
-                    }}
+        <div className="modal-backdrop">
+          <div id="update_modal">
+            <div className="update_modal_heading">
+              <h2>Edit Customer Details</h2>
+              <IoMdClose className="crossicon" onClick={updateCancel} />
+            </div>
+            <div className="update_modal_form">
+              <form className="update_form" onSubmit={(e) => onSub(e)}>
+                <div>
+                  <label
+                    htmlFor="name"
+                    value={name}
+                    style={{ fontWeight: '600', marginTop: '0px' }}
                   >
-                    {phoneError}
-                  </span>
-                ) : (
-                  ''
-                )}
-              </div>
-              <div>
-                <label htmlFor="address" style={{ fontWeight: '600' }}>
-                  Address Line 1
-                </label>
-                <input
-                  type="text"
-                  placeholder="Apartment, Street Number, Block..."
-                  value={add_line1}
-                  name="address"
-                  onChange={(e) => setAddress(e.target.value)}
-                  required
-                  minLength={2}
-                />
-              </div>
-              <div>
-                <label htmlFor="address2" style={{ fontWeight: '600' }}>
-                  Address Line 2
-                </label>
-                <input
-                  type="text"
-                  placeholder="Apartment, Street Number, Block..."
-                  value={add_line2}
-                  name="address2"
-                  onChange={(e) => setAddress2(e.target.value)}
-                  minLength={2}
-                />
-              </div>
-              <section className="update_button">
-                <button
-                  type="submit"
-                  className="btn2updae_btn"
-                  style={{ backgroundColor: '#3378FF' }}
-                >
-                  Update
-                </button>
-                <button
-                  className="btn_cancel"
-                  onClick={updateCancel}
-                  style={{ backgroundColor: '#8F9FBC', color: '#FFFFFF' }}
-                >
-                  Cancel
-                </button>
-              </section>
-            </form>
-          </div>
-        </div> </div>
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Eg. John Doe"
+                    name="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    minLength={3}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" style={{ fontWeight: '600' }}>
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Eg.john@xyz.com"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    readOnly
+                  />
+                </div>
+                <div>
+                  <label htmlFor="mobile" style={{ fontWeight: '600' }}>
+                    Phone Number
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="Eg.99xxxxxxxx"
+                    value={mobile}
+                    name="mobile"
+                    onChange={handleMobile}
+                    onKeyDown={(evt) =>
+                      (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
+                      evt.preventDefault()
+                    }
+                    required
+                    autoComplete="off"
+                  />
+                  {phoneError ? (
+                    <span
+                      id="email__error"
+                      style={{
+                        fontWeight: '400',
+                        color: `${colorGreen}`,
+                        fontSize: '12px',
+                      }}
+                    >
+                      {phoneError}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="address" style={{ fontWeight: '600' }}>
+                    Address Line 1
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Apartment, Street Number, Block..."
+                    value={add_line1}
+                    name="address"
+                    onChange={(e) => setAddress(e.target.value)}
+                    required
+                    minLength={2}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="address2" style={{ fontWeight: '600' }}>
+                    Address Line 2
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Apartment, Street Number, Block..."
+                    value={add_line2}
+                    name="address2"
+                    onChange={(e) => setAddress2(e.target.value)}
+                    minLength={2}
+                  />
+                </div>
+                <section className="update_button">
+                  <button
+                    type="submit"
+                    className="btn2updae_btn"
+                    style={{ backgroundColor: '#3378FF' }}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="btn_cancel"
+                    onClick={updateCancel}
+                    style={{ backgroundColor: '#8F9FBC', color: '#FFFFFF' }}
+                  >
+                    Cancel
+                  </button>
+                </section>
+              </form>
+            </div>
+          </div>{' '}
+        </div>
       ) : (
         ''
       )}

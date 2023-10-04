@@ -22,15 +22,16 @@ import editPen from '../../assets/images/editPen.svg'
 import location_tag from '../../assets/images/location_tag.svg'
 import export_img from '../../assets/images/export_img.svg'
 import import_one from '../../assets/images/import_one.svg'
-import sheet from '../../assets/images/sheets.png'
+import sheet from '../../assets/images/excelicon.svg'
 import { troesAPi } from '../../api'
-
+import { BsCloudDownload } from 'react-icons/bs'
 import { CSVLink } from 'react-csv'
 import { useNavigate } from 'react-router-dom'
 import './location.css'
 import '../universal.css'
 import { notification } from 'antd'
-
+import Rightarrow from '../../assets/images/Rightarrow.svg'
+import { HiFilter } from 'react-icons/hi'
 const Location = () => {
   const [ide, setIde] = useState('')
   const [value, setValue] = useState('')
@@ -486,6 +487,7 @@ const Location = () => {
           ]}
         >
           <p className="partner_name">Installation Name : {Object.keys(modalGetRequest)}</p>
+
           <table className="table theadPadding_remove">
             <thead>
               <th>Device ID</th>
@@ -506,6 +508,7 @@ const Location = () => {
               )}
             </tbody>
           </table>
+
         </Modal>
 
         <Modal
@@ -543,33 +546,32 @@ const Location = () => {
           </div>
         </Modal>
 
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <div>
-            <p className="location__acount">Installation Management</p>
+        <div className="installation_base_warp">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+            <div className="total_wrap">
+              <span className="location__acount">Installation Base</span>
+              <span className="total__location"> ({locationData?.length})</span>
+            </div>
+
+            <div className="total_installation_wrap">
+              <span className="arrow_customers">Total Installation</span>
+              <span>
+                <img src={Rightarrow} alt=" right arrow" />{' '}
+              </span>
+            </div>
           </div>
 
-          <button onClick={handleClicked} id="universalButton" style={{ gap: '5px' }}>
-            <img
-              src={location_tag}
-              alt="logo"
-              style={{ width: '22px', height: '15px', marginTop: '-2px' }}
-            />
-            Add New Installation
+          <button onClick={handleClicked} className="customer_add_button">
+            <span className="plusicon">+</span>
+            <span> Add New Installation</span>
           </button>
         </div>
-        <p className="total__location">Total Installation : {locationData?.length}</p>
 
         <div>
           <div className="second_mainDiv_location">
             <div className="filter_partner">
               <div>
-                <div style={{ display: 'flex', gap: '10px' }}>
+                <div style={{ display: 'flex', gap: '16px' }}>
                   <select id="option__value_Location" onChange={handleChange}>
                     <option value="">All Partners</option>
                     {partnerData &&
@@ -582,22 +584,14 @@ const Location = () => {
                       })}
                   </select>
 
-                  <button id="universalButton" onClick={(e) => handleFilter(e)}>
-                    <FilterFilled
-                      style={{
-                        color: '#fff',
-                        fontSize: '20px',
-                        fontWeight: 'bolder',
-                        display: 'block',
-                        float: 'left',
-                        paddingRight: '5px',
-                      }}
-                    />
-                  </button>
+                  <button id='basefilter' onClick={(e) => handleFilter(e)}>
+                    <span>Filter</span>
+                    <span> <HiFilter /></span>
 
+                  </button>
                 </div>
               </div>
-              <form
+              {/* <form
                 className="import_csv_class"
                 onSubmit={handleSubmit}
                 style={{ gap: '6px', display: 'flex' }}
@@ -619,7 +613,11 @@ const Location = () => {
                   <img src={import_one} alt="edit" style={{ width: '22px', height: '15px' }} />
                   Import Device Address
                 </button>
-              </form>
+              </form> */}
+              <button type="submit" className="import_report">
+                  <BsCloudDownload className="cloud_downlaod_icon" />
+                  <span className="downlaodtext"> Import Device Address </span>
+                </button>
             </div>
           </div>
         </div>
@@ -866,24 +864,13 @@ const Location = () => {
             </div>
           </div>
         </div>
-
+        <div className='table_wrap'>
         <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
           <table className="table table-hover">
             <thead className="location__information">
               <tr>
                 <th className="t_Name">S.No.</th>
-                <th>
-                  {/* <img
-                    src={sheet}
-                    alt="upload_img"
-                    style={{
-                      width: '20px',
-                      marginTop: '-7px',
-                      // marginLeft: '4px',
-                      cursor: 'pointer',
-                    }}
-                  /> */}
-                </th>
+                <th className="t_Name">File</th>
 
                 <th className="t_Name">Name</th>
                 <th className="t_Name">Device Address</th>
@@ -917,18 +904,13 @@ const Location = () => {
                   return (
                     <tr key={index}>
                       <td className="px-4">{displayedIndex}</td>
-                      <td>
+                      <td className="px-4">
                         <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
                           <Tooltip placement="topLeft" title={textOne}>
                             <img
                               src={sheet}
                               alt="upload_img"
-                              style={{
-                                width: '20px',
-                                marginTop: '-7px',
-                                // marginLeft: '4px',
-                                cursor: 'pointer',
-                              }}
+
                             />
                           </Tooltip>
                         </div>
@@ -995,6 +977,28 @@ const Location = () => {
           </table>
         </div>
 
+
+<div className='pagination_wrap'>
+<Pagination
+          onChange={handlePagination}
+          pageSize={postPerPage}
+          total={total}
+          current={page}
+          showSizeChanger
+          showQuickJumper
+          onShowSizeChange={onShowSizeChange}
+          itemRender={itemRender}
+          style={{
+            paddingLeft: '12px',
+            display: 'flex',
+            marginTop: '10px',
+            justifyContent: 'flex-start',
+          }}
+        />
+</div>
+
+
+ </div>
         <div
           className="user__detail__popup__location"
           style={{
@@ -1057,22 +1061,7 @@ const Location = () => {
             <p className="admin_registerd__pop">Location has been deleted.</p>
           </div>
         </div>
-        <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{
-            paddingLeft: '12px',
-            display: 'flex',
-            marginTop: '10px',
-            justifyContent: 'flex-start',
-          }}
-        />
+
       </div>
     </>
   )

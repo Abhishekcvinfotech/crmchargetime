@@ -27,7 +27,7 @@ form select {
   color: #fff;
 }
 
-#form__admin_admin{
+#form__admin_admin {
   margin-top: 24px;
 }
 /* #form__admin_ADMIN {
@@ -68,8 +68,6 @@ form select {
   box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
 }
 
-
-
 .admin__input:focus {
   outline: none;
 }
@@ -82,7 +80,7 @@ form select {
 } */
 .create_new__admin {
   height: 48px;
-  background:#3378ff;
+  background: #3378ff;
   border-radius: 6px;
   border: none;
   font-weight: bold;
@@ -90,16 +88,16 @@ form select {
   z-index: 1000;
   padding: 2px 9px;
   width: 46%;
-  color: #FFF;
-font-family: DM Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 21px;
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
 }
 
-.create_new__admin:hover{
-  background-color: #2062E3
+.create_new__admin:hover {
+  background-color: #2062e3;
 }
 .modal-backdrop {
   position: fixed;
@@ -111,32 +109,29 @@ line-height: 21px;
   z-index: 999;
 }
 
-
 .cancel__create {
   width: 46%;
   height: 48px;
-  background: #8F9FBC;
+  background: #8f9fbc;
   border-radius: 6px;
   border: none;
   font-weight: bold;
   margin-top: 20px;
   z-index: 1000;
-  color: #FFF;
+  color: #fff;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
-
 }
 
-
 .cancel__create:hover {
-background-color:#6D84AD;
+  background-color: #6d84ad;
 }
 
 #delete__create:hover {
- background-color: #8F9FBC;;
+  background-color: #8f9fbc;
 }
 
 .update_new__admin {
@@ -176,7 +171,7 @@ background-color:#6D84AD;
   letter-spacing: 1px;
 } */
 .delete_new__admin {
-  background: #F84E4E;
+  background: #f84e4e;
   border-radius: 6px;
   color: #fff;
   border: none;
@@ -188,27 +183,27 @@ background-color:#6D84AD;
   height: 48px;
   width: 46%;
 }
-.delete_new__admin:hover{
-  background-color: #EA3030;
+.delete_new__admin:hover {
+  background-color: #ea3030;
 }
 
-.cancel__confirm{
+.cancel__confirm {
   width: 46%;
   height: 48px;
-  background: #8F9FBC;
+  background: #8f9fbc;
   border-radius: 6px;
   border: none;
   font-weight: 500;
   z-index: 1000;
-  color: #FFF;
+  color: #fff;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
 }
-.cancel__confirm:hover{
-  background-color: #6D84AD;
+.cancel__confirm:hover {
+  background-color: #6d84ad;
 }
 
 #delete__create {
@@ -282,7 +277,6 @@ background-color:#6D84AD;
   justify-content: space-around;
   align-items: center;
   margin-top: 48px;
-
 }
 
 /* .toatl_adminss {
@@ -295,7 +289,6 @@ background-color:#6D84AD;
   justify-content: space-between;
   align-items: center;
   margin: 24px 0;
-
 }
 
 .admin__acount {
@@ -307,13 +300,12 @@ background-color:#6D84AD;
   padding: 0;
   display: flex;
   gap: 16px;
-
 }
-.admin__acount span{
+.admin__acount span {
   display: block;
 }
 
-.admin_Parent_wrap{
+.admin_Parent_wrap {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -329,13 +321,13 @@ background-color:#6D84AD;
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #3378FF;
+  color: #3378ff;
   font-family: DM Sans;
   text-decoration-line: underline;
 }
 
-.toatl_adminss  span{
-display: block;
+.toatl_adminss span {
+  display: block;
 }
 
 .registration_length {
@@ -379,10 +371,10 @@ td {
   background-color: #ffff;
   border-radius: 6px;
   padding: 24px;
-  box-shadow: 0 4px 16px 0 rgba(0,0,0,.04)
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.04);
 }
 
-.container-lg{
+.container-lg {
   padding: 0 24px !important;
 }
 .pagination_wrap {
@@ -403,8 +395,8 @@ td {
   border: none;
   width: 100%;
   border-radius: 6px;
-  border: 1px solid #F1F1F1;
-  background: #FFF;
+  border: 1px solid #f1f1f1;
+  background: #fff;
   margin-top: 0;
   margin-bottom: 24px;
 }
@@ -417,15 +409,15 @@ td {
   font-weight: 700;
   line-height: normal;
 }
-#form__admin_Edit input{
+#form__admin_Edit input {
   margin-top: 12px;
   margin-bottom: 24px;
 }
-#confirm__delete_Admin{
- display: flex;
- align-items: center;
- justify-content: space-between;
- margin-bottom: 24px;
+#confirm__delete_Admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
 #confirm__delete_Admin p {
   color: #213446;
@@ -435,7 +427,6 @@ td {
   font-weight: 700;
   line-height: normal;
   margin: 0;
-
 }
 
 .crossicon {
@@ -494,8 +485,6 @@ td {
     border-radius: 6px;
     padding-bottom: 10px;
   }
-
-
 
   .confirm__delete {
     font-size: 22px;
