@@ -1276,7 +1276,7 @@ const Customer = () => {
       console.log(err)
     }
   }
-  console.log(newZipcode,'newZipcode')
+
   useEffect(() => {
     setName('')
     setEmail('')
@@ -1310,13 +1310,8 @@ const Customer = () => {
     axios
       .get(`${troesAPi}/installation/${e.target.selectedOptions[0].getAttribute('data-name')}`)
       .then((res) => {
-
-        const firstData = res.data[0];
-        // console.log(firstData.ZIP_code, "data.ZIP_code");
-        // console.log(firstData.state);
-
-        setNewZipcode(firstData.ZIP_code)
-        setNewState(firstData.state)
+        setNewZipcode(res.data[0].ZIP_code)
+        setNewState(res.data[0].state)
         setLocationId(+res.data.id)
       })
       .catch((err) => {
@@ -3288,6 +3283,7 @@ const Customer = () => {
         <div id="update_modal">
           <div className="update_modal_heading">
             <h2>Edit Customer Details</h2>
+            <IoMdClose className="crossicon"  onClick={updateCancel} />
           </div>
           <div className="update_modal_form">
             <form className="update_form" onSubmit={(e) => onSub(e)}>

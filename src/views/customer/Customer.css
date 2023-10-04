@@ -1770,6 +1770,11 @@ line-height: 21px;
   margin-bottom: 20px;
 } */
 
+.update_modal_heading{
+display: flex;
+justify-content: space-between;
+}
+
 .update_modal_heading h2 {
   font-size: 20px;
   font-weight: 600;
@@ -1863,7 +1868,9 @@ line-height: 21px;
   /* gap: 12px 0; */
 }
 
-#addModalsecond .modal_form {}
+#addModalsecond .modal_form {
+  margin-top: 24px;
+}
 
 .addcustomerform_cancel {
 
