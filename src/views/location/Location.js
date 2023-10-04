@@ -409,7 +409,8 @@ const Location = () => {
     axios
       .get(`${troesAPi}/filterpartner?name=${partner}`)
       .then((res) => {
-        setLocationData(res.data.customers)
+        setLocationData(res.data)
+
         setLoading(false)
       })
       .catch((err) => {
