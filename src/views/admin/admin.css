@@ -331,9 +331,11 @@ form select {
 }
 
 .registration_length {
-  font-weight: 700;
-  color: #324253;
-  font-size: 12px;
+  font-family: DM Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+  margin-top: 3px;
 }
 
 td {

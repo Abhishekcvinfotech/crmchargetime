@@ -32,6 +32,7 @@ import '../universal.css'
 import { notification } from 'antd'
 import Rightarrow from '../../assets/images/Rightarrow.svg'
 import { HiFilter } from 'react-icons/hi'
+import { IoMdClose } from 'react-icons/io'
 const Location = () => {
   const [ide, setIde] = useState('')
   const [value, setValue] = useState('')
@@ -508,7 +509,6 @@ const Location = () => {
               )}
             </tbody>
           </table>
-
         </Modal>
 
         <Modal
@@ -584,10 +584,12 @@ const Location = () => {
                       })}
                   </select>
 
-                  <button id='basefilter' onClick={(e) => handleFilter(e)}>
+                  <button id="basefilter" onClick={(e) => handleFilter(e)}>
                     <span>Filter</span>
-                    <span> <HiFilter /></span>
-
+                    <span>
+                      {' '}
+                      <HiFilter />
+                    </span>
                   </button>
                 </div>
               </div>
@@ -615,9 +617,9 @@ const Location = () => {
                 </button>
               </form> */}
               <button type="submit" className="import_report">
-                  <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import Device Address </span>
-                </button>
+                <BsCloudDownload className="cloud_downlaod_icon" />
+                <span className="downlaodtext"> Import Device Address </span>
+              </button>
             </div>
           </div>
         </div>
@@ -629,209 +631,215 @@ const Location = () => {
           target="_blank"
           ref={csvDownloadRef}
         />
-        <div
-          className="show__notShow"
-          style={{
-            display: isShown ? 'block' : 'none',
-          }}
-        >
-          <form onSubmit={signUp}>
-            <div id="create_Location">
-              <p>Add new Installation</p>
-            </div>
 
-            <div id="form__admin__locate">
-              <p className="nameEmail__Location" style={{ paddingTop: '20px' }}>
-                Installation Name
-              </p>
-              <input
-                className="locate__input"
-                type="text"
-                name="location"
-                value={location}
-                placeholder="Ex. Submarine Base"
-                onChange={(e) => setLocation(e.target.value)}
-                required
-              />
-              <p className="nameEmail__Location partner_margin">Partner</p>
-              <div className="">
-                <Select
-                  showSearch
-                  style={{
-                    width: 250,
-                    marginLeft: '12px',
-                    borderRadius: '8px',
-                    backgroundColor: '#ebebeb',
-                    marginTop: '5px',
-                    zIndex: 2,
-                  }}
-                  placeholder="Search to Select"
-                  optionFilterProp="children"
-                  onChange={(value, e) => selectInstallPartner(value, e)}
-                  filterOption={(input, option) => (option?.label ?? '').includes(input)}
-                  filterSort={(optionA, optionB) =>
-                    (optionA?.label ?? '')
-                      .toLowerCase()
-                      .localeCompare((optionB?.label ?? '').toLowerCase())
-                  }
-                  options={(partnerData || []).map((d) => ({
-                    value: d.id,
-                    label: d.name,
-                  }))}
-                />
-              </div>
-
-              <p className="nameEmail__Location">State</p>
-              <input
-                className="locate__input"
-                type="text"
-                name="state"
-                value={state}
-                placeholder="Ex. New London"
-                onChange={(e) => setState(e.target.value)}
-                required
-              />
-
-              <p className="nameEmail__Location">Zip Code</p>
-              <input
-                className="locate__input"
-                type="number"
-                name="ZIP_code"
-                value={ZIP_code}
-                placeholder=" 111222"
-                onChange={(e) => setZipCode(e.target.value)}
-                required
-              />
-              <p className="nameEmail__Location">Sales Tax</p>
-              <input
-                className="locate__input"
-                type="number"
-                name="salesTax"
-                value={salesTax}
-                placeholder=" 7%"
-                onChange={(e) => setSalesTax(e.target.value)}
-                required
-              />
-
-              <div className="locate_side" style={{ paddingLeft: '10px' }}>
-                <button
-                  type="submit"
-                  className="create_new__location"
-                  // onClick={signUp}
-                  // disabled={disabled}
-                >
-                  Add
-                </button>
-                <Button
-                  onClick={cancelCreate}
-                  className="cancel__create__location"
-                  id="not_ShowCancel"
-                >
-                  Cancel
-                </Button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div
-          className="show__notShow"
-          style={{
-            display: isadminShow ? 'block' : 'none',
-          }}
-        >
-          <div id="create_Location">
-            <p>Edit Installation</p>
-          </div>
-
-          <div id="form__admin__locate">
-            <p className="nameEmail__Location" style={{ paddingTop: '20px' }}>
-              Installation Name
-            </p>
-            <input
-              className="locate__input"
-              type="text"
-              name="location"
-              value={location}
-              placeholder="Ex. Submarine Base"
-              onChange={(e) => setLocation(e.target.value)}
-            />
-            <p className="nameEmail__Location partner_margin">Partner</p>
+        <div>
+          {' '}
+          {isShown && (
             <div>
-              <Select
-                showSearch
+              <div className="modal-backdrop" onClick={cancelCreate}>
+                {' '}
+              </div>
+
+              <div
+                className="show__notShow"
                 style={{
-                  width: 250,
-                  marginLeft: '12px',
-                  borderRadius: '8px',
-                  backgroundColor: '#ebebeb',
-                  marginTop: '5px',
-                  zIndex: 2,
+                  display: isShown ? 'block' : 'none',
                 }}
-                placeholder="Search to Select"
-                optionFilterProp="children"
-                onChange={(value, e) => selectInstallPartner(value, e)}
-                filterOption={(input, option) => (option?.label ?? '').includes(input)}
-                filterSort={(optionA, optionB) =>
-                  (optionA?.label ?? '')
-                    .toLowerCase()
-                    .localeCompare((optionB?.label ?? '').toLowerCase())
-                }
-                options={(partnerData || []).map((d) => ({
-                  value: d.id,
-                  label: d.name,
-                }))}
-              />
-            </div>
-
-            <p className="nameEmail__Location">State</p>
-            <input
-              className="locate__input"
-              type="text"
-              name="state"
-              value={state}
-              placeholder="Ex. New London"
-              onChange={(e) => setState(e.target.value)}
-            />
-
-            <p className="nameEmail__Location">Zip Code</p>
-            <input
-              className="locate__input"
-              type="number"
-              name="ZIP_code"
-              value={ZIP_code}
-              placeholder=" 111222"
-              onChange={(e) => setZipCode(e.target.value)}
-            />
-            <p className="nameEmail__Location">Sales Tax</p>
-            <input
-              className="locate__input"
-              type="number"
-              name="salesTax"
-              value={salesTax}
-              placeholder="7%"
-              onChange={(e) => setSalesTax(e.target.value)}
-            />
-
-            <div className="locate_side" style={{ paddingLeft: '10px' }}>
-              <button
-                type="submit"
-                className="create_new__location"
-                onClick={() => updateAdmin(id)}
-                // disabled={disabled}
               >
-                Update
-              </button>
-              <Button
-                onClick={cancelCreateAdmin}
-                className="cancel__create__location"
-                id="not_ShowCancel"
-              >
-                Cancel
-              </Button>
+                <div id="create_Location">
+                  <p className="addnew">Add new Installation</p>
+                  <IoMdClose className="crossicon" onClick={cancelCreate} />
+                </div>
+
+                <form onSubmit={signUp}>
+                  <div className="form__admin__locate" style={{ marginTop: '24px' }}>
+                    <label className="nameEmail__Location">Installation Name</label>
+                    <input
+                      className="locate__input"
+                      type="text"
+                      name="location"
+                      value={location}
+                      placeholder="Ex. Submarine Base"
+                      onChange={(e) => setLocation(e.target.value)}
+                      required
+                    />
+                    <label className="nameEmail__Location ">Partner</label>
+                    <div className="">
+                      <Select
+                        showSearch
+                        className="add_new_select"
+                        placeholder="Search to Select"
+                        optionFilterProp="children"
+                        onChange={(value, e) => selectInstallPartner(value, e)}
+                        filterOption={(input, option) => (option?.label ?? '').includes(input)}
+                        filterSort={(optionA, optionB) =>
+                          (optionA?.label ?? '')
+                            .toLowerCase()
+                            .localeCompare((optionB?.label ?? '').toLowerCase())
+                        }
+                        options={(partnerData || []).map((d) => ({
+                          value: d.id,
+                          label: d.name,
+                        }))}
+                      />
+                    </div>
+
+                    <label className="nameEmail__Location statemargin">State</label>
+                    <input
+                      className="locate__input"
+                      type="text"
+                      name="state"
+                      value={state}
+                      placeholder="Ex. New London"
+                      onChange={(e) => setState(e.target.value)}
+                      required
+                    />
+
+                    <label className="nameEmail__Location">Zip Code</label>
+                    <input
+                      className="locate__input"
+                      type="number"
+                      name="ZIP_code"
+                      value={ZIP_code}
+                      placeholder=" 111222"
+                      onChange={(e) => setZipCode(e.target.value)}
+                      required
+                    />
+                    <label className="nameEmail__Location">Sales Tax</label>
+                    <input
+                      className="locate__input"
+                      type="number"
+                      name="salesTax"
+                      value={salesTax}
+                      placeholder=" 7%"
+                      onChange={(e) => setSalesTax(e.target.value)}
+                      required
+                    />
+
+                    <div className="locate_side">
+                      <button onClick={cancelCreate} className="cancel__create" id="not_ShowCancel">
+                        Cancel
+                      </button>
+
+                      <button
+                        type="submit"
+                        className="create_new__admin"
+                        // onClick={signUp}
+                        // disabled={disabled}
+                      >
+                        Add Installation
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
+          )}
         </div>
-        <div
+
+        <div>
+          {' '}
+          {isadminShow && (
+            <div>
+              <div className="modal-backdrop" onClick={cancelCreateAdmin}></div>
+
+              <div
+                className="show__notShow"
+                style={{
+                  display: isadminShow ? 'block' : 'none',
+                }}
+              >
+                <div id="create_Location">
+                  <p className="addnew">Edit Installation</p>
+                  <IoMdClose className="crossicon" onClick={cancelCreateAdmin} />
+                </div>
+
+                <div className="form__admin__locate" style={{ marginTop: '24px' }}>
+                  <label className="nameEmail__Location">Installation Name</label>
+                  <input
+                    className="locate__input"
+                    type="text"
+                    name="location"
+                    value={location}
+                    placeholder="Ex. Submarine Base"
+                    onChange={(e) => setLocation(e.target.value)}
+                  />
+                  <label className="nameEmail__Location partner_margin">Partner</label>
+                  <div className="">
+                    <Select
+                      showSearch
+                      placeholder="Search to Select"
+                      optionFilterProp="children"
+                      onChange={(value, e) => selectInstallPartner(value, e)}
+                      filterOption={(input, option) => (option?.label ?? '').includes(input)}
+                      filterSort={(optionA, optionB) =>
+                        (optionA?.label ?? '')
+                          .toLowerCase()
+                          .localeCompare((optionB?.label ?? '').toLowerCase())
+                      }
+                      options={(partnerData || []).map((d) => ({
+                        value: d.id,
+                        label: d.name,
+                      }))}
+                    />
+                  </div>
+
+                  <label className="nameEmail__Location statemargin">State</label>
+                  <input
+                    className="locate__input"
+                    type="text"
+                    name="state"
+                    value={state}
+                    placeholder="Ex. New London"
+                    onChange={(e) => setState(e.target.value)}
+                  />
+
+                  <label className="nameEmail__Location">Zip Code</label>
+                  <input
+                    className="locate__input"
+                    type="number"
+                    name="ZIP_code"
+                    value={ZIP_code}
+                    placeholder=" 111222"
+                    onChange={(e) => setZipCode(e.target.value)}
+                  />
+                  <label className="nameEmail__Location">Sales Tax</label>
+                  <input
+                    className="locate__input"
+                    type="number"
+                    name="salesTax"
+                    value={salesTax}
+                    placeholder="7%"
+                    onChange={(e) => setSalesTax(e.target.value)}
+                  />
+
+                  <div className="locate_side">
+                    <button
+                      onClick={cancelCreateAdmin}
+                      className="cancel__create"
+                      id="not_ShowCancel"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      className="create_new__admin"
+                      onClick={() => updateAdmin(id)}
+                      // disabled={disabled}
+                    >
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+        <div>{ isadminDelete &&  (
+
+    <div>
+    <div className="modal-backdrop" onClick={cancelDeleteLocation}></div>
+          <div
           className="show__notShow"
           style={{
             display: isadminDelete ? 'block' : 'none',
@@ -839,14 +847,26 @@ const Location = () => {
         >
           <div id="confirm__delete_location">
             <p>Confirm Delete</p>
+            <IoMdClose className="crossicon"  onClick={cancelDeleteLocation} />
           </div>
+
           <div id="delete__Location">
-            <p>Are you sure you want to delete location</p>
-            <p style={{ marginTop: '-10px' }}>
+            <p style={{textAlign:'left'}}>Are you sure you want to delete location
+
               <span style={{ fontWeight: 'bolder' }}>{RowData.location}</span>
-            </p>
-            <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
-            <div style={{ paddingLeft: '10px' }}>
+
+             This process is Irreversible</p>
+            <div className='delete_warp'>
+
+
+              <button
+                onClick={cancelDeleteLocation}
+                className="  cancel__confirm"
+                type="submit"
+              >
+                Cancel
+              </button>
+
               <button
                 onClick={() => deleteLocation(id)}
                 type="submit"
@@ -854,151 +874,151 @@ const Location = () => {
               >
                 Delete
               </button>
-              <button
-                onClick={cancelDeleteLocation}
-                className="cancel__create__location"
-                type="submit"
-              >
-                Cancel
-              </button>
+
+
             </div>
           </div>
-        </div>
-        <div className='table_wrap'>
-        <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
-          <table className="table table-hover">
-            <thead className="location__information">
-              <tr>
-                <th className="t_Name">S.No.</th>
-                <th className="t_Name">File</th>
+          </div>
 
-                <th className="t_Name">Name</th>
-                <th className="t_Name">Device Address</th>
-                <th className="t_Name">Device Info</th>
-                <th className="t_Name">Partner</th>
-                <th className="t_Name">State</th>
-                <th className="t_Name">Zip Code</th>
-                <th className="t_Name">Sales Tax(%)</th>
-                <th className="t_Name">Date</th>
-                <th className="t_Name text-center">Update</th>
-                <th className="t_Name">Delete</th>
-              </tr>
-            </thead>
 
-            <tbody style={{ background: '#fff' }}>
-              {currentPosts &&
-                currentPosts.map((item, index) => {
-                  const displayedIndex = indexOfFirstPage + index + 1
-                  function padTo2Digits(num) {
-                    return num.toString().padStart(2, '0')
-                  }
-
-                  function formatDate(date) {
-                    return [
-                      padTo2Digits(date.getDate()),
-                      padTo2Digits(date.getMonth() + 1),
-                      date.getFullYear(),
-                    ].join('-')
-                  }
-                  let numOfDaata = formatDate(new Date(item.pwa_date))
-                  return (
-                    <tr key={index}>
-                      <td className="px-4">{displayedIndex}</td>
-                      <td className="px-4">
-                        <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
-                          <Tooltip placement="topLeft" title={textOne}>
-                            <img
-                              src={sheet}
-                              alt="upload_img"
-
-                            />
-                          </Tooltip>
-                        </div>
-                      </td>
-
-                      <td>{item.location}</td>
-                      <td
-                        style={{ cursor: 'pointer' }}
-                        className="px-5"
-                        onClick={() => toSeeDeviceAddress(item.location)}
-                        value={item.location}
-                      >
-                        <Tooltip placement="topLeft" title={text}>
-                          <HomeOutlined />
-                        </Tooltip>
-                      </td>
-                      <td
-                        style={{ cursor: 'pointer' }}
-                        className="px-5"
-                        onClick={() => toSeeInventory(item.location, setInstalName(item.location))}
-                        value={item.location}
-                      >
-                        <Tooltip placement="topLeft" title={textTwo}>
-                          <InfoCircleOutlined />
-                        </Tooltip>
-                      </td>
-                      <td>{item.partner}</td>
-
-                      <td>{item.state}</td>
-                      <td>{item.ZIP_code}</td>
-                      <td>
-                        {item.salesTax}
-                        {item.salesTax ? '%' : ''}
-                      </td>
-                      <td>{numOfDaata}</td>
-
-                      <td className="text-center">
-                        <button
-                          onClick={() => {
-                            setLocation(item.location)
-                            setPartner(item.partner)
-                            setState(item.state)
-                            setZipCode(item.ZIP_code)
-                            setSalesTax(item.salesTax)
-                            updateAdminID(SetRowData(item), setId(item.id))
-                          }}
-                          className="update__Location"
-                        >
-                          <img src={editPen} alt="edit" className="editn_btn_global" />
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          className="delete__Location__of"
-                          onClick={() => deleteLocated(SetRowData(item), setId(item.id))}
-                        >
-                          <DeleteOutlined className="delete_btn_global" />
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                })}
-            </tbody>
-          </table>
         </div>
 
+        )}
 
-<div className='pagination_wrap'>
-<Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{
-            paddingLeft: '12px',
-            display: 'flex',
-            marginTop: '10px',
-            justifyContent: 'flex-start',
-          }}
-        />
+
+
 </div>
 
+        <div className="table_wrap">
+          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+            <table className="table table-hover">
+              <thead className="location__information">
+                <tr>
+                  <th className="t_Name">S.No.</th>
+                  <th className="t_Name">File</th>
 
- </div>
+                  <th className="t_Name">Name</th>
+                  <th className="t_Name">Device Address</th>
+                  <th className="t_Name">Device Info</th>
+                  <th className="t_Name">Partner</th>
+                  <th className="t_Name">State</th>
+                  <th className="t_Name">Zip Code</th>
+                  <th className="t_Name">Sales Tax(%)</th>
+                  <th className="t_Name">Date</th>
+                  <th className="t_Name text-center">Update</th>
+                  <th className="t_Name">Delete</th>
+                </tr>
+              </thead>
+
+              <tbody style={{ background: '#fff' }}>
+                {currentPosts &&
+                  currentPosts.map((item, index) => {
+                    const displayedIndex = indexOfFirstPage + index + 1
+                    function padTo2Digits(num) {
+                      return num.toString().padStart(2, '0')
+                    }
+
+                    function formatDate(date) {
+                      return [
+                        padTo2Digits(date.getDate()),
+                        padTo2Digits(date.getMonth() + 1),
+                        date.getFullYear(),
+                      ].join('-')
+                    }
+                    let numOfDaata = formatDate(new Date(item.pwa_date))
+                    return (
+                      <tr key={index}>
+                        <td className="">{displayedIndex}</td>
+                        <td className="">
+                          <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
+                            <Tooltip placement="topLeft" title={textOne}>
+                              <img src={sheet} alt="upload_img" />
+                            </Tooltip>
+                          </div>
+                        </td>
+
+                        <td>{item.location}</td>
+                        <td
+                          style={{ cursor: 'pointer' }}
+                          className="px-5"
+                          onClick={() => toSeeDeviceAddress(item.location)}
+                          value={item.location}
+                        >
+                          <Tooltip placement="topLeft" title={text}>
+                            <HomeOutlined />
+                          </Tooltip>
+                        </td>
+                        <td
+                          style={{ cursor: 'pointer' }}
+                          className="px-5"
+                          onClick={() =>
+                            toSeeInventory(item.location, setInstalName(item.location))
+                          }
+                          value={item.location}
+                        >
+                          <Tooltip placement="topLeft" title={textTwo}>
+                            <InfoCircleOutlined />
+                          </Tooltip>
+                        </td>
+                        <td>{item.partner}</td>
+
+                        <td>{item.state}</td>
+                        <td>{item.ZIP_code}</td>
+                        <td>
+                          {item.salesTax}
+                          {item.salesTax ? '%' : ''}
+                        </td>
+                        <td>{numOfDaata}</td>
+
+                        <td className="text-center">
+                          <button
+                            onClick={() => {
+                              setLocation(item.location)
+                              setPartner(item.partner)
+                              setState(item.state)
+                              setZipCode(item.ZIP_code)
+                              setSalesTax(item.salesTax)
+                              updateAdminID(SetRowData(item), setId(item.id))
+                            }}
+                            className="update__Location"
+                          >
+                            <img src={editPen} alt="edit" className="editn_btn_global" />
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            className="delete__Location__of"
+                            onClick={() => deleteLocated(SetRowData(item), setId(item.id))}
+                          >
+                            <DeleteOutlined className="delete_btn_global" />
+                          </button>
+                        </td>
+                      </tr>
+                    )
+                  })}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="pagination_wrap">
+            <Pagination
+              onChange={handlePagination}
+              pageSize={postPerPage}
+              total={total}
+              current={page}
+              showSizeChanger
+              showQuickJumper
+              onShowSizeChange={onShowSizeChange}
+              itemRender={itemRender}
+              style={{
+                paddingLeft: '12px',
+                display: 'flex',
+                marginTop: '10px',
+                justifyContent: 'flex-start',
+              }}
+            />
+          </div>
+        </div>
         <div
           className="user__detail__popup__location"
           style={{
@@ -1061,7 +1081,6 @@ const Location = () => {
             <p className="admin_registerd__pop">Location has been deleted.</p>
           </div>
         </div>
-
       </div>
     </>
   )

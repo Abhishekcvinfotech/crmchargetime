@@ -522,7 +522,8 @@ const Customer = () => {
       if (basePrice !== 0) {
         valueToPush['energy_price'] = basePrice
       }
-      document.getElementById('handle__addFilter').style.background = '#f1f1f1'
+      document.getElementById('handle__addFilter').style.background = '#1890ff';
+      document.getElementById('handle__addFilter').style.color = '#fff';
       // document.getElementById('handle__addFilter').style.background = 'red'
       setclearData(true)
       axios({

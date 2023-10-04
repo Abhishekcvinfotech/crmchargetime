@@ -718,11 +718,11 @@ const Admin = () => {
                 <p>Confirm Delete</p>
                 <IoMdClose className="crossicon" onClick={cancelDeleteAdmin} />
               </div>
-              <p>Are you sure you want to delete profile</p>
-              <p style={{  }}>
+              <div style={{textAlign:'left'}}>
+              <p>Are you sure you want to delete profile
+
                 of the admin <span style={{ fontWeight: 'bolder' }}>{RowData.name}</span>
-              </p>
-              <p style={{  }}> This process is Irreversible</p>
+             This process is Irreversible</p> </div>
               <div id="handle_Admin_Delete_cancel">
 
                 <button onClick={cancelDeleteAdmin}   className='cancel__confirm' type="submit">
