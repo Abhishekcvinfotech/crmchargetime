@@ -519,6 +519,35 @@ p {
   margin: 24px 0;
 }
 
+.fileimport_btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.fileimport_btn button {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 6px;
+  padding: 24px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 21px;
+  margin-top: 40px;
+}
+
+
+.fileimport_cancel {
+  background-color: #8f9fbc;
+}
+
+
 /* .delete_new__admin {
   background: #f84e4e;
   border-radius: 50px;

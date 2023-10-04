@@ -2894,7 +2894,8 @@ const Customer = () => {
                   {/* <CopyFilled style={{ color: 'blue' }} /> */}
                   <div style={{ cursor: 'pointer' }} onClick={() => setShow(false)}>
                     {' '}
-                    <img src={XOutline} alt="cross icon" />{' '}
+                    {/* <img src={XOutline} alt="cross icon" />{' '} */}
+                    <img src={Bxs_copy} alt="Copied Icon" />
                   </div>
                   {uniquecopied ? <span style={{ color: 'blue' }}>Copied</span> : 'Copy ID'}
                 </button>

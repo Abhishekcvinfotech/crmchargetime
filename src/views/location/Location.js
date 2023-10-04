@@ -74,7 +74,7 @@ const Location = () => {
   const [postPerPage, setPostPerPage] = useState(10)
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState('')
-
+  const [modal2Open, setModal2Open] = useState(false);
   // himanshu code starts
   const openNotification = () => {
     notification.open({
@@ -617,10 +617,75 @@ const Location = () => {
                   Import Device Address
                 </button>
               </form> */}
-              <button type="submit" className="import_report">
+              <div>
+              <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                 <BsCloudDownload className="cloud_downlaod_icon" />
                 <span className="downlaodtext"> Import Device Address </span>
               </button>
+              {
+
+                <Modal
+        title="Import File"
+        centered
+        visible={modal2Open}
+        onOk={() => setModal2Open(false)}
+        onCancel={() => setModal2Open(false)}
+        width={1000}
+      >
+
+        <div>
+        <form
+                className="import_csv_class"
+                onSubmit={handleSubmit}
+
+              >
+                <input
+                  className="w-55 input_type_file"
+                  ref={inputRef}
+                  style={{ width: csvwidth, color: csvTextColor }}
+                  accept=".csv"
+                  type="file"
+                  onChange={handleFileChange}
+                  required
+                />
+                <div className="fileimport_btn">
+                {/* <button
+                  className="import_report"
+                  style={bgColor ? { backgroundColor: '#1890ff' } : { backgroundColor: '#cc9ceb' }}
+                  type="submit"
+                >
+                  <img src={import_one} alt="edit" style={{ width: '22px', height: '15px' }} />
+                  Import Device Address
+                </button> */}
+
+                          <button
+                          type="button"
+                          className="fileimport_cancel"
+                          onClick={() => setModal2Open(false)}
+                        >
+                          {' '}
+                          <span>Cancel</span>{' '}
+                        </button>
+
+                        <button type="submit" className="fileimportok_btn">
+
+                          <span> Import </span>
+                        </button>
+
+
+
+                </div>
+              </form>
+
+
+        </div>
+
+
+
+      </Modal>
+
+              }
+              </div>
             </div>
           </div>
         </div>
