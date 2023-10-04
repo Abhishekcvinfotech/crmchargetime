@@ -147,7 +147,7 @@ border-radius: 6px;
 /* paination css end  */
 
 .location__acount {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   color: #213446;
   margin: 0;
@@ -309,7 +309,7 @@ margin-top: 6px;
 .show__notShow {
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 50%;
   transform: translate(-50%, -50%);
   max-width: 550px;
   border-radius: 6px;
@@ -489,10 +489,10 @@ p {
 }
 
 #delete__Location {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   border-radius: 6px;
   padding-bottom: 10px;
 
@@ -501,7 +501,7 @@ p {
 #confirm__delete_location{
   display: flex;
   justify-content: space-between;
-  margin: 24px 0;
+  margin-bottom: 24px;
 }
 
 #confirm__delete_location p{

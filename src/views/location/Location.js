@@ -853,9 +853,9 @@ const Location = () => {
           <div id="delete__Location">
             <p style={{textAlign:'left'}}>Are you sure you want to delete location
 
-              <span style={{ fontWeight: 'bolder' }}>{RowData.location}</span>
+             &nbsp;  <span style={{ fontWeight: 'bolder' }}>{RowData.location}</span>
 
-             This process is Irreversible</p>
+             <br />This process is Irreversible</p>
             <div className='delete_warp'>
 
 

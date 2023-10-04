@@ -629,6 +629,7 @@ const Admin = () => {
                         ''
                       )}
                     </div>
+                    <div>
                     <label className="nameEmail__admin">Password</label>
                     <input
                       className="admin__input"
@@ -642,7 +643,7 @@ const Admin = () => {
                         style={{
                           fontWeight: '400',
                           color: `${colorRed}`,
-                          paddingLeft: '20px',
+
                           fontSize: '12px',
                         }}
                       >
@@ -651,6 +652,8 @@ const Admin = () => {
                     ) : (
                       ''
                     )}
+                    </div>
+                    <div>
                     <label className="nameEmail__admin">Confirm Password</label>
                     <input
                       id="conFirm_password"
@@ -667,7 +670,7 @@ const Admin = () => {
                           fontWeight: '400',
                           color: `${colorPink}`,
 
-                          paddingLeft: '20px',
+
                           fontSize: '12px',
                         }}
                       >
@@ -676,6 +679,7 @@ const Admin = () => {
                     ) : (
                       ''
                     )}
+                    </div>
                     <div
                       style={{
                         display: 'flex',
@@ -721,8 +725,8 @@ const Admin = () => {
               <div style={{textAlign:'left'}}>
               <p>Are you sure you want to delete profile
 
-                of the admin <span style={{ fontWeight: 'bolder' }}>{RowData.name}</span>
-             This process is Irreversible</p> </div>
+                of the admin <span style={{ fontWeight: 'bolder' }}>{RowData.name}</span>.
+                &nbsp;This process is Irreversible</p> </div>
               <div id="handle_Admin_Delete_cancel">
 
                 <button onClick={cancelDeleteAdmin}   className='cancel__confirm' type="submit">
