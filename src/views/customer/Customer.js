@@ -2866,8 +2866,8 @@ const Customer = () => {
                   {/* <img src={FrameTwo} alt="frame" style={{ paddingRight: '10px' }} /> */}
                   <p style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
                     {' '}
-                    Unique id:
-                  </p>{' '}
+                    Unique ID :
+                  </p> &nbsp;
                   <p
                     style={{
                       color: 'white',

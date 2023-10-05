@@ -6,11 +6,50 @@ tr:hover .actionbtn {
   background: #ececee !important;
 }
 .emporia_troes {
-  display: inline;
-
-  /* padding-bottom: 3px; */
-  font-size: 16px;
+  color:  #324253;
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 600;
+  line-height: normal;
+}
+.table_wrap{
+    margin: 24px 0;
+    padding: 24px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+    overflow-x: auto;
+    white-space:unset;
+}
+.table_wrap_second{
+
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+}
+.filter_button {
+  width: 103px;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 16px;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  background: #f1f1f1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.filter_button:hover{
+  background-color: #e5e5e5;
+}
+
+.forAlignment_Account{
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .ant-picker {
 border-radius: 6px;
@@ -54,7 +93,6 @@ tr:hover tr {
 
 .fiseachicon {
   position: absolute;
-
   top: 20%;
   font-size: 22px;
   /* left: 32%; */
@@ -79,6 +117,15 @@ tr:hover tr {
 .container-lg {
   padding: 0 24px !important;
 }
+
+.emporia_wrap{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin: 24px 0;
+
+}
+
 
 .totalnotification{
 cursor: pointer;

@@ -2,40 +2,37 @@ body {
   font-family: 'DM Sans', sans-serif !important;
 }
 
-td{
-
+td {
   font-family: 'DM Sans';
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  color:#213446;
-
+  color: #213446;
 }
-table {
 
+table {
   border-spacing: 100px;
 }
 
-thead th{
+thead th {
   height: 56px;
 }
 
-thead  tr{
- vertical-align: middle;
+thead tr {
+  vertical-align: middle;
 }
 
-.header{
+.header {
   border-bottom: none;
 }
-.body{
-  background-color: #F9FBFE;;
+.body {
+  background-color: #f9fbfe;
 }
-.pagination_wrap{
+.pagination_wrap {
   margin: 24px 0;
 }
 
 /* pagination css start */
-
 
 .ant-pagination-prev {
   height: 48px;
@@ -44,7 +41,7 @@ thead  tr{
   align-items: center;
   gap: 10px;
   border-radius: 6px 0px 0px 6px;
-  border: 1px solid #8F9FBC;
+  border: 1px solid #8f9fbc;
   margin-right: 0px;
   display: flex;
   justify-content: center;
@@ -59,7 +56,7 @@ thead  tr{
   align-items: center;
   gap: 10px;
   margin-left: 0px;
-  border: 1px solid #8F9FBC;
+  border: 1px solid #8f9fbc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,8 +78,8 @@ thead  tr{
 }
 
 .ant-pagination-item-active {
-  background-color: #3378FF;
-  color: #FFFFFF;
+  background-color: #3378ff;
+  color: #ffffff;
 }
 
 .ant-pagination {
@@ -109,7 +106,6 @@ thead  tr{
   border-radius: none;
   box-shadow: none;
   outline: none;
-
 }
 
 .ant-select:not(.ant-select-customize-input) .ant-select-selector {
@@ -128,7 +124,6 @@ thead  tr{
   align-items: center;
   gap: 16px;
   cursor: pointer;
-
 }
 
 .loginimage_wrap {
@@ -139,38 +134,36 @@ thead  tr{
   border: 1px solid whitesmoke;
 }
 
-.logoutdropdownn{
-
-position: relative;
+.logoutdropdownn {
+  position: relative;
   display: inline-block;
 }
-.logoutdropdown-content{
+.logoutdropdown-content {
   display: block;
   position: absolute;
   top: 43px;
   right: -4px;
   width: 160px;
-height: 53px;
- border-radius: 6px;
-border: 1px solid var(--border-border-secondary, #F1F1F1);
-background: #FFF;
-box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
-display: flex;
-align-items: center;
-gap: 16px;
-padding: 16px;
-cursor: pointer;
-
+  height: 53px;
+  border-radius: 6px;
+  border: 1px solid var(--border-border-secondary, #f1f1f1);
+  background: #fff;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  cursor: pointer;
 }
-.logoutdropdown-content h6{
-margin: 0;
-padding: 0;
-color: #213446;
-font-family: DM Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.logoutdropdown-content h6 {
+  margin: 0;
+  padding: 0;
+  color: #213446;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .loginimage_wrap img {
   width: 100%;
@@ -184,24 +177,20 @@ line-height: normal;
   line-height: 21px;
   padding: 0;
   margin: 0;
-
 }
 
 /*  app header login image css */
-
 
 /*
 app header sticky css */
 
 .header.header-sticky {
-  box-shadow: 0px 4px 16px 0px #0000000A;
+  box-shadow: 0px 4px 16px 0px #0000000a;
   padding: 0;
   margin: 0;
   z-index: 9;
   height: 64px;
 }
-
-
 
 .mb-4 {
   padding: 0 !important;
@@ -236,11 +225,11 @@ input[type="file"]::file-selector-button {
 
 
 /* start */
-input[type="file"] {
+input[type='file'] {
   position: relative;
 }
 
-input[type="file"]::file-selector-button {
+input[type='file']::file-selector-button {
   width: 136px;
   color: transparent;
 }
@@ -257,33 +246,31 @@ input[type="file"]::file-selector-button {
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
 } */
-input[type="file"]::before {
+input[type='file']::before {
   position: absolute;
   pointer-events: none;
   top: 11px;
   left: 16px;
   height: 20px;
   width: 20px;
-  content: "";
+  content: '';
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
-
-
 }
 
-input[type="file"]::after {
+input[type='file']::after {
   position: absolute;
   pointer-events: none;
   top: 10px;
   left: 40px;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
-  content: "Choose File";
+  content: 'Choose File';
 }
 
 /* ------- From Step 1 ------- */
 
 /* file upload button */
-input[type="file"]::file-selector-button {
+input[type='file']::file-selector-button {
   border-radius: 6px;
   padding: 0 16px;
   height: 40px;
@@ -294,7 +281,6 @@ input[type="file"]::file-selector-button {
   margin-right: 16px;
   transition: background-color 200ms;
 }
-
 
 /* file upload button hover state */
 /* input[type="file"]::file-selector-button:hover {
@@ -319,9 +305,6 @@ input[type="file"]::file-selector-button {
   box-sizing: border-box;
 } */
 /* end */
-
-
-
 
 .select_text {
   font-weight: bold;
@@ -375,15 +358,15 @@ input[type="file"]::file-selector-button {
   margin-top: 0px;
   margin-left: 10px;
 }
-#clearbutton:hover{
-  background-color: #E5E5E5;
+#clearbutton:hover {
+  background-color: #e5e5e5;
 }
 #clearbutton span {
   color: black !important;
-  font-weight: 500   !important;
-  font-size: 16px  !important;
-  display: inline-block  !important;
-  line-height: 20px  !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  display: inline-block !important;
+  line-height: 20px !important;
 }
 .button {
   font-weight: bolder !important;
@@ -437,7 +420,7 @@ input[type="file"]::file-selector-button {
   line-height: 20px;
   font-weight: 400;
   outline: none;
-  border: 1px solid var(--border-border-secondary, #F1F1F1) !important;
+  border: 1px solid var(--border-border-secondary, #f1f1f1) !important;
   box-shadow: none;
 }
 
@@ -456,11 +439,9 @@ input[type="file"]::file-selector-button {
   font-size: 16px;
 }
 
-
 @media only screen and (max-width: 1240px) {
-
   /* pagination css  start*/
-  .ant-pagination-item{
+  .ant-pagination-item {
     height: 32px;
   }
 
@@ -468,43 +449,38 @@ input[type="file"]::file-selector-button {
     height: 32px;
     padding: 10px 25px;
   }
-    .ant-pagination-next {
+  .ant-pagination-next {
+    padding: 10px 25px;
+    height: 32px;
+  }
+  .ant-pagination-options {
+    height: 32px;
+  }
 
-      padding: 10px 25px;
-      height: 32px;
-    }
-    .ant-pagination-options{
-      height: 32px;
-    }
+  .ant-pagination-options {
+    height: 32px;
+  }
 
+  .ant-select-selector {
+    height: 32px;
+  }
+
+  .ant-pagination-options-quick-jumper input {
+    height: 32px;
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    height: 32px;
+  }
+
+  @media only screen and (max-width: 1140px) {
     .ant-pagination-options {
-      height: 32px;
-
+      width: unset;
     }
-
-    .ant-select-selector {
-      height: 32px;
-    }
-
-    .ant-pagination-options-quick-jumper input {
-      height: 32px;
-
-
-    }
-
-    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-      height: 32px;}
-
-      @media only screen and (max-width: 1140px) {
-
-        .ant-pagination-options{
-               width: unset;
-        }
-        /* #searchBox {
+    /* #searchBox {
           max-width: 300px;
           width: 100%;
         } */
-
-      }
+  }
   /* pagination css end */
 }

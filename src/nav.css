@@ -1,16 +1,15 @@
-.nav-title{
+.nav-title {
   margin-top: 40px !important;
   font-size: 12px !important;
   font-weight: 700 !important;
-  line-height: 16px  !important;
+  line-height: 16px !important;
 }
 
-.nav-links{
+.nav-links {
   font-size: 14px !important;
   font-weight: 400 !important;
-  line-height: 18px  !important;
+  line-height: 18px !important;
 }
-
 
 /* .nav-item:hover {
   padding:11px 16px !important;
@@ -22,56 +21,59 @@
   border-radius: 6px !important;
  } */
 
-
- /* html:not([dir=rtl]) .sidebar-nav .nav-group-items .nav-link {
+/* html:not([dir=rtl]) .sidebar-nav .nav-group-items .nav-link {
   padding-left: 0 !important;
  } */
 
- /* .sidebar-nav .nav-link.active {
+/* .sidebar-nav .nav-link.active {
   background-color: unset !important;
   padding:11px 16px !important;
   border-radius: 6px !important;
  } */
 
- /* .sidebar-nav .nav-link:hover {
+/* .sidebar-nav .nav-link:hover {
 
   border-radius: 6px !important;
  } */
 
- html:not([dir=rtl]) .sidebar-nav .nav-group-items .nav-link {
+html:not([dir='rtl']) .sidebar-nav .nav-group-items .nav-link {
   padding-left: 0.9rem !important;
+  border-radius: 6px !important;
 }
 
-.sidebar-nav .nav-link:hover{
+.sidebar-nav .nav-link:hover {
   /* padding: 11px 19px !important;
   border-radius: 6px !important; */
 }
-.nav-item{
+.nav-item {
   padding: 0px 16px !important;
   border-radius: 6px !important;
 }
-.nav-group{
+.nav-group {
   padding: 0px 16px !important;
   border-radius: 6px !important;
-  background-color: #0C2556 !important;
+  background-color: #0c2556 !important;
 }
 /* .nav-group-items{
   padding: 0px 16px !important;
   border-radius: 6px !important;
 } */
-.nav-link .active{
+.nav-link .active {
   border-radius: 6px !important;
 }
-.nav-group-items{
-background-color: #0C2556 !important;
+.nav-link {
+  border-radius: 6px !important;
+}
+.nav-group-items {
+  background-color: #0c2556 !important;
 }
 
 .sidebar-nav .nav-link:hover {
+  border-radius: 6px !important;
+}
 
-border-radius: 6px !important; }
-
-.sidebar-brand{
-  background-color: #0C2556 !important;
+.sidebar-brand {
+  background-color: #0c2556 !important;
 }
 
 /* .nav-link img{
@@ -85,7 +87,7 @@ border-radius: 6px !important; }
   filter: none !important;
 } */
 
-.faiconsdashboard{
+.faiconsdashboard {
   margin: 0 16px;
   width: 16px;
   height: 16px;

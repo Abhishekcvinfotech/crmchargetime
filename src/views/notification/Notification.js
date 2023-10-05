@@ -41,7 +41,7 @@ import { useRef } from 'react'
 import dayjs from 'dayjs'
 import { getStyle } from '@coreui/utils'
 import { FiSearch } from 'react-icons/fi'
-
+import { HiFilter } from 'react-icons/hi'
 const Notification = () => {
   const [loading, setLoading] = useState(false)
   const [expand, setExpand] = useState(true)
@@ -928,7 +928,7 @@ const Notification = () => {
               </div>
 
               <div className="uI_hndle" style={{ gap: '10px' }}>
-                <Button id="button" type="primary" onClick={handleClicked}>
+                {/* <button id="button" type="primary" onClick={handleClicked}>
                   <FilterFilled
                     style={{
                       color: '#fff',
@@ -938,7 +938,19 @@ const Notification = () => {
                       float: 'left',
                     }}
                   />
-                </Button>
+                </button> */}
+
+                <button
+                  id="handle__addFilter"
+                  className="filter_button"
+                  onClick={handleClicked}
+
+                >
+                  <span className="filter_span">Filter</span>
+
+                  <HiFilter />
+                </button>
+
                 {clearData ? (
                   <Button
                     className="for_Filter_Clear"
@@ -958,21 +970,23 @@ const Notification = () => {
                   ''
                 )}
               </div>
+
+
             </div>
-            <div
+            {/* <div
               style={{
                 display: 'flex',
                 gap: '10px',
               }}
             >
-              <div>
-                {/* <Link to="/Trash">
+
+                <Link to="/Trash">
                   <button id="button" style={{ gap: '10px', marginTop: '-13px' }}>
                     <img src={Trash} alt="frame" style={{ width: '22px', height: '15px' }} />
                     Trash
                   </button>
-                </Link> */}
-              </div>
+                </Link>
+
               <div style={{ marginTop: '-13px' }}>
                 <Button
                   type="primary"
@@ -989,24 +1003,9 @@ const Notification = () => {
                   Add New Emporia Notification
                 </Button>
               </div>
-            </div>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'end',
-            }}
-          >
-            {/* <div className="test">
-              <Link to="/Trash">
-                <span className="trash recycleBin">
-                  <span className="span"></span>
-                  <i></i>
-                </span>
-                <p className="trashp">Go to Trash Page</p>
-              </Link>
             </div> */}
-            <div style={{ display: 'flex' }}>
+
+            <div style={{ display: 'flex' , gap:'24px', }}>
               <div className="forAlignment_Account">
                 <div
                   className="forChanging_color"
@@ -1054,6 +1053,71 @@ const Notification = () => {
                 </button>
               </div>
             </div>
+
+
+
+
+          </div>
+          <div
+
+          >
+            {/* <div className="test">
+              <Link to="/Trash">
+                <span className="trash recycleBin">
+                  <span className="span"></span>
+                  <i></i>
+                </span>
+                <p className="trashp">Go to Trash Page</p>
+              </Link>
+            </div> */}
+            {/* <div style={{ display: 'flex' ,  }}>
+              <div className="forAlignment_Account">
+                <div
+                  className="forChanging_color"
+                  style={{
+                    background: 'green',
+                  }}
+                ></div>
+                <button
+                  className="btn_for_Link"
+                  style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
+                  onClick={activeNotification}
+                >
+                  Active
+                </button>
+              </div>
+              <div className="forAlignment_Account">
+                <div
+                  className="forChanging_color"
+                  style={{
+                    background: 'red',
+                  }}
+                ></div>
+                <button
+                  className="btn_for_Link"
+                  style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
+                  onClick={inActivee}
+                >
+                  In-active
+                </button>
+              </div>
+
+              <div className="forAlignment_Account">
+                <div
+                  className="forChanging_color"
+                  style={{
+                    background: 'blue',
+                  }}
+                ></div>
+                <button
+                  className="btn_for_Link"
+                  style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
+                  onClick={scheduledNotification}
+                >
+                  Scheduled
+                </button>
+              </div>
+            </div> */}
           </div>
         </div>
         {/* filter modal code starts */}
@@ -1267,11 +1331,35 @@ const Notification = () => {
         {/* filter modal code ends */}
 
         {/* hero content */}
+
+        <div className='emporia_wrap'>
+        <p className="emporia_troes"> Emporia Notifications</p>
+
+            <div>
+                <button
+
+                  id="button"
+                  className="btncsv"
+                  onClick={() => createNewNotification()}
+                  style={{ display: 'flex', gap: '10px' }}
+                >
+                  <img
+                    src={AddNotification}
+                    alt="frame"
+                    style={{ width: '22px', height: '15px' }}
+                  />
+                  Add  Emporia Notification
+                </button>
+              </div>
+
+        </div>
+
+
         <div
-          className="td_part"
-          style={{ marginTop: '10px', overflowX: 'auto', whiteSpace: 'noWrap' }}
+          className="table_wrap"
+
         >
-          <p className="emporia_troes"> Emporia Notifications</p>
+
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
@@ -1768,6 +1856,8 @@ const Notification = () => {
             </tbody>
           </table>
         </div>
+
+
         <div
           className="user__detail__popup__Customer"
           style={{
@@ -1841,8 +1931,7 @@ const Notification = () => {
           </div>
         </div>
         <div
-          className="td_part"
-          style={{ marginTop: '10px', overflowX: 'auto', whiteSpace: 'noWrap' }}
+          className='table_wrap_second'
         >
           <table className="table table-hover NotificationTable">
             <thead className="">
