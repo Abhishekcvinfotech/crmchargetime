@@ -3,18 +3,55 @@
   font-family: DM Sans;
   font-size: 24px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   margin: 0;
   padding: 0;
 }
+.container-lg {
+  padding: 0 24px !important;
+}
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.add_message_modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.edit_message_modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+z-index: 9999;
+
+}
 
 .splash_text_wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 12px 0;
+  margin: 24px 0;
 }
 
 .add_mesage_btn {
@@ -49,12 +86,19 @@
 .splash_middle_div {
   background-color: #fff;
   padding: 24px;
-  margin: 12px 0;
+  margin: 24px 0;
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+}
+
+.table_parent{
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .splash_wrapper #select_option__value {
@@ -113,7 +157,7 @@ td {
   margin-bottom: 50px;
 }
 .pagination_wrap {
-  margin: 12px 0;
+  margin: 24px 0;
 }
 .plus_sign {
   font-size: 18px;

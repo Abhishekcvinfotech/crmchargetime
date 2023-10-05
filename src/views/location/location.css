@@ -705,6 +705,13 @@ input::file-selector-button {
   background-color: #fff;
 }
 
+.ant-modal-title{
+
+padding-right: 10px;
+}
+
+
+
 @media only screen and (max-width: 930px) {
   .show__notShow {
     width: 300px;

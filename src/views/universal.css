@@ -30,6 +30,9 @@ thead  tr{
 .body{
   background-color: #F9FBFE;;
 }
+.pagination_wrap{
+  margin: 24px 0;
+}
 
 /* pagination css start */
 

@@ -381,18 +381,13 @@ const Splash = () => {
           {/* </div> */}
 
           {messageModal ? (
+
+
+            <div>
+
+        <div className="modal-backdrop" ></div>
             <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'fixed',
-                zIndex: '1',
-                top: '50%',
-                left: '50%',
-                width: '50%',
-                transform: 'translate(-50%, -50%)',
-              }}
+              className="add_message_modal"
             >
               <div
                 style={{
@@ -407,12 +402,15 @@ const Splash = () => {
               >
                 <div className="messagemodal_heading">
                   <h5>Add Message </h5>
-                  <IoMdClose className="crossicon"   onClick={() => {
+                  <IoMdClose
+                    className="crossicon"
+                    onClick={() => {
                       setMessageModal(false), setUpdateModal(false)
                       //setInputText('')
-                    }}/>
+                    }}
+                  />
                 </div>
-                <hr className='cretaecustomerline'></hr>
+                <hr className="cretaecustomerline"></hr>
 
                 <TextArea
                   size="sm"
@@ -472,22 +470,19 @@ const Splash = () => {
                 </div>
               </div>
             </div>
+            </div>
+
           ) : (
             ''
           )}
           {updateModal ? (
+
+<div>
+
+        <div className="modal-backdrop" ></div>
+
             <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'fixed',
-                zIndex: '1',
-                top: '50%',
-                left: '50%',
-                width: '50%',
-                transform: 'translate(-50%, -50%)',
-              }}
+              className='edit_message_modal'
             >
               <div
                 style={{
@@ -502,12 +497,15 @@ const Splash = () => {
               >
                 <div className="messagemodal_heading">
                   <h5>Add Message </h5>
-                  <IoMdClose className="crossicon"   onClick={() => {
-                      setMessageModal(false), setUpdateModal(false)
+                  <IoMdClose
+                    className="crossicon"
+                    onClick={() => {
+                      setMessageModal(false)
                       //setInputText('')
-                    }}/>
+                    }}
+                  />
                 </div>
-                <hr className='cretaecustomerline'></hr>
+                <hr className="cretaecustomerline"></hr>
                 <TextArea
                   className="modaltextarea"
                   size="sm"
@@ -545,11 +543,13 @@ const Splash = () => {
                 </div>
               </div>
             </div>
+
+            </div>
           ) : (
             ''
           )}
         </div>
-        <div style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+        <div  className='table_parent'>
           <div className="table_wrapper">
             <table className="table table-hover" style={{ position: 'relative' }}>
               <thead className="splash__information">
