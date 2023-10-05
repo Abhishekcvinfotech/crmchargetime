@@ -899,16 +899,20 @@ const Notification = () => {
         ''
       )}
       <div style={{ position: 'relative' }}>
-        <div style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'column' }}>
-          <h2 className="all_customer_of_page" style={{}}>
+
+
+        <div  className='tnotification_wrap'>
+          <h2 className="all_customer_of_page" >
             Notifications
           </h2>
-          <p style={{ cursor: 'pointer' }} onClick={() => getUsers()}>
-            Total Notifications :{notificationCount}
+
+          <p className='totalnotification' onClick={() => getUsers()}>
+            ({notificationCount})  Total Notifications
           </p>
         </div>
 
-        <div style={{ position: 'relative', backgroundColor: '#fff', padding: '30px 10px' }}>
+
+        <div  className='filter_wrap'>
           <div className="add_nine" style={{ justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', gap: '10px' }}>
               <div className="serachicon">
@@ -962,12 +966,12 @@ const Notification = () => {
               }}
             >
               <div>
-                <Link to="/Trash">
+                {/* <Link to="/Trash">
                   <button id="button" style={{ gap: '10px', marginTop: '-13px' }}>
                     <img src={Trash} alt="frame" style={{ width: '22px', height: '15px' }} />
                     Trash
                   </button>
-                </Link>
+                </Link> */}
               </div>
               <div style={{ marginTop: '-13px' }}>
                 <Button

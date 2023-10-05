@@ -2,7 +2,7 @@ import React from 'react'
 import axios, { Axios } from 'axios'
 import './Charging.css'
 import '../universal.css'
-import { Button, Drawer, Spin, Pagination } from 'antd'
+import { Button, Drawer, Spin, Pagination, Modal } from 'antd'
 import { useState, useEffect } from 'react'
 import actionEdit from '../../assets/images/actionEdit.svg'
 import actionDelete from '../../assets/images/actionDelete.svg'
@@ -10,6 +10,7 @@ import right_arrow from '../../assets/images/right_arrow.svg'
 import editPen from '../../assets/images/editPen.svg'
 import { troesAPi } from '../../api'
 import { DeleteOutlined, UserAddOutlined, UserSwitchOutlined } from '@ant-design/icons'
+
 const Charging = () => {
   const [open, setOpen] = useState(false)
   const [editOpen, setEditOpen] = useState(false)
@@ -31,7 +32,7 @@ const Charging = () => {
   const [postPerPage, setPostPerPage] = useState(10)
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState('')
-
+  const [modal2Open, setModal2Open] = useState(false)
 
   const showDrawer = () => {
     setOpen(true)
@@ -69,7 +70,6 @@ const Charging = () => {
       .get(`${troesAPi}/allpartner`)
       .then((res) => {
         setPartnerData(res.data)
-
       })
       .catch((err) => console.log(err))
   }
@@ -111,7 +111,7 @@ const Charging = () => {
           setLoading(false)
           setUserDelete(true)
           getLocationData()
-          setData((prevData) => prevData.filter(item => item.id !== id));
+          setData((prevData) => prevData.filter((item) => item.id !== id))
           setTimeout(() => {
             setUserDelete(false)
           }, 10000)
@@ -125,17 +125,18 @@ const Charging = () => {
     }
   }
 
-
-
   const handleSelected = (e) => {
     setPartner('')
     setPartnerid('')
     setLocationId(e.target.selectedOptions[0].getAttribute('data-name'))
     setInstallation(e.target.value)
     axios
-      .get(`${troesAPi}/installation_partner/${e.target.selectedOptions[0].getAttribute('data-name')}`, {
-        mode: 'cors',
-      })
+      .get(
+        `${troesAPi}/installation_partner/${e.target.selectedOptions[0].getAttribute('data-name')}`,
+        {
+          mode: 'cors',
+        },
+      )
       .then((res) => {
         setPartner(res.data.partner)
         setPartnerid(res.data.partner_id)
@@ -146,49 +147,47 @@ const Charging = () => {
   async function addRate(e) {
     e.preventDefault()
     setLoading(true)
-if(installation && partner_id && partner && kwh && rate){
-    try {
-      let result = await fetch(`${troesAPi}/partnercharge`, {
-        method: 'post',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify({
-          installation,
-          partner_id,
-          partner,
-          kwh,
-          rate,
-        }),
-      })
-      let res = await result.json()
-      setOpen(false)
-      if (res.error) {
-        alert(res.message)
-        setUserAdded('none')
-      } else {
-        setUserAdded('block')
-        getData()
-        setLoading(false)
-        setKWh('')
-        setRate('')
-        setPartner('')
-        setInstallation('')
-        getLocationData()
-        setTimeout(() => {
+    if (installation && partner_id && partner && kwh && rate) {
+      try {
+        let result = await fetch(`${troesAPi}/partnercharge`, {
+          method: 'post',
+          mode: 'cors',
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+          body: JSON.stringify({
+            installation,
+            partner_id,
+            partner,
+            kwh,
+            rate,
+          }),
+        })
+        let res = await result.json()
+        setOpen(false)
+        if (res.error) {
+          alert(res.message)
           setUserAdded('none')
-        }, 5000)
+        } else {
+          setUserAdded('block')
+          getData()
+          setLoading(false)
+          setKWh('')
+          setRate('')
+          setPartner('')
+          setInstallation('')
+          getLocationData()
+          setTimeout(() => {
+            setUserAdded('none')
+          }, 5000)
+        }
+      } catch (err) {
+        console.log(err)
+        setOpen(false)
       }
-    } catch (err) {
-      console.log(err)
-      setOpen(false)
+    } else {
+      alert('Please select Installation and create charging rate again. ')
+      setLoading(false)
     }
   }
-  else{
-    alert('Please select Installation and create charging rate again. ')
-    setLoading(false)
-
-  }
-}
   useEffect(() => {
     setKWh('')
     setRate('')
@@ -226,23 +225,23 @@ if(installation && partner_id && partner && kwh && rate){
     }
   }
   const handleSelect = (e) => {
-
     setLoading(true)
-    if(e.target.value !== 'all'){
-    axios
-    .get(`${troesAPi}/partnerfilter/${e.target.selectedOptions[0].getAttribute('data-name')}`, {
-      mode: 'cors',
-    })
-      .then((res) => {
-        setData(res.data)
-        setLoading(false)
-      })
-      .catch((err) => {
-        setLoading(false)
-      })}else{
-        getData()
-    setLoading(false)
-      }
+    if (e.target.value !== 'all') {
+      axios
+        .get(`${troesAPi}/partnerfilter/${e.target.selectedOptions[0].getAttribute('data-name')}`, {
+          mode: 'cors',
+        })
+        .then((res) => {
+          setData(res.data)
+          setLoading(false)
+        })
+        .catch((err) => {
+          setLoading(false)
+        })
+    } else {
+      getData()
+      setLoading(false)
+    }
   }
 
   // pagination Start
@@ -293,29 +292,130 @@ if(installation && partner_id && partner && kwh && rate){
       ) : (
         ''
       )}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent:'space-between',
-          marginBottom:'24px',
-        }}
-      >
+      <div className="charge_btn_wrp">
         <p className="finance_bold_text">Charging Rates</p>
-        <button type="primary"  id='universalButton' onClick={showDrawer}>
-        <img src={right_arrow} alt="edit" style={{width:"22px",height:"15px",paddingRight:"4px"}} />
-          Create Rate
+        <div>
+          <button type="primary" id="charging_rates_btn" onClick={() => setModal2Open(true)}>
+            <span>
+              {' '}
+              <img src={right_arrow} alt="edit" />{' '}
+            </span>
 
-        </button>
+            <span>Create Rate</span>
+          </button>
+
+          {
+            <Modal
+              title="Create Rate"
+              centered
+              open={modal2Open}
+              onOk={() => setModal2Open(false)}
+              onCancel={() => setModal2Open(false)}
+            >
+              <div className="modal_form">
+                <form className="form" onSubmit={addRate}>
+                  <div>
+                    <label
+                      className="htmlFor_respn"
+                      style={{ marginRight: '10px', fontWeight: '600' }}
+                    >
+                      Select Installation:
+                    </label>
+                    <select value={installation} onChange={handleSelected}>
+                      <option value="">Select installation from choices:</option>
+                      {locateData &&
+                        locateData.map((item, index) => {
+                          return (
+                            <option key={index} data-name={item.id} value={item.location}>
+                              {item.location}
+                            </option>
+                          )
+                        })}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label
+                      className="htmlFor_respn"
+                      style={{ marginRight: '10px', fontWeight: '600' }}
+                    >
+                      Partner:
+                    </label>
+                    <input
+                      type="text"
+                      value={partner}
+                      onChange={(e) => setPartner(e.target.value)}
+                      required
+                      readOnly
+                    />
+                    <input
+                      type="hidden"
+                      value={partner_id}
+                      onChange={(e) => setPartnerid(e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="startDate" style={{ fontWeight: '600' }}>
+                      kWh
+                    </label>
+                    <input
+                      type="number"
+                      value={kwh}
+                      required
+                      onChange={(e) => setKWh(e.target.value)}
+                      placeholder="Enter kWh"
+                      onKeyDown={(evt) =>
+                        (evt.key === '-' || evt.key === 'e' || evt.key === 'E') &&
+                        evt.preventDefault()
+                      }
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="endDate" style={{ fontWeight: '600' }}>
+                      ($) Rate
+                    </label>
+                    <input
+                      type="number"
+                      value={rate}
+                      required
+                      onChange={(e) => setRate(e.target.value)}
+                      placeholder="Enter ($) Rate"
+                      onKeyDown={(evt) =>
+                        (evt.key === '-' || evt.key === 'e' || evt.key === 'E') &&
+                        evt.preventDefault()
+                      }
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      paddingBottom: '10px',
+                      borderTop: '2px dotted darkgrey',
+                      paddingTop: '10px',
+                    }}
+                  >
+                    <button  type='submit'   className="btn2" required>
+                      Create Rate
+                    </button>
+                    <button className="btn_cancel" onClick={()=> { back(); setModal2Open(false)}} type="button">
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </Modal>
+          }
+        </div>
       </div>
       <div className="finance_partner_select" style={{ display: 'flex', alignItems: 'center' }}>
         <div className="finance_wrapper">
-          <label className="for_finance_select" style={{ marginRight: '10px', fontWeight: 'bold' }}>
-            Select Partner:
-          </label>
           <select id="option__value_charging_rate" onChange={handleSelect}>
             <option value="all">{`Select partner  from choices`}</option>
-            <option value='all'>All Partners</option>
+            <option value="all">All Partners</option>
             {partnerData &&
               partnerData.map((item, index) => {
                 return (
@@ -324,11 +424,10 @@ if(installation && partner_id && partner && kwh && rate){
                   </option>
                 )
               })}
-
           </select>
         </div>
 
-        <Drawer
+        {/* <Drawer
           title="Create Rate"
           placement="right"
           onClose={onClose}
@@ -341,8 +440,8 @@ if(installation && partner_id && partner && kwh && rate){
               <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
                 Select Installation:
               </label>
-              <select  value={installation} onChange={handleSelected}>
-                <option value="">Select installation  from choices:</option>
+              <select value={installation} onChange={handleSelected}>
+                <option value="">Select installation from choices:</option>
                 {locateData &&
                   locateData.map((item, index) => {
                     return (
@@ -376,7 +475,9 @@ if(installation && partner_id && partner && kwh && rate){
                 required
                 onChange={(e) => setKWh(e.target.value)}
                 placeholder="Enter kWh"
-                onKeyDown={(evt) => (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()}
+                onKeyDown={(evt) =>
+                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
+                }
               />
               <label htmlFor="endDate" style={{ fontWeight: '600' }}>
                 ($) Rate
@@ -387,7 +488,9 @@ if(installation && partner_id && partner && kwh && rate){
                 required
                 onChange={(e) => setRate(e.target.value)}
                 placeholder="Enter ($) Rate"
-                onKeyDown={(evt) => (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()}
+                onKeyDown={(evt) =>
+                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
+                }
               />
               <div
                 style={{
@@ -407,7 +510,8 @@ if(installation && partner_id && partner && kwh && rate){
               </div>
             </form>
           </div>
-        </Drawer>
+        </Drawer> */}
+
         <div
           className="user__detail__popup__Customer"
           style={{
@@ -476,7 +580,9 @@ if(installation && partner_id && partner && kwh && rate){
                 required
                 onChange={(e) => setKWh(e.target.value)}
                 placeholder="Enter kWh"
-                onKeyDown={(evt) => (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()}
+                onKeyDown={(evt) =>
+                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
+                }
               />
               <label htmlFor="endDate" style={{ fontWeight: '600' }}>
                 ($) Rate
@@ -487,7 +593,9 @@ if(installation && partner_id && partner && kwh && rate){
                 required
                 onChange={(e) => setRate(e.target.value)}
                 placeholder="Enter ($) Rate"
-                onKeyDown={(evt) => (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()}
+                onKeyDown={(evt) =>
+                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
+                }
               />
               <div
                 style={{
@@ -530,10 +638,7 @@ if(installation && partner_id && partner && kwh && rate){
           </div>
         </div>
       </div>
-      <div
-        className="td_part"
-        style={{ overflowX: 'auto', whiteSpace: 'noWrap' }}
-      >
+      <div className="table_wraper">
         <table className="table table-hover">
           <thead className="">
             <tr>
@@ -551,12 +656,12 @@ if(installation && partner_id && partner && kwh && rate){
                 const displayedIndex = indexOfFirstPage + index + 1
                 return (
                   <tr key={index}>
-                  <td className="px-4">{displayedIndex}</td>
+                    <td className="px-4">{displayedIndex}</td>
                     <td className="px-3">{item.partner}</td>
                     <td className="px-3">{item.installation}</td>
                     <td className="px-3">{item.kwh}</td>
                     <td className="px-3">${item.rate}</td>
-                    <td className="px-4" >
+                    <td className="px-4">
                       <button
                         className="actionBtn"
                         onClick={() => {
@@ -569,14 +674,15 @@ if(installation && partner_id && partner && kwh && rate){
                         }}
                         style={{ border: 'none', paddingRight: '5px', background: 'none' }}
                       >
-                        <img src={editPen} alt="edit" className='editn_btn_global'/>
-                      </button> &nbsp; &nbsp;
+                        <img src={editPen} alt="edit" className="editn_btn_global" />
+                      </button>{' '}
+                      &nbsp; &nbsp;
                       <button
                         className="actionBtn"
                         onClick={() => onDeleteUser(item.id)}
                         style={{ color: 'red' }}
                       >
-                        <DeleteOutlined className='delete_btn_global' />
+                        <DeleteOutlined className="delete_btn_global" />
                       </button>
                     </td>
                   </tr>
@@ -584,17 +690,19 @@ if(installation && partner_id && partner && kwh && rate){
               })}
           </tbody>
         </table>
-        <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start', }}
-        />
+        <div className="pagination_wrap">
+          <Pagination
+            onChange={handlePagination}
+            pageSize={postPerPage}
+            total={total}
+            current={page}
+            showSizeChanger
+            showQuickJumper
+            onShowSizeChange={onShowSizeChange}
+            itemRender={itemRender}
+            style={{ display: 'flex', justifyContent: 'flex-start' }}
+          />
+        </div>
       </div>
     </>
   )

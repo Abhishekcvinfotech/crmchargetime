@@ -20,7 +20,9 @@ form select {
   color: grey;
   right: 16px;
 }
-
+.table-responsive{
+margin-bottom: 48px;
+}
 .filter_serach {
   display: flex;
   align-items: center;

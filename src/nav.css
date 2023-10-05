@@ -39,7 +39,7 @@
  } */
 
  html:not([dir=rtl]) .sidebar-nav .nav-group-items .nav-link {
-  padding-left: 2.5rem !important;
+  padding-left: 0.9rem !important;
 }
 
 .sidebar-nav .nav-link:hover{
@@ -49,6 +49,11 @@
 .nav-item{
   padding: 0px 16px !important;
   border-radius: 6px !important;
+}
+.nav-group{
+  padding: 0px 16px !important;
+  border-radius: 6px !important;
+  background-color: #0C2556 !important;
 }
 /* .nav-group-items{
   padding: 0px 16px !important;

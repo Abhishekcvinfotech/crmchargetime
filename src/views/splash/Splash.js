@@ -459,7 +459,7 @@ const Splash = () => {
                     </button>
                     <button
                       // id="universalButton"
-                      className="modal_cancel_btn"
+                      className="modal_cancel_btn hovercolor "
                       onClick={() => {
                         setMessageModal(false), setInputText('')
                       }}
@@ -500,7 +500,7 @@ const Splash = () => {
                   <IoMdClose
                     className="crossicon"
                     onClick={() => {
-                      setMessageModal(false)
+                      setMessageModal(false), setUpdateModal(false)
                       //setInputText('')
                     }}
                   />
@@ -532,7 +532,7 @@ const Splash = () => {
                     <span> Preview</span>
                   </button>
                   <button
-                    className="modal_cancel_btn"
+                    className="modal_cancel_btn hovercolor"
                     onClick={() => {
                       setMessageModal(false), setUpdateModal(false)
                       //setInputText('')
