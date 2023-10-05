@@ -488,8 +488,9 @@ tr {
   gap: 8px; */
 }
 
+
 .btn_for_Link {
-  color: #3378ff;
+  color: #3378FF !important;
   font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
@@ -512,6 +513,9 @@ tr {
 
 .btn_for_Link span {
   display: inline-block;
+}
+.btn_for_Link:focus{
+  color: Red !important;
 }
 
 /* .forAlignment_Account button:focus {
@@ -540,18 +544,7 @@ tr {
   display: inline-block;
 }
 
-.btn_for_Link {
-  color: #3378ff;
-  font-family: DM Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background: none;
-}
+
 /* .btn_for_Link:hover{
   background-color: #2062E3;
 } */

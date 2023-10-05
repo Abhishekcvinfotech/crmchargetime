@@ -159,21 +159,21 @@ const Customer = () => {
   const [fontWeight4, setFontWeight4] = useState('400')
   const [fontWeight5, setFontWeight5] = useState('400')
   const [fontWeight6, setFontWeight6] = useState('400')
-  const [fontred, setFontred] = useState('blue')
+  const [fontred, setFontred] = useState('#3378FF')
 
-  const [fontred1, setFontred1] = useState('blue')
-  const [fontred2, setFontred2] = useState('blue')
-  const [fontred3, setFontred3] = useState('blue')
-  const [fontred4, setFontred4] = useState('blue')
-  const [fontred5, setFontred5] = useState('blue')
-  const [fontred6, setFontred6] = useState('blue')
-  const [borderred, setborderred] = useState('1px solid blue')
-  const [borderred1, setborderred1] = useState('1px solid blue')
-  const [borderred2, setborderred2] = useState('1px solid blue')
-  const [borderred3, setborderred3] = useState('1px solid blue')
-  const [borderred4, setborderred4] = useState('1px solid blue')
-  const [borderred5, setborderred5] = useState('1px solid blue')
-  const [borderred6, setborderred6] = useState('1px solid blue')
+  const [fontred1, setFontred1] = useState('#3378FF')
+  const [fontred2, setFontred2] = useState('#3378FF')
+  const [fontred3, setFontred3] = useState('#3378FF')
+  const [fontred4, setFontred4] = useState('#3378FF')
+  const [fontred5, setFontred5] = useState('#3378FF')
+  const [fontred6, setFontred6] = useState('#3378FF')
+  const [borderred, setborderred] = useState('1px solid #3378FF')
+  const [borderred1, setborderred1] = useState('1px solid #3378FF')
+  const [borderred2, setborderred2] = useState('1px solid #3378FF')
+  const [borderred3, setborderred3] = useState('1px solid #3378FF')
+  const [borderred4, setborderred4] = useState('1px solid #3378FF')
+  const [borderred5, setborderred5] = useState('1px solid #3378FF')
+  const [borderred6, setborderred6] = useState('1px solid #3378FF')
   const inputRef = useRef(null)
   const [errorMessage, setErrorMessage] = useState('')
   const [colorRed, setColorRed] = useState('')
@@ -370,13 +370,13 @@ const Customer = () => {
     setFontred4('blue')
     setFontred5('blue')
     setFontred6('blue')
-    setborderred('1px solid blue')
-    setborderred1('1px solid blue')
-    setborderred2('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred5('1px solid blue')
-    setborderred6('1px solid blue')
+    setborderred('1px solid #3378FF')
+    setborderred1('1px solid #3378FF')
+    setborderred2('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred5('1px solid #3378FF')
+    setborderred6('1px solid #3378FF')
     axios
       .get(`${troesAPi}/pwa_user`)
 
@@ -648,12 +648,12 @@ const Customer = () => {
     setFontred4('blue')
     setFontred5('blue')
     setFontred6('blue')
-    setborderred1('1px solid blue')
-    setborderred2('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred5('1px solid blue')
-    setborderred6('1px solid blue')
+    setborderred1('1px solid #3378FF')
+    setborderred2('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred5('1px solid #3378FF')
+    setborderred6('1px solid #3378FF')
   }
   const deviceUnassigned = () => {
     setLoading(true)
@@ -685,20 +685,20 @@ const Customer = () => {
     setFontred4('blue')
     setFontred5('blue')
     setFontred6('blue')
-    setborderred('1px solid blue')
-    setborderred2('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred5('1px solid blue')
-    setborderred6('1px solid blue')
+    setborderred('1px solid #3378FF')
+    setborderred2('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred5('1px solid #3378FF')
+    setborderred6('1px solid #3378FF')
   }
 
   const Paused = async () => {
     setLoading(true)
-    setFontWeight6(700)
-    setFontred6('red')
-    setborderred6('1px solid red')
-    setFilterStatus('6')
+    setFontWeight5(700)
+    setFontred5('red')
+    setborderred5('1px solid red')
+    setFilterStatus('5')
     await axios
       .get(`${troesAPi}/pauseuser`)
       .then((res) => {
@@ -722,12 +722,14 @@ const Customer = () => {
     setFontred2('blue')
     setFontred3('blue')
     setFontred4('blue')
-    setFontred5('blue')
-    setborderred('1px solid blue')
-    setborderred1('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred5('1px solid blue')
+    setFontred5('red')
+    setFontred6('blue')
+    setborderred('1px solid #3378FF')
+    setborderred1('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred5('1px solid red')
+    setborderred6('1px solid #3378FF')
   }
   // himanshu code ends
   const registerdAccount = () => {
@@ -760,12 +762,12 @@ const Customer = () => {
     setFontred4('blue')
     setFontred5('blue')
     setFontred6('blue')
-    setborderred('1px solid blue')
-    setborderred1('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred5('1px solid blue')
-    setborderred6('1px solid blue')
+    setborderred('1px solid #3378FF')
+    setborderred1('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred5('1px solid #3378FF')
+    setborderred6('1px solid #3378FF')
   }
   const activeAccount = () => {
     setLoading(true)
@@ -797,12 +799,12 @@ const Customer = () => {
     setFontred4('blue')
     setFontred5('blue')
     setFontred6('blue')
-    setborderred('1px solid blue')
-    setborderred1('1px solid blue')
-    setborderred2('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred5('1px solid blue')
-    setborderred6('1px solid blue')
+    setborderred('1px solid #3378FF')
+    setborderred1('1px solid #3378FF')
+    setborderred2('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred5('1px solid #3378FF')
+    setborderred6('1px solid #3378FF')
   }
   const inActivee = () => {
     setLoading(true)
@@ -834,18 +836,18 @@ const Customer = () => {
     setFontred3('blue')
     setFontred5('blue')
     setFontred6('blue')
-    setborderred('1px solid blue')
-    setborderred1('1px solid blue')
-    setborderred2('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred5('1px solid blue')
-    setborderred6('1px solid blue')
+    setborderred('1px solid  #3378FF')
+    setborderred1('1px solid #3378FF')
+    setborderred2('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred5('1px solid #3378FF')
+    setborderred6('1px solid #3378FF')
   }
   const AccountSuspended = () => {
     setLoading(true)
-    setFontWeight5(700)
-    setFontred5('red')
-    setborderred5('1px solid red')
+    setFontWeight6(700)
+    setFontred6('red')
+    setborderred6('1px solid red')
     setFilterStatus('3')
     axios
       .get(`${troesAPi}/suspended`)
@@ -870,13 +872,13 @@ const Customer = () => {
     setFontred2('blue')
     setFontred3('blue')
     setFontred4('blue')
-    setFontred6('blue')
-    setborderred('1px solid blue')
-    setborderred1('1px solid blue')
-    setborderred2('1px solid blue')
-    setborderred3('1px solid blue')
-    setborderred4('1px solid blue')
-    setborderred6('1px solid blue')
+    setFontred6('red')
+    setborderred('1px solid #3378FF')
+    setborderred1('1px solid #3378FF')
+    setborderred2('1px solid #3378FF')
+    setborderred3('1px solid #3378FF')
+    setborderred4('1px solid #3378FF')
+    setborderred6('1px solid red')
   }
   const getLocationData = (e) => {
     setLoading(true)
@@ -1744,7 +1746,7 @@ const Customer = () => {
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#DB7E06' }}></span>
-                <span style={{ borderBottom: borderred }}>Assigned</span>
+                <span style={{ borderBottom: borderred }} className='border_bottom'>Assigned</span>
               </button>
               {clickedButton === 'Assigned' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1772,7 +1774,7 @@ const Customer = () => {
                   }}
                 >
                   <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
-                  <span style={{ borderBottom: borderred1 }}> Un-assigned</span>
+                  <span style={{ borderBottom: borderred1 }} className='border_bottom'> Un-assigned</span>
                 </button>
                 {clickedButton === 'Un-assigned' && (
                   <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1800,7 +1802,7 @@ const Customer = () => {
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
-                <span style={{ borderBottom: borderred2 }}> Registered</span>
+                <span style={{ borderBottom: borderred2 }} className='border_bottom'> Registered</span>
               </button>
               {clickedButton === 'Registered' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1832,7 +1834,7 @@ const Customer = () => {
                     background: '#3CB72C',
                   }}
                 ></span>
-                <span style={{ borderBottom: borderred3 }}> Active</span>
+                <span style={{ borderBottom: borderred3 }} className='border_bottom'> Active</span>
               </button>
               {clickedButton === 'Active' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1864,7 +1866,7 @@ const Customer = () => {
                     background: '#935CED ',
                   }}
                 ></span>
-                <span style={{ borderBottom: borderred4 }}>In-active</span>
+                <span style={{ borderBottom: borderred4 }} className='border_bottom'>In-active</span>
               </button>
               {clickedButton === 'In-active' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1884,14 +1886,14 @@ const Customer = () => {
             >
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight6, color: fontred6 }}
+                style={{ fontWeight: fontWeight5, color: fontred5 }}
                 onClick={() => {
                   Paused()
                   handleIconPaddingClick('Paused')
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
-                <span style={{ borderBottom: borderred6 }}> Paused</span>
+                <span style={{ borderBottom: borderred5 }} className='border_bottom'> Paused</span>
               </button>
               {clickedButton === 'Paused' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1911,14 +1913,14 @@ const Customer = () => {
             >
               <button
                 className="btn_for_Link"
-                style={{ fontWeight: fontWeight5, color: fontred5 }}
+                style={{ fontWeight: fontWeight6, color: fontred6 }}
                 onClick={() => {
                   AccountSuspended()
                   handleIconPaddingClick('Suspended')
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
-                <span style={{ borderBottom: borderred6 }}> Suspended</span>
+                <span style={{ borderBottom: borderred6 }} className='border_bottom'> Suspended</span>
               </button>
               {clickedButton === 'Suspended' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
