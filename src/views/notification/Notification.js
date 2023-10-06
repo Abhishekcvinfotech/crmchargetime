@@ -29,7 +29,7 @@ import Timing from '../../assets/images/Timing.svg'
 import Trash from '../../assets/images/trash.svg'
 import AddNotification from '../../assets/images/addNotification.svg'
 import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
-import Redcircle  from '../../assets/images/Redcircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
 import { SaveOutlined } from '@ant-design/icons'
 import { TimePicker } from 'antd'
 import { Input, Select } from 'antd'
@@ -44,6 +44,8 @@ import dayjs from 'dayjs'
 import { getStyle } from '@coreui/utils'
 import { FiSearch } from 'react-icons/fi'
 import { HiFilter } from 'react-icons/hi'
+import { IoMdClose } from 'react-icons/io'
+
 const Notification = () => {
   const [loading, setLoading] = useState(false)
   const [expand, setExpand] = useState(true)
@@ -232,6 +234,7 @@ const Notification = () => {
   }
 
   const clearFilter = () => {
+    console.log(" hello world");
     setStatusfilter(false)
     setInstallation(false)
     setPlanData(false)
@@ -901,20 +904,15 @@ const Notification = () => {
         ''
       )}
       <div style={{ position: 'relative' }}>
+        <div className="tnotification_wrap">
+          <h2 className="all_customer_of_page">Notifications</h2>
 
-
-        <div  className='tnotification_wrap'>
-          <h2 className="all_customer_of_page" >
-            Notifications
-          </h2>
-
-          <p className='totalnotification' onClick={() => getUsers()}>
-            ({notificationCount})  Total Notifications
+          <p className="totalnotification" onClick={() => getUsers()}>
+            ({notificationCount}) Total Notifications
           </p>
         </div>
 
-
-        <div  className='filter_wrap'>
+        <div className="filter_wrap">
           <div className="add_nine" style={{ justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', gap: '10px' }}>
               <div className="serachicon">
@@ -942,12 +940,7 @@ const Notification = () => {
                   />
                 </button> */}
 
-                <button
-                  id="handle__addFilter"
-                  className="filter_button"
-                  onClick={handleClicked}
-
-                >
+                <button id="handle__addFilter" className="filter_button" onClick={handleClicked}>
                   <span className="filter_span">Filter</span>
 
                   <HiFilter />
@@ -972,8 +965,6 @@ const Notification = () => {
                   ''
                 )}
               </div>
-
-
             </div>
             {/* <div
               style={{
@@ -1007,7 +998,7 @@ const Notification = () => {
               </div>
             </div> */}
 
-            <div style={{ display: 'flex' , gap:'24px', }}>
+            <div style={{ display: 'flex', gap: '24px' }}>
               <div className="forAlignment_Account">
                 <div
                   className="forChanging_color"
@@ -1055,14 +1046,8 @@ const Notification = () => {
                 </button>
               </div>
             </div>
-
-
-
-
           </div>
-          <div
-
-          >
+          <div>
             {/* <div className="test">
               <Link to="/Trash">
                 <span className="trash recycleBin">
@@ -1124,31 +1109,37 @@ const Notification = () => {
         </div>
         {/* filter modal code starts */}
 
-        <div
-          className="for_respon__modal filterModal"
-          style={{
-            display: isShown ? 'block' : 'none',
-          }}
-        >
-          <form onSubmit={applyFilter}>
-            <div className="add__one">
-              <div className="filterwrap">
-                <span className="add_filter_1">Add Filter</span>
-                <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} />
-              </div>
-              <br />
-              <div className="add__three">
-                <p>Find the Users you are looking for : </p>
-                <div className="for__marginn">
-                  <Button
-                    id="campaign_activity"
-                    onClick={campaignActivity}
-                    className="for_campaign_act"
-                  >
-                    <img src={FrameTwo} alt="frame" className="for_img_two" />
-                    Location
-                  </Button>
-                  {/* <Button
+        <div>
+          {' '}
+          {isShown && (
+            <div>
+              <div className="modal-backdrop" onClick={clearFilter}></div>
+              <div
+                className="for_respon__modal_noti filterModal"
+                style={{
+                  display: isShown ? 'block' : 'none',
+                }}
+              >
+                <form onSubmit={applyFilter}>
+                  <div className="add__one">
+                    <div className="filterwrap">
+                      <span className="add_filter_1">Add Filter</span>
+                      {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
+                       <span>  <IoMdClose className="crossicon"  /></span>
+                    </div>
+                    <br />
+                    <div className="add__three">
+                      <p>Find the Users you are looking for : </p>
+                      <div className="for__marginn">
+                        <Button
+                          id="campaign_activity"
+                          onClick={campaignActivity}
+                          className="for_campaign_act"
+                        >
+                          <img src={FrameTwo} alt="frame" className="for_img_two" />
+                          <span>Location</span>
+                        </Button>
+                        {/* <Button
                     id="status_filter"
                     onClick={statusFilter}
                     className="for_campaign_act"
@@ -1163,7 +1154,7 @@ const Notification = () => {
                     User
                   </Button> */}
 
-                  {/* <Button id="location" onClick={location} className="for_campaign_act">
+                        {/* <Button id="location" onClick={location} className="for_campaign_act">
                     <img
                       src={Source}
                       alt="frame"
@@ -1172,202 +1163,198 @@ const Notification = () => {
                     />
                     Source Trigger
                   </Button> */}
-                  <Button
-                    id="price_handle"
-                    onClick={priceHandle}
-                    className="for__price_hand"
-                    style={{ alignItems: 'center', display: 'flex' }}
-                  >
-                    <img
-                      src={Timing}
-                      alt="frame"
-                      className="for_img_two"
-                      style={{ width: '26px', height: '23px' }}
-                    />
-                    Timing
-                  </Button>
-                </div>
-              </div>
-              <hr style={{ width: '100%' }} />
-              {statusfilter || installation || priceData ? (
-                ''
-              ) : (
-                <div className="add__four">
-                  <p>
-                    <MinusOutlined className="minus_outlined_one" />
-                    No Filters applied
-                  </p>
-                  <p>Add one of the above filters to narrow down your Notification list</p>
-                </div>
-              )}
-              {installation ? (
-                <div className="add_five">
-                  <div className="add__eleven">
-                    <span className="add__forteen">Location</span>
-                    <Radio.Group
-                      onChange={onChangePlan}
-                      className="base_PP2"
-                      style={{ paddingLeft: '28px' }}
-                    >
-                      {locateData.map((item, index) => {
-                        return (
-                          <Radio key={index} value={item.id} id="amul">
-                            <p id=""> {item.location}</p>
-                          </Radio>
-                        )
-                      })}
-                    </Radio.Group>
-                  </div>
-                  {/* <span className="plan__uncheck_one" onClick={RadioPlan}>
+                        <Button
+                          id="price_handle"
+                          onClick={priceHandle}
+                          className="for__price_hand"
+                          style={{ alignItems: 'center', display: 'flex' }}
+                        >
+                          <img
+                            src={Timing}
+                            alt="frame"
+                            className="for_img_two"
+                            style={{ width: '26px', height: '23px' }}
+                          />
+                          <span>Timing</span>
+                        </Button>
+                      </div>
+                    </div>
+                    <hr className='filter_Line' />
+                    {statusfilter || installation || priceData ? (
+                      ''
+                    ) : (
+                      <div className="add__four">
+                        <p>
+                          <MinusOutlined className="minus_outlined_one" />
+                          No Filters applied
+                        </p>
+                        <p>Add one of the above filters to narrow down your Notification list</p>
+                      </div>
+                    )}
+                    {installation ? (
+                      <div className="add_five">
+                        <div className="add__eleven">
+                          <span className="add__forteen">Location</span>
+                          <Radio.Group
+                            onChange={onChangePlan}
+                            className="base_PP2"
+                            // style={{ paddingLeft: '28px' }}
+                          >
+                            {locateData.map((item, index) => {
+                              return (
+                                <Radio key={index} value={item.id} id="amul">
+                                  <p id=""> {item.location}</p>
+                                </Radio>
+                              )
+                            })}
+                          </Radio.Group>
+                        </div>
+                        {/* <span className="plan__uncheck_one" onClick={RadioPlan}>
                     <CloseOutlined />
                   </span> */}
-                </div>
-              ) : (
-                ''
-              )}
-              {installation ? (
-                <div>
-                  <hr style={{ width: '100%', margin: 'auto' }} />
-                </div>
-              ) : (
-                ''
-              )}
+                      </div>
+                    ) : (
+                      ''
+                    )}
+                    {installation ? (
+                      <div>
+                        <hr className='filter_Line'/>
+                      </div>
+                    ) : (
+                      ''
+                    )}
 
-              {statusfilter ? (
-                <div>
-                  <hr style={{ width: '100%', margin: 'auto' }} />
-                </div>
-              ) : (
-                ''
-              )}
+                    {statusfilter ? (
+                      <div>
+                        <hr className='filter_Line' />
+                      </div>
+                    ) : (
+                      ''
+                    )}
 
-              {planData ? (
-                <div
-                  className="add__eight"
-                  style={{ justifyContent: 'space-between', alignItems: 'center' }}
-                >
-                  <div className="add_twelve">
-                    <span className="add__sixx">Trigger</span>
-                    <div className="add_twenty">
-                      <Radio.Group
-                        onChange={onChangeBase}
-                        value={planValue}
-                        className="base_yy2"
-                        style={{ paddingLeft: '40px' }}
+                    {planData ? (
+                      <div
+                        className="add__eight"
+                        style={{ justifyContent: 'space-between', alignItems: 'center' }}
                       >
-                        <Radio value={'Emporia'} id="amul">
-                          <div
-                            style={{
-                              display: 'flex',
-                            }}
-                          >
-                            <p id="">Emporia</p>
+                        <div className="add_twelve">
+                          <span className="add__sixx">Trigger</span>
+                          <div className="add_twenty">
+                            <Radio.Group
+                              onChange={onChangeBase}
+                              value={planValue}
+                              className="base_yy2"
+                              style={{ paddingLeft: '40px' }}
+                            >
+                              <Radio value={'Emporia'} id="amul">
+                                <div
+                                  style={{
+                                    display: 'flex',
+                                  }}
+                                >
+                                  <p id="">Emporia</p>
+                                </div>
+                              </Radio>
+                              <Radio value={'TROes'} id="amul">
+                                <div
+                                  style={{
+                                    display: 'flex',
+                                  }}
+                                >
+                                  <p id="">TROes</p>
+                                </div>
+                              </Radio>
+                            </Radio.Group>
                           </div>
-                        </Radio>
-                        <Radio value={'TROes'} id="amul">
-                          <div
-                            style={{
-                              display: 'flex',
-                            }}
-                          >
-                            <p id="">TROes</p>
-                          </div>
-                        </Radio>
-                      </Radio.Group>
+                        </div>
+                      </div>
+                    ) : (
+                      ''
+                    )}
+                    {planData ? (
+                      <div>
+                        <hr className='filter_Line' />
+                      </div>
+                    ) : (
+                      ''
+                    )}
+                    {priceData ? (
+                      <div className="price__div" style={{ gap: '20px' }}>
+                        {/* <p className="main_div_of_pric">Start Date: </p> */}
+                        <Space direction="vertical" size={12}>
+                          <DatePicker
+                            showTime
+                            format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
+                            onChange={onChangeed}
+                            onOk={onOk}
+                            disabledDate={disabledDateEnd}
+                            disabledTime={disabledDateTimeEnd}
+                          />
+                        </Space>
+
+                        {/* <p className="main_div_of_pric">End Date: </p> */}
+                        <Space direction="vertical" size={12}>
+                          <DatePicker
+                            showTime
+                            format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
+                            onChange={onChangeedTwo}
+                            onOk={onOk}
+                            disabledDate={disabledDateEnd}
+                            disabledTime={disabledDateTimeEnd}
+                          />
+                        </Space>
+                      </div>
+                    ) : (
+                      ''
+                    )}
+                    <div className="mainDivOf_apply">
+                      <button className="sub_divOf_Applifilter" id="apply__filter">
+                        <FilterFilled className="filter_outlined" />
+                        Apply Filter
+                      </button>
+                      <button onClick={clearFilter} className="subdivision_claer_filter">
+                        <ClearOutlined className="delete_outlinedd" />
+                        Clear Filter
+                      </button>
                     </div>
                   </div>
-                </div>
-              ) : (
-                ''
-              )}
-              {planData ? (
-                <div>
-                  <hr style={{ width: '100%', margin: 'auto' }} />
-                </div>
-              ) : (
-                ''
-              )}
-              {priceData ? (
-                <div className="price__div" style={{ gap: '20px' }}>
-                  <p className="main_div_of_pric">Start Date: </p>
-                  <Space direction="vertical" size={12}>
-                    <DatePicker
-                      showTime
-                      format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
-                      onChange={onChangeed}
-                      onOk={onOk}
-                      disabledDate={disabledDateEnd}
-                      disabledTime={disabledDateTimeEnd}
-                    />
-                  </Space>
-
-                  <p className="main_div_of_pric">End Date: </p>
-                  <Space direction="vertical" size={12}>
-                    <DatePicker
-                      showTime
-                      format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
-                      onChange={onChangeedTwo}
-                      onOk={onOk}
-                      disabledDate={disabledDateEnd}
-                      disabledTime={disabledDateTimeEnd}
-                    />
-                  </Space>
-                </div>
-              ) : (
-                ''
-              )}
-              <div className="mainDivOf_apply">
-                <button className="sub_divOf_Appli" id="apply__filter">
-                  <FilterFilled className="filter_outlined" />
-                  Apply Filter
-                </button>
-                <Button onClick={clearFilter} className="claer_filter">
-                  <ClearOutlined className="delete_outlinedd" />
-                  Clear Filter
-                </Button>
+                </form>
               </div>
             </div>
-          </form>
+          )}
         </div>
 
         {/* filter modal code ends */}
 
         {/* hero content */}
 
-        <div className='emporia_wrap'>
-        <p className="emporia_troes"> Emporia Notifications</p>
+        <div className="emporia_wrap">
+          <p className="emporia_troes"> Emporia Notifications</p>
 
-            <div>
-                <button
-
-                  // id="button"
-                  className="btncsv"
-                  onClick={() => createNewNotification()}
-                  // style={{ display: 'flex', gap: '10px' }}
-                >
-                  {/* <img
+          <div>
+            <button
+              // id="button"
+              className="btncsv"
+              onClick={() => createNewNotification()}
+              // style={{ display: 'flex', gap: '10px' }}
+            >
+              {/* <img
                     src={AddNotification}
                     alt="frame"
                     style={{ width: '22px', height: '15px' }}
                   />
                   Add  Emporia Notification */}
-                  <span className="plusicon">+</span>
-                   <span>Add  Emporia Notification</span>
-                </button>
-              </div>
-
+              <span className="plusicon">+</span>
+              <span>Add Emporia Notification</span>
+            </button>
+          </div>
         </div>
 
-
-        <div
-          className="table_wrap"
-
-        >
-
+        <div className="table_wrap">
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
-              <th className="t_Name px-2 global_th"></th>
+                <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">S.No.</th>
                 <th className="t_Name px-2 global_th">Notification Id</th>
@@ -1403,12 +1390,10 @@ const Notification = () => {
                   return (
                     <React.Fragment key={index}>
                       <tr className="trSelect trindicator_parent" style={{ position: 'relative' }}>
-
-
-                      <td className="px-2">
+                        <td className="px-2">
                           <input
                             type="checkbox"
-                            class="trindicator_noti"
+                            className="trindicator_noti"
                             style={{
                               appearance: 'none',
                               backgroundColor: `${color}`,
@@ -1861,15 +1846,21 @@ const Notification = () => {
           </table>
         </div>
 
-
         <div
           className="user__detail__popup__Customer_noti"
           style={{
             display: NotificationUpdated,
           }}
         >
-          <div >
-            <p className="admin_registerd__pop_noti"> <span> <img src={CheckgreenCircle} alt='Cyber Vision infotech' /> </span>  <span> Notification has been added successfully.</span></p>
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <span>
+                {' '}
+                <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              </span>{' '}
+              <span> Notification has been added successfully.</span>
+            </p>
           </div>
         </div>
         <div
@@ -1878,8 +1869,14 @@ const Notification = () => {
             display: NotificationDeleted,
           }}
         >
-          <div >
-            <p className="admin_registerd__pop_noti"><span> <img src={Redcircle} alt="Cyber Vision infotech " /> </span>  <span> Notification moved to Trash.  </span></p>
+          <div>
+            <p className="admin_registerd__pop_noti">
+              <span>
+                {' '}
+                <img src={Redcircle} alt="Cyber Vision infotech " />{' '}
+              </span>{' '}
+              <span> Notification moved to Trash. </span>
+            </p>
           </div>
         </div>
         <div
@@ -1888,8 +1885,12 @@ const Notification = () => {
             display: NotificationAdded,
           }}
         >
-          <div >
-            <p className="admin_registerd__pop_noti"> <img src={CheckgreenCircle} alt='Cyber Vision infotech' />  <span> Notification has been added successfully.</span> </p>
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Notification has been added successfully.</span>{' '}
+            </p>
           </div>
         </div>
         {/* <Pagination
@@ -1910,13 +1911,10 @@ const Notification = () => {
         /> */}
 
         {/* troes table */}
-        <div
-
-          className='tores_notificationsecond'
-        >
+        <div className="tores_notificationsecond">
           <p className="emporia_troes">TROes Notification</p>
 
-          <div >
+          <div>
             <button
               type="primary"
               // id="button"
@@ -1928,18 +1926,15 @@ const Notification = () => {
               Add New TROes Notification */}
 
               <span className="plusicon">+</span>
-                   <span>Add  Emporia Notification</span>
-
+              <span>Add Emporia Notification</span>
             </button>
           </div>
         </div>
-        <div
-          className='table_wrap_second'
-        >
+        <div className="table_wrap_second">
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
-              <th className="t_Name px-2 global_th"></th>
+                <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">S.No.</th>
                 <th className="t_Name px-2 global_th">Notification Id</th>
@@ -1970,14 +1965,13 @@ const Notification = () => {
                   return (
                     <React.Fragment key={index}>
                       <tr className="trSelect" style={{ position: 'relative' }}>
-                      <td className="px-2">
+                        <td className="px-2">
                           <input
                             type="checkbox"
                             class="trindicator_noti"
                             style={{
                               appearance: 'none',
                               backgroundColor: `${color}`,
-
                             }}
                           />
                         </td>
