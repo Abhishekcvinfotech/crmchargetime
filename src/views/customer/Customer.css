@@ -262,10 +262,10 @@ tbody tr {
 }
 
 td {
-  width: 100%;
+  /* width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
   height: 80px;
 }
 
@@ -1198,17 +1198,96 @@ input[type='file']::before {
 
 /* responsive */
 
-@media only screen and (max-width: 1540px) {
-  .for_respon__modal_first {
-    max-width: 580px;
+@media  (max-width: 1540px) {
+
+
+  .for_respon__modal_first{
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50% ,-50%) !important;
+
+    height: 500px!important;
+    overflow-x: auto!important;
+    max-width: 540px !important;
   }
+
+  #update_modal{
+
+    display: block !important;
+    height: 500px !important;
+    overflow-x: auto !important;
+
+  }
+  .add__one {
+    padding: 15px !important;
+   }
+
+   #addModalsecond{
+    padding: 15px !important;
+    width: 700px !important;
+   }
+   #addModalsecond .modal_form {
+    margin-top: 15px !important;
+   }
+
+   #addModalsecond input{
+    margin-bottom: 15px !important;
+    height: 35px !important;
+   }
+
+   .addcustomerform_cancel{
+    height: 35px !important;
+    padding: 0px 15px !important;
+   }
+   .addcustomerform_btn{
+    height: 35px !important;
+    padding: 0px 15px !important;
+   }
+
+   .mainDivOf_apply button{
+    padding: 0 15px !important;
+    width: 30% !important;
+    height: 35px !important;
+    padding: 0px 15px !important;
+   }
+
+   .mainDivOf_apply{
+    justify-content: space-evenly !important;
+   }
+
+   .ant-input-suffix{
+    top: 11px !important;
+   }
+
+   form select {
+    height: 35px !important;
+   }
+
+   .fileimport_cancel{
+    height: 35px !important;
+    padding: 16px !important;
+   }
+   .fileimportok_btn{
+       height: 35px !important;
+       padding: 16px !important;
+   }
+
+   .search_heading {
+    gap: 48px !important;
+   }
+
+   form input {
+    height: 35px !important;
+   }
+
+   .update_button button{
+    width: 35% !important;
+    height: 40px !important;
+   }
+
 }
 
-@media only screen and (max-width: 1540px) {
-  .for_respon__modal_first {
-    left: 314px;
-  }
-}
+
 
 @media only screen and (max-width: 1240px) {
   .customer_wrapper {
@@ -1956,6 +2035,11 @@ input::file-selector-button {
 }
 
 /* media query starts */
+
+
+
+
+
 @media (min-width: 887px) and (max-width: 960px) {
   .modal_form {
     min-height: 460px;
