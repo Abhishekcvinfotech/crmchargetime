@@ -28,6 +28,8 @@ import Source from '../../assets/images/Source.svg'
 import Timing from '../../assets/images/Timing.svg'
 import Trash from '../../assets/images/trash.svg'
 import AddNotification from '../../assets/images/addNotification.svg'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle  from '../../assets/images/Redcircle.svg'
 import { SaveOutlined } from '@ant-design/icons'
 import { TimePicker } from 'antd'
 import { Input, Select } from 'antd'
@@ -1338,17 +1340,19 @@ const Notification = () => {
             <div>
                 <button
 
-                  id="button"
+                  // id="button"
                   className="btncsv"
                   onClick={() => createNewNotification()}
-                  style={{ display: 'flex', gap: '10px' }}
+                  // style={{ display: 'flex', gap: '10px' }}
                 >
-                  <img
+                  {/* <img
                     src={AddNotification}
                     alt="frame"
                     style={{ width: '22px', height: '15px' }}
                   />
-                  Add  Emporia Notification
+                  Add  Emporia Notification */}
+                  <span className="plusicon">+</span>
+                   <span>Add  Emporia Notification</span>
                 </button>
               </div>
 
@@ -1363,9 +1367,9 @@ const Notification = () => {
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
+              <th className="t_Name px-2 global_th"></th>
+                <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">S.No.</th>
-                <th className="t_Name px-2 global_th"></th>
-                <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">Notification Id</th>
                 <th className="t_Name px-2 global_th">Notification Type</th>
                 <th className="t_Name px-2 global_th">Source Trigger</th>
@@ -1398,18 +1402,16 @@ const Notification = () => {
 
                   return (
                     <React.Fragment key={index}>
-                      <tr className="trSelect" style={{ position: 'relative' }}>
-                        <td className="px-2">{displayedIndex}</td>
-                        <td className="px-2">
+                      <tr className="trSelect trindicator_parent" style={{ position: 'relative' }}>
+
+
+                      <td className="px-2">
                           <input
                             type="checkbox"
+                            class="trindicator_noti"
                             style={{
                               appearance: 'none',
                               backgroundColor: `${color}`,
-                              width: '10px',
-                              height: '10px',
-                              borderRadius: '50%',
-                              marginTop: '10px',
                             }}
                           />
                         </td>
@@ -1426,6 +1428,8 @@ const Notification = () => {
                             />
                           )}
                         </td>
+                        <td className="px-2">{displayedIndex}</td>
+
                         <td className="px-2">
                           {item.notification_id === null ? (
                             <input
@@ -1859,33 +1863,33 @@ const Notification = () => {
 
 
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: NotificationUpdated,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p className="admin_registerd__pop">Notification Updated Successfully.</p>
+          <div >
+            <p className="admin_registerd__pop_noti"> <span> <img src={CheckgreenCircle} alt='Cyber Vision infotech' /> </span>  <span> Notification has been added successfully.</span></p>
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_noti_red"
           style={{
             display: NotificationDeleted,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p className="admin_registerd__pop">Notification moved to Trash.</p>
+          <div >
+            <p className="admin_registerd__pop_noti"><span> <img src={Redcircle} alt="Cyber Vision infotech " /> </span>  <span> Notification moved to Trash.  </span></p>
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: NotificationAdded,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p className="admin_registerd__pop">Notification added Successfully.</p>
+          <div >
+            <p className="admin_registerd__pop_noti"> <img src={CheckgreenCircle} alt='Cyber Vision infotech' />  <span> Notification has been added successfully.</span> </p>
           </div>
         </div>
         {/* <Pagination
@@ -1907,27 +1911,26 @@ const Notification = () => {
 
         {/* troes table */}
         <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '25px',
-            marginRight: '10px',
-          }}
+
+          className='tores_notificationsecond'
         >
           <p className="emporia_troes">TROes Notification</p>
 
-          <div style={{ marginTop: '-10px' }}>
-            <Button
+          <div >
+            <button
               type="primary"
-              id="button"
+              // id="button"
               className="btncsv"
               onClick={() => createNewTroesNotification()}
-              style={{ display: 'flex', gap: '10px' }}
+              // style={{ display: 'flex', gap: '10px' }}
             >
-              <img src={AddNotification} alt="frame" style={{ width: '22px', height: '15px' }} />
-              Add New TROes Notification
-            </Button>
+              {/* <img src={AddNotification} alt="frame" style={{ width: '22px', height: '15px' }} />
+              Add New TROes Notification */}
+
+              <span className="plusicon">+</span>
+                   <span>Add  Emporia Notification</span>
+
+            </button>
           </div>
         </div>
         <div
@@ -1936,9 +1939,9 @@ const Notification = () => {
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
+              <th className="t_Name px-2 global_th"></th>
+                <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">S.No.</th>
-                <th className="t_Name px-2 global_th"></th>
-                <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">Notification Id</th>
                 <th className="t_Name px-2 global_th">Notification Type</th>
                 <th className="t_Name px-2 global_th">Source Trigger</th>
@@ -1967,17 +1970,14 @@ const Notification = () => {
                   return (
                     <React.Fragment key={index}>
                       <tr className="trSelect" style={{ position: 'relative' }}>
-                        <td className="px-2">{displayedIndex}</td>
-                        <td className="px-2">
+                      <td className="px-2">
                           <input
                             type="checkbox"
+                            class="trindicator_noti"
                             style={{
                               appearance: 'none',
                               backgroundColor: `${color}`,
-                              width: '10px',
-                              height: '10px',
-                              borderRadius: '50%',
-                              marginTop: '10px',
+
                             }}
                           />
                         </td>
@@ -1994,6 +1994,8 @@ const Notification = () => {
                             />
                           )}
                         </td>
+                        <td className="px-2">{displayedIndex}</td>
+
                         <td>
                           {item.notification_id === null ? (
                             <input

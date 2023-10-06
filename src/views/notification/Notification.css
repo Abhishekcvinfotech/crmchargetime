@@ -29,6 +29,8 @@ tr:hover .actionbtn {
   border-radius: 6px;
   background: #fff;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+    white-space:unset;
 }
 .filter_button {
   width: 103px;
@@ -63,6 +65,110 @@ border-radius: 6px;
 .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
   background-color: #f5f5f5;
 }
+
+.tores_notificationsecond{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+}
+.btncsv{
+
+    background-color: #3378ff !important;
+    color: #ffffff;
+    height: 48px;
+    max-width: 315px;
+    width: 100%;
+    border-radius: 6px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 24px;
+
+}
+
+  .plusicon {
+    font-size: 20px;
+  }
+  .trindicator_parent{
+    position: relative;
+  }
+  .trindicator_noti{
+    background: none;
+    border-radius: 0 10px 10px 0;
+    height: 56px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+  }
+
+
+
+  .user__detail__popup__Customer_noti {
+    z-index: 1;
+    border-radius: 6px;
+    padding: 0px 12px;
+    height: 88px;
+    /* position:absolute;
+    top: -14px;
+    left: 0; */
+
+    position:fixed;
+    top:80px;
+
+    border-radius: 6px;
+    background:  #3CB72C;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+    max-width: 1564px;
+    width: 100%;
+    padding: 23px 12px;
+
+  }
+  .user__detail__popup__Customer_noti_red{
+
+    z-index: 1;
+    border-radius: 6px;
+    padding: 0px 12px;
+    height: 88px;
+    position:fixed;
+    top:80px;
+    border-radius: 6px;
+    background: #F42B3D;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+    max-width: 1564px;
+    width: 100%;
+    padding: 23px 12px;
+
+  }
+
+  .admin_registerd__pop_noti{
+       display: flex;
+       align-items: center;
+       gap: 16px;
+       width: 100%;
+  }
+
+  .admin_registerd__pop_noti span{
+
+    color:#FFFFFF;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+  }
+
 
 /* paination css start  */
 /* .ant-pagination-item {
