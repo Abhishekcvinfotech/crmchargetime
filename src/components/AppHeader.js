@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import LoginImage from '../../src/assets/images/loginimage.svg'
@@ -30,7 +30,11 @@ const AppHeader = () => {
     setOpen(!isOpen)
   }
   const dispatch = useDispatch()
-  const sidebarShow = useSelector((state) => state.sidebarShow)
+  
+ 
+
+
+ const sidebarShow = useSelector((state) => state.sidebarShow)
   let navigate = useNavigate()
 
   function handleClick() {

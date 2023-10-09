@@ -226,7 +226,8 @@ tr:hover tr {
 
 .fiseachicon {
   position: absolute;
-  top: 20%;
+  top: 50%;
+  transform: translate(-50% , -50%);
   font-size: 22px;
   /* left: 32%; */
   color: grey;

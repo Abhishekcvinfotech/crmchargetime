@@ -212,20 +212,20 @@ const Customer = () => {
     energy_price: 'ASC',
     id: 'ASC',
   })
+
   const [btnpadding, setBtnpadding] = useState('0px')
   const [paddingcolor, setPaddingcolor] = useState('none')
   const [borderRadius, setBorderRadius] = useState('')
   const [clickedButton, setClickedButton] = useState(null)
-
+  
   const [modal2Open, setModal2Open] = useState(false)
-
   const handleIconPaddingClick = (buttonId) => {
     setClickedButton(buttonId)
-    console.log('button is clicked')
     setBtnpadding('7px 8px')
     setPaddingcolor('#F1F1F1')
     setBorderRadius('6px')
     setShowCrossIcon(true)
+
   }
 
   const openNotification = () => {
@@ -405,9 +405,8 @@ const Customer = () => {
     setBtnpadding('0px')
     setPaddingcolor('white')
     setClickedButton(null)
-
-    console.log('again showing data')
   }
+
 
   const clearFilter = () => {
     setStatusfilter(false)

@@ -45,6 +45,7 @@ import { getStyle } from '@coreui/utils'
 import { FiSearch } from 'react-icons/fi'
 import { HiFilter } from 'react-icons/hi'
 import { IoMdClose } from 'react-icons/io'
+import { IoIosClose } from 'react-icons/io'
 
 const Notification = () => {
   const [loading, setLoading] = useState(false)
@@ -111,6 +112,17 @@ const Notification = () => {
   const [value, setValue] = useState(0)
   const [filterColor, setFilterColor] = useState('green')
   const [update, setUpdate] = useState('0')
+
+
+  const [showCrossIcon, setShowCrossIcon] = useState(false)
+  const [btnpadding, setBtnpadding] = useState('0px')
+  const [paddingcolor, setPaddingcolor] = useState('none')
+  const [borderRadius, setBorderRadius] = useState('')
+  const [clickedButton, setClickedButton] = useState(null)
+
+  
+
+
   const format = 'HH:mm'
   const [editableValues, setEditableValues] = useState(
     data.map((item) => ({ item, update: false })),
@@ -289,23 +301,39 @@ const Notification = () => {
   useEffect(() => {
     getUsers()
   }, [])
-  // get data ends
 
+
+
+  const sortedDate = () => {
+    getUsers();  
+    setShowCrossIcon(false)  
+    setBtnpadding('0px')  
+    setPaddingcolor('white') 
+    setClickedButton(null) 
+  }
+
+
+   const handleIconPaddingClick = (buttonId) =>{
+    setClickedButton(buttonId)
+    setBtnpadding('7px 8px')
+    setPaddingcolor('#F1F1F1')
+    setBorderRadius('6px')
+    setShowCrossIcon(true)
+  }
+
+  // get data ends
   const [expandedRows, setExpandedRows] = useState([])
   const [expandedRowsTroes, setExpandedRowsTroes] = useState([])
-
   const toggleRowExpansion = (index) => {
     const newExpandedRows = [...expandedRows]
     newExpandedRows[index] = !newExpandedRows[index]
     setExpandedRows(newExpandedRows)
   }
-
   const toggleRowExpansionTroes = (index) => {
     const newExpandedRows = [...expandedRowsTroes]
     newExpandedRows[index] = !newExpandedRows[index]
     setExpandedRowsTroes(newExpandedRows)
   }
-
   // paginations starts
   const handlePagination = (value) => {
     setPage(value)
@@ -994,57 +1022,97 @@ const Notification = () => {
                     style={{ width: '22px', height: '15px' }}
                   />
                   Add New Emporia Notification
-                </Button>
+                </BuStton>
               </div>
             </div> */}
 
-            <div style={{ display: 'flex', gap: '24px' }}>
-              <div className="forAlignment_Account">
+            <div style={{ display: 'flex', gap: '24px' ,alignItems:'center' }}>
+             
+              <div className="forAlignment_Account" style={{
+                padding: clickedButton === 'Active' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'Active' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                boxSizing: 'border-box',
+
+              }}>
                 <div
                   className="forChanging_color"
                   style={{
                     background: 'green',
+                    
                   }}
                 ></div>
                 <button
                   className="btn_for_Link"
                   style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
-                  onClick={activeNotification}
+                  onClick={() => {activeNotification() ; handleIconPaddingClick('Active');}}
                 >
                   Active
                 </button>
+                {clickedButton === 'Active' && (
+                <IoIosClose className="sortcross"  onClick={sortedDate}  /> 
+                )}
+
               </div>
-              <div className="forAlignment_Account">
+
+              <div className="forAlignment_Account" style={{
+                
+                // padding:  btnpadding ,
+                //     backgroundColor:  paddingcolor,
+                //     borderRadius: borderRadius,
+                padding: clickedButton === 'In-active' ? btnpadding : 0,
+                backgroundColor: clickedButton === 'In-active' ? paddingcolor : 'transparent',
+                borderRadius: borderRadius,
+                  
+                    
+                    }}>
                 <div
                   className="forChanging_color"
                   style={{
                     background: 'red',
+                    
                   }}
                 ></div>
                 <button
                   className="btn_for_Link"
                   style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
-                  onClick={inActivee}
+                  onClick={()=> {inActivee() ; handleIconPaddingClick('In-active');}}
                 >
                   In-active
                 </button>
+                {clickedButton === 'In-active' && (
+                <IoIosClose className="sortcross"  onClick={sortedDate}  />
+                 )}
               </div>
 
-              <div className="forAlignment_Account">
+              <div className="forAlignment_Account" style={{padding:  btnpadding ,
+                  
+                    padding: clickedButton === 'Scheduled' ? btnpadding : 0,
+                    backgroundColor: clickedButton === 'Scheduled' ? paddingcolor : 'transparent',
+                    borderRadius: borderRadius,
+                    
+                    }}>
                 <div
                   className="forChanging_color"
                   style={{
-                    background: 'blue',
+                    background:'blue',
+                    
                   }}
                 ></div>
                 <button
                   className="btn_for_Link"
                   style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
-                  onClick={scheduledNotification}
+                  onClick={() => { scheduledNotification() ; handleIconPaddingClick('Scheduled'); } }
                 >
                   Scheduled
                 </button>
+                {clickedButton === 'Scheduled' && (
+                <IoIosClose className="sortcross"  onClick={sortedDate}  /> )}
               </div>
+
             </div>
           </div>
           <div>
