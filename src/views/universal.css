@@ -9,17 +9,19 @@ td {
   line-height: 21px;
   color: #213446;
 }
-.px-2{
+/* .px-2{
 
   margin: 0 !important;
   padding: 0 !important;
-}
+} */
+
 table {
   border-spacing: 100px;
 }
 
 thead th {
   height: 56px;
+  background-color: #F9FBFE !important;
 }
 
 thead tr {

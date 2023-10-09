@@ -1350,7 +1350,7 @@ const Notification = () => {
           </div>
         </div>
 
-        <div className="table_wrap">
+        <div className="table_wrap table-responsive">
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
@@ -1431,7 +1431,7 @@ const Notification = () => {
                                 setNotificationId(e.target.value)
                                 setInputid('0')
                               }}
-                              style={{ border: 'none', padding: '4px', width: '100px' }}
+                              style={{ border: 'none', padding: '4px', }}
                               className="inputRender"
                             />
                           ) : (
@@ -1930,7 +1930,7 @@ const Notification = () => {
             </button>
           </div>
         </div>
-        <div className="table_wrap_second">
+        <div className="table_wrap_second table-responsive">
           <table className="table table-hover NotificationTable">
             <thead className="">
               <tr>
