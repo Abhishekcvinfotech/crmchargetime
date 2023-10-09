@@ -63,6 +63,7 @@ html:not([dir='rtl']) .sidebar-nav .nav-group-items .nav-link {
 }
 .nav-link {
   border-radius: 6px !important;
+  gap: 16px;
 }
 .nav-group-items {
   background-color: #0c2556 !important;
@@ -88,7 +89,7 @@ html:not([dir='rtl']) .sidebar-nav .nav-group-items .nav-link {
 } */
 
 .faiconsdashboard {
-  margin: 0 16px;
+  /* margin: 0 16px; */
   width: 16px;
   height: 16px;
 }
