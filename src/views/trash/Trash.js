@@ -8,6 +8,7 @@ import './trash.css'
 import axios, { Axios } from 'axios'
 import { troesAPi } from '../../api'
 import { Pagination } from 'antd'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
 import {
   DeleteOutlined,
   StopOutlined,
@@ -311,7 +312,7 @@ const Trash = () => {
                                   alt="restore"
                                   width={'16px'}
                                   height={'16px'}
-                                  style={{ marginTop: '6px' }}
+                                  style={{  }}
                                 />
                               </button>
                             </Tooltip>
@@ -447,7 +448,7 @@ const Trash = () => {
                                 alt="restore"
                                 width={'16px'}
                                 height={'16px'}
-                                style={{ marginTop: '6px' }}
+                                style={{  }}
                               />
                             </button>
                           </Tooltip>
@@ -498,22 +499,23 @@ const Trash = () => {
               display: notificationRestored,
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-
-              <p className="admin_registerd__pop">Notification Restored Successfully.</p>
+            <div className='notification_image'>
+                   <span> <img src={CheckgreenCircle} alt="Cyber Vision infotech" /></span>
+              <span className="admin_registerd__pop">Notification Restored Successfully.</span>
+              <span></span>
             </div>
           </div>
 
 
           <div
-            className="user__detail__popup__Customer"
+            className="user__detail__popup__Customer_delete"
             style={{
               display: notificationDeleted,
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-
-              <p className="admin_registerd__pop">Notification Deleted permanently.</p>
+            <div  className='notification_image'>
+            <span>  <img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span> 
+              <span className="admin_registerd__pop">Notification Deleted permanently.</span>
             </div>
           </div>
 

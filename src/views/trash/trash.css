@@ -90,6 +90,58 @@ p {
 
 }
 
+.user__detail__popup__Customer{
+    z-index: 1;
+    border-radius: 6px;
+    padding: 0px 12px;
+    height: 88px;
+    position: fixed;
+    top: 80px;
+    border-radius: 6px;
+    background: #3CB72C;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+    width: 900px;
+    padding: 23px 12px;
+
+}
+.notification_image{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin_registerd__pop{
+    color: #FFFFFF;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+
+}
+
+.notification_image span{
+    display: inline-block;
+}
+.user__detail__popup__Customer_delete{
+
+   
+
+    z-index: 1;
+    border-radius: 6px;
+    padding: 0px 12px;
+    height: 88px;
+    position: fixed;
+    top: 80px;
+    border-radius: 6px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+    width: 900px;
+    background: #F42B3D;
+    padding: 23px 12px;
+
+
+}
 .pagination_wrap {
 
     margin: 48px 0;
