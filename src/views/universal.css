@@ -430,10 +430,10 @@ input[type='file']::file-selector-button {
   box-shadow: none;
 }
 
-.global_th {
+/* .global_th {
   font-size: 16px;
   font-weight: bolder;
-}
+} */
 
 .editn_btn_global {
   width: 15px;

@@ -46,6 +46,7 @@ import { FiSearch } from 'react-icons/fi'
 import { HiFilter } from 'react-icons/hi'
 import { IoMdClose } from 'react-icons/io'
 import { IoIosClose } from 'react-icons/io'
+import Rightarrow from '../../assets/images/Rightarrow.svg'
 
 const Notification = () => {
   const [loading, setLoading] = useState(false)
@@ -933,11 +934,13 @@ const Notification = () => {
       )}
       <div style={{ position: 'relative' }}>
         <div className="tnotification_wrap">
-          <h2 className="all_customer_of_page">Notifications</h2>
 
-          <p className="totalnotification" onClick={() => getUsers()}>
-            ({notificationCount}) Total Notifications
+          <h2 className="all_customer_of_page"><span className='notifica'> Notifications</span>  <span className='notification_count'> ({notificationCount}) </span></h2>
+
+          <p className="totalnotification" >
+            <span>Total Notifications </span> <span><img src={Rightarrow} alt=" right arrow" /> </span>
           </p>
+          
         </div>
 
         <div className="filter_wrap">
@@ -1507,7 +1510,7 @@ const Notification = () => {
                               placeholder="Notification Id"
                               value={item.notification_id}
                               readOnly
-                              style={{ border: 'none', padding: '4px', width: '100px' }}
+                              style={{ border: 'none', padding: '4px',  }}
                               className="inputRender"
                             />
                           )}
@@ -2074,7 +2077,7 @@ const Notification = () => {
                                 setNotificationId(e.target.value)
                                 setInputid('0')
                               }}
-                              style={{ border: 'none', padding: '4px', width: '100px' }}
+                              style={{ border: 'none', padding: '4px', }}
                               className="inputRender"
                             />
                           ) : (

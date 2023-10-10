@@ -16,7 +16,11 @@ import { Spin, Modal, Button, Tooltip, Popconfirm, message, Pagination } from 'a
 
 import axios from 'axios'
 import { useRef } from 'react'
-import sheet from '../../assets/images/sheets.png'
+
+
+
+import Excelicon from '../../assets/images/excelicon.svg'
+
 import { color } from '@mui/system'
 
 const Partner = () => {
@@ -910,7 +914,7 @@ const Partner = () => {
             <thead className="">
               <tr>
                 <th className="th_Name px-3">S.No.</th>
-                <th>
+                <th className="th_Name px-3">
                   {/* <img
                     src={sheet}
                     alt="upload_img"
@@ -920,7 +924,7 @@ const Partner = () => {
                       // marginLeft: '4px',
                       cursor: 'pointer',
                     }}
-                  /> */}
+                  /> */} File
                 </th>
                 <th className="th_Name px-3">Name</th>
                 <th className="th_Name px-3">Partner ID</th>
@@ -949,12 +953,10 @@ const Partner = () => {
                         <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
                           <Tooltip placement="topLeft" title={textOne}>
                             <img
-                              src={sheet}
+                              src={Excelicon}
                               alt="upload_img"
                               style={{
-                                width: '20px',
-                                marginTop: '-7px',
-
+                                marginLeft:'5px',
                                 cursor: 'pointer',
                               }}
                             />

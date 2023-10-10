@@ -25,7 +25,7 @@ import { Input, Select } from 'antd'
 import { DatePicker, Space } from 'antd'
 import Restore from '../../assets/images/restore.png'
 import { CListGroup } from '@coreui/react'
-
+import Rightarrow from '../../assets/images/Rightarrow.svg'
 const { TextArea } = Input
 
 const Trash = () => {
@@ -67,12 +67,12 @@ const Trash = () => {
     setOpenRowIndex((prevIndex) => (prevIndex === index ? null : index))
     toggleRowExpansion(index)
     setShowMessage(true)
- 
+
   }
   const checkShrink = (index) => {
     toggleRowExpansion(index)
     setShowMessage(false)
-  
+
   }
   const toggleRowExpansionTroes = (index) => {
     const newExpandedRows = [...expandedRowsTroes]
@@ -83,7 +83,7 @@ const Trash = () => {
     setOpenRowIndexTroes((prevIndex) => (prevIndex === index ? null : index))
     toggleRowExpansionTroes(index)
     setShowMessageTroes(true)
-  
+
   }
   const checkShrinkTroes = (index) => {
     toggleRowExpansionTroes(index)
@@ -98,11 +98,11 @@ const Trash = () => {
         setTotal(res.data.result.Emporia?.length)
         setEmporiaData(res.data?.result.TROes)
         setTotalEmporia((res.data?.result.TROes).length)
-        settotTrashNotification((res.data.result.Emporia?.length)+(res.data?.result.TROes).length)
+        settotTrashNotification((res.data.result.Emporia?.length) + (res.data?.result.TROes).length)
       })
       .catch((err) => console.log(err))
   }
-  
+
 
   // emporia pagination start
 
@@ -218,15 +218,15 @@ const Trash = () => {
         ''
       )}
       <div style={{ position: 'relative' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <h2 className="all_customer_of_page" style={{ marginTop: '-13px' }}>
-            Deleted Notifications
+        <div className='deletenotification'>
+          <h2 className="all_customer_of_page" >
+            <span>Deleted Notifications</span> <span className='total_notification'>({totTrashNotification}) </span>
           </h2>
-          <p style={{ paddingBottom: '10px', textAlign: 'center',fontWeight:"bolder" }}>
-            Total Notifications : {totTrashNotification} <br />
+          <p className='total_notification'>
+            <span className='tnotification'> Total Notifications </span> <span>  <img src={Rightarrow} alt=" right arrow" />  </span>
           </p>
         </div>
-        <div style={{ position: 'relative', backgroundColor: '#fff', padding: '30px 10px' }}>
+        <div className='back_to_app_notification' >
           <div style={{ display: 'flex' }}>
             <Link to="/notification" style={{ paddingLeft: '40px !important' }}>
               <button id="button" style={{ gap: '10px' }}>
@@ -237,256 +237,261 @@ const Trash = () => {
           </div>
         </div>
 
-        {/* hero content */}
+
         <div
-          className="td_part"
-          style={{ marginTop: '10px', overflowX: 'auto', whiteSpace: 'noWrap' }}
+
         >
-          <div style={{ padding: '10px 0px 13px 0px', margin: 'auto' }}>
-            <p className="text">Emporia Notifications</p>
-          </div>
-          <table className="table table-hover">
-            <thead className="">
-              <tr>
-                <th className="t_Name px-2 global_th">S.No.</th>
-                <th className="t_Name px-2 global_th"></th>
-                <th className="t_Name px-2 global_th">Notification Id</th>
-                <th className="t_Name px-2 global_th">Notification Type</th>
-                <th className="t_Name px-2 global_th">Source Trigger</th>
-                <th className="t_Name px-2 global_th">Event Trigger</th>
-                <th className="t_Name px-2 global_th">Installation</th>
-                <th className="t_Name px-2 global_th">Start</th>
-                <th className="t_Name px-2 global_th">Stop</th>
-                <th className="t_Name px-2 global_th">Time</th>
-                <th className="t_Name px-2 global_th">Action</th>
-              </tr>
-            </thead>
-            <tbody style={{ background: '#fff' }}>
-              {currentPosts &&
-                currentPosts.map((item, index) => {
-                 
-                  const displayedIndex = indexOfFirstPage + index + 1
-                  return (
-                    <React.Fragment key={index}>
-                      <tr className="trSelect">
-                        <td className="px-2">{displayedIndex}</td>
-                        <td className="px-2">
-                          {expandedRows[index] ? (
-                            <MinusOutlined
-                              onClick={() => checkShrink(index)}
-                              style={{ color: 'blue' }}
-                            />
-                          ) : (
-                            <PlusOutlined
-                              onClick={() => checkExpand(index)}
-                              style={{ color: 'blue' }}
-                            />
-                          )}
-                        </td>
-                        
-                        <td className="px-2">{item.notification_id}</td>
-                        <td className="px-2">{(item. notification_type === 0
-                                  ? 'Conditional'
-                                  : '') ||
-                                (item. notification_type === 1
-                                  ? 'Un-Conditional'
-                                  : '')
-                              }</td>
-                        <td className="px-2">{item.source_trigger}</td>
-                        <td className="px-2">{item.notification_type === 0?item.eventtriggername :item.event_trigger}</td>
-                        <td className="px-2">{item.locationname}</td>
-                        <td className="px-2">{item.startDate}</td>
-                        <td className="px-2">{item.endDate}</td>
-                        <td className="px-2">{item.message_time}</td>
-                        <td className="px-2">
-                          <Tooltip title="Restore">
-                            <button
-                              className="actionbtn"
-                              style={{ paddingLeft: '5px', color: 'red', padding:'1px'  }}
-                              onClick={() => restoreNotification(item.id)}
-                            >
-                              <img
-                                src={Restore}
-                                alt="restore"
-                                width={'16px'}
-                                height={'16px'}
-                                style={{ marginTop: '6px' }}
-                              />
-                            </button>
-                          </Tooltip>
-                          <Tooltip title="Delete">
-                            <button
-                              className="actionbtn"
-                              style={{ paddingLeft: '10px', color: 'red', padding:'4px'  }}
-                              onClick={() => onDeleteNotification(item.id)}
-                            >
-                              <DeleteOutlined className='delete_btn_global'/>
-                            </button>
-                          </Tooltip>
-                        </td>
-                      </tr>
-                      {openRowIndex === index && showMessage ? (
-                        <tr>
-                          <td colSpan={2}></td>
-                          <td colSpan={1}>Message:</td>
-                          <td colSpan={4}>
-                            <div>
-                              <TextArea
-                                placeholder="Notification Message..."
-                                autoSize={{
-                                  minRows: 2,
-                                  maxRows: 6,
-                                }}
-                                value={message}
-                              />
-                              <p>
-                                Words remaining: {maxWords - message.trim().length} / {maxWords}
-                              </p>
-                            </div>
-                          </td>
-                          <td colSpan={4}></td>
-                        </tr>
-                      ) : (
-                        ''
-                      )}
-                    </React.Fragment>
-                  )
-                })}
-            </tbody>
 
-            
-          </table>
-          <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          //style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
-        />
-        <div style={{ padding: '10px 0px 13px 0px',margin:"auto" }}>
-              <p className="text">TROes Notifications</p>
+          <p className="text">Emporia Notifications</p>
+
+
+          <div className="table_wrapper">
+            <table className="table table-hover">
+              <thead className="">
+                <tr>
+                  <th className="t_Name px-2 global_th">S.No.</th>
+                  <th className="t_Name px-2 global_th"></th>
+                  <th className="t_Name px-2 global_th">Notification Id</th>
+                  <th className="t_Name px-2 global_th">Notification Type</th>
+                  <th className="t_Name px-2 global_th">Source Trigger</th>
+                  <th className="t_Name px-2 global_th">Event Trigger</th>
+                  <th className="t_Name px-2 global_th">Installation</th>
+                  <th className="t_Name px-2 global_th">Start</th>
+                  <th className="t_Name px-2 global_th">Stop</th>
+                  <th className="t_Name px-2 global_th">Time</th>
+                  <th className="t_Name px-2 global_th">Action</th>
+                </tr>
+              </thead>
+              <tbody style={{ background: '#fff' }}>
+                {currentPosts &&
+                  currentPosts.map((item, index) => {
+
+                    const displayedIndex = indexOfFirstPage + index + 1
+                    return (
+                      <React.Fragment key={index}>
+                        <tr className="trSelect">
+                          <td className="px-2">{displayedIndex}</td>
+                          <td className="px-2">
+                            {expandedRows[index] ? (
+                              <MinusOutlined
+                                onClick={() => checkShrink(index)}
+                                style={{ color: 'blue' }}
+                              />
+                            ) : (
+                              <PlusOutlined
+                                onClick={() => checkExpand(index)}
+                                style={{ color: 'blue' }}
+                              />
+                            )}
+                          </td>
+
+                          <td className="px-2">{item.notification_id}</td>
+                          <td className="px-2">{(item.notification_type === 0
+                            ? 'Conditional'
+                            : '') ||
+                            (item.notification_type === 1
+                              ? 'Un-Conditional'
+                              : '')
+                          }</td>
+                          <td className="px-2">{item.source_trigger}</td>
+                          <td className="px-2">{item.notification_type === 0 ? item.eventtriggername : item.event_trigger}</td>
+                          <td className="px-2">{item.locationname}</td>
+                          <td className="px-2">{item.startDate}</td>
+                          <td className="px-2">{item.endDate}</td>
+                          <td className="px-2">{item.message_time}</td>
+                          <td className="px-2">
+                            <Tooltip title="Restore">
+                              <button
+                                className="actionbtn"
+                                style={{ paddingLeft: '5px', color: 'red', padding: '1px' }}
+                                onClick={() => restoreNotification(item.id)}
+                              >
+                                <img
+                                  src={Restore}
+                                  alt="restore"
+                                  width={'16px'}
+                                  height={'16px'}
+                                  style={{ marginTop: '6px' }}
+                                />
+                              </button>
+                            </Tooltip>
+                            <Tooltip title="Delete">
+                              <button
+                                className="actionbtn"
+                                style={{ paddingLeft: '10px', color: 'red', padding: '4px' }}
+                                onClick={() => onDeleteNotification(item.id)}
+                              >
+                                <DeleteOutlined className='delete_btn_global' />
+                              </button>
+                            </Tooltip>
+                          </td>
+                        </tr>
+                        {openRowIndex === index && showMessage ? (
+                          <tr>
+                            <td colSpan={2}></td>
+                            <td colSpan={1}>Message:</td>
+                            <td colSpan={4}>
+                              <div>
+                                <TextArea
+                                  placeholder="Notification Message..."
+                                  autoSize={{
+                                    minRows: 2,
+                                    maxRows: 6,
+                                  }}
+                                  value={message}
+                                />
+                                <p>
+                                  Words remaining: {maxWords - message.trim().length} / {maxWords}
+                                </p>
+                              </div>
+                            </td>
+                            <td colSpan={4}></td>
+                          </tr>
+                        ) : (
+                          ''
+                        )}
+                      </React.Fragment>
+                    )
+                  })}
+              </tbody>
+
+
+            </table>
+            <div className='pagination_wrap'>
+              <Pagination
+                onChange={handlePagination}
+                pageSize={postPerPage}
+                total={total}
+                current={page}
+                showSizeChanger
+                showQuickJumper
+                onShowSizeChange={onShowSizeChange}
+                itemRender={itemRender}
+              />
             </div>
-          <table className="table table-hover">
-            
-            <thead className="">
-              <tr>
-                <th className="t_Name px-2 global_th">S.No.</th>
-                <th className="t_Name px-2 global_th"></th>
-                <th className="t_Name px-2 global_th">Notification Id</th>
-                <th className="t_Name px-2 global_th">Notification Type</th>
-                <th className="t_Name px-2 global_th">Source Trigger</th>
-                <th className="t_Name px-2 global_th">Event Trigger</th>
-                <th className="t_Name px-2 global_th">Installation</th>
-                <th className="t_Name px-2 global_th">Start</th>
-                <th className="t_Name px-2 global_th">Stop</th>
-                <th className="t_Name px-2 global_th">Time</th>
-                <th className="t_Name px-2 global_th">Action</th>
-              </tr>
-            </thead>
-            
-            <tbody style={{ background: '#fff' }}>
-              {currentPostsEmporia &&
-                currentPostsEmporia.map((item, index) => {
-                 
-                  const displayedIndexEmporia = indexOfFirstPageEmporia + index + 1
-                  return (
-                    <React.Fragment key={index}>
-                      <tr className="trSelect">
-                        <td className="px-2">{displayedIndexEmporia}</td>
-               
-
-                        <td className="px-2">
-                          {expandedRowsTroes[index] ? (
-                            <MinusOutlined
-                              onClick={() => checkShrinkTroes(index)}
-                              style={{ color: 'blue' }}
-                            />
-                          ) : (
-                            <PlusOutlined
-                              onClick={() => checkExpandTroes(index)}
-                              style={{ color: 'blue' }}
-                            />
-                          )}
-                        </td>
-                       
-                        <td className="px-2">{item.notification_id}</td>
-                        <td className="px-2">{(item. notification_type === 0
-                                  ? 'Conditional'
-                                  : '') ||
-                                (item. notification_type === 1
-                                  ? 'Un-Conditional'
-                                  : '') ||
-                                  (item. notification_type === 2
-                                  ? 'Un-Conditional Daily'
-                                  : '')
-                              }</td>
-                        <td className="px-2">{item.source_trigger}</td>
-                        <td className="px-2">{item.notification_type === 0?item.eventtriggername :item.event_trigger}</td>
-                        <td className="px-2">{item.locationname === null? 'All Locations': item.locationname}</td>
-                        <td className="px-2">{item.startDate=== '1895-01-01 00:00:00'? '24/7': item.startDate}</td>
-                        <td className="px-2">{item.endDate=== '1895-01-01 00:00:00'? '24/7': item.endDate}</td>
-                        <td className="px-2">{item.message_time}</td>
-                        <td className="px-2">
-                          <Tooltip title="Restore">
-                            <button
-                              className="actionbtn"
-                              style={{ paddingLeft: '5px', color: 'red', padding:'1px' }}
-                              onClick={() => restoreNotification(item.id)}
-                            >
-                              <img
-                                src={Restore}
-                                alt="restore"
-                                width={'16px'}
-                                height={'16px'}
-                                style={{ marginTop: '6px' }}
-                              />
-                            </button>
-                          </Tooltip>
-                          <Tooltip title="Delete">
-                            <button
-                              className="actionbtn"
-                              style={{ paddingLeft: '10px', color: 'red', padding:'4px'  }}
-                              onClick={() => onDeleteNotification(item.id)}
-                            >
-                              <DeleteOutlined className='delete_btn_global' />
-                            </button>
-                          </Tooltip>
-                        </td>
-                      </tr>
-                      {openRowIndexTroes === index && showMessageTroes ? (
-                        <tr>
-                          <td colSpan={2}></td>
-                          <td colSpan={1}>Message:</td>
-                          <td colSpan={4}>
-                            <div>
-                              <TextArea
-                                placeholder="Notification Message..."
-                                autoSize={{
-                                  minRows: 2,
-                                  maxRows: 6,
-                                }}
-                                value={message}
-                              />
-                              <p>
-                                Words remaining: {maxWords - message.trim().length} / {maxWords}
-                              </p>
-                            </div>
-                          </td>
-                          <td colSpan={4}></td>
-                        </tr>
-                      ) : (
-                        ''
-                      )}
-                    </React.Fragment>
-                  )
-                })}
-            </tbody>
-          </table>
+          </div>
         </div>
+        <p className="text">TROes Notifications</p>
+
+<div className='table_wrapper table-responsive'>  
+
+        <table className="table table-hover">
+
+          <thead className="">
+            <tr>
+              <th className="t_Name px-2 global_th">S.No.</th>
+              <th className="t_Name px-2 global_th"></th>
+              <th className="t_Name px-2 global_th">Notification Id</th>
+              <th className="t_Name px-2 global_th">Notification Type</th>
+              <th className="t_Name px-2 global_th">Source Trigger</th>
+              <th className="t_Name px-2 global_th">Event Trigger</th>
+              <th className="t_Name px-2 global_th">Installation</th>
+              <th className="t_Name px-2 global_th">Start</th>
+              <th className="t_Name px-2 global_th">Stop</th>
+              <th className="t_Name px-2 global_th">Time</th>
+              <th className="t_Name px-2 global_th">Action</th>
+            </tr>
+          </thead>
+
+          <tbody style={{ background: '#fff' }}>
+            {currentPostsEmporia &&
+              currentPostsEmporia.map((item, index) => {
+
+                const displayedIndexEmporia = indexOfFirstPageEmporia + index + 1
+                return (
+                  <React.Fragment key={index}>
+                    <tr className="trSelect">
+                      <td className="px-2">{displayedIndexEmporia}</td>
+
+
+                      <td className="px-2">
+                        {expandedRowsTroes[index] ? (
+                          <MinusOutlined
+                            onClick={() => checkShrinkTroes(index)}
+                            style={{ color: 'blue' }}
+                          />
+                        ) : (
+                          <PlusOutlined
+                            onClick={() => checkExpandTroes(index)}
+                            style={{ color: 'blue' }}
+                          />
+                        )}
+                      </td>
+
+                      <td className="px-2">{item.notification_id}</td>
+                      <td className="px-2">{(item.notification_type === 0
+                        ? 'Conditional'
+                        : '') ||
+                        (item.notification_type === 1
+                          ? 'Un-Conditional'
+                          : '') ||
+                        (item.notification_type === 2
+                          ? 'Un-Conditional Daily'
+                          : '')
+                      }</td>
+                      <td className="px-2">{item.source_trigger}</td>
+                      <td className="px-2">{item.notification_type === 0 ? item.eventtriggername : item.event_trigger}</td>
+                      <td className="px-2">{item.locationname === null ? 'All Locations' : item.locationname}</td>
+                      <td className="px-2">{item.startDate === '1895-01-01 00:00:00' ? '24/7' : item.startDate}</td>
+                      <td className="px-2">{item.endDate === '1895-01-01 00:00:00' ? '24/7' : item.endDate}</td>
+                      <td className="px-2">{item.message_time}</td>
+                      <td className="px-2">
+                        <Tooltip title="Restore">
+                          <button
+                            className="actionbtn"
+                            style={{ paddingLeft: '5px', color: 'red', padding: '1px' }}
+                            onClick={() => restoreNotification(item.id)}
+                          >
+                            <img
+                              src={Restore}
+                              alt="restore"
+                              width={'16px'}
+                              height={'16px'}
+                              style={{ marginTop: '6px' }}
+                            />
+                          </button>
+                        </Tooltip>
+                        <Tooltip title="Delete">
+                          <button
+                            className="actionbtn"
+                            style={{ paddingLeft: '10px', color: 'red', padding: '4px' }}
+                            onClick={() => onDeleteNotification(item.id)}
+                          >
+                            <DeleteOutlined className='delete_btn_global' />
+                          </button>
+                        </Tooltip>
+                      </td>
+                    </tr>
+                    {openRowIndexTroes === index && showMessageTroes ? (
+                      <tr>
+                        <td colSpan={2}></td>
+                        <td colSpan={1}>Message:</td>
+                        <td colSpan={4}>
+                          <div>
+                            <TextArea
+                              placeholder="Notification Message..."
+                              autoSize={{
+                                minRows: 2,
+                                maxRows: 6,
+                              }}
+                              value={message}
+                            />
+                            <p>
+                              Words remaining: {maxWords - message.trim().length} / {maxWords}
+                            </p>
+                          </div>
+                        </td>
+                        <td colSpan={4}></td>
+                      </tr>
+                    ) : (
+                      ''
+                    )}
+                  </React.Fragment>
+                )
+              })}
+          </tbody>
+        </table>
+
         <div
           className="user__detail__popup__Customer"
           style={{
@@ -494,19 +499,12 @@ const Trash = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* <UserSwitchOutlined
-            style={{
-              display: 'block',
-              color: '#fff',
-              fontWeight: 'bolder',
-              paddingRight: '10px',
-              marginTop: '-5px',
-              fontSize: '18px',
-            }}
-          /> */}
+
             <p className="admin_registerd__pop">Notification Restored Successfully.</p>
           </div>
         </div>
+
+
         <div
           className="user__detail__popup__Customer"
           style={{
@@ -514,22 +512,15 @@ const Trash = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* <UserSwitchOutlined
-            style={{
-              display: 'block',
-              color: '#fff',
-              fontWeight: 'bolder',
-              paddingRight: '10px',
-              marginTop: '-5px',
-              fontSize: '18px',
-            }}
-          /> */}
+
             <p className="admin_registerd__pop">Notification Deleted permanently.</p>
           </div>
         </div>
-      </div>
-      <div>
-      <Pagination
+     
+
+
+      <div className='pagination_wrap'>
+        <Pagination
           onChange={handlePaginationEmporia}
           pageSize={postPerPageForEmporia}
           total={totalEmporia}
@@ -540,7 +531,9 @@ const Trash = () => {
           itemRender={itemRenderEmporia}
           style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
         />
-        
+      </div>
+
+      </div>
       </div>
     </>
   )
