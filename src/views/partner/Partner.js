@@ -584,12 +584,13 @@ const Partner = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}
+          className='parent_wrap'
         >
-          <p className="partner__acount">Partners</p>
+          <p className="partner__acount">Partners </p>
 
           <div className="filter_users">
             <div>
-              <button id="universalButton" onClick={addPartnerModalOpen} style={{ gap: '5px' }}>
+              <button id="add_partner" onClick={addPartnerModalOpen} style={{ gap: '5px' }}>
                 <img src={right_arrow} alt="edit" style={{ width: '22px', height: '15px' }} />
                 Add Partner
               </button>
@@ -909,7 +910,9 @@ const Partner = () => {
           </div>
         </div>
 
-        <div className="td_part" style={{ overflowX: 'auto', whiteSpace: 'noWrap' }}>
+        <div className="table_wrap" style={{ overflowX: 'auto', whiteSpace: 'noWrap' }}>
+          
+
           <table className="table table-hover">
             <thead className="">
               <tr>
@@ -1065,6 +1068,7 @@ const Partner = () => {
                 })}
             </tbody>
           </table>
+
         </div>
         <div
           className="user__detail__popup__partner"
@@ -1128,6 +1132,9 @@ const Partner = () => {
             <p className="partner_registerd__pop">Partner has been deleted.</p>
           </div>
         </div>
+
+<div className='pagination'> 
+
         <Pagination
           onChange={handlePagination}
           pageSize={postPerPage}
@@ -1144,6 +1151,8 @@ const Partner = () => {
             marginTop: '10px',
           }}
         />
+ </div>
+
       </div>
     </>
   )
