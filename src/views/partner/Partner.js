@@ -609,7 +609,7 @@ const Partner = () => {
           <div id="create_partner__edit">
 
             <p>Add Partner</p>
-            <IoIosClose className="sortcross" />
+            <IoIosClose className="sortcross"  onClick={cancelAddPartnerModalOpen} />
           </div>
 
 
@@ -755,7 +755,7 @@ const Partner = () => {
         >
           <div id="create_partner__edit">
             <p>Edit Partner</p>
-            <IoIosClose className="sortcross" />
+            <IoIosClose className="sortcross"    onClick={cancelupdatePartners} />
           </div>
 
           <div id="form__partner__update">
@@ -860,7 +860,7 @@ const Partner = () => {
               <br />
               Max File size: 1MB allowed
             </p>
-            <div className="locate_side" style={{ paddingLeft: '10px' }}>
+            <div className="locate_side">
 
               <button
                 onClick={cancelupdatePartners}
@@ -880,7 +880,7 @@ const Partner = () => {
           </div>
         </div>
         <div
-          className="show__notShow_partner"
+          className="show__notShow_partner_delete"
           style={{
             display: isPartnerDelete ? 'block' : 'none',
           }}
