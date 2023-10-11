@@ -103,11 +103,12 @@ z-index: 9999;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
 }
 
-.table_parent{
+/* .table_parent{
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
   overflow-x: auto;
   white-space: nowrap;
-}
+} */
+
 #select_option__value{
   padding-right: 30px;
 }

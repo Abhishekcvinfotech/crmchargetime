@@ -439,6 +439,24 @@ td {
 }
 
 /* css end by abhishek singh */
+@media  (max-width: 1540px) {
+ 
+  .modalscroll{
+    position: fixed;
+    top:50%  ;
+    left:50% ;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    overflow-x: auto ;
+
+  }
+
+  .ant-modal{
+    width: 600px !important;
+  }
+}
+
+
 
 @media only screen and (max-width: 1240px) {
   .registration_admin_btn {

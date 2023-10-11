@@ -10,19 +10,13 @@ import { DeleteOutlined, InfoCircleOutlined } from '@ant-design/icons'
 import editPen from '../../assets/images/editPen.svg'
 // import { ExportToCsv } from 'csv-export'
 import { CSVLink } from 'react-csv'
-
+import { IoIosClose } from 'react-icons/io'
 import { useState } from 'react'
 import { Spin, Modal, Button, Tooltip, Popconfirm, message, Pagination } from 'antd'
-
 import axios from 'axios'
 import { useRef } from 'react'
-
-
-
 import Excelicon from '../../assets/images/excelicon.svg'
-
 import { color } from '@mui/system'
-
 const Partner = () => {
   const [ide, setIde] = useState('')
 
@@ -613,13 +607,17 @@ const Partner = () => {
           }}
         >
           <div id="create_partner__edit">
-            <p>Add Partner</p>
+
+            <p>Add Partner</p> 
+            <IoIosClose className="sortcross"  />
           </div>
+
+
           <form onSubmit={createPartnerData}>
             <div id="form__partner__update">
-              <p className="label__Partner" style={{ paddingTop: '20px' }}>
+              <label className="label__Partner" style={{ paddingTop: '20px' }}>
                 Name
-              </p>
+              </label>
               <input
                 className="input__partner"
                 type="text"
@@ -631,7 +629,7 @@ const Partner = () => {
                 minLength={3}
               />
 
-              <p className="label__Partner">Partner ID</p>
+              <label className="label__Partner">Partner ID</label>
               <input
                 className="input__partner"
                 type="text"
@@ -642,7 +640,7 @@ const Partner = () => {
                 required
               />
 
-              <p className="label__Partner">Main POC</p>
+              <label className="label__Partner">Main POC</label>
               <input
                 className="input__partner"
                 type="text"
@@ -652,7 +650,7 @@ const Partner = () => {
                 onChange={(e) => setMainPoc(e.target.value)}
                 required
               />
-              <p className="label__Partner">POC Email</p>
+              <label className="label__Partner">POC Email</label>
               <input
                 className="input__partner"
                 type="text"
@@ -662,7 +660,7 @@ const Partner = () => {
                 onChange={(e) => setPocEmail(e.target.value)}
                 required
               />
-              <p className="label__Partner">POC Phone</p>
+              <label className="label__Partner">POC Phone </label>
               <input
                 className="input__partner"
                 type="number"
@@ -677,7 +675,7 @@ const Partner = () => {
                 }
                 required
               />
-              <p className="label__Partner">Address</p>
+              <label className="label__Partner">Address</label>
               <input
                 className="input__partner"
                 type="text"
@@ -687,7 +685,7 @@ const Partner = () => {
                 onChange={(e) => setAddress(e.target.value)}
                 required
               />
-              <p className="label__Partner">State</p>
+              <label className="label__Partner">State</label>
               <input
                 className="input__partner"
                 type="text"
@@ -697,7 +695,7 @@ const Partner = () => {
                 onChange={(e) => setState(e.target.value)}
                 required
               />
-              <p className="label__Partner">ZIP</p>
+              <label className="label__Partner">ZIP</label>
               <input
                 className="input__partner"
                 type="number"
@@ -712,7 +710,7 @@ const Partner = () => {
                 }
                 required
               />
-              <p className="label__Partner">Partner logo</p>
+              <label className="label__Partner">Partner logo</label>
               <div style={{ marginLeft: '10px' }}>
                 <input
                   type="file"
@@ -729,17 +727,21 @@ const Partner = () => {
                 Max File size: 1MB allowed
               </p>
 
-              <div className="locate_side" style={{ paddingLeft: '10px' }}>
-                <button type="submit" className="create_new__partner">
-                  Add
-                </button>
-                <button
+              <div className="locate_side" >
+                
+                 <button
                   onClick={cancelAddPartnerModalOpen}
                   className="cancel__create__partner"
                   id="not_ShowCancel"
                 >
                   Cancel
                 </button>
+                
+                
+                <button type="submit" className="create_new__partner">
+                  Add
+                </button>
+               
               </div>
             </div>
           </form>
@@ -753,12 +755,13 @@ const Partner = () => {
         >
           <div id="create_partner__edit">
             <p>Edit Partner</p>
+            <IoIosClose className="sortcross"  />
           </div>
 
           <div id="form__partner__update">
-            <p className="label__Partner" style={{ paddingTop: '20px' }}>
+            <label className="label__Partner" style={{ paddingTop: '20px' }}>
               Name
-            </p>
+            </label>
             <input
               className="input__partner"
               type="text"
@@ -769,7 +772,7 @@ const Partner = () => {
               required
             />
 
-            <p className="label__Partner">Partner ID</p>
+            <label className="label__Partner">Partner ID</label>
             <input
               className="input__partner"
               type="text"
@@ -780,7 +783,7 @@ const Partner = () => {
               required
             />
 
-            <p className="label__Partner">Main POC</p>
+            <label className="label__Partner">Main POC</label>
             <input
               className="input__partner"
               type="text"
@@ -790,7 +793,7 @@ const Partner = () => {
               required
               onChange={(e) => setMainPoc(e.target.value)}
             />
-            <p className="label__Partner">POC Email</p>
+            <label className="label__Partner">POC Email</label>
             <input
               className="input__partner"
               type="text"
@@ -800,7 +803,7 @@ const Partner = () => {
               required
               onChange={(e) => setPocEmail(e.target.value)}
             />
-            <p className="label__Partner">Partner Contact</p>
+            <label className="label__Partner">Partner Contact</label>
             <input
               className="input__partner"
               type="number"
@@ -811,7 +814,7 @@ const Partner = () => {
               // onChange={(e) => setPocPhone(e.target.value)}
               onChange={handleMobile}
             />
-            <p className="label__Partner">Address</p>
+            <label className="label__Partner">Address</label>
             <input
               className="input__partner"
               type="text"
@@ -821,7 +824,7 @@ const Partner = () => {
               required
               onChange={(e) => setAddress(e.target.value)}
             />
-            <p className="label__Partner">State</p>
+            <label className="label__Partner">State</label>
             <input
               className="input__partner"
               type="text"
@@ -831,7 +834,7 @@ const Partner = () => {
               required
               onChange={(e) => setState(e.target.value)}
             />
-            <p className="label__Partner">ZIP</p>
+            <label className="label__Partner">ZIP</label>
             <input
               className="input__partner"
               type="number"
@@ -842,7 +845,7 @@ const Partner = () => {
               onChange={handleZipcode}
               // onChange={(e) => setZip(e.target.value)}
             />
-            <p className="label__Partner">Partner logo</p>
+            <label className="label__Partner">Partner logo</label>
             <div style={{ marginLeft: '10px' }}>
               <input
                 type="file"
@@ -858,6 +861,16 @@ const Partner = () => {
               Max File size: 1MB allowed
             </p>
             <div className="locate_side" style={{ paddingLeft: '10px' }}>
+            
+            <button
+                onClick={cancelupdatePartners}
+                className="cancel__create__partner"
+                id="not_ShowCancel"
+              >
+                Cancel
+              </button>
+            
+            
               <button
                 type="submit"
                 className="create_new__partner"
@@ -865,13 +878,7 @@ const Partner = () => {
               >
                 Update
               </button>
-              <button
-                onClick={cancelupdatePartners}
-                className="cancel__create__partner"
-                id="not_ShowCancel"
-              >
-                Cancel
-              </button>
+            
             </div>
           </div>
         </div>

@@ -83,7 +83,7 @@ import { IoPricetags } from 'react-icons/io5'
 import { IoIosPaper } from 'react-icons/io'
 import { IoLocationSharp } from 'react-icons/io5'
 import { CenterFocusStrong } from '@mui/icons-material'
-
+import Redcircle from '../../assets/images/Redcircle.svg'
 // import swal from 'sweetalert';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import { MDBIcon} from 'mdbreact';
@@ -2926,23 +2926,23 @@ const Customer = () => {
           {/*   // himanshu code ends */}
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer userdeletmodal"
           style={{
             display: userDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
+          <div style={{ display: 'flex', alignItems: 'center' ,gap:'16px' }}>
+            {/* <DeleteOutlined
               style={{
                 display: 'block',
                 color: '#fff',
                 fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
+                
                 fontSize: '18px',
               }}
-            />
-            <p className="admin_registerd__pop">User has been deleted.</p>
+            /> */}
+             <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin  ">User has been deleted.</span>
           </div>
         </div>
         <div

@@ -424,7 +424,7 @@ const Admin = () => {
               </div>
             )}
             <div
-              className="show__notShow"
+              className="show__notShow modalscroll"
               style={{
                 display: isShown ? 'block' : 'none',
               }}
@@ -570,7 +570,7 @@ const Admin = () => {
               <div>
                 <div className="modal-backdrop" onClick={cancelCreateAdmin}></div>
                 <div
-                  className="show__notShow"
+                  className="show__notShow  modalscroll"
                   style={{
                     display: isadminShow ? 'block' : 'none',
                   }}

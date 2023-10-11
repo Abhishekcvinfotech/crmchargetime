@@ -1188,6 +1188,25 @@ input[type='file']::before {
   display: flex;
 }
 
+.userdeletmodal{
+    margin: 0;
+    background: #F42B3D;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+    width: 600px;
+    padding: 23px 12px;
+    border-radius: 6px;
+}
+.userdeletmodal_margin{
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 /* .all_customer_of_page {
   font-size: 24px;
   font-weight: bolder;
@@ -1224,6 +1243,9 @@ input[type='file']::before {
    #addModalsecond{
     padding: 15px !important;
     width: 700px !important;
+    height: 500px !important;
+    overflow-x: auto !important;
+
    }
    #addModalsecond .modal_form {
     margin-top: 15px !important;

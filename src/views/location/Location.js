@@ -707,7 +707,7 @@ const Location = () => {
               </div>
 
               <div
-                className="show__notShow"
+                className="show__notShow  editinstallation"
                 style={{
                   display: isShown ? 'block' : 'none',
                 }}
@@ -810,7 +810,7 @@ const Location = () => {
               <div className="modal-backdrop" onClick={cancelCreateAdmin}></div>
 
               <div
-                className="show__notShow"
+                className="show__notShow editinstallation"
                 style={{
                   display: isadminShow ? 'block' : 'none',
                 }}
@@ -906,7 +906,7 @@ const Location = () => {
     <div>
     <div className="modal-backdrop" onClick={cancelDeleteLocation}></div>
           <div
-          className="show__notShow"
+          className="  deletemodal "
           style={{
             display: isadminDelete ? 'block' : 'none',
           }}
