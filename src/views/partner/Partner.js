@@ -608,8 +608,8 @@ const Partner = () => {
         >
           <div id="create_partner__edit">
 
-            <p>Add Partner</p> 
-            <IoIosClose className="sortcross"  />
+            <p>Add Partner</p>
+            <IoIosClose className="sortcross" />
           </div>
 
 
@@ -728,20 +728,20 @@ const Partner = () => {
               </p>
 
               <div className="locate_side" >
-                
-                 <button
+
+                <button
                   onClick={cancelAddPartnerModalOpen}
                   className="cancel__create__partner"
                   id="not_ShowCancel"
                 >
                   Cancel
                 </button>
-                
-                
+
+
                 <button type="submit" className="create_new__partner">
                   Add
                 </button>
-               
+
               </div>
             </div>
           </form>
@@ -755,7 +755,7 @@ const Partner = () => {
         >
           <div id="create_partner__edit">
             <p>Edit Partner</p>
-            <IoIosClose className="sortcross"  />
+            <IoIosClose className="sortcross" />
           </div>
 
           <div id="form__partner__update">
@@ -843,7 +843,7 @@ const Partner = () => {
               placeholder="Enter ZIP Code"
               required
               onChange={handleZipcode}
-              // onChange={(e) => setZip(e.target.value)}
+            // onChange={(e) => setZip(e.target.value)}
             />
             <label className="label__Partner">Partner logo</label>
             <div style={{ marginLeft: '10px' }}>
@@ -861,16 +861,14 @@ const Partner = () => {
               Max File size: 1MB allowed
             </p>
             <div className="locate_side" style={{ paddingLeft: '10px' }}>
-            
-            <button
+
+              <button
                 onClick={cancelupdatePartners}
                 className="cancel__create__partner"
                 id="not_ShowCancel"
               >
                 Cancel
               </button>
-            
-            
               <button
                 type="submit"
                 className="create_new__partner"
@@ -878,11 +876,9 @@ const Partner = () => {
               >
                 Update
               </button>
-            
             </div>
           </div>
         </div>
-
         <div
           className="show__notShow_partner"
           style={{
@@ -916,10 +912,7 @@ const Partner = () => {
             </div>
           </div>
         </div>
-
         <div className="table_wrap" style={{ overflowX: 'auto', whiteSpace: 'noWrap' }}>
-          
-
           <table className="table table-hover">
             <thead className="">
               <tr>
@@ -951,7 +944,6 @@ const Partner = () => {
                 <th className="th_Name px-3">Action</th>
               </tr>
             </thead>
-
             <tbody style={{ background: '#fff' }}>
               {currentPosts &&
                 currentPosts.map((item, ind) => {
@@ -966,7 +958,7 @@ const Partner = () => {
                               src={Excelicon}
                               alt="upload_img"
                               style={{
-                                marginLeft:'5px',
+                                marginLeft: '5px',
                                 cursor: 'pointer',
                               }}
                             />
@@ -981,7 +973,6 @@ const Partner = () => {
                       <td className="px-3 ">{item.address}</td>
                       <td className="px-3 ">{item.state}</td>
                       <td className="px-3 ">{item.zip}</td>
-
                       <td className="px-3" style={{ textAlign: 'center' }}>
                         {item.path ? (
                           <img
@@ -1140,25 +1131,25 @@ const Partner = () => {
           </div>
         </div>
 
-<div className='pagination'> 
+        <div className='pagination'>
 
-        <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{
-            paddingLeft: '12px',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            marginTop: '10px',
-          }}
-        />
- </div>
+          <Pagination
+            onChange={handlePagination}
+            pageSize={postPerPage}
+            total={total}
+            current={page}
+            showSizeChanger
+            showQuickJumper
+            onShowSizeChange={onShowSizeChange}
+            itemRender={itemRender}
+            style={{
+              paddingLeft: '12px',
+              display: 'flex',
+              justifyContent: 'flex-start',
+              marginTop: '10px',
+            }}
+          />
+        </div>
 
       </div>
     </>

@@ -318,8 +318,7 @@ border-radius: 6px;
   margin-left: 15px;
 }
 .cancel__create__partner:hover {
-  background-color: #2062e3;
-  
+  background-color: #2062e3; 
 }
 
 /* Modal Popup end */
@@ -330,14 +329,15 @@ border-radius: 6px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding-top: 50px;
 }
+
 #create_partner__export {
   font-size: 18px;
   font-weight: bold;
   overflow-y: auto;
 }
+
 #form__partner__reports {
   width: 350px;
   background: #fff;
@@ -349,7 +349,6 @@ border-radius: 6px;
   /* margin-left: 55px; */
   /* border-radius: 10px; */
   margin: auto;
-
   overflow-y: auto;
 }
 
@@ -357,10 +356,10 @@ border-radius: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   padding: 10px 10px;
 }
+
 .second_div_export {
   display: flex;
   align-items: center;
@@ -392,6 +391,7 @@ border-radius: 6px;
   bottom: 10px;
   margin-left: 10px;
 }
+
 .partner_registerd__pop {
   color: #fff;
   font-size: 14px;
@@ -417,7 +417,6 @@ border-radius: 6px;
 }
 
 #add_partner{
-
   background-color: #3378ff !important;
   color: #ffffff;
   height: 48px;
@@ -437,8 +436,6 @@ border-radius: 6px;
   gap: 16px;
   padding: 0px 24px 0px 24px !important;
 }
-
-
 .table_wrap{
   margin: 24px 0;
   padding: 24px;
@@ -448,7 +445,6 @@ border-radius: 6px;
   overflow-x: auto;
   white-space:unset;
 }
-
 @media  (max-width: 1540px) {
   .show__notShow_partner{
     position: absolute;
@@ -461,9 +457,6 @@ border-radius: 6px;
     overflow-x: auto;
     transform: translate(-50% , -50%);
   }
-
-
-
   }
 
 @media only screen and (max-width: 473px) {
@@ -483,7 +476,6 @@ border-radius: 6px;
     margin-top: 10px;
   }
 }
-
 /* Bottom popup send */
 
 /* html part */
