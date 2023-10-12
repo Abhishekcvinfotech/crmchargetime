@@ -11,6 +11,7 @@ import axios from 'axios'
 import { CSVLink } from 'react-csv'
 import partnerd from '../../assets/images/partnerd.svg'
 import sheet from '../../assets/images/sheets.png'
+import Redcircle from '../../assets/images/Redcircle.svg'
 
 import { DeleteOutlined } from '@ant-design/icons'
 const Finance = () => {
@@ -33,7 +34,7 @@ const Finance = () => {
 
   //pagination start
 
-  const [postPerPage, setPostPerPage] = useState(10)
+  const [postPerPage, setPostPerPage] = useState(25)
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState('')
   //pagination end
@@ -211,12 +212,14 @@ const Finance = () => {
   return (
     <>
       <div
-        style={{
-          display: 'flex',
-          justifyContent:'space-between',
-          alignItems: 'center',
-          marginBottom: '24px',
-        }}
+        // style={{
+        //   display: 'flex',
+        //   justifyContent:'space-between',
+        //   alignItems: 'center',
+        //   marginBottom: '24px',
+        // }}
+
+        className='finance_btn_wrap'
       >
         <p className="finance_bold_text">Partner Invoice Report</p>
 
@@ -255,9 +258,10 @@ const Finance = () => {
       <div></div>
       <div className="finance_partner_select">
         <div className="finance_wrapper">
-          <label className="for_finance_select" style={{ marginRight: '10px', fontWeight: 'bold' }}>
+        
+          {/* <label className="for_finance_select" style={{ marginRight: '10px', fontWeight: 'bold' }}>
             Select Partner:
-          </label>
+          </label> */}
 
          <div className='icon-wrap'> 
           <select id="option__value_two_finanace" onChange={handlePartner}>
@@ -409,19 +413,12 @@ const Finance = () => {
             display: financeDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
+
+          <div className='redcircle'>
+            <img src={Redcircle} alt="Cyber Vision infotech " />
             <p className="dleted_text">Partner Invoice Report has been deleted.</p>
           </div>
+
         </div>
         <div
           className="finance__popup__Invoice"
@@ -444,6 +441,8 @@ const Finance = () => {
             <p className="dleted_text">Partner Invoice Report has been Downloaded.</p>
           </div>
         </div>
+
+<div className='pagination_wrap'>   
         <Pagination
           onChange={handlePagination}
           pageSize={postPerPage}
@@ -455,6 +454,8 @@ const Finance = () => {
           itemRender={itemRender}
           style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
         />
+</div>
+
       </div>
     </>
   )

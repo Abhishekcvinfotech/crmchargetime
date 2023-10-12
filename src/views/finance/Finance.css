@@ -1,14 +1,27 @@
 .finance_bold_text {
-  font-weight: bolder;
-  font-size: 30px;
-  color: black;
-  margin: 0;
-  padding: 0 ;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 600;
+    color: #213446;
+    margin: 0;
 }
+
+.container-lg {
+  padding: 0 24px !important;
+}
+
+
 .finance_bold_text_one {
   margin-top: -10px;
 }
 
+.finance_btn_wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+
+}
 .icon-wrap{
   display: flex;
   gap: 10px;
@@ -63,25 +76,18 @@ border-radius: 6px;
 } */
 /* paination css end  */
 
-.finance__popup__Invoice {
-  z-index: 1;
-  background: #1890ff;
-  border-radius: 6px;
-  display: flex;
-  align-content: flex-end;
-  padding: 0px 12px;
-  position: fixed;
-  bottom: 10px;
-  margin-left: 10px;
-}
+
+
+
 .dleted_text {
   color: #fff;
   font-size: 14px;
   font-weight: 500;
-
   display: block;
   margin-top: 10px;
 }
+
+
 .delete__Location_Finance {
   border: none;
   background: none;
@@ -97,7 +103,8 @@ border-radius: 6px;
   background-repeat: no-repeat;
   background-position: right 0.7rem top 50%;
   background-size: 0.65rem auto;
-border-radius: 6px;
+  border-radius: 6px;
+  margin: 0;
 }
 #option__value_two_finanace:focus {
   background-image: url('https://w7.pngwing.com/pngs/711/104/png-transparent-computer-icons-arrow-down-arrow-up-right-left-up-up-arrow-angle-triangle-black-thumbnail.png');
@@ -109,7 +116,32 @@ border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(58, 114, 222, 0.1);
-  padding: 30px 24px;
-  border-bottom: 2px solid #565454;
+  padding: 24px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+}
+
+.redcircle{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    background: #F42B3D;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+    width: 400px;
+    padding: 23px 12px;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.finance__popup__Invoice {
+  z-index: 1;
+  border-radius: 6px;
+  display: flex;
+  align-content: flex-end;
+  padding: 0px 12px;
+  position: fixed;
+  bottom: 10px;
+  margin-left: 10px;
 }
