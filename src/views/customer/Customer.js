@@ -1938,7 +1938,7 @@ const Customer = () => {
         <div>
           {isShown && (
             <div className="modal-backdrop" onClick={() => setIsShown(false)}>
-              {/* Backdrop content (if needed) */}
+              
             </div>
           )}
           <div

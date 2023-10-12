@@ -258,10 +258,10 @@ const Notification = () => {
     setPlanValue(0)
     setValue(0)
     setstatusValue(0)
-    document.getElementById('location').style.backgroundColor = '#1890ff'
+    // document.getElementById('location').style.backgroundColor = '#1890ff'
     document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
     document.getElementById('price_handle').style.backgroundColor = '#1890ff'
-    document.getElementById('status_filter').style.backgroundColor = '#1890ff'
+    // document.getElementById('status_filter').style.backgroundColor = '#1890ff'
   }
 
   // filter ends

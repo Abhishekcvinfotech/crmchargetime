@@ -747,6 +747,12 @@ const Partner = () => {
           </form>
         </div>
 
+
+        <div>   { isPartnerModal && (  
+        <div className="modal-backdrop" onClick={cancelupdatePartners} >  
+        </div>
+             )}
+
         <div
           className="show__notShow_partner"
           style={{
@@ -879,6 +885,16 @@ const Partner = () => {
             </div>
           </div>
         </div>
+
+        </div>
+
+
+<div> { isPartnerDelete &&  (
+
+   <div className="modal-backdrop"  onClick={cancelDeleteModalPopup} >   </div>
+
+   )}
+
         <div
           className="show__notShow_partner_delete"
           style={{
@@ -912,6 +928,9 @@ const Partner = () => {
             </div>
           </div>
         </div>
+</div>
+
+
         <div className="table_wrap" style={{ overflowX: 'auto', whiteSpace: 'noWrap' }}>
           <table className="table table-hover">
             <thead className="">
