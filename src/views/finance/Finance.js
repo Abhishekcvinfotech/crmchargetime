@@ -10,8 +10,9 @@ import { troesAPi } from '../../api'
 import axios from 'axios'
 import { CSVLink } from 'react-csv'
 import partnerd from '../../assets/images/partnerd.svg'
-import sheet from '../../assets/images/sheets.png'
+// import sheet from '../../assets/images/sheets.png'
 import Redcircle from '../../assets/images/Redcircle.svg'
+import Excelicon from '../../assets/images/excelicon.svg'
 
 import { DeleteOutlined } from '@ant-design/icons'
 const Finance = () => {
@@ -85,7 +86,7 @@ const Finance = () => {
      }
 
   const downloadEndpoint = `${troesAPi}/partnerexport/${getIdOfPartner}`
-  const handleFileDownload =async () => {
+  const handleFileDownload = async () => {
     setLoading(true)
     setRefreshing(true)
     const requestData = {
@@ -332,20 +333,13 @@ const Finance = () => {
         </div>
       </div>
 
-      <div style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+      <div  className='table_wrapper' >
         <table className="table table-hover">
           <thead className="finance__information">
             <tr>
             <th>S.No.</th>
               <th>
-                {/* <img
-                  src={sheet}
-                  alt="upload_img"
-                  style={{
-                    width: '20px',
-                    cursor: 'pointer',
-                  }}
-                /> */}
+               File
               </th>
               <th>Name</th>
               <th style={{margin:'auto'}}>Interval</th>
@@ -375,7 +369,7 @@ const Finance = () => {
                   <td className='px-4'>{displayedIndex}</td>
                   <td onClick={() => handleExcel(item.id,setPartnername(item.report_name))}>
                       <img
-                        src={sheet}
+                        src={Excelicon}
                         alt="upload_img"
                         style={{
                           width: '20px',
@@ -405,6 +399,25 @@ const Finance = () => {
               })}
           </tbody>
         </table>
+
+
+
+        <div className='pagination_wrap'>   
+        <Pagination
+          onChange={handlePagination}
+          pageSize={postPerPage}
+          total={total}
+          current={page}
+          showSizeChanger
+          showQuickJumper
+          onShowSizeChange={onShowSizeChange}
+          itemRender={itemRender}
+          style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
+        />
+        </div>
+
+
+
       </div>
       <div>
         <div
@@ -442,19 +455,6 @@ const Finance = () => {
           </div>
         </div>
 
-<div className='pagination_wrap'>   
-        <Pagination
-          onChange={handlePagination}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
-        />
-</div>
 
       </div>
     </>
