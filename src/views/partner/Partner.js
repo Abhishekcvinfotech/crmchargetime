@@ -600,6 +600,15 @@ const Partner = () => {
             ref={csvDownloadRef}
           />
         </div>
+
+<div>  
+ {  partnerForCreate && (   <div className="modal-backdrop" onClick={cancelAddPartnerModalOpen} >  
+         </div>
+         
+         )}
+
+        
+
         <div
           className="show__notShow_partner"
           style={{
@@ -747,6 +756,7 @@ const Partner = () => {
           </form>
         </div>
 
+</div>
 
         <div>   { isPartnerModal && (  
         <div className="modal-backdrop" onClick={cancelupdatePartners} >  
@@ -905,12 +915,17 @@ const Partner = () => {
             <p>Confirm Delete</p>
           </div>
           <div id="delete__partner">
-            <p>Are you sure you want to delete location</p>
-            <p style={{ marginTop: '-10px' }}>
-              <span style={{ fontWeight: 'bolder' }}>{name}</span>
-            </p>
-            <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
-            <div style={{ paddingLeft: '10px' }}>
+            <p>Are you sure you want to delete location </p>
+             <p> <span style={{ fontWeight: 'bolder' , color:'black'}}>{name}</span></p>
+              <p>This process is Irreversible</p>
+            <div className='delete_modal_buttons'>
+             <button
+                onClick={cancelDeleteModalPopup}
+                className="cancel__create__partner"
+                type="submit"
+              >
+                Cancel
+              </button>
               <button
                 onClick={() => deletePartner(id)}
                 type="submit"
@@ -918,13 +933,7 @@ const Partner = () => {
               >
                 Delete
               </button>
-              <button
-                onClick={cancelDeleteModalPopup}
-                className="cancel__create__partner"
-                type="submit"
-              >
-                Cancel
-              </button>
+            
             </div>
           </div>
         </div>
