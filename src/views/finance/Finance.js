@@ -226,7 +226,7 @@ const Finance = () => {
 
         <Button
             type="primary"
-            id='universalButton'
+            id='generate_report_btn'
             onClick={handleFileDownload}
             style={{height:'40px', display:'flex',  alignItems: 'center'}}
           >
@@ -259,11 +259,6 @@ const Finance = () => {
       <div></div>
       <div className="finance_partner_select">
         <div className="finance_wrapper">
-        
-          {/* <label className="for_finance_select" style={{ marginRight: '10px', fontWeight: 'bold' }}>
-            Select Partner:
-          </label> */}
-
          <div className='icon-wrap'> 
           <select id="option__value_two_finanace" onChange={handlePartner}>
           {refreshing ? (

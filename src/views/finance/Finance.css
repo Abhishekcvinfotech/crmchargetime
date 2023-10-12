@@ -155,3 +155,26 @@ border-radius: 6px;
  margin: 24px 0;
 
 }
+
+#generate_report_btn{
+  height: 48px;
+  padding: 0px 24px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #3378ff;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
