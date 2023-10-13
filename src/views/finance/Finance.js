@@ -232,7 +232,6 @@ const Finance = () => {
           >
           <img src={right_arrow} alt="edit"  style={{width:"22px",height:"15px",paddingRight:"4px"}} />
             Generate Report
-            
           </Button>
 
 

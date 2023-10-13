@@ -25,17 +25,19 @@ import { AppHeaderDropdown } from './header/index'
 import { logo } from 'src/assets/brand/logo'
 
 const AppHeader = () => {
+
   const [isOpen, setOpen] = useState(false)
   const toggleDropdown = () => {
     setOpen(!isOpen)
   }
-  const dispatch = useDispatch()
-  
- 
 
 
- const sidebarShow = useSelector((state) => state.sidebarShow)
-  let navigate = useNavigate()
+const dispatch = useDispatch()
+const sidebarShow = useSelector((state) => state.sidebarShow)
+
+let navigate = useNavigate()
+
+
 
   function handleClick() {
     let confirmAction = window.confirm('Are you sure?')
@@ -49,13 +51,15 @@ const AppHeader = () => {
   return (
     <CHeader position="sticky" className="mb-4">
       <CContainer fluid>
+
         <CHeaderToggler
           className="ps-1"
           onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
-          // style={{ zIndex: '100000' }}
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
+
+
         {/* <Link to="/">
           <CHeaderBrand className="mx-auto " to="/">
             <img style={{ width: '40px' }} src={chargeLogo} alt="charheLogo" />

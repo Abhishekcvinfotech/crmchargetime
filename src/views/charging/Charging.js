@@ -307,6 +307,7 @@ const Charging = () => {
           {
             <Modal
               title="Create Rate"
+              width={400}
               centered
               open={modal2Open}
               onOk={() => setModal2Open(false)}
@@ -346,7 +347,7 @@ const Charging = () => {
                       value={partner}
                       onChange={(e) => setPartner(e.target.value)}
                       required
-                      readOnly
+                      
                     />
                     <input
                       type="hidden"
@@ -394,16 +395,20 @@ const Charging = () => {
                       display: 'flex',
                       justifyContent: 'space-between',
                       paddingBottom: '10px',
-                      borderTop: '2px dotted darkgrey',
                       paddingTop: '10px',
                     }}
+                    className='create_wap_btn'
                   >
-                    <button  type='submit'   className="btn2" required>
-                      Create Rate
-                    </button>
-                    <button className="btn_cancel" onClick={()=> { back(); setModal2Open(false)}} type="button">
+
+
+                   <button className="btn_cancel" onClick={()=> { back(); setModal2Open(false)}} type="button">
                       Cancel
                     </button>
+
+                    <button  type='submit'   className="btn__createrate" required>
+                      Create Rate
+                    </button>
+                  
                   </div>
                 </form>
               </div>
