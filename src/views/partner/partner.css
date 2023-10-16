@@ -439,11 +439,12 @@ border-radius: 6px;
 }
 
 .partner__acount {
-  font-weight: bolder;
-  font-size: 30px;
-  color: black;
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 600;
+  color: #213446;
   margin: 0;
-  padding: 0;
+  padding: 0 ;
 }
 
 #add_partner{

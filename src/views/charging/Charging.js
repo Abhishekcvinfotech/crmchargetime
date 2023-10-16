@@ -33,6 +33,7 @@ const Charging = () => {
   const [page, setPage] = useState(1)
   const [total, setTotal] = useState('')
   const [modal2Open, setModal2Open] = useState(false)
+  const [modal21pen, setModal21pen] = useState(false);
 
   const showDrawer = () => {
     setOpen(true)
@@ -312,6 +313,7 @@ const Charging = () => {
               open={modal2Open}
               onOk={() => setModal2Open(false)}
               onCancel={() => setModal2Open(false)}
+              
             >
               <div className="modal_form">
                 <form className="form" onSubmit={addRate}>
@@ -558,15 +560,80 @@ const Charging = () => {
           </div>
         </div>
         {/* //edit code */}
-        <Drawer
+        {/* <Drawer
           title="Update Rate"
           placement="right"
           onClose={onEditClose}
           open={editOpen}
           style={{ zIndex: '9991' }}
           className="drawer"
-        >
-          <div className="modal_form">
+        > */}
+          {/* <div className="modal_form">
+            <form className="form" onSubmit={(e) => onSub(e)}>
+              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
+                Installation
+              </label>
+              <input type="text" value={installation} readOnly />
+              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
+                Partner
+              </label>
+              <input type="text" value={partner} readOnly />
+              <label htmlFor="startDate" style={{ fontWeight: '600' }}>
+                kWh
+              </label>
+              <input
+                type="number"
+                value={kwh}
+                required
+                onChange={(e) => setKWh(e.target.value)}
+                placeholder="Enter kWh"
+                onKeyDown={(evt) =>
+                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
+                }
+              />
+              <label htmlFor="endDate" style={{ fontWeight: '600' }}>
+                ($) Rate
+              </label>
+              <input
+                type="number"
+                value={rate}
+                required
+                onChange={(e) => setRate(e.target.value)}
+                placeholder="Enter ($) Rate"
+                onKeyDown={(evt) =>
+                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
+                }
+              />
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  paddingBottom: '10px',
+                  borderTop: '2px dotted darkgrey',
+                  paddingTop: '10px',
+                  gap: '10px',
+                }}
+              >
+                <button className="btn2" required>
+                  Update Rate
+                </button>
+                <button className="btn_cancel" type="button" onClick={Editback}>
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div> */}
+        {/* </Drawer> */}
+
+        <Modal
+        title="Vertically centered modal dialog"
+        centered
+        open={modal21pen}
+        onOk={() => setModal21pen(false)}
+        onCancel={() => setModal21pen(false)}
+      >
+      
+      <div className="modal_form">
             <form className="form" onSubmit={(e) => onSub(e)}>
               <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
                 Installation
@@ -621,7 +688,12 @@ const Charging = () => {
               </div>
             </form>
           </div>
-        </Drawer>
+
+      </Modal>
+
+
+
+
         <div
           className="user__detail__popup__Customer"
           style={{
@@ -680,6 +752,7 @@ const Charging = () => {
                         style={{ border: 'none', paddingRight: '5px', background: 'none' }}
                       >
                         <img src={editPen} alt="edit" className="editn_btn_global" />
+                        
                       </button>{' '}
                       &nbsp; &nbsp;
                       <button
