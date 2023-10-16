@@ -720,7 +720,7 @@ const Partner = () => {
                 required
               />
               <label className="label__Partner">Partner logo</label>
-              <div style={{ marginLeft: '10px' }}>
+              
                 <input
                   type="file"
                   required
@@ -729,7 +729,7 @@ const Partner = () => {
                   onChange={handleImage}
                   ref={ref}
                 />
-              </div>
+             
               <p style={{ color: 'red', fontSize: '11px', padding: '1px 10px', display: note }}>
                 Note: Please select only Image file( eg: .png, .jpg, .jpeg)
                 <br />
@@ -862,7 +862,7 @@ const Partner = () => {
             // onChange={(e) => setZip(e.target.value)}
             />
             <label className="label__Partner">Partner logo</label>
-            <div style={{ marginLeft: '10px' }}>
+            
               <input
                 type="file"
                 accept=".png, .jpg, .jpeg"
@@ -870,7 +870,7 @@ const Partner = () => {
                 onChange={(event) => handleUpdateImage(event)}
                 ref={fileInputRef}
               />
-            </div>
+            
             <p style={{ color: 'red', fontSize: '11px', padding: '1px 10px', display: note }}>
               Note: Please select only Image file( eg: .png, .jpg, .jpeg)
               <br />
@@ -1057,7 +1057,7 @@ const Partner = () => {
                           </Tooltip>
                         </Popconfirm>
                       </td>
-                      <td className="px-4">
+                      <td className="px-3">
                         <button
                           onClick={() => {
                             setName(item.name)
@@ -1075,7 +1075,7 @@ const Partner = () => {
                               item.imagename !== null ? item.imagename : 'No file chosen',
                             )
                           }}
-                          style={{ border: 'none', paddingRight: '5px', background: 'none' }}
+                          style={{ border: 'none',  background: 'none' }}
                         >
                           <img src={editPen} alt="edit" className="editn_btn_global" />
                         </button>{' '}
