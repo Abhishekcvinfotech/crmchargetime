@@ -316,10 +316,7 @@ font-size: 22px;
   padding-bottom: 10px;
 }
 
-#delete__partner p{
 
-
-}
 .delete_new__partner {
   background: #f84e4e;
 border-radius: 6px;
@@ -376,8 +373,6 @@ border-radius: 6px;
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 5px !important;
-  /* margin-left: 55px; */
-  /* border-radius: 10px; */
   margin: auto;
   overflow-y: auto;
 }
