@@ -3,7 +3,7 @@ import React from 'react'
 const Customer = React.lazy(() => import('./views/customer/Customer'))
 const Admin = React.lazy(() => import('./views/admin/Admin'))
 const Location = React.lazy(() => import('./views/location/Location'))
-const Price = React.lazy(() => import('./views/price/PriceTwo'))
+const Price = React.lazy(() => import('./views/price/PriceThree'))
 const Asset = React.lazy(() => import('./views/asset/AssetTwo'))
 const Partner = React.lazy(() => import('./views/partner/Partner'))
 // const Voucher = React.lazy(() => import('./views/voucher/Voucher'))
