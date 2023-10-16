@@ -471,6 +471,10 @@ border-radius: 6px;
   overflow-x: auto;
   white-space:unset;
 }
+
+.ant-pagination-next , .ant-pagination-prev{
+  padding: 10px 22px !important;
+}
 @media  (max-width: 1540px) {
   .show__notShow_partner{
     position: absolute;

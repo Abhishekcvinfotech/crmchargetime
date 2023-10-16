@@ -417,7 +417,7 @@ input[type='file']::file-selector-button {
 }
 
 #searchBox {
-  height: 48px !important;
+  height: 42px !important;
   border-radius: 6px !important;
   border: solid #ccc 1px !important;
   width: 470px !important;

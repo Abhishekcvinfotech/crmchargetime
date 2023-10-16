@@ -994,7 +994,7 @@ const Location = () => {
                     let numOfDaata = formatDate(new Date(item.pwa_date))
                     return (
                       <tr key={index}>
-                        <td className="">{displayedIndex}</td>
+                        <td className="px-3">{displayedIndex}</td>
                         <td className="">
                           <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
                             <Tooltip placement="topLeft" title={textOne}>
@@ -1030,7 +1030,7 @@ const Location = () => {
 
                         <td>{item.state}</td>
                         <td>{item.ZIP_code}</td>
-                        <td>
+                        <td className='text-center'>
                           {item.salesTax}
                           {item.salesTax ? '%' : ''}
                         </td>

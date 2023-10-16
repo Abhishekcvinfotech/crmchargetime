@@ -1484,7 +1484,7 @@ const Notification = () => {
                             />
                           )}
                         </td>
-                        <td className="px-2">{displayedIndex}</td>
+                        <td className="px-3">{displayedIndex}</td>
 
                         <td className="px-2">
                           {item.notification_id === null ? (
@@ -1814,7 +1814,7 @@ const Notification = () => {
                             />
                           )}
                         </td>
-                        <td className="px-2">
+                        <td className="text-center">
                           {editableValues[index].update ? (
                             <Tooltip title="Update">
                               <button
@@ -2059,7 +2059,7 @@ const Notification = () => {
                             />
                           )}
                         </td>
-                        <td className="px-2">{displayedIndex}</td>
+                        <td className="px-3">{displayedIndex}</td>
 
                         <td>
                           {item.notification_id === null ? (

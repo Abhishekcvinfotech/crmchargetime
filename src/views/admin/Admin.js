@@ -778,7 +778,7 @@ const Admin = () => {
                     let numOfDaata = formatDate(new Date(item.pwa_date))
                     return (
                       <tr key={index}>
-                        <td>{displayedIndex}</td>
+                        <td className='px-3'>{displayedIndex}</td>
 
                         <td>{item.name}</td>
                         <td>{item.email}</td>
