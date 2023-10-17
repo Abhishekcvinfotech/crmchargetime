@@ -956,7 +956,7 @@ const Location = () => {
 </div>
 
         <div className="table_wrap">
-          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap', marginBottom:'48px' }}>
             <table className="table table-hover">
               <thead className="location__information">
                 <tr>
@@ -1079,11 +1079,12 @@ const Location = () => {
               style={{
                 paddingLeft: '12px',
                 display: 'flex',
-                marginTop: '10px',
                 justifyContent: 'flex-start',
               }}
             />
           </div>
+
+       
         </div>
         <div
           className="user__detail__popup__location"

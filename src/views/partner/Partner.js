@@ -1174,7 +1174,8 @@ const Partner = () => {
               paddingLeft: '12px',
               display: 'flex',
               justifyContent: 'flex-start',
-              marginTop: '10px',
+              marginBottom:'24px',
+              marginTop:'48px',
             }}
           />
         </div>

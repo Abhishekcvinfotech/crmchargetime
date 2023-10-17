@@ -22,10 +22,17 @@ table {
 thead th {
   height: 56px;
   background-color: #F9FBFE !important;
+  font-size: 16px  !important;
+  font-weight: bolder !important;
 }
 
 thead tr {
   vertical-align: middle;
+}
+
+.table{
+margin-bottom: 48px;
+
 }
 
 .header {
@@ -34,9 +41,8 @@ thead tr {
 .body {
   background-color: #f9fbfe;
 }
-.pagination_wrap {
-  margin: 24px 0;
-}
+
+
 
 /* pagination css start */
 
