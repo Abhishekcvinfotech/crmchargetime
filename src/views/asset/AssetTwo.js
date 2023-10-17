@@ -35,6 +35,7 @@ import '../universal.css'
 import import_one from '../../assets/images/import_one.svg'
 import FrameTwo from '../../assets/images/FrameTwo.svg'
 import WrongDetails from '../../assets/images/wrongDetails.svg'
+import wrong_detailsicon from '../../assets/images/wrong_detailsicon.svg'
 import MatchCustomer from '../../assets/images/match_customer.svg'
 import Emporia_data from '../../assets/images/Emporia_data.svg'
 import { WrongLocation } from '@mui/icons-material'
@@ -999,15 +1000,19 @@ const AssetTwo = () => {
         )}
         <Modal
           // centered
+          // id='wrongDetails_modal'
           title="Wrong Emporia Details"
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
-          width={550}
+          width={900}
+          bodyStyle={{ height: '400px', overflowX:'auto' ,padding:'24px' }}  
         >
-          <table className="table">
+          
+
+          <table className="table" >
             <thead>
-              <img
+              {/* <img
                 src={Excelicon}
                 alt="upload_img"
                 style={{
@@ -1016,12 +1021,13 @@ const AssetTwo = () => {
                   cursor: 'pointer',
                   marginTop: '10px',
                 }}
-              />
+              /> */}
+              <th className="px-3">File</th>
 
               <th className="px-3">Device ID</th>
-              <th style={{ padding: '5px' }}>Device Address</th>
-              <th style={{ padding: '5px' }}>Issue</th>
-              <th style={{ padding: '5px' }}>ON/OFF</th>
+              <th >Device Address</th>
+              <th >Issue</th>
+              <th >ON/OFF</th>
             </thead>
             <tbody>
               {forLoader ? (
@@ -1051,7 +1057,7 @@ const AssetTwo = () => {
                         </div>
                       </td>
                       <td> {item.device_id}</td>
-                      <td> {item.device_address}</td>
+                      <td><div style={{width:'200px'}}> {item.device_address}</div></td>
                       <td> {item.issue}</td>
 
                       <td className={`toggle_style_${ind}`}>
@@ -1076,7 +1082,8 @@ const AssetTwo = () => {
                   )
                 })}
             </tbody>
-          </table>
+          </table> 
+           
         </Modal>
         {/* <CSVLink
             data={data}
@@ -1250,7 +1257,7 @@ const AssetTwo = () => {
                   gap: '5px',
                   padding: '8px 10px',
                   border: '1px solid #ccc',
-                  borderRadius: '9px',
+                  borderRadius: '6px',
                 }}
                 onClick={() => multipleCsv()}
               >
@@ -1389,8 +1396,8 @@ const AssetTwo = () => {
               onClick={showModal}
               style={{ display: 'flex', gap: '10px', borderRadius: '6px' }}
             >
-              <img src={WrongDetails} alt="frame" style={{ width: '22px', height: '15px' }} />
-              Wrong Details
+              <img src={wrong_detailsicon} alt="frame" style={{ width: '22px', height: '15px' }} />
+             <span> Wrong Details</span>
             </button>
 
           </div>
@@ -1614,7 +1621,7 @@ const AssetTwo = () => {
                                   </Tooltip>
                                 </div>
                                 <button
-                                  style={{ border: 'none', background: '#fff' }}
+                                  style={{ border: 'none', background: 'none' }}
                                   onClick={() => {
                                     setUniqueShow(true)
                                     setUniqueId(item?.device_address[0]?.fill)
@@ -1788,7 +1795,7 @@ const AssetTwo = () => {
                                     : ''
                                 }
                               >
-                                <UserAddOutlined size="large" style={{ color: 'red' }} />
+                                <UserAddOutlined size="large" style={{ color: 'red' ,cursor:'default' }} />
                               </button>
                             )}
                           </td>
