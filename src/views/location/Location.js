@@ -956,7 +956,7 @@ const Location = () => {
 </div>
 
         <div className="table_wrap">
-          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap', marginBottom:'48px' }}>
             <table className="table table-hover">
               <thead className="location__information">
                 <tr>
@@ -994,7 +994,7 @@ const Location = () => {
                     let numOfDaata = formatDate(new Date(item.pwa_date))
                     return (
                       <tr key={index}>
-                        <td className="">{displayedIndex}</td>
+                        <td className="px-3">{displayedIndex}</td>
                         <td className="">
                           <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
                             <Tooltip placement="topLeft" title={textOne}>
@@ -1030,7 +1030,7 @@ const Location = () => {
 
                         <td>{item.state}</td>
                         <td>{item.ZIP_code}</td>
-                        <td>
+                        <td className='text-center'>
                           {item.salesTax}
                           {item.salesTax ? '%' : ''}
                         </td>
@@ -1079,11 +1079,12 @@ const Location = () => {
               style={{
                 paddingLeft: '12px',
                 display: 'flex',
-                marginTop: '10px',
                 justifyContent: 'flex-start',
               }}
             />
           </div>
+
+       
         </div>
         <div
           className="user__detail__popup__location"

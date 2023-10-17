@@ -72,7 +72,7 @@ td {
   gap: 10px;
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 42px;
   border-radius: 6px;
   border: 1px solid #8f9fbc;
 }
@@ -83,6 +83,11 @@ td {
 .cloud_downlaod_icon {
   color: #8f9fbc;
 }
+
+ /* .pagination_wrap {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}  */
 
 .downlaodtext {
   display: inline-block;
@@ -225,7 +230,7 @@ margin-top: 6px;
   border: 1px solid #f1f1f1;
   background: #fff;
   width: 470px;
-  height: 48px;
+  height: 42px;
   padding-left: 14px;
   font-size: 16px;
   line-height: 20px;
@@ -240,7 +245,7 @@ margin-top: 6px;
 }
 
 #basefilter {
-  height: 48px;
+  height: 42px;
   padding: 15px 16px;
   align-items: center;
   gap: 16px;

@@ -978,7 +978,7 @@ const Partner = () => {
                   const displayedIndex = indexOfFirstPage + ind + 1
                   return (
                     <tr key={ind}>
-                      <td className="px-3">{displayedIndex}</td>
+                      <td className="px-4">{displayedIndex}</td>
                       <td>
                         <div onClick={(e) => onChangedModal(e, item.id)} value={value}>
                           <Tooltip placement="topLeft" title={textOne}>
@@ -1174,7 +1174,8 @@ const Partner = () => {
               paddingLeft: '12px',
               display: 'flex',
               justifyContent: 'flex-start',
-              marginTop: '10px',
+              marginBottom:'24px',
+              marginTop:'48px',
             }}
           />
         </div>

@@ -379,9 +379,10 @@ td {
 .container-lg {
   padding: 0 24px !important;
 }
-.pagination_wrap {
+
+/* .pagination_wrap {
   margin: 24px 0;
-}
+} */
 
 .create_admin {
   font-size: 16px;

@@ -250,8 +250,9 @@ const Trash = () => {
             <table className="table table-hover">
               <thead className="">
                 <tr>
+                <th className="t_Name px-2 global_th"></th>
                   <th className="t_Name px-2 global_th">S.No.</th>
-                  <th className="t_Name px-2 global_th"></th>
+                
                   <th className="t_Name px-2 global_th">Notification Id</th>
                   <th className="t_Name px-2 global_th">Notification Type</th>
                   <th className="t_Name px-2 global_th">Source Trigger</th>
@@ -271,8 +272,8 @@ const Trash = () => {
                     return (
                       <React.Fragment key={index}>
                         <tr className="trSelect">
-                          <td className="px-2">{displayedIndex}</td>
-                          <td className="px-2">
+                        
+                        <td className="px-2">
                             {expandedRows[index] ? (
                               <MinusOutlined
                                 onClick={() => checkShrink(index)}
@@ -285,6 +286,9 @@ const Trash = () => {
                               />
                             )}
                           </td>
+
+                          <td className="px-3">{displayedIndex}</td>
+                        
 
                           <td className="px-2">{item.notification_id}</td>
                           <td className="px-2">{(item.notification_type === 0
@@ -380,8 +384,9 @@ const Trash = () => {
 
             <thead className="">
               <tr>
+              <th className="t_Name px-2 global_th"></th>
                 <th className="t_Name px-2 global_th">S.No.</th>
-                <th className="t_Name px-2 global_th"></th>
+               
                 <th className="t_Name px-2 global_th">Notification Id</th>
                 <th className="t_Name px-2 global_th">Notification Type</th>
                 <th className="t_Name px-2 global_th">Source Trigger</th>
@@ -402,10 +407,7 @@ const Trash = () => {
                   return (
                     <React.Fragment key={index}>
                       <tr className="trSelect">
-                        <td className="px-2">{displayedIndexEmporia}</td>
-
-
-                        <td className="px-2">
+                      <td className="px-2">
                           {expandedRowsTroes[index] ? (
                             <MinusOutlined
                               onClick={() => checkShrinkTroes(index)}
@@ -418,6 +420,10 @@ const Trash = () => {
                             />
                           )}
                         </td>
+                        <td className="px-3">{displayedIndexEmporia}</td>
+
+
+                       
 
                         <td className="px-2">{item.notification_id}</td>
                         <td className="px-2">{(item.notification_type === 0
