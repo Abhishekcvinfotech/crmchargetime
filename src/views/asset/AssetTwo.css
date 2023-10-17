@@ -15,12 +15,17 @@
   display: block;
 }
 .asset__management {
-  font-weight: bolder;
-  font-size: 30px;
-  /* letter-spacing: 1px; */
-  color: black;
-  margin-left: 20px;
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 600;
+  color: #213446;
+  margin: 0;
+
 }
+.container-lg {
+  padding: 0 24px !important;
+}
+
 .asset_refresh {
   padding-left: 7px;
   font-size: 14px;
@@ -150,9 +155,150 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 18px 10px;
+
+  border-radius: 6px;
+  background: #FFF;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+
 }
+.asset_wrap{
+  padding: 24px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  margin-top: 24px;
+  margin-bottom: 24px
+
+}
+
+.matchEmporia{
+height: 42px;
+padding: 0px 24px;
+justify-content: center;
+align-items: center;
+gap: 16px;
+border-radius: 6px;
+border: 1px solid  #3378FF;
+display: flex;
+align-items: center;
+background-color: #ffffff;
+}
+
+.reload_out{
+  display: inline-block;
+}
+.matchEmporia span{
+color:  #3378FF;
+font-family: DM Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+display: block;
+}
+.import_report {
+  background: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #8f9fbc !important;
+  height: 42px;
+  
+}
+
+.import_report:hover {
+  background-color: #e7ecf5;
+}
+.cloud_downlaod_icon {
+  color: #8f9fbc;
+}
+
+.ant-modal-footer {
+  display: none !important;
+}
+
+.fileimport_btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+#assetimport{
+height: 40px !important;
+}
+
+.fileimport_btn button {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 6px;
+  padding: 24px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 21px;
+  margin-top: 40px;
+}
+.fileimport_cancel {
+  background-color: #8f9fbc;
+}
+.fileimport_cancel :hover {
+  /* background-color: #6D84AD; */
+}
+.fileimportok_btn {
+  background-color: #3378ff;
+}
+
+.fileimportok_btn:hover {
+  background-color: #2062e3;
+}
+
+
+.downlaodtext {
+  display: inline-block;
+  color: #8f9fbc;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.matchEmporia:hover{
+  background-color: #3378FF;
+  color: #ffffff;
+}
+
+
+.matchEmporia:hover {
+  background-color:#3378FF;
+}
+
+.matchEmporia:active {
+  background-color:#3378FF;
+}
+
+.matchEmporia:hover span,
+.matchEmporia:active span {
+  color: white;
+}
+
+.matchEmporia:hover .fauser_btn ,
+.matchEmporia:active .fauser_btn {
+  color: white;
+}
+
+.fauser_btn{
+color:#3378FF;
+}
+
+
 .import_file {
   border: none;
   color: #fff;
@@ -533,7 +679,7 @@ svg {
 }
 ::-webkit-file-upload-button {
   color: white;
-  background: #b1d34f;
+  background: #3378ff;
   border: none;
   border-radius: 6px;
   outline: none;
@@ -544,7 +690,7 @@ svg {
 }
 input::file-selector-button {
   color: white;
-  background: #b1d34f;
+  background:#3378ff;
   border: none;
   border-radius: 6px;
   outline: none;
@@ -566,6 +712,13 @@ input::file-selector-button {
   /* padding-top: 10px; */
   display: block;
   margin-top: 10px;
+}
+
+@media (max-width: 1540px){
+.ant-modal {
+    width: 600px !important;
+}
+
 }
 @media only screen and (max-width: 1100px) {
   .for_uploading {

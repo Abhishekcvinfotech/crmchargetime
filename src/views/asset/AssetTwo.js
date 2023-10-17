@@ -20,10 +20,10 @@ import {
   DeleteOutlined,
   PlayCircleOutlined,
   PauseCircleOutlined,
+  ReloadOutlined,
   MinusCircleOutlined,
   PoweroffOutlined,
   CopyOutlined,
-  ReloadOutlined,
   CopyFilled,
 } from '@ant-design/icons'
 import { troesAPi } from '../../api'
@@ -35,15 +35,18 @@ import '../universal.css'
 import import_one from '../../assets/images/import_one.svg'
 import FrameTwo from '../../assets/images/FrameTwo.svg'
 import WrongDetails from '../../assets/images/wrongDetails.svg'
-import MatchCustomer from '../../assets/images/matchCustomer.svg'
+import MatchCustomer from '../../assets/images/match_customer.svg'
+import Emporia_data from '../../assets/images/Emporia_data.svg'
 import { WrongLocation } from '@mui/icons-material'
 import partiallymatched_1 from '../../assets/images/partiallymatched_1.svg'
 import { CListGroup } from '@coreui/react'
 import useCopy from 'use-copy'
-import sheet from '../../assets/images/sheets.png'
+import { FaUserGroup } from 'react-icons/fa6';
 import { CSVLink } from 'react-csv'
-
+import Excelicon from '../../assets/images/excelicon.svg'
+import { BsCloudDownload } from 'react-icons/bs'
 const AssetTwo = () => {
+
   //condition for assigned start
   const [conditionAssigned, setConditionAssigned] = useState(false)
   //condition for assigned end
@@ -155,7 +158,7 @@ const AssetTwo = () => {
   const [uniquecopied, uniquecopy, setUniqueCopied] = useCopy(uniqueId)
   const [multipledata, setMultipleData] = useState([])
   const [show, setShow] = useState(false)
-
+  const [modal2Open, setModal2Open] = useState(false)
   const copyUniqueText = () => {
     uniquecopy()
     setTimeout(() => {
@@ -503,18 +506,18 @@ const AssetTwo = () => {
   ) {
     if (
       id &&
-      device_id !== null &&
-      unique_id !== null &&
-      device_address !== null &&
-      device_state !== null &&
-      device_zip !== null &&
-      installation !== null &&
-      partner !== null &&
-      autoFillCustomerName
+        device_id !== null &&
+        unique_id !== null &&
+        device_address !== null &&
+        device_state !== null &&
+        device_zip !== null &&
+        installation !== null &&
+        partner !== null &&
+        autoFillCustomerName
         ? autoFillCustomerName
         : cust_name !== null && autoFillCustomerEmail
-        ? autoFillCustomerEmail
-        : cust_email !== null
+          ? autoFillCustomerEmail
+          : cust_email !== null
     ) {
       setLoading(true)
       const conf = confirm('Are you sure you would like to change')
@@ -1005,7 +1008,7 @@ const AssetTwo = () => {
           <table className="table">
             <thead>
               <img
-                src={sheet}
+                src={Excelicon}
                 alt="upload_img"
                 style={{
                   width: '20px',
@@ -1036,7 +1039,7 @@ const AssetTwo = () => {
                       <td>
                         <div onClick={() => csvWrongExport(item.id, item?.device_id)}>
                           <img
-                            src={sheet}
+                            src={Excelicon}
                             alt="upload_img"
                             style={{
                               width: '20px',
@@ -1101,6 +1104,8 @@ const AssetTwo = () => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            marginTop: '24px',
+            marginBottom: '24px',
           }}
         >
           <p className="asset__management">Asset Management</p>
@@ -1108,33 +1113,42 @@ const AssetTwo = () => {
           <div
             style={{
               display: 'flex',
-              // alignItems: 'flex-start',
+              alignItems: 'center',
               cursor: 'pointer',
-              marginTop: '-24px',
+              gap: '16px',
+              marginRight:'24px'
+
             }}
           >
+
             <button
-              id="universalButton"
-              style={{
-                display: 'flex',
-                gap: '10px',
-                alignItems: 'center',
-                height: '40px',
-                borderRadius: '6px',
-              }}
+              className='matchEmporia'
+              onClick={matchDisable ? importCSVFunc : ''}
+              style={{ cursor: matchDisable ? 'pointer' : 'no-drop', }}
+            >    <FaUserGroup className='fauser_btn hovering_effect' /> 
+
+              <span className='hovering_effect '>Match Customer</span>
+            </button>
+
+            <button
+              className='matchEmporia'
+
               onClick={() => refreshAssetPage()}
             >
-              <ReloadOutlined style={{ paddingRight: '7px' }} />
-              Emporia Data
+              <ReloadOutlined className='fauser_btn hovering_effect' />
+              {/* <img src={Emporia_data} alt="frame" style={{ width: '22px', height: '15px' }} /> */}
+              <span className='hovering_effect'> Emporia Data</span>
             </button>
-            <button
+            {/* <button
               className="wrong_details"
               onClick={showModal}
               style={{ display: 'flex', gap: '10px', borderRadius: '6px' }}
             >
               <img src={WrongDetails} alt="frame" style={{ width: '22px', height: '15px' }} />
               Wrong Details
-            </button>
+            </button> */}
+
+
           </div>
         </div>
         <div className="for_uploading">
@@ -1147,18 +1161,18 @@ const AssetTwo = () => {
                 style={
                   changBackgroundAll
                     ? {
-                        backgroundColor: '#3A72DE',
-                        color: '#fff',
-                        backgroundImage: `url=(/)`,
-                      }
+                      backgroundColor: '#3A72DE',
+                      color: '#fff',
+                      backgroundImage: `url=(/)`,
+                    }
                     : { backgroundColor: '#fff' }
                 }
               >
-                {changBackgroundAll ? (
+                {/* {changBackgroundAll ? (
                   <img src={check_sign} alt="edit" className="right_arrow" />
                 ) : (
                   ''
-                )}
+                )} */}
                 All
               </button>
               <button
@@ -1171,11 +1185,11 @@ const AssetTwo = () => {
                     : { backgroundColor: '#fff' }
                 }
               >
-                {changBackgroundAssigned ? (
+                {/* {changBackgroundAssigned ? (
                   <img src={check_sign} alt="edit" className="right_arrow" />
                 ) : (
                   ''
-                )}
+                )} */}
                 Assigned
               </button>
               <button
@@ -1188,11 +1202,11 @@ const AssetTwo = () => {
                     : { backgroundColor: '#fff' }
                 }
               >
-                {changBackgroundUnAssigned ? (
+                {/* {changBackgroundUnAssigned ? (
                   <img src={check_sign} alt="edit" className="right_arrow" />
                 ) : (
                   ''
-                )}
+                )} */}
                 Unassigned
               </button>
             </div>
@@ -1240,14 +1254,71 @@ const AssetTwo = () => {
                 }}
                 onClick={() => multipleCsv()}
               >
-                <img src={sheet} alt="" style={{ width: '22px' }} />
+                <img src={Excelicon} alt="" style={{ width: '22px' }} />
                 Report
               </button>
             </div>
           </div>
 
           <div style={{ display: 'flex', gap: '10px' }}>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '6px' }}>
+           <div id="file_uplaoder_modal">
+
+                <button type="submit" className="import_report"  onClick={() => setModal2Open(true)}>
+                  <BsCloudDownload className="cloud_downlaod_icon" />
+                  <span className="downlaodtext"> Import CSV File </span>
+                </button>
+
+                <Modal
+                  title="Import File"
+                  centered
+                  visible={modal2Open}
+                  onOk={() => setModal2Open(false)}
+                  onCancel={() => setModal2Open(false)}
+                  width={1000}
+                >
+                  <div>
+                  <form onSubmit={handleSubmit} >
+              <input
+                ref={inputRef}
+                accept=".csv"
+                type="file"
+                onChange={handleFileChange}
+                style={{ width: csvwidth, color: csvTextColor , height:'40px'}}
+                required
+                id="assetimport"
+              />
+
+
+              {/* <button
+                className="import_report"
+                style={bgColor ? { backgroundColor: '#1890ff' } : { backgroundColor: '#cc9ceb' }}
+                type="submit"
+              >
+                <img src={import_one} alt="edit" style={{ width: '15px' }} />
+                Import CSV
+              </button> */}
+  <div className="fileimport_btn">
+                        <button
+                          type="button"
+                          className="fileimport_cancel"
+                          onClick={() => setModal2Open(false)}
+                        >
+                          {' '}
+                          <span>Cancel</span>{' '}
+                        </button>
+
+                        <button type="submit" className="fileimportok_btn">
+                          {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
+                          <span> Import </span>
+                        </button>
+                      </div>
+
+            </form>
+                  </div>
+                </Modal>
+                </div>
+
+            {/* <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '6px' }}>
               <input
                 ref={inputRef}
                 accept=".csv"
@@ -1264,7 +1335,7 @@ const AssetTwo = () => {
                 <img src={import_one} alt="edit" style={{ width: '15px' }} />
                 Import CSV
               </button>
-            </form>
+            </form> */}
             {isCsvModalOpen && csvWrongData?.length > 0 ? (
               <Modal
                 title={`${modalTitle?.name} (Uploaded)`}
@@ -1304,17 +1375,27 @@ const AssetTwo = () => {
             ) : (
               ''
             )}
-            <button
+            {/* <button
               id="universalButton"
               onClick={matchDisable ? importCSVFunc : ''}
               style={{ cursor: matchDisable ? 'pointer' : 'no-drop', display: 'flex', gap: '10px' }}
             >
               <img src={MatchCustomer} alt="frame" style={{ width: '22px', height: '15px' }} />
               Match Customer
+            </button> */}
+
+            <button
+              className="wrong_details"
+              onClick={showModal}
+              style={{ display: 'flex', gap: '10px', borderRadius: '6px' }}
+            >
+              <img src={WrongDetails} alt="frame" style={{ width: '22px', height: '15px' }} />
+              Wrong Details
             </button>
+
           </div>
         </div>
-        <div className="">
+        <div className="asset_wrap">
           <div className="main_div">
             <div className="first_div" style={{ overflowX: 'auto' }}>
               <table className="table table-hover">
@@ -1322,7 +1403,7 @@ const AssetTwo = () => {
                   <tr className="asset__acount">
                     {/* <th className="th_style">
                   <img
-                    src={sheet}
+                    src={Excelicon}
                     alt="upload_img"
                     style={{
                       width: '20px',
@@ -1408,8 +1489,8 @@ const AssetTwo = () => {
                             item.match_type === 1
                               ? { background: '#B6D7A8' }
                               : item.match_type === 2
-                              ? { background: '#FFF5BF' }
-                              : {}
+                                ? { background: '#FFF5BF' }
+                                : {}
                           }
                           className="bg-prmary tr_class"
                         >
@@ -1417,7 +1498,7 @@ const AssetTwo = () => {
                           {/* <td>
                         <div onClick={() =>csvExport(item.id,item?.device_id)}>
                             <img
-                              src={sheet}
+                              src={Excelicon}
                               alt="upload_img"
                               style={{
                                 width: '20px',
@@ -1574,7 +1655,7 @@ const AssetTwo = () => {
                               }}
                               value={
                                 `td_style_${ind}` === autoFillIndexForCustomer ||
-                                `td_style_${ind}` === autoFillIndex
+                                  `td_style_${ind}` === autoFillIndex
                                   ? autoFillCustomerName
                                   : item?.pwa_name[0].pwa_name_fill
                               }
@@ -1586,28 +1667,28 @@ const AssetTwo = () => {
                               }
                               options={
                                 item.pwa_name[0].pwa_name_fill == null &&
-                                `td_style_${ind}` === autoFillIndex
+                                  `td_style_${ind}` === autoFillIndex
                                   ? (loopingCustomerName || []).map((f) => ({
-                                      value: f.id,
-                                      label: f.pwa_name,
-                                    }))
+                                    value: f.id,
+                                    label: f.pwa_name,
+                                  }))
                                   : ((item && item.pwa_name) || []).map((d) => ({
-                                      value: d.cust_id_sss,
-                                      label: d.pwa_name_sss,
-                                    }))
+                                    value: d.cust_id_sss,
+                                    label: d.pwa_name_sss,
+                                  }))
                               }
                             />
                           </td>
                           <td className={`td_style td_style_${ind}`}>
                             {`td_style_${ind}` === autoFillIndexForCustomer ||
-                            `td_style_${ind}` === autoFillIndex
+                              `td_style_${ind}` === autoFillIndex
                               ? autoFillCustomerPhone
                               : item && item.pwa_mobile}
                           </td>
 
                           <td className={`td_style td_style_${ind}`}>
                             {`td_style_${ind}` === autoFillIndexForCustomer ||
-                            `td_style_${ind}` === autoFillIndex
+                              `td_style_${ind}` === autoFillIndex
                               ? autoFillCustomerEmail
                               : item && item.pwa_email}
                           </td>
@@ -1660,8 +1741,8 @@ const AssetTwo = () => {
                                 `td_style_${ind}` === autoFillIndex
                                   ? disabled
                                   : +item?.status === 1
-                                  ? () => setDisabled(disabled)
-                                  : ''
+                                    ? () => setDisabled(disabled)
+                                    : ''
                               }
                               disabled={+item?.status === 1 ? false : true}
                               onChange={
@@ -1686,24 +1767,24 @@ const AssetTwo = () => {
                                 style={{ border: 'none', background: 'none' }}
                                 onClick={
                                   `td_style_${ind}` === autoFillIndexForCustomer ||
-                                  `td_style_${ind}` === autoFillIndex ||
-                                  item.pwa_name[0].pwa_name_fill
+                                    `td_style_${ind}` === autoFillIndex ||
+                                    item.pwa_name[0].pwa_name_fill
                                     ? () =>
-                                        AssignedDataOnMapMethod(
-                                          item.id,
-                                          item.device_id,
-                                          item.unique_id,
-                                          item.device_address[0].fill,
-                                          item.device_state,
-                                          item.device_zip,
-                                          item.installation,
-                                          item.partner,
-                                          item.pwa_name[0].pwa_name_fill,
-                                          item.pwa_mobile,
-                                          item.pwa_email,
-                                          item.deviceunit_state,
-                                          item.pwa_name[0].cust_id_fill,
-                                        )
+                                      AssignedDataOnMapMethod(
+                                        item.id,
+                                        item.device_id,
+                                        item.unique_id,
+                                        item.device_address[0].fill,
+                                        item.device_state,
+                                        item.device_zip,
+                                        item.installation,
+                                        item.partner,
+                                        item.pwa_name[0].pwa_name_fill,
+                                        item.pwa_mobile,
+                                        item.pwa_email,
+                                        item.deviceunit_state,
+                                        item.pwa_name[0].cust_id_fill,
+                                      )
                                     : ''
                                 }
                               >
@@ -1727,7 +1808,25 @@ const AssetTwo = () => {
                 </tbody>
               </table>
             </div>
+
+
           </div>
+          <Pagination
+            onChange={handlePaginationOfAssets}
+            pageSize={postPerPage}
+            total={total}
+            current={page}
+            showSizeChanger
+            showQuickJumper
+            onShowSizeChange={onShowSizeChange}
+            itemRender={itemRender}
+            style={{
+              paddingLeft: '12px',
+              display: 'flex',
+              justifyContent: 'flex-start',
+              marginTop: '48px',
+            }}
+          />
         </div>
         {show ? (
           <div className="modal display-block">
@@ -1908,22 +2007,7 @@ const AssetTwo = () => {
             </div>
           </div>
         </div>
-        <Pagination
-          onChange={handlePaginationOfAssets}
-          pageSize={postPerPage}
-          total={total}
-          current={page}
-          showSizeChanger
-          showQuickJumper
-          onShowSizeChange={onShowSizeChange}
-          itemRender={itemRender}
-          style={{
-            paddingLeft: '12px',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            marginTop: '10px',
-          }}
-        />
+
       </div>
     </>
   )

@@ -46,7 +46,7 @@ margin-bottom: 48px;
   display: flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #8f9fbc;
+  border: 1px solid #8f9fbc !important;
   height: 42px;
   
 }
@@ -58,6 +58,7 @@ margin-bottom: 48px;
 .ant-modal-footer {
   display: none !important;
 }
+
 .fileimport_btn {
   display: flex;
   justify-content: flex-end;
