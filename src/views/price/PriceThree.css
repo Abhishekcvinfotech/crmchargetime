@@ -62,7 +62,7 @@ h1 {
     margin: 0;
     width: 495px !important;
     /* width: 200px; */
-    height: 48px;
+    height: 42px;
     flex-shrink: 0;
     border-radius: 6px;
     border: 1px solid #f1f1f1;
@@ -289,8 +289,9 @@ margin-bottom: 0 !important;
 }
 .show__notShow {
   position: absolute;
-  top: 10%;
-  left: 33%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 400px;
   padding: 24px;
   background: #ebebeb;
@@ -299,6 +300,8 @@ margin-bottom: 0 !important;
   border: 1px solid #f1f1f1;
   background: #fff;
   box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
+  height: 500px;
+  overflow-x: auto;
 }
 .create_Location__packag {
   font-size: 16px;
@@ -310,6 +313,17 @@ margin-bottom: 0 !important;
 #form__admin_admin {
   margin-top: 24px;
 }
+#form__admin_admin label {
+  
+  color: #213446;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+}
+
 .locate__input {
   padding: 5px 15px;
   margin: 3px 0px 10px 0px;
