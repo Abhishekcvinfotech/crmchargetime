@@ -1057,7 +1057,7 @@ const Partner = () => {
                           </Tooltip>
                         </Popconfirm>
                       </td>
-                      <td className="px-3">
+                      <td className="px-3 text-center">
                         <button
                           onClick={() => {
                             setName(item.name)
