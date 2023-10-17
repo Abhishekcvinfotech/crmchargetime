@@ -489,7 +489,7 @@ const AssetTwo = () => {
       alert('Please fill up neccessary details')
     }
   }
-  async function AssignedDataOnMapMethod(
+  const  AssignedDataOnMapMethod = async (
     id,
     device_id,
     unique_id,
@@ -503,7 +503,7 @@ const AssetTwo = () => {
     cust_email,
     deviceunit_state,
     custId,
-  ) {
+  )  =>{
     if (
       id &&
         device_id !== null &&
@@ -573,15 +573,14 @@ const AssetTwo = () => {
       alert('Please fill up neccessary details')
     }
   }
-  useEffect(() => {
-    // getAllAssetsData()
-  }, [deleted])
+  
 
   const cancel = (e) => {
     console.log(e)
   }
 
   async function unAssignedData(id, custIde) {
+    
     setLoading(true)
     const conf = confirm('Are you sure you would like to change')
     if (conf == true) {
@@ -627,7 +626,7 @@ const AssetTwo = () => {
         setLoading(false)
       }
     } else {
-      console.log('cancelled')
+      
       setLoading(false)
     }
   }
@@ -1633,7 +1632,7 @@ const AssetTwo = () => {
                           <td className={`td_style td_style_${ind}`}>
                             {`td_style_${ind}` === autoFillIndex
                               ? autoFillState
-                              : item.device_state}
+                              : item.device_state }
                           </td>
                           <td className={`td_style td_style_${ind}`}>
                             {`td_style_${ind}` === autoFillIndex ? autoFillZip : item.device_zip}
@@ -1753,11 +1752,11 @@ const AssetTwo = () => {
                             />
                           </td>
                           <td className={`td_style td_style_${ind}`}>
-                            {item.status === 1 ? (
+                            {item?.status == 1 ? (
                               <button
                                 style={{ border: 'none', background: 'none' }}
                                 onClick={() =>
-                                  unAssignedData(item.id, item.pwa_name[0].cust_id_fill)
+                                  unAssignedData(item.id, item.pwa_name[0]?.cust_id_fill)
                                 }
                               >
                                 <UserAddOutlined size="large" style={{ color: 'green' }} />
@@ -1766,24 +1765,24 @@ const AssetTwo = () => {
                               <button
                                 style={{ border: 'none', background: 'none' }}
                                 onClick={
-                                  `td_style_${ind}` === autoFillIndexForCustomer ||
-                                    `td_style_${ind}` === autoFillIndex ||
-                                    item.pwa_name[0].pwa_name_fill
+                                  `td_style_${ind}` == autoFillIndexForCustomer ||
+                                    `td_style_${ind}` == autoFillIndex ||
+                                    item?.pwa_name[0]?.pwa_name_fill 
                                     ? () =>
                                       AssignedDataOnMapMethod(
-                                        item.id,
-                                        item.device_id,
-                                        item.unique_id,
-                                        item.device_address[0].fill,
-                                        item.device_state,
-                                        item.device_zip,
-                                        item.installation,
-                                        item.partner,
-                                        item.pwa_name[0].pwa_name_fill,
-                                        item.pwa_mobile,
-                                        item.pwa_email,
-                                        item.deviceunit_state,
-                                        item.pwa_name[0].cust_id_fill,
+                                        item?.id,
+                                        item?.device_id,
+                                        item?.unique_id,
+                                        item?.device_address[0]?.fill,
+                                        item?.device_state,
+                                        item?.device_zip,
+                                        item?.installation,
+                                        item?.partner,
+                                        item?.pwa_name[0]?.pwa_name_fill,
+                                        item?.pwa_mobile,
+                                        item?.pwa_email,
+                                        item?.deviceunit_state,
+                                        item?.pwa_name[0]?.cust_id_fill,
                                       )
                                     : ''
                                 }
