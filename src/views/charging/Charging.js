@@ -10,6 +10,8 @@ import right_arrow from '../../assets/images/right_arrow.svg'
 import editPen from '../../assets/images/editPen.svg'
 import { troesAPi } from '../../api'
 import { DeleteOutlined, UserAddOutlined, UserSwitchOutlined } from '@ant-design/icons'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
 
 const Charging = () => {
   const [open, setOpen] = useState(false)
@@ -313,7 +315,7 @@ const Charging = () => {
               open={modal2Open}
               onOk={() => setModal2Open(false)}
               onCancel={() => setModal2Open(false)}
-              
+
             >
               <div className="modal_form">
                 <form className="form" onSubmit={addRate}>
@@ -349,7 +351,7 @@ const Charging = () => {
                       value={partner}
                       onChange={(e) => setPartner(e.target.value)}
                       required
-                      
+
                     />
                     <input
                       type="hidden"
@@ -403,14 +405,14 @@ const Charging = () => {
                   >
 
 
-                   <button className="btn_cancel" onClick={()=> { back(); setModal2Open(false)}} type="button">
+                    <button className="btn_cancel" onClick={() => { back(); setModal2Open(false) }} type="button">
                       Cancel
                     </button>
 
-                    <button  type='submit'   className="btn__createrate" required>
+                    <button type='submit' className="btn__createrate" required>
                       Create Rate
                     </button>
-                  
+
                   </div>
                 </form>
               </div>
@@ -520,13 +522,13 @@ const Charging = () => {
         </Drawer> */}
 
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_success"
           style={{
             display: userAdded,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <UserAddOutlined
+            {/* <UserAddOutlined
               style={{
                 display: 'block',
                 color: '#fff',
@@ -535,18 +537,19 @@ const Charging = () => {
                 marginTop: '-5px',
                 fontSize: '18px',
               }}
-            />
-            <p className="admin_registerd__pop">Rate Added Successfully.</p>
+            /> */}
+
+            <p className="admin_registerd__pop_noti">  <span>  <img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span><span> Rate Updated Successfully.  </span></p>
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_deleted"
           style={{
             display: userDelete ? 'block' : 'none',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
+            {/* <DeleteOutlined
               style={{
                 display: 'block',
                 color: '#fff',
@@ -555,11 +558,14 @@ const Charging = () => {
                 marginTop: '-5px',
                 fontSize: '18px',
               }}
-            />
-            <p className="admin_registerd__pop">Rate has been deleted.</p>
+            /> */}
+
+
+            <p className="admin_registerd__pop_noti">  <span>     <img src={Redcircle} alt="Cyber Vision infotech " /> </span><span> Rate has been deleted.  </span></p>
           </div>
         </div>
         {/* //edit code */}
+
         {/* <Drawer
           title="Update Rate"
           placement="right"
@@ -567,8 +573,8 @@ const Charging = () => {
           open={editOpen}
           style={{ zIndex: '9991' }}
           className="drawer"
-        > */}
-          {/* <div className="modal_form">
+        > 
+           <div className="modal_form">
             <form className="form" onSubmit={(e) => onSub(e)}>
               <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
                 Installation
@@ -622,28 +628,35 @@ const Charging = () => {
                 </button>
               </div>
             </form>
-          </div> */}
-        {/* </Drawer> */}
+          </div> 
+       </Drawer>  */}
+
+
+
 
         <Modal
-        title="Vertically centered modal dialog"
-        centered
-        open={modal21pen}
-        onOk={() => setModal21pen(false)}
-        onCancel={() => setModal21pen(false)}
-      >
-      
-      <div className="modal_form">
+          title="Update Rate"
+          centered
+          // open={modal21pen}
+
+          onClose={onEditClose}
+          open={editOpen}
+
+        // onOk={() => setModal21pen(false)}
+        // onCancel={() => setModal21pen(false)}
+        >
+
+          <div className="modal_form">
             <form className="form" onSubmit={(e) => onSub(e)}>
-              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
+              <label className="htmlFor_respn" >
                 Installation
               </label>
               <input type="text" value={installation} readOnly />
-              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
+              <label className="htmlFor_respn" >
                 Partner
               </label>
               <input type="text" value={partner} readOnly />
-              <label htmlFor="startDate" style={{ fontWeight: '600' }}>
+              <label htmlFor="startDate" >
                 kWh
               </label>
               <input
@@ -656,7 +669,7 @@ const Charging = () => {
                   (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
                 }
               />
-              <label htmlFor="endDate" style={{ fontWeight: '600' }}>
+              <label htmlFor="endDate" >
                 ($) Rate
               </label>
               <input
@@ -669,7 +682,7 @@ const Charging = () => {
                   (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
                 }
               />
-              <div
+              {/* <div
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -685,23 +698,29 @@ const Charging = () => {
                 <button className="btn_cancel" type="button" onClick={Editback}>
                   Cancel
                 </button>
+              </div> */}
+
+
+              <div className="create_wap_btn">
+                <button class="btn_cancel" type="button" onClick={Editback} >Cancel</button>
+                <button type="submit" class="btn__createrate" required >  Update Rate</button>
               </div>
             </form>
           </div>
 
-      </Modal>
+        </Modal>
 
 
 
 
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_success"
           style={{
             display: userUpdated,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <UserSwitchOutlined
+            {/* <UserSwitchOutlined
               style={{
                 display: 'block',
                 color: '#fff',
@@ -710,8 +729,8 @@ const Charging = () => {
                 marginTop: '-5px',
                 fontSize: '18px',
               }}
-            />
-            <p className="admin_registerd__pop">Rate Updated Successfully.</p>
+            /> */}
+            <p className="admin_registerd__pop_noti">  <span><img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span><span> Rate Updated Successfully.  </span></p>
           </div>
         </div>
       </div>
@@ -752,7 +771,7 @@ const Charging = () => {
                         style={{ border: 'none', paddingRight: '5px', background: 'none' }}
                       >
                         <img src={editPen} alt="edit" className="editn_btn_global" />
-                        
+
                       </button>{' '}
                       &nbsp; &nbsp;
                       <button

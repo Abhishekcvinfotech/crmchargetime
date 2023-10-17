@@ -1928,7 +1928,7 @@ const Notification = () => {
               {' '}
               <span>
                 {' '}
-                <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+                <img src={CheckgreenCircle} alt="Cyber Vision infotech" />   {' '}
               </span>{' '}
               <span> Notification has been added successfully.</span>
             </p>
