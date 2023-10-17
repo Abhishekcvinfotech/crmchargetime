@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { troesAPi } from '../../api'
 import { Button, Checkbox, message, Spin, Modal, notification } from 'antd'
+import { DeleteOutlined, PlusOutlined, MinusOutlined, SaveOutlined } from '@ant-design/icons'
 import coupon from '../../assets/images/coupon.svg'
 import { IoMdClose } from 'react-icons/io'
 
@@ -80,6 +81,7 @@ const PriceThree = () => {
   }
   const showModal = () => {
     setIsModalOpen(true)
+    setisAdminShow((current) => !current)
   }
   const postData = {
     coupon_name: coupon_name,
@@ -392,7 +394,6 @@ const PriceThree = () => {
 
   const handleClicked = (event) => {
     setIsShown((current) => !current)
-    
   }
 
   useEffect(() => {
@@ -465,7 +466,8 @@ const PriceThree = () => {
         ) : (
           ''
         )}
-        <Modal title="Coupon" open={isModalOpen} onOk={ handleOk} onCancel={handleCancel}>
+
+        <Modal title="Coupon" open={isModalOpen}  onCancel={handleCancel} >
           {loading ? (
             <div className="loading_part">
               <Spin size="large" />
@@ -606,7 +608,7 @@ const PriceThree = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="3" className="text-center">
+                  <td colSpan="3"  className="text-center border-bottom-0">
                     No data
                   </td>
                 </tr>
@@ -677,9 +679,28 @@ const PriceThree = () => {
               <p className="admin_registerd__pop">Coupon deleted successfully.</p>
             </div>
           </div>
+          <div className="fileimport_btn">
+                        <button
+                          type="button"
+                          className="fileimport_cancel"
+                         onClick={handleCancel}
+                        >
+                          {' '}
+                          <span>Cancel</span>{' '}
+                        </button>
+
+                        <button type="submit" className="fileimportok_btn" onClick={() =>handleOk()}>
+                          {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
+                          <span> Add </span>
+                        </button>
+                      </div>
         </Modal>
         <h2 className="pr_text">Price Management</h2>
-        <button className="customer_add_button" style={{cursor:"pointer"}}  onClick={handleClicked}>
+        <button
+          className="customer_add_button"
+          style={{ cursor: 'pointer' }}
+          onClick={handleClicked}
+        >
           <span className="plusicon">+</span>
           <span>Add New Plan</span>
         </button>
@@ -705,34 +726,73 @@ const PriceThree = () => {
               })}
           </select>
         </div>
-      </div><div>
-      {isShown && (
-              <div className="modal-backdrop" onClick={() => setIsShown(false)}>
-                {/* Backdrop content (if needed) */}
+      </div>
+      <div>
+{ isadminDelete &&(
+
+
+              <div>
+              
+          <div
+            className="show__notShow"
+            style={{
+              display: isadminDelete ? 'block' : 'none',
+            }}
+          >
+            
+              <div className='create_Location__packag'>
+                <label>Confirm Delete</label>
+                <IoMdClose className="crossicon" onClick={deleteLocated} />
               </div>
-            )}
-     
-      
-            <div
-              className="show__notShow modalscroll"
-              style={{
-                display: isShown ? 'block' : 'none',
-              }}
-            >
- <form onSubmit={signUp}>
+              <div style={{textAlign:'left',marginTop:"23px"}}>
+              <p>Are you sure you want to delete the location
+
+                 <span style={{ fontWeight: 'bolder' }}> {RowData.location}</span>.
+                &nbsp;This process is Irreversible</p> </div>
+              <div id="handle_Admin_Delete_cancel">
+
+                <button onClick={deleteLocated}   className='cancel__confirm' type="submit">
+                  Cancel
+                </button>
+
+                <button onClick={() => deleteLocation(id)} type="submit" className="delete_new__admin">
+                  Delete
+                </button>
+
+              </div>
+            </div>
+          </div>
+  
+)}
+
+          </div>
+      <div>
+        {isShown && (
+          <div className="modal-backdrop" onClick={() => setIsShown(false)}>
+            {/* Backdrop content (if needed) */}
+          </div>
+        )}
+
+        <div
+          className="show__notShow modalscroll"
+          style={{
+            display: isShown ? 'block' : 'none',
+          }}
+        >
+          <form onSubmit={signUp}>
             <div className="create_Location__packag">
-            <label>Add New Package</label>
-                  <IoMdClose className="crossicon" onClick={cancelCreate} />
+              <label>Add New Package</label>
+              <IoMdClose className="crossicon" onClick={cancelCreate} />
             </div>
 
             <div id="form__admin_admin">
-              <label className="nameEmail__Price" >Location Name</label>
+              <label className="nameEmail__Price">Location Name</label>
               <input
                 className="locate__input"
                 type="text"
                 name=""
                 id=""
-                placeholder='Location Name'
+                placeholder="Location Name"
                 readOnly={true}
                 value={location}
               />
@@ -746,7 +806,7 @@ const PriceThree = () => {
                 value={location_id}
               />
 
-              <p style={{ color: 'red',  }}>{errorlocation}</p>
+              <p style={{ color: 'red' }}>{errorlocation}</p>
               <label className="nameEmail__Price">Product Name</label>
               <input
                 className="locate__input"
@@ -850,12 +910,14 @@ const PriceThree = () => {
               >
                 {errorprice}
               </span>
-              <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                    }}>
-              <button
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <button
                   onClick={cancelCreate}
                   className="cancel__create__location"
                   id="not_ShowCancel"
@@ -866,17 +928,171 @@ const PriceThree = () => {
                   type="submit"
                   className="create_new__location"
                   onClick={signUp}
-                // disabled={disabled}
+                  // disabled={disabled}
                 >
                   Add
                 </button>
-                
               </div>
             </div>
           </form>
+        </div>
+      </div>
+      <div
+          className="show__notShow"
+          style={{
+            display: isadminShow ? 'block' : 'none',
+          }}
+        >
+          <div className="create_Location__packag">
+          <label>Edit Package</label>
+              <IoMdClose className="crossicon" onClick={cancelCreateAdmin} />
+          </div>
 
+          <div id="form__admin_update">
+            <label className="nameEmail__Price">Location Name</label>
+            <input
+              type="text"
+              name=""
+              id=""
+              readOnly={true}
+              value={location}
+              className="locate__input"
+            />
+            <span style={{ color: 'red', paddingLeft: '11px' }}>{errorlocation}</span>
+            <label className="nameEmail__Price">Package Name</label>
+            <input
+              className="locate__input"
+              type="text"
+              name="package_name"
+              value={package_name}
+              placeholder="Eg. Base Package - 4"
+              onChange={(e) => setPackgagename(e.target.value)}
+            />
+            <label className="nameEmail__Price">Stripe Product ID </label>
+            <input
+              className="locate__input"
+              type="text"
+              name="product_desc"
+              value={price_stripe_id}
+              placeholder="Product Description"
+              onChange={(e) => setPriceStripeId(e.target.value)}
+            />
+            <div
+              style={{
+                display: 'flex',
+                 justifyContent: 'flex-start',
+                alignItems: 'center',
+                gap: '10px',
+                // paddingTop: '12px',
+              }}
+            >
+              <label className="coupan_name">Coupon</label>
+              <button className="plus_out_line" onClick={() => showModal(package_name)}>
+                <PlusOutlined style={{ display: 'block', }} />
+              </button>
             </div>
+            {/* <label className="nameEmail__Price">Coupon ID</label>
+            <input
+              className="locate__input"
+              type="text"
+              name="stripe_voucher_id"
+              value={stripe_voucher_id}
+              placeholder="Voucher ID"
+              onChange={(e) => setVoucherID(e.target.value)}
+            />
+            <label className="nameEmail__Price">Coupon Promotion Code</label>
+            <input
+              className="locate__input"
+              type="text"
+              name="voucher_name"
+              value={voucher_name}
+              placeholder="Voucher Name"
+              onChange={(e) => setVoucherName(e.target.value)}
+            /> */}
+
+            <label
+              
+            >
+              kWh
+            </label>
+            <input
+              className="locate__input"
+              type="number"
+              name="kwh"
+              value={kwh}
+              placeholder="kWh"
+              onChange={(e) => setKwh(e.target.value)}
+            />
+
+            <label className="nameEmail__Price">Mi Eq</label>
+            <input
+              className="locate__input"
+              type="number"
+              name="mi_eq"
+              value={mi_eq}
+              placeholder="Eg. 2000"
+              onChange={(e) => setMieq(e.target.value)}
+            />
+            <label className="nameEmail__Price">$/Mi</label>
+            <input
+              className="locate__input"
+              type="number"
+              name="dollar_mi"
+              value={dollar_mi}
+              placeholder="Eg. 2000"
+              onChange={(e) => setDollar(e.target.value)}
+            />
+
+            <label className="nameEmail__Price">Price ($)</label>
+            <input
+              className="locate__input"
+              type="number"
+              name="price"
+              value={total_price}
+              placeholder="Eg.$149"
+              onChange={(e) => setPrice(e.target.value)}
+            />
+
+            <label className="nameEmail__Price">Sales Tax</label>
+            <input
+              className="locate__input"
+              type="text"
+              name=""
+              id=""
+              readOnly={true}
+              value={salesTax + '%'}
+            />
+            <input type="hidden" className="locate__input" value={salesTaxTwo} />
+            <div className="total_pr_local">
+              <p className="functioned_p" onClick={() => totalPrice(2)}>
+                Check Total Price
+              </p>
+              <p className="ttl__ssl_tx">${totalSalexTax}</p>
             </div>
+            <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}>
+              
+              <button
+                onClick={cancelCreateAdmin}
+                className="cancel__create__location"
+                id="not_ShowCancel"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="create_new__location"
+                onClick={() => updateAdmin(id)}
+              // disabled={disabled}
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
       <div className="main_kwh_mieq_div">
         {plans &&
           plans.map((item, index) => {
@@ -923,7 +1139,12 @@ const PriceThree = () => {
                   </div>
                   <div className="edit_delete_btn">
                     <div
-                      style={{ display: 'flex', alignItems: 'center', gap: '8px' , cursor:'pointer'}}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        cursor: 'pointer',
+                      }}
                       onClick={() => {
                         setGetLocationId(item.location_id)
                         // setLocation(item.location)
@@ -944,7 +1165,12 @@ const PriceThree = () => {
                       <p className="edit_p">Edit</p>
                     </div>
                     <div
-                      style={{ display: 'flex', alignItems: 'center', gap: '8px',cursor:'pointer' }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        cursor: 'pointer',
+                      }}
                       onClick={() => deleteLocated(SetRowData(item), setId(item.id))}
                     >
                       <img src={Trash} alt="delete" />
