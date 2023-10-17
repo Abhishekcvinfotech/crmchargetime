@@ -490,7 +490,7 @@ const AssetTwo = () => {
       alert('Please fill up neccessary details')
     }
   }
-  const  AssignedDataOnMapMethod = async (
+  const AssignedDataOnMapMethod = async (
     id,
     device_id,
     unique_id,
@@ -504,7 +504,7 @@ const AssetTwo = () => {
     cust_email,
     deviceunit_state,
     custId,
-  )  =>{
+  ) => {
     if (
       id &&
         device_id !== null &&
@@ -574,14 +574,14 @@ const AssetTwo = () => {
       alert('Please fill up neccessary details')
     }
   }
-  
+
 
   const cancel = (e) => {
     console.log(e)
   }
 
   async function unAssignedData(id, custIde) {
-    
+
     setLoading(true)
     const conf = confirm('Are you sure you would like to change')
     if (conf == true) {
@@ -627,7 +627,7 @@ const AssetTwo = () => {
         setLoading(false)
       }
     } else {
-      
+
       setLoading(false)
     }
   }
@@ -1005,9 +1005,9 @@ const AssetTwo = () => {
           onOk={handleOk}
           onCancel={handleCancel}
           width={900}
-          bodyStyle={{ height: '400px', overflowX:'auto' ,padding:'24px' }}  
+          bodyStyle={{ height: '400px', overflowX: 'auto', padding: '24px' }}
         >
-          
+
 
           <table className="table" >
             <thead>
@@ -1056,7 +1056,7 @@ const AssetTwo = () => {
                         </div>
                       </td>
                       <td> {item.device_id}</td>
-                      <td><div style={{width:'200px'}}> {item.device_address}</div></td>
+                      <td><div style={{ width: '200px' }}> {item.device_address}</div></td>
                       <td> {item.issue}</td>
 
                       <td className={`toggle_style_${ind}`}>
@@ -1081,8 +1081,8 @@ const AssetTwo = () => {
                   )
                 })}
             </tbody>
-          </table> 
-           
+          </table>
+
         </Modal>
         {/* <CSVLink
             data={data}
@@ -1122,7 +1122,7 @@ const AssetTwo = () => {
               alignItems: 'center',
               cursor: 'pointer',
               gap: '16px',
-              marginRight:'24px'
+              marginRight: '24px'
 
             }}
           >
@@ -1131,7 +1131,7 @@ const AssetTwo = () => {
               className='matchEmporia'
               onClick={matchDisable ? importCSVFunc : ''}
               style={{ cursor: matchDisable ? 'pointer' : 'no-drop', }}
-            >    <FaUserGroup className='fauser_btn hovering_effect' /> 
+            >    <FaUserGroup className='fauser_btn hovering_effect' />
 
               <span className='hovering_effect '>Match Customer</span>
             </button>
@@ -1267,35 +1267,35 @@ const AssetTwo = () => {
           </div>
 
           <div style={{ display: 'flex', gap: '10px' }}>
-           <div id="file_uplaoder_modal">
+            <div id="file_uplaoder_modal">
 
-                <button type="submit" className="import_report"  onClick={() => setModal2Open(true)}>
-                  <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import CSV File </span>
-                </button>
+              <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
+                <BsCloudDownload className="cloud_downlaod_icon" />
+                <span className="downlaodtext"> Import CSV File </span>
+              </button>
 
-                <Modal
-                  title="Import File"
-                  centered
-                  visible={modal2Open}
-                  onOk={() => setModal2Open(false)}
-                  onCancel={() => setModal2Open(false)}
-                  width={1000}
-                >
-                  <div>
+              <Modal
+                title="Import File"
+                centered
+                visible={modal2Open}
+                onOk={() => setModal2Open(false)}
+                onCancel={() => setModal2Open(false)}
+                width={1000}
+              >
+                <div>
                   <form onSubmit={handleSubmit} >
-              <input
-                ref={inputRef}
-                accept=".csv"
-                type="file"
-                onChange={handleFileChange}
-                style={{ width: csvwidth, color: csvTextColor , height:'40px'}}
-                required
-                id="assetimport"
-              />
+                    <input
+                      ref={inputRef}
+                      accept=".csv"
+                      type="file"
+                      onChange={handleFileChange}
+                      style={{ width: csvwidth, color: csvTextColor, height: '40px' }}
+                      required
+                      id="assetimport"
+                    />
 
 
-              {/* <button
+                    {/* <button
                 className="import_report"
                 style={bgColor ? { backgroundColor: '#1890ff' } : { backgroundColor: '#cc9ceb' }}
                 type="submit"
@@ -1303,26 +1303,26 @@ const AssetTwo = () => {
                 <img src={import_one} alt="edit" style={{ width: '15px' }} />
                 Import CSV
               </button> */}
-  <div className="fileimport_btn">
-                        <button
-                          type="button"
-                          className="fileimport_cancel"
-                          onClick={() => setModal2Open(false)}
-                        >
-                          {' '}
-                          <span>Cancel</span>{' '}
-                        </button>
+                    <div className="fileimport_btn">
+                      <button
+                        type="button"
+                        className="fileimport_cancel"
+                        onClick={() => setModal2Open(false)}
+                      >
+                        {' '}
+                        <span>Cancel</span>{' '}
+                      </button>
 
-                        <button type="submit" className="fileimportok_btn">
-                          {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
-                          <span> Import </span>
-                        </button>
-                      </div>
+                      <button type="submit" className="fileimportok_btn">
+                        {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
+                        <span> Import </span>
+                      </button>
+                    </div>
 
-            </form>
-                  </div>
-                </Modal>
+                  </form>
                 </div>
+              </Modal>
+            </div>
 
             {/* <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '6px' }}>
               <input
@@ -1396,7 +1396,7 @@ const AssetTwo = () => {
               style={{ display: 'flex', gap: '10px', borderRadius: '6px' }}
             >
               <img src={wrong_detailsicon} alt="frame" style={{ width: '22px', height: '15px' }} />
-             <span> Wrong Details</span>
+              <span> Wrong Details</span>
             </button>
 
           </div>
@@ -1639,7 +1639,7 @@ const AssetTwo = () => {
                           <td className={`td_style td_style_${ind}`}>
                             {`td_style_${ind}` === autoFillIndex
                               ? autoFillState
-                              : item.device_state }
+                              : item.device_state}
                           </td>
                           <td className={`td_style td_style_${ind}`}>
                             {`td_style_${ind}` === autoFillIndex ? autoFillZip : item.device_zip}
@@ -1774,7 +1774,7 @@ const AssetTwo = () => {
                                 onClick={
                                   `td_style_${ind}` == autoFillIndexForCustomer ||
                                     `td_style_${ind}` == autoFillIndex ||
-                                    item?.pwa_name[0]?.pwa_name_fill 
+                                    item?.pwa_name[0]?.pwa_name_fill
                                     ? () =>
                                       AssignedDataOnMapMethod(
                                         item?.id,
@@ -1794,7 +1794,7 @@ const AssetTwo = () => {
                                     : ''
                                 }
                               >
-                                <UserAddOutlined size="large" style={{ color: 'red' ,cursor:'default' }} />
+                                <UserAddOutlined size="large" style={{ color: 'red', cursor: 'default' }} />
                               </button>
                             )}
                           </td>
@@ -1984,22 +1984,31 @@ const AssetTwo = () => {
             <p className="admin_registerd__pop">Device(s) have been turned off.</p>
           </div>
         </div>
-        <div
-          className="show__notShow"
-          style={{
-            display: isAssetsDelete ? 'block' : 'none',
-          }}
-        >
-          <div id="confirm__delete_location">
-            <p>Confirm Delete</p>
-          </div>
-          <div id="delete__Location">
-            <p>Are you sure you want to delete Device Id</p>
-            <p style={{ marginTop: '-10px' }}>
-              <span style={{ fontWeight: 'bolder' }}>{name}</span>
-            </p>
-            <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
-            <div style={{ paddingLeft: '10px' }}>
+        <div>
+          {isAssetsDelete && (
+            <div className="modal-backdrop" onClick={cancelDeleteAssets} >
+
+            </div>
+
+          )}
+          <div
+            className="show__notShow_delete"
+            style={{
+              display: isAssetsDelete ? 'block' : 'none',
+            }}
+          >
+            <div id="confirm__delete_location">
+              <p>Confirm Delete</p>
+            </div>
+            <div id="delete__Location">
+              <div style={{paddingTop:'24px'}}>   
+              <p>Are you sure you want to delete Device Id</p>
+              <p style={{ marginTop: '-10px' }}>
+                <span style={{ fontWeight: 'bolder' }}>{name}</span>
+              </p>
+              <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
+              </div>
+              {/* <div style={{ paddingLeft: '10px' }}>
               <button onClick={() => deleteAsseted(id)} type="submit" className="delete_new__admin">
                 Delete
               </button>
@@ -2010,6 +2019,12 @@ const AssetTwo = () => {
               >
                 Cancel
               </button>
+            </div> */}
+
+              <div id="handle_Admin_Delete_cancel">
+                <button class="cancel__confirm" type="submit" onClick={() => deleteAsseted(id)} >Cancel</button>
+                <button type="submit" class="delete_new__admin"  onClick={cancelDeleteAssets} >Delete</button>
+                </div>
             </div>
           </div>
         </div>

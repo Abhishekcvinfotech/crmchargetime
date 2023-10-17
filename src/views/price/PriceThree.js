@@ -476,7 +476,7 @@ const PriceThree = () => {
             ''
           )}
 
-          <button id="universalButton" onClick={handleUIModal}>
+          <button  className='add_coupen' onClick={handleUIModal}>
             Add Coupon
           </button>
           {showInputField && (
@@ -729,8 +729,6 @@ const PriceThree = () => {
       </div>
       <div>
 { isadminDelete &&(
-
-
               <div>
               
           <div
@@ -937,6 +935,14 @@ const PriceThree = () => {
           </form>
         </div>
       </div>
+      <div>  
+
+      {isadminShow && (
+            <div className="modal-backdrop" onClick={cancelCreateAdmin}>
+              
+            </div>
+          )}
+
       <div
           className="show__notShow"
           style={{
@@ -1092,6 +1098,8 @@ const PriceThree = () => {
               </button>
             </div>
           </div>
+        </div>
+
         </div>
       <div className="main_kwh_mieq_div">
         {plans &&
