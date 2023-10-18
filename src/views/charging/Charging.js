@@ -722,7 +722,7 @@ const Charging = () => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             {/* <UserSwitchOutlined
               style={{
-                display: 'block',
+                display: 'block',air
                 color: '#fff',
                 fontWeight: 'bolder',
                 paddingRight: '10px',
