@@ -228,6 +228,8 @@ const Customer = () => {
 
   }
 
+  var offset = new Date().toString().match(/([A-Z]+[\+-][0-9]+)/)[1];
+console.log(offset,'off');
   const openNotification = () => {
     notification.open({
       // message: 'Notification Title',
@@ -427,11 +429,7 @@ const Customer = () => {
   useEffect(() => {
     getUsers()
   }, [forSuspend, forUnSuspend, deleted])
-  // if(data.energy_plan !== null && data.Device_Id == null){
-  //     document.getElementById('flag').style.display = 'block';
-  // console.log("hello ")
-  // }
-
+  
   const indexOfLastPage = page * postPerPage
   const indexOfFirstPage = indexOfLastPage - postPerPage
   const currentPosts = data?.slice(indexOfFirstPage, indexOfLastPage)
@@ -495,7 +493,10 @@ const Customer = () => {
     })
       .then(function (response) {
         setData(response.data)
-        setLoading(false)
+        
+        setTotal(response.data?.length)
+          setLoading(false)
+          handlePagination((value) => setPage(1))
       })
       .catch(function (error) {
         console.log(error)
@@ -531,8 +532,11 @@ const Customer = () => {
         data: valueToPush,
       })
         .then(function (response) {
+          
           setData(response.data)
+          setTotal(response.data?.length)
           setLoading(false)
+          handlePagination((value) => setPage(1))
         })
         .catch(function (error) {
           console.log(error)
@@ -543,21 +547,7 @@ const Customer = () => {
   }
   const totalUsers = activeData?.length
 
-  // const sorting = (col) => {
-  //   const sortOrder = sortingState[col] === 'ASC' ? 'DSC' : 'ASC'
-  //   setSortingState({ ...sortingState, [col]: sortOrder })
-
-  //   const sorted = [...data].sort((a, b) =>
-  //     sortOrder === 'ASC'
-  //       ? a[col]?.toLowerCase() > b[col]?.toLowerCase()
-  //         ? 1
-  //         : -1
-  //       : a[col]?.toLowerCase() < b[col]?.toLowerCase()
-  //       ? 1
-  //       : -1,
-  //   )
-  //   setData(sorted)
-  // }
+  
 
   const sorting = (col) => {
     const sortOrder = sortingState[col] === 'ASC' ? 'DSC' : 'ASC'
@@ -915,9 +905,7 @@ const Customer = () => {
         })
     }
   }
-  // useEffect(() => {
-  //   viewsPlan()
-  // }, [])
+ 
   useEffect(() => {
     viewsPlan()
   }, [forRefreshing, forRadioDelete])
@@ -1252,6 +1240,7 @@ const Customer = () => {
       })
 
       let res = await result.json()
+      
       if (res.error) {
         setUserAdded('none')
         alert(res.message)
@@ -1308,13 +1297,15 @@ const Customer = () => {
     setErrorMessage('')
   }
   const handleSelect = (e) => {
-    setLocationId(e.target.id)
+    
+    setLocationId(e.target.selectedOptions[0].getAttribute('data-name'))
     axios
       .get(`${troesAPi}/installation/${e.target.selectedOptions[0].getAttribute('data-name')}`)
       .then((res) => {
+        console.log(res.data,'res')
         setNewZipcode(res.data[0].ZIP_code)
         setNewState(res.data[0].state)
-        setLocationId(+res.data.id)
+        // setLocationId('')
       })
       .catch((err) => {
         console.log(err)
@@ -1430,11 +1421,7 @@ const Customer = () => {
       setLoading(false)
     }
   }
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setData('')
-  //   },[43200])
-  // },[])
+  
   const content = (item) => {
     return (
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
@@ -1524,8 +1511,7 @@ const Customer = () => {
   return (
     <>
       <div className="container-fluid customer_information">
-        {/* <div className="container-fluid customer_information" style={{position:'relative'}} > */}
-        {/* <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}> */}
+       
         <div className="customer_addbutton_wrap">
           <div className="tcount">
             <h2 className="all_customer_of_page">
@@ -1544,37 +1530,11 @@ const Customer = () => {
               </span>
             </h5>
 
-            {/* </Link> </span> </p> */}
+           
           </div>
 
-          {/* <p style={{ paddingBottom: '18px', textAlign: 'right', paddingRight:'25px' }}>
-            Total Customers : {totalUsers} <br />
-            <Link to="/">
-              <span
-                className="hoverChange"
-                style={{
-                  textAlign: 'center',
-                  color: 'blue',
-                  borderBottom: '1px solid blue',
-                  padding: '3px',
-
-                }}
-              >
-                All Customers
-              </span>
-            </Link>
-          </p> */}
-          {/*
-          <Button
-                // id="button"
-                type="primary"
-                onClick={() => setAddUserModal(true)}
-                className="customer_add_button"
-                style={{display:'flex', gap:'5px' ,alignItems:'center'}}
-              >
-                <img src={AddUser} alt="frame"  style={{ width: '15px', marginTop:'3px' }} />
-                Add User
-              </Button> */}
+        
+          
           <button onClick={() => setAddUserModal(true)} className="customer_add_button">
             <span className="plusicon">+</span>
             <span>Add Customer</span>
@@ -1583,7 +1543,7 @@ const Customer = () => {
 
         <CSVLink
           data={csvdata}
-          //headers={headers}
+          
           filename={`${csvName}_Report.csv`}
           target="_blank"
           ref={csvDownloadRef}
@@ -3030,6 +2990,7 @@ const Customer = () => {
       {/* add user modal starts */}
       {addUserModal ? (
         <div className="modal-backdrop">
+        
           <div id="addModalsecond">
             <div className="modal_heading ">
               <div className="modal_hedaing_customer">

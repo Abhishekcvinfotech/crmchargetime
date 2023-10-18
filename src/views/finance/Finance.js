@@ -87,13 +87,15 @@ const Finance = () => {
 
   const downloadEndpoint = `${troesAPi}/partnerexport/${getIdOfPartner}`
   const handleFileDownload = async () => {
-    setLoading(true)
-    setRefreshing(true)
+    
+    
     const requestData = {
       startdate: startdate,
       enddate: enddate,
     }
-
+if(requestData !== ''){
+  setLoading(true)
+  setRefreshing(true)
     await axios
       .post(downloadEndpoint, requestData, {
         responseType: 'blob',
@@ -112,8 +114,12 @@ const Finance = () => {
       })
       .catch((error) => {
         console.error('Error downloading the file:', error)
+        setLoading(false)
         setRefreshing(false)
       })
+    }else{
+      alert("Please fill required fields")
+    }
   }
 
   const getPartnerInvoiceData = () => {
