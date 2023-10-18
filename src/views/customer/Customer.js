@@ -2907,63 +2907,49 @@ console.log(offset,'off');
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer userdeletmodal"
           style={{
             display: userPlay ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <PlayCircleOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">Subscription Resumed.</p>
+          
+          <div>
+            <p className="admin_registerd__pop_noti ">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Subscription Resumed. </span>{' '}
+            </p>
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer userdeletmodal"
           style={{
             display: userPause ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <PauseCircleOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">Subscription Paused.</p>
+        
+
+<div>
+            <p className="admin_registerd__pop_noti ">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Subscription Paused. </span>{' '}
+            </p>
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer userdeletmodal"
           style={{
             display: userSuspend ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">A User has been Suspended.</p>
+         
+           <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> A User has been Suspended.</span>{' '}
+            </p>
           </div>
         </div>
         <div
@@ -3066,6 +3052,9 @@ console.log(offset,'off');
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
+                        position:'relative',
+                        top:'-12px',
+                        left:'5px',
                       }}
                     >
                       {phoneError}
@@ -3110,6 +3099,9 @@ console.log(offset,'off');
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
+                        position:'relative',
+                        top:'-12px',
+                        left:'5px',
                       }}
                     >
                       {emailError}
@@ -3153,6 +3145,9 @@ console.log(offset,'off');
                         color: `${colorRed}`,
                         width: '235px',
                         fontSize: '12px',
+                        position:'relative',
+                        top:'-12px',
+                        left:'5px',
                       }}
                     >
                       {errorMessage}
@@ -3190,7 +3185,9 @@ console.log(offset,'off');
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
                   />
-                  <p style={{ color: 'red', display: display, fontSize: '12px' }}>
+                  <p style={{ color: 'red', display: display, fontSize: '12px' ,  position:'relative',
+                        top:'-12px',
+                        left:'5px',  }}>
                     Password did not match❗
                   </p>
 
@@ -3198,20 +3195,14 @@ console.log(offset,'off');
                     onClick={generatePassword}
                     style={{
                       cursor: 'pointer',
-                      // background: 'rgb(24, 144, 255)',
-                      // color: 'rgb(255, 255, 255)',
+                    
                       display: 'flex',
                       justifyContent: 'flex-end',
                       color: '#3378FF',
                       textDecoration: 'underline',
                       paddingBottom: '1px',
 
-                      // color: 'white',
-                      // padding: '5px 10px',
-                      // borderRadius: '7px',
-                      // width: 'fit-content',
-                      // margin: '0',
-                      // marginBottom: '3px',
+                    
                     }}
                   >
                     Generate Password
@@ -3246,18 +3237,7 @@ console.log(offset,'off');
           display: userAdded,
         }}
       >
-        {/* <div style={{ display: 'flex', alignItems: 'center' }}> */}
-          {/* <UserAddOutlined
-            style={{
-              display: 'block',
-              color: '#fff',
-              fontWeight: 'bolder',
-              paddingRight: '10px',
-              marginTop: '-5px',
-              fontSize: '18px',
-            }}
-          /> */}
-          {/* <p className="admin_registerd__pop">Customer Added Successfully.</p> */}
+      
           <div>
             <p className="admin_registerd__pop_noti">
               {' '}
@@ -3400,19 +3380,7 @@ console.log(offset,'off');
           display: userUpdated,
         }}
       >
-        {/* <div style={{ display: 'flex', alignItems: 'center' }}>
-          <UserSwitchOutlined
-            style={{
-              display: 'block',
-              color: '#fff',
-              fontWeight: 'bolder',
-              paddingRight: '10px',
-              marginTop: '-5px',
-              fontSize: '18px',
-            }}
-          />
-          <p className="admin_registerd__pop">Customer Updated Successfully.</p>
-        </div> */}
+     
         <div>
             <p className="admin_registerd__pop_noti">
               {' '}
