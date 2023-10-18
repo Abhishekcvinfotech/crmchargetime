@@ -84,6 +84,7 @@ import { IoIosPaper } from 'react-icons/io'
 import { IoLocationSharp } from 'react-icons/io5'
 import { CenterFocusStrong } from '@mui/icons-material'
 import Redcircle from '../../assets/images/Redcircle.svg'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
 // import swal from 'sweetalert';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 // import { MDBIcon} from 'mdbreact';
@@ -3240,13 +3241,13 @@ console.log(offset,'off');
         ''
       )}
       <div
-        className="user__detail__popup__Customer"
+        className="user__detail__popup__Customer_noti"
         style={{
           display: userAdded,
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <UserAddOutlined
+        {/* <div style={{ display: 'flex', alignItems: 'center' }}> */}
+          {/* <UserAddOutlined
             style={{
               display: 'block',
               color: '#fff',
@@ -3255,9 +3256,17 @@ console.log(offset,'off');
               marginTop: '-5px',
               fontSize: '18px',
             }}
-          />
-          <p className="admin_registerd__pop">Customer Added Successfully.</p>
-        </div>
+          /> */}
+          {/* <p className="admin_registerd__pop">Customer Added Successfully.</p> */}
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Customer Added Successfully.</span>{' '}
+            </p>
+          </div>
+
+        {/* </div> */}
       </div>
       {/* add user modal ends */}
 
@@ -3386,12 +3395,12 @@ console.log(offset,'off');
         ''
       )}
       <div
-        className="user__detail__popup__Customer"
+        className="user__detail__popup__Customer_noti"
         style={{
           display: userUpdated,
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        {/* <div style={{ display: 'flex', alignItems: 'center' }}>
           <UserSwitchOutlined
             style={{
               display: 'block',
@@ -3403,7 +3412,14 @@ console.log(offset,'off');
             }}
           />
           <p className="admin_registerd__pop">Customer Updated Successfully.</p>
-        </div>
+        </div> */}
+        <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Customer Updated Successfully.</span>{' '}
+            </p>
+          </div>
       </div>
 
       {/* update modal ends */}
