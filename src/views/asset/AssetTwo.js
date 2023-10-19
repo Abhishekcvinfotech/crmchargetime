@@ -46,6 +46,11 @@ import { FaUserGroup } from 'react-icons/fa6';
 import { CSVLink } from 'react-csv'
 import Excelicon from '../../assets/images/excelicon.svg'
 import { BsCloudDownload } from 'react-icons/bs'
+
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
+
+
 const AssetTwo = () => {
 
   //condition for assigned start
@@ -1945,51 +1950,49 @@ const AssetTwo = () => {
           ''
         )}
         <div
-          className="user__detail__popup__Price"
+          className="user__detail__popup__Admin userdeletmodal"
           style={{
             display: userDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">Assets has been deleted.</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin "> Assets has been deleted.</span>
           </div>
+
+
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: turnedOn ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p className="admin_registerd__pop">Device(s) have been turned on.</p>
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Device(s) have been turned on. </span>{' '}
+            </p>
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer userdeletmodal"
           style={{
             display: turnedOff ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <p className="admin_registerd__pop">Device(s) have been turned off.</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin  ">User has been deleted.</span>
           </div>
+
         </div>
         <div>
           {isAssetsDelete && (
             <div className="modal-backdrop" onClick={cancelDeleteAssets} >
-
             </div>
-
           )}
           <div
             className="show__notShow_delete"
@@ -2001,30 +2004,19 @@ const AssetTwo = () => {
               <p>Confirm Delete</p>
             </div>
             <div id="delete__Location">
-              <div style={{paddingTop:'24px'}}>   
-              <p>Are you sure you want to delete Device Id</p>
-              <p style={{ marginTop: '-10px' }}>
-                <span style={{ fontWeight: 'bolder' }}>{name}</span>
-              </p>
-              <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
+              <div style={{ paddingTop: '24px' }}>
+                <p>Are you sure you want to delete Device Id</p>
+                <p style={{ marginTop: '-10px' }}>
+                  <span style={{ fontWeight: 'bolder' }}>{name}</span>
+                </p>
+                <p style={{ marginTop: '-10px' }}> This process is Irreversible</p>
               </div>
-              {/* <div style={{ paddingLeft: '10px' }}>
-              <button onClick={() => deleteAsseted(id)} type="submit" className="delete_new__admin">
-                Delete
-              </button>
-              <button
-                onClick={cancelDeleteAssets}
-                className="cancel__create__location"
-                type="submit"
-              >
-                Cancel
-              </button>
-            </div> */}
+
 
               <div id="handle_Admin_Delete_cancel">
-                <button class="cancel__confirm" type="submit" onClick={() => deleteAsseted(id)} >Cancel</button>
-                <button type="submit" class="delete_new__admin"  onClick={cancelDeleteAssets} >Delete</button>
-                </div>
+                <button class="cancel__confirm" type="submit" onClick={cancelDeleteAssets}  >Cancel</button>
+                <button type="submit" class="delete_new__admin" onClick={() => deleteAsseted(id)} >Delete</button>
+              </div>
             </div>
           </div>
         </div>
