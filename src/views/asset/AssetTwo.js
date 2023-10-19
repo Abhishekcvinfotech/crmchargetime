@@ -1985,7 +1985,7 @@ const AssetTwo = () => {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <img src={Redcircle} alt="Cyber Vision infotech " />
-            <span className="admin_registerd__pop userdeletmodal_margin  ">User has been deleted.</span>
+            <span className="admin_registerd__pop userdeletmodal_margin  "> Device(s) has been turned off.</span>
           </div>
 
         </div>
