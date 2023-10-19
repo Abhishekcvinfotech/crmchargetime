@@ -793,7 +793,7 @@ input::file-selector-button {
   font-weight: 500;
   /* padding-top: 10px; */
   display: block;
-  margin-top: 10px;
+  
 }
 
 @media (max-width: 1540px){

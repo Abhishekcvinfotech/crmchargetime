@@ -9,6 +9,8 @@ import { Button, Checkbox, message, Spin, Modal, notification } from 'antd'
 import { DeleteOutlined, PlusOutlined, MinusOutlined, SaveOutlined } from '@ant-design/icons'
 import coupon from '../../assets/images/coupon.svg'
 import { IoMdClose } from 'react-icons/io'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
 
 const PriceThree = () => {
   const [isShown, setIsShown] = useState(false)
@@ -1192,66 +1194,51 @@ const PriceThree = () => {
         ;
       </div>
       <div
-          className="user__detail__popup__Price"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: userAdmit ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              // src={ep_pricetag}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                height: '15px',
-                objectFit: 'contain',
-              }}
-            />
-            <p className="admin_registerd__pop">New package added successfully.</p>
+         
+           <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> New package added successfully. </span>{' '}
+            </p>
           </div>
+
+
         </div>
         <div
-          className="user__detail__popup__Price"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: userUpdate ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              // src={ep_pricetag}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                objectFit: 'contain',
-                height: '15px',
-              }}
-            />
-            <p className="admin_registerd__pop">Package information updated.</p>
+          
+  <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Package information updated. </span>{' '}
+            </p>
           </div>
+
         </div>
         <div
-          className=""
+          className=" user__detail__popup__Admin userdeletmodal"
           style={{
             display: userDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">Package has been deleted.</p>
-          </div>
+         
+           <div style={{ display: 'flex', alignItems: 'center' ,gap:'16px' }}>
+            
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+           <span className="admin_registerd__pop userdeletmodal_margin "> Package has been deleted.</span>
+         </div>
+
         </div>
     </>
   )
