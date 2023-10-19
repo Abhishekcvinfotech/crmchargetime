@@ -838,20 +838,7 @@ const Admin = () => {
               display: userAdmit ? 'block' : 'none',
             }}
           >
-            {/* <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img
-                src={adminAccount}
-                alt="logo"
-                style={{
-                  paddingRight: '10px',
-                  display: 'block',
-                  marginTop: '-5px',
-                  height: '15px',
-                  objectFit: 'contain',
-                }}
-              />
-              <p className="admin_registerd__pop">A new admin is registered.</p>
-            </div> */}
+            
               <div>
             <p className="admin_registerd__pop_noti">
               {' '}

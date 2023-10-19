@@ -17,6 +17,10 @@ import axios from 'axios'
 import { useRef } from 'react'
 import Excelicon from '../../assets/images/excelicon.svg'
 import { color } from '@mui/system'
+
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
+
 const Partner = () => {
   const [ide, setIde] = useState('')
 
@@ -601,28 +605,179 @@ const Partner = () => {
           />
         </div>
 
-<div>  
- {  partnerForCreate && (   <div className="modal-backdrop" onClick={cancelAddPartnerModalOpen} >  
-         </div>
-         
-         )}
-
-        
-
-        <div
-          className="show__notShow_partner"
-          style={{
-            display: partnerForCreate ? 'block' : 'none',
-          }}
-        >
-          <div id="create_partner__edit">
-
-            <p>Add Partner</p>
-            <IoIosClose className="sortcross"  onClick={cancelAddPartnerModalOpen} />
+        <div>
+          {partnerForCreate && (<div className="modal-backdrop" onClick={cancelAddPartnerModalOpen} >
           </div>
 
+          )}
 
-          <form onSubmit={createPartnerData}>
+
+
+          <div
+            className="show__notShow_partner"
+            style={{
+              display: partnerForCreate ? 'block' : 'none',
+            }}
+          >
+            <div id="create_partner__edit">
+
+              <p>Add Partner</p>
+              <IoIosClose className="sortcross" onClick={cancelAddPartnerModalOpen} />
+            </div>
+
+
+            <form onSubmit={createPartnerData}>
+              <div id="form__partner__update">
+                <label className="label__Partner" style={{ paddingTop: '20px' }}>
+                  Name
+                </label>
+                <input
+                  className="input__partner"
+                  type="text"
+                  name="name"
+                  value={name}
+                  required
+                  placeholder="Enter Partner name"
+                  onChange={(e) => setName(e.target.value)}
+                  minLength={3}
+                />
+
+                <label className="label__Partner">Partner ID</label>
+                <input
+                  className="input__partner"
+                  type="text"
+                  name="partner_id"
+                  value={partner_id}
+                  placeholder="Enter Partner ID"
+                  onChange={(e) => setParnerId(e.target.value)}
+                  required
+                />
+
+                <label className="label__Partner">Main POC</label>
+                <input
+                  className="input__partner"
+                  type="text"
+                  name="main_poc"
+                  value={main_poc}
+                  placeholder="Enter Main POC"
+                  onChange={(e) => setMainPoc(e.target.value)}
+                  required
+                />
+                <label className="label__Partner">POC Email</label>
+                <input
+                  className="input__partner"
+                  type="text"
+                  name="poc_email"
+                  value={poc_email}
+                  placeholder="Enter Partner Email"
+                  onChange={(e) => setPocEmail(e.target.value)}
+                  required
+                />
+                <label className="label__Partner">POC Phone </label>
+                <input
+                  className="input__partner"
+                  type="number"
+                  name="poc_phone"
+                  value={poc_phone}
+                  placeholder="Enter Partner Contact"
+                  onChange={handleMobile}
+                  // onChange={(e) => setPocPhone(e.target.value)}
+                  onKeyDown={(evt) =>
+                    (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
+                    evt.preventDefault()
+                  }
+                  required
+                />
+                <label className="label__Partner">Address</label>
+                <input
+                  className="input__partner"
+                  type="text"
+                  name="address"
+                  value={address}
+                  placeholder="Enter Partner Address"
+                  onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+                <label className="label__Partner">State</label>
+                <input
+                  className="input__partner"
+                  type="text"
+                  name="state"
+                  value={state}
+                  placeholder="Enter State Name"
+                  onChange={(e) => setState(e.target.value)}
+                  required
+                />
+                <label className="label__Partner">ZIP</label>
+                <input
+                  className="input__partner"
+                  type="number"
+                  name="zip"
+                  value={zip}
+                  placeholder="Enter ZIP Code"
+                  onChange={handleZipcode}
+                  // onChange={(e) => setZip(e.target.value)}
+                  onKeyDown={(evt) =>
+                    (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
+                    evt.preventDefault()
+                  }
+                  required
+                />
+                <label className="label__Partner">Partner logo</label>
+
+                <input
+                  type="file"
+                  required
+                  accept=".png, .jpg, .jpeg"
+                  style={{ width: '240px' }}
+                  onChange={handleImage}
+                  ref={ref}
+                />
+
+                <p style={{ color: 'red', fontSize: '11px', padding: '1px 10px', display: note }}>
+                  Note: Please select only Image file( eg: .png, .jpg, .jpeg)
+                  <br />
+                  Max File size: 1MB allowed
+                </p>
+
+                <div className="locate_side" >
+
+                  <button
+                    onClick={cancelAddPartnerModalOpen}
+                    className="cancel__create__partner"
+                    id="not_ShowCancel"
+                  >
+                    Cancel
+                  </button>
+
+
+                  <button type="submit" className="create_new__partner">
+                    Add
+                  </button>
+
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div>   {isPartnerModal && (
+          <div className="modal-backdrop" onClick={cancelupdatePartners} >
+          </div>
+        )}
+
+          <div
+            className="show__notShow_partner"
+            style={{
+              display: isPartnerModal ? 'block' : 'none',
+            }}
+          >
+            <div id="create_partner__edit">
+              <p>Edit Partner</p>
+              <IoIosClose className="sortcross" onClick={cancelupdatePartners} />
+            </div>
+
             <div id="form__partner__update">
               <label className="label__Partner" style={{ paddingTop: '20px' }}>
                 Name
@@ -632,10 +787,9 @@ const Partner = () => {
                 type="text"
                 name="name"
                 value={name}
-                required
                 placeholder="Enter Partner name"
                 onChange={(e) => setName(e.target.value)}
-                minLength={3}
+                required
               />
 
               <label className="label__Partner">Partner ID</label>
@@ -656,8 +810,8 @@ const Partner = () => {
                 name="main_poc"
                 value={main_poc}
                 placeholder="Enter Main POC"
-                onChange={(e) => setMainPoc(e.target.value)}
                 required
+                onChange={(e) => setMainPoc(e.target.value)}
               />
               <label className="label__Partner">POC Email</label>
               <input
@@ -666,23 +820,19 @@ const Partner = () => {
                 name="poc_email"
                 value={poc_email}
                 placeholder="Enter Partner Email"
-                onChange={(e) => setPocEmail(e.target.value)}
                 required
+                onChange={(e) => setPocEmail(e.target.value)}
               />
-              <label className="label__Partner">POC Phone </label>
+              <label className="label__Partner">Partner Contact</label>
               <input
                 className="input__partner"
                 type="number"
                 name="poc_phone"
                 value={poc_phone}
                 placeholder="Enter Partner Contact"
-                onChange={handleMobile}
-                // onChange={(e) => setPocPhone(e.target.value)}
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
-                  evt.preventDefault()
-                }
                 required
+                // onChange={(e) => setPocPhone(e.target.value)}
+                onChange={handleMobile}
               />
               <label className="label__Partner">Address</label>
               <input
@@ -691,8 +841,8 @@ const Partner = () => {
                 name="address"
                 value={address}
                 placeholder="Enter Partner Address"
-                onChange={(e) => setAddress(e.target.value)}
                 required
+                onChange={(e) => setAddress(e.target.value)}
               />
               <label className="label__Partner">State</label>
               <input
@@ -700,9 +850,9 @@ const Partner = () => {
                 type="text"
                 name="state"
                 value={state}
-                placeholder="Enter State Name"
-                onChange={(e) => setState(e.target.value)}
+                placeholder="Enter Partner State"
                 required
+                onChange={(e) => setState(e.target.value)}
               />
               <label className="label__Partner">ZIP</label>
               <input
@@ -711,158 +861,12 @@ const Partner = () => {
                 name="zip"
                 value={zip}
                 placeholder="Enter ZIP Code"
-                onChange={handleZipcode}
-                // onChange={(e) => setZip(e.target.value)}
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
-                  evt.preventDefault()
-                }
                 required
+                onChange={handleZipcode}
+              // onChange={(e) => setZip(e.target.value)}
               />
               <label className="label__Partner">Partner logo</label>
-              
-                <input
-                  type="file"
-                  required
-                  accept=".png, .jpg, .jpeg"
-                  style={{ width: '240px' }}
-                  onChange={handleImage}
-                  ref={ref}
-                />
-             
-              <p style={{ color: 'red', fontSize: '11px', padding: '1px 10px', display: note }}>
-                Note: Please select only Image file( eg: .png, .jpg, .jpeg)
-                <br />
-                Max File size: 1MB allowed
-              </p>
 
-              <div className="locate_side" >
-
-                <button
-                  onClick={cancelAddPartnerModalOpen}
-                  className="cancel__create__partner"
-                  id="not_ShowCancel"
-                >
-                  Cancel
-                </button>
-
-
-                <button type="submit" className="create_new__partner">
-                  Add
-                </button>
-
-              </div>
-            </div>
-          </form>
-        </div>
-
-</div>
-
-        <div>   { isPartnerModal && (  
-        <div className="modal-backdrop" onClick={cancelupdatePartners} >  
-        </div>
-             )}
-
-        <div
-          className="show__notShow_partner"
-          style={{
-            display: isPartnerModal ? 'block' : 'none',
-          }}
-        >
-          <div id="create_partner__edit">
-            <p>Edit Partner</p>
-            <IoIosClose className="sortcross"    onClick={cancelupdatePartners} />
-          </div>
-
-          <div id="form__partner__update">
-            <label className="label__Partner" style={{ paddingTop: '20px' }}>
-              Name
-            </label>
-            <input
-              className="input__partner"
-              type="text"
-              name="name"
-              value={name}
-              placeholder="Enter Partner name"
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-
-            <label className="label__Partner">Partner ID</label>
-            <input
-              className="input__partner"
-              type="text"
-              name="partner_id"
-              value={partner_id}
-              placeholder="Enter Partner ID"
-              onChange={(e) => setParnerId(e.target.value)}
-              required
-            />
-
-            <label className="label__Partner">Main POC</label>
-            <input
-              className="input__partner"
-              type="text"
-              name="main_poc"
-              value={main_poc}
-              placeholder="Enter Main POC"
-              required
-              onChange={(e) => setMainPoc(e.target.value)}
-            />
-            <label className="label__Partner">POC Email</label>
-            <input
-              className="input__partner"
-              type="text"
-              name="poc_email"
-              value={poc_email}
-              placeholder="Enter Partner Email"
-              required
-              onChange={(e) => setPocEmail(e.target.value)}
-            />
-            <label className="label__Partner">Partner Contact</label>
-            <input
-              className="input__partner"
-              type="number"
-              name="poc_phone"
-              value={poc_phone}
-              placeholder="Enter Partner Contact"
-              required
-              // onChange={(e) => setPocPhone(e.target.value)}
-              onChange={handleMobile}
-            />
-            <label className="label__Partner">Address</label>
-            <input
-              className="input__partner"
-              type="text"
-              name="address"
-              value={address}
-              placeholder="Enter Partner Address"
-              required
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <label className="label__Partner">State</label>
-            <input
-              className="input__partner"
-              type="text"
-              name="state"
-              value={state}
-              placeholder="Enter Partner State"
-              required
-              onChange={(e) => setState(e.target.value)}
-            />
-            <label className="label__Partner">ZIP</label>
-            <input
-              className="input__partner"
-              type="number"
-              name="zip"
-              value={zip}
-              placeholder="Enter ZIP Code"
-              required
-              onChange={handleZipcode}
-            // onChange={(e) => setZip(e.target.value)}
-            />
-            <label className="label__Partner">Partner logo</label>
-            
               <input
                 type="file"
                 accept=".png, .jpg, .jpeg"
@@ -870,74 +874,74 @@ const Partner = () => {
                 onChange={(event) => handleUpdateImage(event)}
                 ref={fileInputRef}
               />
-            
-            <p style={{ color: 'red', fontSize: '11px', padding: '1px 10px', display: note }}>
-              Note: Please select only Image file( eg: .png, .jpg, .jpeg)
-              <br />
-              Max File size: 1MB allowed
-            </p>
-            <div className="locate_side">
 
-              <button
-                onClick={cancelupdatePartners}
-                className="cancel__create__partner"
-                id="not_ShowCancel"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="create_new__partner"
-                onClick={() => updatePartner(id)}
-              >
-                Update
-              </button>
+              <p style={{ color: 'red', fontSize: '11px', padding: '1px 10px', display: note }}>
+                Note: Please select only Image file( eg: .png, .jpg, .jpeg)
+                <br />
+                Max File size: 1MB allowed
+              </p>
+              <div className="locate_side">
+
+                <button
+                  onClick={cancelupdatePartners}
+                  className="cancel__create__partner"
+                  id="not_ShowCancel"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="create_new__partner"
+                  onClick={() => updatePartner(id)}
+                >
+                  Update
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
         </div>
 
 
-<div> { isPartnerDelete &&  (
+        <div> {isPartnerDelete && (
 
-   <div className="modal-backdrop"  onClick={cancelDeleteModalPopup} >   </div>
+          <div className="modal-backdrop" onClick={cancelDeleteModalPopup} >   </div>
 
-   )}
+        )}
 
-        <div
-          className="show__notShow_partner_delete"
-          style={{
-            display: isPartnerDelete ? 'block' : 'none',
-          }}
-        >
-          <div id="confirm__delete_partner">
-            <p>Confirm Delete</p>
-          </div>
-          <div id="delete__partner">
-            <p>Are you sure you want to delete location </p>
-             <p> <span style={{ fontWeight: 'bolder' , color:'black'}}>{name}</span></p>
+          <div
+            className="show__notShow_partner_delete"
+            style={{
+              display: isPartnerDelete ? 'block' : 'none',
+            }}
+          >
+            <div id="confirm__delete_partner">
+              <p>Confirm Delete</p>
+            </div>
+            <div id="delete__partner">
+              <p>Are you sure you want to delete location </p>
+              <p> <span style={{ fontWeight: 'bolder', color: 'black' }}>{name}</span></p>
               <p>This process is Irreversible</p>
-            <div className='delete_modal_buttons'>
-             <button
-                onClick={cancelDeleteModalPopup}
-                className="cancel__create__partner"
-                type="submit"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={() => deletePartner(id)}
-                type="submit"
-                className="delete_new__partner"
-              >
-                Delete
-              </button>
-            
+              <div className='delete_modal_buttons'>
+                <button
+                  onClick={cancelDeleteModalPopup}
+                  className="cancel__create__partner"
+                  type="submit"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={() => deletePartner(id)}
+                  type="submit"
+                  className="delete_new__partner"
+                >
+                  Delete
+                </button>
+
+              </div>
             </div>
           </div>
         </div>
-</div>
 
 
         <div className="table_wrap" style={{ overflowX: 'auto', whiteSpace: 'noWrap' }}>
@@ -946,16 +950,7 @@ const Partner = () => {
               <tr>
                 <th className="th_Name px-3">S.No.</th>
                 <th className="th_Name px-3">
-                  {/* <img
-                    src={sheet}
-                    alt="upload_img"
-                    style={{
-                      width: '20px',
-                      marginTop: '-7px',
-                      // marginLeft: '4px',
-                      cursor: 'pointer',
-                    }}
-                  /> */} File
+                  File
                 </th>
                 <th className="th_Name px-3">Name</th>
                 <th className="th_Name px-3">Partner ID</th>
@@ -1075,7 +1070,7 @@ const Partner = () => {
                               item.imagename !== null ? item.imagename : 'No file chosen',
                             )
                           }}
-                          style={{ border: 'none',  background: 'none' }}
+                          style={{ border: 'none', background: 'none' }}
                         >
                           <img src={editPen} alt="edit" className="editn_btn_global" />
                         </button>{' '}
@@ -1097,66 +1092,50 @@ const Partner = () => {
 
         </div>
         <div
-          className="user__detail__popup__partner"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: partnerAdmit ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={location_tag}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                height: '15px',
-                objectFit: 'contain',
-              }}
-            />
-            <p className="partner_registerd__pop">New Partner added successfully.</p>
+
+
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span>New Partner added successfully.</span>{' '}
+            </p>
           </div>
+
         </div>
         <div
-          className="user__detail__popup__partner"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: partnerUpdate ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={location_tag}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                objectFit: 'contain',
-                height: '15px',
-              }}
-            />
-            <p className="partner_registerd__pop">Partner information updated.</p>
+
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span>Partner information updated.</span>{' '}
+            </p>
           </div>
         </div>
         <div
-          className="user__detail__popup__partner"
+          className="user__detail__popup__Admin userdeletmodal"
           style={{
             display: partnerDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="partner_registerd__pop">Partner has been deleted.</p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin "> Partner has been deleted.</span>
           </div>
+
         </div>
 
         <div className='pagination'>
@@ -1174,8 +1153,8 @@ const Partner = () => {
               paddingLeft: '12px',
               display: 'flex',
               justifyContent: 'flex-start',
-              marginBottom:'24px',
-              marginTop:'48px',
+              marginBottom: '24px',
+              marginTop: '48px',
             }}
           />
         </div>

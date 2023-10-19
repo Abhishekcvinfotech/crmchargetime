@@ -1,0 +1,264 @@
+[33mcommit 6968fc047e6e71b841b3848889fedcfe8ed16180[m[33m ([m[1;36mHEAD -> [m[1;32mcharge_rate[m[33m)[m
+Merge: 919a788 d2d38fa
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 11:32:07 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit d2d38faab29612ef57ebeec15f878e9f698074b8[m[33m ([m[1;31morigin/pricing[m[33m)[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Thu Oct 19 11:31:30 2023 +0530
+
+    second 01
+
+[33mcommit 919a7881308a964ac32dbccc6be6924ef2c2d45e[m[33m ([m[1;31morigin/charge_rate[m[33m)[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 11:31:27 2023 +0530
+
+     app notification fixed
+
+[33mcommit 1c14a2e30d55a5b1bf8b6714c3762f7cb6b6152d[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 11:09:16 2023 +0530
+
+    pushing code
+
+[33mcommit 08e2456628ffb323a4519df2509af6707f304e79[m
+Merge: f1e550f 9b0d810
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 11:08:25 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit 9b0d810bba1ba3ad7e7414b68cf4d46388c86bdc[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Thu Oct 19 11:06:45 2023 +0530
+
+    second
+
+[33mcommit f1e550fbdba616586737fb35be6773da8b7cfb3a[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 11:05:47 2023 +0530
+
+    splash screen fixed
+
+[33mcommit 90b3ccd336b5091eaa8475bffd93975c1ff01e0b[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 10:45:59 2023 +0530
+
+    installation fixed
+
+[33mcommit 54cbe5d0ced94e4e8a240be599b126724b20d763[m
+Merge: 6fab2a6 9076eae
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 10:05:20 2023 +0530
+
+    merge resolved
+
+[33mcommit 9076eaef93fe9f4ed509733bd6c3faf97f597e15[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Thu Oct 19 10:03:42 2023 +0530
+
+    19/10 morning
+
+[33mcommit 6fab2a6ac91a61ee97261d6b060741abf4ea8316[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 10:03:14 2023 +0530
+
+    update done
+
+[33mcommit 861f8b6655d1c7ef40b51a461bba64a339df5b5d[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 19 09:40:38 2023 +0530
+
+    admin fixed
+
+[33mcommit df340c7f7e8de376068372eecfb416de309bf4c8[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Wed Oct 18 18:12:50 2023 +0530
+
+    customer nnotification fix
+
+[33mcommit 0420fb5bcc16e174b8772c77c1139c77ecd1502b[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Wed Oct 18 17:15:03 2023 +0530
+
+    ui-fix
+
+[33mcommit d6ee4448547c5e0635e31bf3268802aaaea12326[m
+Merge: a012dab 5d03bbb
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Wed Oct 18 16:57:10 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit a012dabcf3572778e6e903597e7b687498db4336[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Wed Oct 18 16:56:15 2023 +0530
+
+    ui0fix
+
+[33mcommit 5d03bbbd13085feaca56c34a6018653c4e2ce550[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Wed Oct 18 16:55:45 2023 +0530
+
+    customer changes
+
+[33mcommit 6b1d8eafe0e184cbad565ecdfd78bab7d2ca94ae[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 18:17:50 2023 +0530
+
+    charging modla fixed
+
+[33mcommit 9e3e72cfaec052ca81ce490d97459276cd207e2c[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 16:23:35 2023 +0530
+
+    delte modla fixed
+
+[33mcommit c636f685f0ecc083056285057458feb97c8c1465[m
+Merge: 696c9b3 1c470c1
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 15:26:14 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit 696c9b323653947656667bfb4e5dc6bd667233db[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 15:25:42 2023 +0530
+
+    asset fixed
+
+[33mcommit 1c470c1679da1cd33accf0e52a0e9f62c6686f1a[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Tue Oct 17 15:25:33 2023 +0530
+
+    partner Ui 3
+
+[33mcommit 179aa19a11d70d60c44b6076cc43189f3aedece9[m
+Merge: bef313a 062bb0d
+Author: Manish <cvtechworld@gmail.com>
+Date:   Tue Oct 17 12:57:01 2023 +0530
+
+    Merge branch 'charge_rate' of https://github.com/Abhishekcvinfotech/crmchargetime into pricing
+
+[33mcommit bef313a057b1ed63aa895c42d39e86bcebda9f7d[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Tue Oct 17 12:56:41 2023 +0530
+
+    partner Ui 12
+
+[33mcommit 062bb0dce2e7d9df524e1dcbf3f4f2af77b8fb8f[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 12:55:42 2023 +0530
+
+     file import csv
+
+[33mcommit 9478803d4ccedaadcb04f0533baf63e613bbc368[m
+Merge: 1ad421c d4ce0ac
+Author: Manish <cvtechworld@gmail.com>
+Date:   Tue Oct 17 10:00:15 2023 +0530
+
+    Merge branch 'charge_rate' of https://github.com/Abhishekcvinfotech/crmchargetime into pricing
+
+[33mcommit d4ce0ac89bb154cc3137f5f5ac8c2a98aefc67a0[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 09:59:51 2023 +0530
+
+    label css done
+
+[33mcommit 1ad421cde370aaeea5eda18be556e56a63793cd1[m
+Merge: 43d3097 44ea3e0
+Author: Manish <cvtechworld@gmail.com>
+Date:   Tue Oct 17 09:38:19 2023 +0530
+
+    Merge branch 'charge_rate' of https://github.com/Abhishekcvinfotech/crmchargetime into pricing
+
+[33mcommit 5cecb2ce163d87bf5ba3276498a9fd23f59637bd[m
+Merge: 44ea3e0 43d3097
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 09:35:49 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit 44ea3e065e31402b3ec78e499a86d8d73652be56[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Tue Oct 17 09:35:02 2023 +0530
+
+    pagination margin fix
+
+[33mcommit 43d309712d8ac6ec9c085c67182471c002c37d3b[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Tue Oct 17 09:22:12 2023 +0530
+
+    partner Ui changes 17
+
+[33mcommit 7f6c6f3dbae366a980499b9ac262a75f97613d5c[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Mon Oct 16 21:13:44 2023 +0530
+
+    fixing charge time
+
+[33mcommit eff1d033aca02191f3b8debc16c26c8e7adce8e5[m
+Merge: 3592cf0 c299013
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Mon Oct 16 15:38:16 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit 3592cf078ebadf4fa63c66bd3eece06d7135a1dd[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Mon Oct 16 15:37:35 2023 +0530
+
+    pricing card craeted
+
+[33mcommit c2990139d1d8332109c12f6d2f6428f506d08643[m
+Author: Manish <cvtechworld@gmail.com>
+Date:   Mon Oct 16 15:07:19 2023 +0530
+
+    partner Ui changes
+
+[33mcommit c8275092e5d6abb4860609283ecb6a676ed2ceb1[m
+Merge: 8a26a52 74976a6
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Mon Oct 16 14:00:33 2023 +0530
+
+    Merge branch 'pricing' of https://github.com/Abhishekcvinfotech/crmchargetime into charge_rate
+
+[33mcommit 8a26a52cffbbe2c2863e917651bc7944ceec15b0[m[33m ([m[1;32mmain[m[33m)[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Mon Oct 16 13:56:06 2023 +0530
+
+    partner fixed
+
+[33mcommit 74976a65276874c5c52399d1ade7cae7852a09d7[m[33m ([m[1;32mpricing[m[33m)[m
+Author: cvinfotech <cvtechworld@gmail.com>
+Date:   Mon Oct 16 12:37:24 2023 +0530
+
+    code done
+
+[33mcommit 5eebb4009315e61c44499105f977d0f3b13ee06c[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Fri Oct 13 14:42:38 2023 +0530
+
+    fixing modal
+
+[33mcommit 6f4dc3addb69259419be0e83c6eaf62debe87b47[m[33m ([m[1;31morigin/partner[m[33m, [m[1;32mpartner[m[33m)[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 12 18:04:53 2023 +0530
+
+    ui-fixes
+
+[33mcommit 1fe17685064a6ca734c66fce2af36122407e9e2c[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 12 16:34:17 2023 +0530
+
+    partner invoice changed
+
+[33mcommit f37960b1287cb74e93c9270365bfaa4a7621deed[m
+Author: abhishek singh <abhishekcvinfotech.com>
+Date:   Thu Oct 12 15:17:40 2023 +0530
+
+    partner invoice fixed
+
+[33mcommit 0a87364764921e6e16d8f673dc0
