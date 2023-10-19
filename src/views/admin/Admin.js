@@ -14,6 +14,8 @@ import { troesAPi } from '../../api'
 import { troesAPiTwo } from '../../api'
 import { IoMdClose } from 'react-icons/io'
 import Rightarrow from '../../assets/images/Rightarrow.svg'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
 // import { useNavigate, Link } from 'react-router-dom'
 
 const Admin = () => {
@@ -479,7 +481,9 @@ const Admin = () => {
                       style={{
                         fontWeight: '400',
                         color: `${colorGreen}`,
-
+                        position:'relative',
+                        top:'-21px',
+                        left:'5px',
                         fontSize: '12px',
                       }}
                     >
@@ -488,6 +492,7 @@ const Admin = () => {
                   ) : (
                     ''
                   )}
+                  <div>  
                   <label className="nameEmail__admin">Password</label>
                   <input
                     className="admin__input"
@@ -505,8 +510,11 @@ const Admin = () => {
                         style={{
                           fontWeight: '400',
                           color: `${colorRed}`,
-                          paddingLeft: '10px',
+                         
                           fontSize: '12px',
+                          position:'relative',
+                          top:'-21px',
+                          left:'0',
                         }}
                       >
                         {errorMessage}
@@ -515,6 +523,8 @@ const Admin = () => {
                   ) : (
                     ''
                   )}
+                  </div>
+                  <div> 
                   <label className="nameEmail__admin">Confirm Password</label>
                   <input
                     className="admin__input"
@@ -532,6 +542,9 @@ const Admin = () => {
                         fontWeight: '400',
                         color: `${colorPink}`,
                         fontSize: '12px',
+                        position:'relative',
+                        top:'-21px',
+                        left:'5px',
                       }}
                     >
                       {conPassErr}
@@ -539,7 +552,7 @@ const Admin = () => {
                   ) : (
                     ''
                   )}
-
+</div>
                   <div
                     style={{
                       display: 'flex',
@@ -581,7 +594,8 @@ const Admin = () => {
                   </div>
 
                   <div id="form__admin_Edit">
-                    <label className="nameEmail__admin" style={{ paddingTop: '20px' }}>
+                    <label className="nameEmail__admin" style={{ paddingTop: '20px',   
+                        }}>
                       Name
                     </label>
                     <input
@@ -598,6 +612,9 @@ const Admin = () => {
                           color: 'red',
                           paddingLeft: '20px',
                           fontSize: '12px',
+                          position:'relative',
+                          top:'-21px',
+                          left:'5px',
                         }}
                       >
                         {nameErrorUpdate}
@@ -619,8 +636,10 @@ const Admin = () => {
                           style={{
                             fontWeight: '400',
                             color: `${colorGreen}`,
-
                             fontSize: '12px',
+                            position:'relative',
+                            top:'-21px',
+                            left:'5px',
                           }}
                         >
                           {emailError}
@@ -643,8 +662,10 @@ const Admin = () => {
                         style={{
                           fontWeight: '400',
                           color: `${colorRed}`,
-
                           fontSize: '12px',
+                          position:'relative',
+                          top:'-21px',
+                          left:'5px',
                         }}
                       >
                         {errorMessage}
@@ -669,8 +690,9 @@ const Admin = () => {
                         style={{
                           fontWeight: '400',
                           color: `${colorPink}`,
-
-
+                          position:'relative',
+                          top:'-21px',
+                          left:'5px',
                           fontSize: '12px',
                         }}
                       >
@@ -811,12 +833,12 @@ const Admin = () => {
             </table>
           </div>
           <div
-            className="user__detail__popup__Admin"
+            className="user__detail__popup__Customer_noti"
             style={{
               display: userAdmit ? 'block' : 'none',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            {/* <div style={{ display: 'flex', alignItems: 'center' }}>
               <img
                 src={adminAccount}
                 alt="logo"
@@ -829,7 +851,14 @@ const Admin = () => {
                 }}
               />
               <p className="admin_registerd__pop">A new admin is registered.</p>
-            </div>
+            </div> */}
+              <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span>A new admin is registered.</span>{' '}
+            </p>
+          </div>
           </div>
           <div
             className="user__detail__popup__Admin"
@@ -853,24 +882,18 @@ const Admin = () => {
             </div>
           </div>
           <div
-            className="user__detail__popup__Admin"
+            className="user__detail__popup__Admin userdeletmodal"
             style={{
               display: userDelete ? 'block' : 'none',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <DeleteOutlined
-                style={{
-                  display: 'block',
-                  color: '#fff',
-                  fontWeight: 'bolder',
-                  paddingRight: '10px',
-                  marginTop: '-5px',
-                  fontSize: '18px',
-                }}
-              />
-              <p className="admin_registerd__pop">ID has been deleted.</p>
-            </div>
+             <div style={{ display: 'flex', alignItems: 'center' ,gap:'16px' }}>
+            
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+           <span className="admin_registerd__pop userdeletmodal_margin "> ID has been deleted.</span>
+         </div>
+           
+
           </div>
         </div>
         <div className="pagination_wrap">

@@ -2893,15 +2893,7 @@ console.log(offset,'off');
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' ,gap:'16px' }}>
-            {/* <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                
-                fontSize: '18px',
-              }}
-            /> */}
+            
              <img src={Redcircle} alt="Cyber Vision infotech " />
             <span className="admin_registerd__pop userdeletmodal_margin  ">User has been deleted.</span>
           </div>
@@ -2953,12 +2945,12 @@ console.log(offset,'off');
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer"
+          className="user__detail__popup__Customer userdeletmodal"
           style={{
             display: userUnSuspend ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          {/* <div style={{ display: 'flex', alignItems: 'center' }}>
             <PlusOutlined
               style={{
                 display: 'block',
@@ -2970,6 +2962,13 @@ console.log(offset,'off');
               }}
             />
             <p className="admin_registerd__pop">A User has been UnSuspended.</p>
+          </div> */}
+           <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> A User has been UnSuspended.</span>{' '}
+            </p>
           </div>
         </div>
       </div>

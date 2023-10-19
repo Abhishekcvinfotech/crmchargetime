@@ -256,7 +256,7 @@ form select {
   font-size: 14px;
   font-weight: 500;
   display: block;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .s_Name {
@@ -266,10 +266,57 @@ form select {
 
 .password__span {
   display: flex;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+
+.user__detail__popup__Customer_noti {
+  z-index: 1;
+  border-radius: 6px;
+  height: 60px;
+ 
+  position:fixed;
+  top:80px;
+  border-radius: 6px;
+  background:  #3CB72C;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+  width: 440px;
+  padding: 9px 12px;
+
+}
+
+.admin_registerd__pop_noti{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.admin_registerd__pop_noti span{
+
+color:#FFFFFF;
+font-family: DM Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+
+}
+
+.userdeletmodal{
+  z-index: 1;
+  border-radius: 6px;
+  height: 60px;
+  position:fixed;
+  top:80px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
+  width: 440px;
+  padding: 9px 12px;
+  background: #F42B3D; 
 }
 
 #handle_Admin_Delete_cancel {

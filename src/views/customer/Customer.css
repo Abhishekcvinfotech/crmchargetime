@@ -1186,15 +1186,13 @@ input[type='file']::before {
   z-index: 1;
   border-radius: 6px;
   height: 60px;
- 
   position:fixed;
   top:80px;
   border-radius: 6px;
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
   width: 440px;
   padding: 9px 12px;
-    background: #F42B3D;
-   
+  background: #F42B3D; 
 }
 
 .user__detail__popup__Customer_noti {
@@ -1211,6 +1209,7 @@ input[type='file']::before {
   padding: 9px 12px;
 
 }
+
 .userdeletmodal_margin{
     margin: 0;
     padding: 0;
@@ -1327,7 +1326,7 @@ line-height: normal;
    }
 
    form input {
-    height: 35px !important;
+    height: 48px !important;
    }
 
    .update_button button{
