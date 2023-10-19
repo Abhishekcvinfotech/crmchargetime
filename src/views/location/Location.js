@@ -33,6 +33,8 @@ import { notification } from 'antd'
 import Rightarrow from '../../assets/images/Rightarrow.svg'
 import { HiFilter } from 'react-icons/hi'
 import { IoMdClose } from 'react-icons/io'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
 const Location = () => {
   const [ide, setIde] = useState('')
   const [value, setValue] = useState('')
@@ -618,38 +620,38 @@ const Location = () => {
                 </button>
               </form> */}
               <div>
-              <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
-                <BsCloudDownload className="cloud_downlaod_icon" />
-                <span className="downlaodtext"> Import Device Address </span>
-              </button>
-              {
+                <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
+                  <BsCloudDownload className="cloud_downlaod_icon" />
+                  <span className="downlaodtext"> Import Device Address </span>
+                </button>
+                {
 
-                <Modal
-        title="Import File"
-        centered
-        visible={modal2Open}
-        onOk={() => setModal2Open(false)}
-        onCancel={() => setModal2Open(false)}
-        width={1000}
-      >
+                  <Modal
+                    title="Import File"
+                    centered
+                    visible={modal2Open}
+                    onOk={() => setModal2Open(false)}
+                    onCancel={() => setModal2Open(false)}
+                    width={1000}
+                  >
 
-        <div>
-        <form
-                className="import_csv_class"
-                onSubmit={handleSubmit}
+                    <div>
+                      <form
+                        className="import_csv_class"
+                        onSubmit={handleSubmit}
 
-              >
-                <input
-                  className="w-55 input_type_file"
-                  ref={inputRef}
-                  style={{ width: csvwidth, color: csvTextColor }}
-                  accept=".csv"
-                  type="file"
-                  onChange={handleFileChange}
-                  required
-                />
-                <div className="fileimport_btn">
-                {/* <button
+                      >
+                        <input
+                          className="w-55 input_type_file"
+                          ref={inputRef}
+                          style={{ width: csvwidth, color: csvTextColor }}
+                          accept=".csv"
+                          type="file"
+                          onChange={handleFileChange}
+                          required
+                        />
+                        <div className="fileimport_btn">
+                          {/* <button
                   className="import_report"
                   style={bgColor ? { backgroundColor: '#1890ff' } : { backgroundColor: '#cc9ceb' }}
                   type="submit"
@@ -659,32 +661,32 @@ const Location = () => {
                 </button> */}
 
                           <button
-                          type="button"
-                          className="fileimport_cancel"
-                          onClick={() => setModal2Open(false)}
-                        >
-                          {' '}
-                          <span>Cancel</span>{' '}
-                        </button>
+                            type="button"
+                            className="fileimport_cancel"
+                            onClick={() => setModal2Open(false)}
+                          >
+                            {' '}
+                            <span>Cancel</span>{' '}
+                          </button>
 
-                        <button type="submit" className="fileimportok_btn">
+                          <button type="submit" className="fileimportok_btn">
 
-                          <span> Import </span>
-                        </button>
-
-
-
-                </div>
-              </form>
-
-
-        </div>
+                            <span> Import </span>
+                          </button>
 
 
 
-      </Modal>
+                        </div>
+                      </form>
 
-              }
+
+                    </div>
+
+
+
+                  </Modal>
+
+                }
               </div>
             </div>
           </div>
@@ -746,7 +748,7 @@ const Location = () => {
                         options={(partnerData || []).map((d) => ({
                           value: d.id,
                           label: d.name,
-                          style: { },
+
                         }))}
                       />
                     </div>
@@ -791,8 +793,8 @@ const Location = () => {
                       <button
                         type="submit"
                         className="create_new__admin"
-                        // onClick={signUp}
-                        // disabled={disabled}
+                      // onClick={signUp}
+                      // disabled={disabled}
                       >
                         Add Installation
                       </button>
@@ -892,7 +894,7 @@ const Location = () => {
                       type="submit"
                       className="create_new__admin"
                       onClick={() => updateAdmin(id)}
-                      // disabled={disabled}
+                    // disabled={disabled}
                     >
                       Update
                     </button>
@@ -902,62 +904,62 @@ const Location = () => {
             </div>
           )}
         </div>
-        <div>{ isadminDelete &&  (
+        <div>{isadminDelete && (
 
-    <div>
-    <div className="modal-backdrop" onClick={cancelDeleteLocation}></div>
-          <div
-          className="  deletemodal "
-          style={{
-            display: isadminDelete ? 'block' : 'none',
-          }}
-        >
-          <div id="confirm__delete_location">
-            <p>Confirm Delete</p>
-            <IoMdClose className="crossicon"  onClick={cancelDeleteLocation} />
-          </div>
+          <div>
+            <div className="modal-backdrop" onClick={cancelDeleteLocation}></div>
+            <div
+              className="  deletemodal "
+              style={{
+                display: isadminDelete ? 'block' : 'none',
+              }}
+            >
+              <div id="confirm__delete_location">
+                <p>Confirm Delete</p>
+                <IoMdClose className="crossicon" onClick={cancelDeleteLocation} />
+              </div>
 
-          <div id="delete__Location">
-            <p style={{textAlign:'left'}}>Are you sure you want to delete location
+              <div id="delete__Location">
+                <p style={{ textAlign: 'left' }}>Are you sure you want to delete location
 
-             &nbsp;  <span style={{ fontWeight: 'bolder' }}>{RowData.location}</span>
+                  &nbsp;  <span style={{ fontWeight: 'bolder' }}>{RowData.location}</span>
 
-             <br />This process is Irreversible</p>
-            <div className='delete_warp'>
-
-
-              <button
-                onClick={cancelDeleteLocation}
-                className="  cancel__confirm"
-                type="submit"
-              >
-                Cancel
-              </button>
-
-              <button
-                onClick={() => deleteLocation(id)}
-                type="submit"
-                className="delete_new__admin"
-              >
-                Delete
-              </button>
+                  <br />This process is Irreversible</p>
+                <div className='delete_warp'>
 
 
+                  <button
+                    onClick={cancelDeleteLocation}
+                    className="  cancel__confirm"
+                    type="submit"
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    onClick={() => deleteLocation(id)}
+                    type="submit"
+                    className="delete_new__admin"
+                  >
+                    Delete
+                  </button>
+
+
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
 
 
-        </div>
+          </div>
 
         )}
 
 
 
-</div>
+        </div>
 
         <div className="table_wrap">
-          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap', marginBottom:'48px' }}>
+          <div className="" style={{ overflowX: 'auto', whiteSpace: 'nowrap', marginBottom: '48px' }}>
             <table className="table table-hover">
               <thead className="location__information">
                 <tr>
@@ -1085,69 +1087,56 @@ const Location = () => {
             />
           </div>
 
-       
+
         </div>
         <div
-          className="user__detail__popup__location"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: userAdmit ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={location_tag}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                height: '15px',
-                objectFit: 'contain',
-              }}
-            />
-            <p className="admin_registerd__pop">New location added successfully.</p>
+
+
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> New location added successfully.</span>{' '}
+            </p>
           </div>
+
+
         </div>
         <div
-          className="user__detail__popup__location"
+          className="user__detail__popup__Customer_noti"
           style={{
             display: userUpdate ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={location_tag}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                objectFit: 'contain',
-                height: '15px',
-              }}
-            />
-            <p className="admin_registerd__pop">Location information updated.</p>
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Location information updated. </span>{' '}
+            </p>
           </div>
+
+
+
         </div>
         <div
-          className="user__detail__popup__location"
+          className="user__detail__popup__location userdeletmodal"
           style={{
             display: userDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="admin_registerd__pop">Location has been deleted.</p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin  ">Location has been deleted.</span>
           </div>
+
         </div>
       </div>
     </>
