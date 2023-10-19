@@ -93,15 +93,15 @@ p {
 .user__detail__popup__Customer{
     z-index: 1;
     border-radius: 6px;
-    padding: 0px 12px;
-    height: 88px;
+    padding: 9px 12px;
+    height: 60px;
     position: fixed;
     top: 80px;
     border-radius: 6px;
     background: #3CB72C;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
-    width: 600px;
-    padding: 23px 12px;
+    width: 440px;
+   
 
 }
 .notification_image{
@@ -130,15 +130,15 @@ p {
 
     z-index: 1;
     border-radius: 6px;
-    padding: 0px 12px;
-    height: 88px;
+  
+    height: 60px;
     position: fixed;
     top: 80px;
     border-radius: 6px;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
-    width: 600px;
+    width: 440px;
     background: #F42B3D;
-    padding: 23px 12px;
+    padding: 9px 12px;
 
 
 }
