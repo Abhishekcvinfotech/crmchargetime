@@ -4,8 +4,26 @@ h1 {
 .price_management{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 24px 0;
+}
+.plezz_select {
+  color: red;
+  margin-top: 8px;
+  padding: 0;
+  display: inline-block;
+
+}
+
+.only_three_package{
+  color:  #F42B3D;
+font-family: DM Sans;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+color: red;
+margin-top: 16px;
+padding: 0;
 }
 .pr_text{
   margin: 0;
