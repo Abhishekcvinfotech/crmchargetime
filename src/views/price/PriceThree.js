@@ -27,6 +27,7 @@ const PriceThree = () => {
   const [errorpackage, setPackageError] = useState('')
   const [errorprice, setPriceError] = useState('')
   const [errordollar, setDollarError] = useState('')
+  const [priceStripeError,setPriceStripeError] = useState('')
   const [isadminDelete, setisAdminDelete] = useState(false)
   const [deleted, setDeleted] = useState(false)
   const [package_name, setPackgagename] = useState('')
@@ -295,7 +296,7 @@ const PriceThree = () => {
     if (package_name == '') setPackageError('Please enter value')
     if (total_price == '') setPriceError('Please enter value')
     if (dollar_mi == '') setDollarError('Please enter value')
-
+    if(price_stripe_id == '')  setPriceStripeError("Please enter value")
     const item = {
       location,
       package_name,
@@ -313,10 +314,7 @@ const PriceThree = () => {
     }
 
     if (
-      (package_name && dollar_mi && mi_eq && kwh && total_price && location,
-      salesTax,
-      totalSalexTax,
-      price_stripe_id)
+      (package_name && dollar_mi && mi_eq && kwh && total_price && location && price_stripe_id &&totalSalexTax&&salesTax)
     ) {
       let result = await fetch(`${troesAPi}/price`, {
         method: 'POST',
@@ -825,6 +823,7 @@ const PriceThree = () => {
                 placeholder="Product Description"
                 onChange={(e) => setPriceStripeId(e.target.value)}
               />
+              <p style={{ color: 'red' }}>{priceStripeError}</p>
 
               <label className="nameEmail__Price">Coupon Promotion Code</label>
               <input

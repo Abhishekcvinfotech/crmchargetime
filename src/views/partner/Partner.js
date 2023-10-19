@@ -997,16 +997,8 @@ const Partner = () => {
                       <td className="px-3 ">{item.state}</td>
                       <td className="px-3 ">{item.zip}</td>
                       <td className="px-3" style={{ textAlign: 'center' }}>
-                        {item.path ? (
-                          <img
-                            src={`https://tro.tentoptoday.com/Development/public/${item.path}`}
-                            alt=""
-                            height={'30px'}
-                            width={'30px'}
-                          />
-                        ) : (
-                          '-'
-                        )}
+                      <td className="px-3" style={{ textAlign: 'center'}}>{item.path ? <img src={`https://troes.io/Admin/public/${item.path}`} alt="" height={'30px'} width={'30px'} /> : '-'}</td>
+
                       </td>
 
                       {/* <td className="px-3 ">{`${item.path}!== null `?<img src={`${troesAPi}/${item.path}`} alt="" height={'30px'} width={'30px'}/> : {'-'}}</td> */}
