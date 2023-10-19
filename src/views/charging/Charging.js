@@ -148,6 +148,7 @@ const Charging = () => {
   }
 
   async function addRate(e) {
+    
     e.preventDefault()
     setLoading(true)
     if (installation && partner_id && partner && kwh && rate) {
@@ -413,6 +414,8 @@ const Charging = () => {
                       Create Rate
                     </button>
 
+                   
+
                   </div>
                 </form>
               </div>
@@ -436,90 +439,7 @@ const Charging = () => {
           </select>
         </div>
 
-        {/* <Drawer
-          title="Create Rate"
-          placement="right"
-          onClose={onClose}
-          open={open}
-          style={{ zIndex: '9991' }}
-          className="drawer"
-        >
-          <div className="modal_form">
-            <form className="form" onSubmit={addRate}>
-              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
-                Select Installation:
-              </label>
-              <select value={installation} onChange={handleSelected}>
-                <option value="">Select installation from choices:</option>
-                {locateData &&
-                  locateData.map((item, index) => {
-                    return (
-                      <option key={index} data-name={item.id} value={item.location}>
-                        {item.location}
-                      </option>
-                    )
-                  })}
-              </select>
-              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
-                Partner:
-              </label>
-              <input
-                type="text"
-                value={partner}
-                onChange={(e) => setPartner(e.target.value)}
-                required
-                readOnly
-              />
-              <input
-                type="hidden"
-                value={partner_id}
-                onChange={(e) => setPartnerid(e.target.value)}
-              />
-              <label htmlFor="startDate" style={{ fontWeight: '600' }}>
-                kWh
-              </label>
-              <input
-                type="number"
-                value={kwh}
-                required
-                onChange={(e) => setKWh(e.target.value)}
-                placeholder="Enter kWh"
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
-                }
-              />
-              <label htmlFor="endDate" style={{ fontWeight: '600' }}>
-                ($) Rate
-              </label>
-              <input
-                type="number"
-                value={rate}
-                required
-                onChange={(e) => setRate(e.target.value)}
-                placeholder="Enter ($) Rate"
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
-                }
-              />
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  paddingBottom: '10px',
-                  borderTop: '2px dotted darkgrey',
-                  paddingTop: '10px',
-                }}
-              >
-                <button className="btn2" required>
-                  Create Rate
-                </button>
-                <button className="btn_cancel" onClick={back} type="button">
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        </Drawer> */}
+      
 
         <div
           className="user__detail__popup__Customer_success"
@@ -528,17 +448,7 @@ const Charging = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* <UserAddOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            /> */}
-
+          
             <p className="admin_registerd__pop_noti">  <span>  <img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span><span> Rate Updated Successfully.  </span></p>
           </div>
         </div>
@@ -549,9 +459,6 @@ const Charging = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-           
-
-
             <p className="admin_registerd__pop_noti">  <span>  
              <img src={Redcircle} alt="Cyber Vision infotech " />
              </span><span> Rate has been deleted.  </span></p>
@@ -601,23 +508,7 @@ const Charging = () => {
                   (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
                 }
               />
-              {/* <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  paddingBottom: '10px',
-                  borderTop: '2px dotted darkgrey',
-                  paddingTop: '10px',
-                  gap: '10px',
-                }}
-              >
-                <button className="btn2" required>
-                  Update Rate
-                </button>
-                <button className="btn_cancel" type="button" onClick={Editback}>
-                  Cancel
-                </button>
-              </div> */}
+              
 
 
               <div className="create_wap_btn">
