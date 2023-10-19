@@ -148,7 +148,8 @@ const Charging = () => {
   }
 
   async function addRate(e) {
-    
+
+    setModal2Open(false)
     e.preventDefault()
     setLoading(true)
     if (installation && partner_id && partner && kwh && rate) {
