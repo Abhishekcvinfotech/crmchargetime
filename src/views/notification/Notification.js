@@ -2282,13 +2282,15 @@ const Notification = () => {
                             <Space direction="vertical" size={12} className="removeIcon">
                               <DatePicker
                                 showTime
-                                format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
+                                format="YYYY-MM-DD HH:mm:ss" // Use 'A' for AM/PM indicator
                                 onChange={(value) => {
+                                  console.log(value,'value')
                                   if (value) {
-                                    setStartDate(value.format('YYYY-MM-DD hh:mm:ss'))
+                                    setStartDate(value.format('YYYY-MM-DD HH:mm:ss '))
+                                    
                                     const updatedValues = [...editableValuesTroes]
                                     updatedValues[index].startDate =
-                                      value.format('YYYY-MM-DD hh:mm:ss')
+                                      value.format('YYYY-MM-DD HH:mm:ss')
                                     setEditableValuesTroes(updatedValues)
                                     updatedValues[index].update = true
                                     setInputid('1')
@@ -2325,7 +2327,7 @@ const Notification = () => {
                             <Space direction="vertical" size={12} className="removeIcon">
                               <DatePicker
                                 showTime
-                                format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
+                                format="YYYY-MM-DD HH:mm:ss" // Use 'A' for AM/PM indicator
                                 value={
                                   editableValuesTroes[index].endDate
                                     ? moment(editableValuesTroes[index].endDate)
@@ -2333,10 +2335,10 @@ const Notification = () => {
                                 }
                                 onChange={(value) => {
                                   if (value) {
-                                    setStopDate(value.format('YYYY-MM-DD hh:mm:s'))
+                                    setStopDate(value.format('YYYY-MM-DD HH:mm:s'))
                                     const updatedValues = [...editableValuesTroes]
                                     updatedValues[index].endDate =
-                                      value.format('YYYY-MM-DD hh:mm:ss')
+                                      value.format('YYYY-MM-DD HH:mm:ss')
                                     setEditableValuesTroes(updatedValues)
                                     updatedValues[index].update = true
                                     setInputid('1')
