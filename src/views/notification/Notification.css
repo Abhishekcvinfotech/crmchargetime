@@ -121,63 +121,52 @@ border-radius: 6px;
 
 
 
+ 
+
   .user__detail__popup__Customer_noti {
     z-index: 1;
     border-radius: 6px;
-    padding: 0px 12px;
-    height: 88px;
-    /* position:absolute;
-    top: -14px;
-    left: 0; */
+    height: 60px;
+   
     position:fixed;
     top:80px;
     border-radius: 6px;
     background:  #3CB72C;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
-    width: 600px;
-    padding: 23px 12px;
-
+    width: 440px;
+    padding: 9px 12px;
+  
   }
-
-
-  .user__detail__popup__Customer_noti_red{
-
+  
+  .admin_registerd__pop_noti{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .admin_registerd__pop_noti span{
+  
+  color:#FFFFFF;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  
+  }
+  
+  .userdeletmodal{
     z-index: 1;
     border-radius: 6px;
-    padding: 0px 12px;
-    height: 88px;
+    height: 60px;
     position:fixed;
     top:80px;
     border-radius: 6px;
-    background: #F42B3D;
     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.16);
-    width: 600px;
-    padding: 23px 12px;
-
-  }
-
-  .px-2{
-    /* width: 300px  !important; */
-    /* margin: 0 !important;
-    padding: 0 !important; */
-  }
-
-  .admin_registerd__pop_noti{
-       display: flex;
-       align-items: center;
-       gap: 16px;
-       width: 100%;
-  }
-
-  .admin_registerd__pop_noti span{
-
-    color:#FFFFFF;
-    font-family: DM Sans;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-
+    width: 440px;
+    padding: 9px 12px;
+    background: #F42B3D; 
   }
 
   .for_respon__modal_noti{

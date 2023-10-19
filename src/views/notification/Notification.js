@@ -1935,13 +1935,13 @@ const Notification = () => {
           </div>
         </div>
         <div
-          className="user__detail__popup__Customer_noti_red"
+          className="user__detail__popup__Customer_noti_red userdeletmodal"
           style={{
             display: NotificationDeleted,
           }}
         >
           <div>
-            <p className="admin_registerd__pop_noti">
+            <p className="admin_registerd__pop_noti  ">
               <span>
                 {' '}
                 <img src={Redcircle} alt="Cyber Vision infotech " />{' '}
