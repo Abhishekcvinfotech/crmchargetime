@@ -302,7 +302,7 @@ const Price = () => {
             alignItems: 'center',
           }}
         >
-          <p className="price__acount">Price Management</p>
+          <p className="price__acount">Price Managementt</p>
         </div>
         <div style={{ background: '#fff' }}>
           <div style={{ padding: '20px 20px' }}>

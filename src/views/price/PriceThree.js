@@ -695,15 +695,33 @@ const PriceThree = () => {
                         </button>
                       </div>
         </Modal>
+        <div>     
         <h2 className="pr_text">Price Management</h2>
-        <button
-          className="customer_add_button"
-          style={{ cursor: 'pointer' }}
-          onClick={handleClicked}
-        >
-          <span className="plusicon">+</span>
+
+        <div>
+              {disabled ? (
+                <p  className='only_three_package'>
+                  Only three packages per location are allowed.
+                </p>
+              ) : (
+                ''
+              )
+              }
+            </div>
+        </div>
+        
+       
+
+         
+            <Button disabled={disabled} onClick={handleClicked}  className="customer_add_button">
+            <span className="plusicon">+</span>
           <span>Add New Plan</span>
-        </button>
+             
+            </Button>
+
+           
+
+        
       </div>
 
       <div className="splash_middle_div">
@@ -725,6 +743,7 @@ const PriceThree = () => {
                 )
               })}
           </select>
+          {forSelect ? '' : <span className="plezz_select">Please select location</span>}
         </div>
       </div>
       <div>
@@ -889,9 +908,9 @@ const PriceThree = () => {
 
               <input type="hidden" className="locate__input" value={salesTaxTwo} />
               <div className="total_pr_local">
-                <label className="functioned_p" onClick={() => totalPrice(2)}>
+                <p className="functioned_p" onClick={() => totalPrice(2)}>
                   Check Total Price
-                </label>
+                </p>
                 <p className="ttl__ssl_tx">${totalSalexTax}</p>
               </div>
               {/* <p className="nameEmail__Price">Total Price/month</p>
@@ -936,6 +955,8 @@ const PriceThree = () => {
         </div>
       </div>
       <div>  
+
+
 
       {isadminShow && (
             <div className="modal-backdrop" onClick={cancelCreateAdmin}>
@@ -1187,254 +1208,8 @@ const PriceThree = () => {
                   </div>
                 </div>
 
-                {/* <div className="kwh_row">
-          <div className="kwh_row_one">
-            <div className="kwh_column">
-              <p className="kwh_key">kwh</p>
-              <p className="kwh_value">200</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">Mi Eq</p>
-              <p className="kwh_value">~500</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">$/MI</p>
-              <p className="kwh_value">0.11</p>
-            </div>
-          </div>
-          <hr className='card_line'></hr>
-          <div className="installation_base">
-            <p className='kwh_key'>Vandenberg Family</p>
-            <p className="kwh_value">Base Package 1</p>
-          </div>
-          <div className="price_main_div">
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Price</p>
-              <p className='dollar_part'>$50.66</p>
-            </div>
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Salex Tax</p>
-              <p className='dollar_part'>$12.00</p>
-            </div>
-            <div className="hr_padding">
-              <hr className='hr_opacity' />
-            </div>
-            <div className="price_with_dollar total_wrap">
-              <p className='kwh_Total'>Total</p>
-              <p className='dollar_part dollar_total'>$12.00/month</p>
-            </div>
-          </div>
-          <div className='edit_delete_btn'>
-            <div style={{display:"flex",alignItems:"center", gap:'8px'}}>
-                <img src={Pencil} alt='edit' />
-                <p className='edit_p'>Edit</p>
-            </div>
-            <div style={{display:"flex",alignItems:"center" , gap:'8px'}}>
-                <img src={Trash} alt='delete' />
-                <p className='delete_p'>Delete</p>
-            </div>
-          </div>
-        </div>
 
-
-        <div className="kwh_row">
-          <div className="kwh_row_one">
-            <div className="kwh_column">
-              <p className="kwh_key">kwh</p>
-              <p className="kwh_value">200</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">Mi Eq</p>
-              <p className="kwh_value">~500</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">$/MI</p>
-              <p className="kwh_value">0.11</p>
-            </div>
-          </div>
-          <hr className='card_line'></hr>
-          <div className="installation_base">
-            <p className='kwh_key'>Vandenberg Family</p>
-            <p className="kwh_value">Base Package 1</p>
-          </div>
-          <div className="price_main_div">
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Price</p>
-              <p className='dollar_part'>$50.66</p>
-            </div>
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Salex Tax</p>
-              <p className='dollar_part'>$12.00</p>
-            </div>
-            <div className="hr_padding">
-              <hr className='hr_opacity' />
-            </div>
-            <div className="price_with_dollar total_wrap">
-              <p className='kwh_Total'>Total</p>
-              <p className='dollar_part dollar_total'>$12.00/month</p>
-            </div>
-          </div>
-          <div className='edit_delete_btn'>
-            <div style={{display:"flex",alignItems:"center", gap:'8px'}}>
-                <img src={Pencil} alt='edit' />
-                <p className='edit_p'>Edit</p>
-            </div>
-            <div style={{display:"flex",alignItems:"center" , gap:'8px'}}>
-                <img src={Trash} alt='delete' />
-                <p className='delete_p'>Delete</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="kwh_row">
-          <div className="kwh_row_one">
-            <div className="kwh_column">
-              <p className="kwh_key">kwh</p>
-              <p className="kwh_value">200</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">Mi Eq</p>
-              <p className="kwh_value">~500</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">$/MI</p>
-              <p className="kwh_value">0.11</p>
-            </div>
-          </div>
-          <hr className='card_line'></hr>
-          <div className="installation_base">
-            <p className='kwh_key'>Vandenberg Family</p>
-            <p className="kwh_value">Base Package 1</p>
-          </div>
-          <div className="price_main_div">
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Price</p>
-              <p className='dollar_part'>$50.66</p>
-            </div>
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Salex Tax</p>
-              <p className='dollar_part'>$12.00</p>
-            </div>
-            <div className="hr_padding">
-              <hr className='hr_opacity' />
-            </div>
-            <div className="price_with_dollar total_wrap">
-              <p className='kwh_Total'>Total</p>
-              <p className='dollar_part dollar_total'>$12.00/month</p>
-            </div>
-          </div>
-          <div className='edit_delete_btn'>
-            <div style={{display:"flex",alignItems:"center", gap:'8px'}}>
-                <img src={Pencil} alt='edit' />
-                <p className='edit_p'>Edit</p>
-            </div>
-            <div style={{display:"flex",alignItems:"center" , gap:'8px'}}>
-                <img src={Trash} alt='delete' />
-                <p className='delete_p'>Delete</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="kwh_row">
-          <div className="kwh_row_one">
-            <div className="kwh_column">
-              <p className="kwh_key">kwh</p>
-              <p className="kwh_value">200</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">Mi Eq</p>
-              <p className="kwh_value">~500</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">$/MI</p>
-              <p className="kwh_value">0.11</p>
-            </div>
-          </div>
-          <hr className='card_line'></hr>
-          <div className="installation_base">
-            <p className='kwh_key'>Vandenberg Family</p>
-            <p className="kwh_value">Base Package 1</p>
-          </div>
-          <div className="price_main_div">
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Price</p>
-              <p className='dollar_part'>$50.66</p>
-            </div>
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Salex Tax</p>
-              <p className='dollar_part'>$12.00</p>
-            </div>
-            <div className="hr_padding">
-              <hr className='hr_opacity' />
-            </div>
-            <div className="price_with_dollar total_wrap">
-              <p className='kwh_Total'>Total</p>
-              <p className='dollar_part dollar_total'>$12.00/month</p>
-            </div>
-          </div>
-          <div className='edit_delete_btn'>
-            <div style={{display:"flex",alignItems:"center", gap:'8px'}}>
-                <img src={Pencil} alt='edit' />
-                <p className='edit_p'>Edit</p>
-            </div>
-            <div style={{display:"flex",alignItems:"center" , gap:'8px'}}>
-                <img src={Trash} alt='delete' />
-                <p className='delete_p'>Delete</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div className="kwh_row">
-          <div className="kwh_row_one">
-            <div className="kwh_column">
-              <p className="kwh_key">kwh</p>
-              <p className="kwh_value">200</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">Mi Eq</p>
-              <p className="kwh_value">~500</p>
-            </div>
-            <div className="kwh_column">
-              <p className="kwh_key">$/MI</p>
-              <p className="kwh_value">0.11</p>
-            </div>
-          </div>
-          <hr className='card_line'></hr>
-          <div className="installation_base">
-            <p className='kwh_key'>Vandenberg Family</p>
-            <p className="kwh_value">Base Package 1</p>
-          </div>
-          <div className="price_main_div">
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Price</p>
-              <p className='dollar_part'>$50.66</p>
-            </div>
-            <div className="price_with_dollar">
-              <p className='kwh_key'>Salex Tax</p>
-              <p className='dollar_part'>$12.00</p>
-            </div>
-            <div className="hr_padding">
-              <hr className='hr_opacity' />
-            </div>
-            <div className="price_with_dollar total_wrap">
-              <p className='kwh_Total'>Total</p>
-              <p className='dollar_part dollar_total'>$12.00/month</p>
-            </div>
-          </div>
-          <div className='edit_delete_btn'>
-            <div style={{display:"flex",alignItems:"center", gap:'8px'}}>
-                <img src={Pencil} alt='edit' />
-                <p className='edit_p'>Edit</p>
-            </div>
-            <div style={{display:"flex",alignItems:"center" , gap:'8px'}}>
-                <img src={Trash} alt='delete' />
-                <p className='delete_p'>Delete</p>
-            </div>
-          </div>
-        </div> */}
+                
               </div>
             )
           })}
