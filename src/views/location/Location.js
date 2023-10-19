@@ -121,7 +121,7 @@ const Location = () => {
     axios
       .get(`${troesAPi}/location`)
       .then((res) => {
-        setLocationData(res.data.customers)
+        setLocationData(res.data?.customers)
         setTotal(res.data.customers?.length)
         setLoading(false)
       })
@@ -411,7 +411,7 @@ const Location = () => {
     axios
       .get(`${troesAPi}/filterpartner?name=${partner}`)
       .then((res) => {
-        setLocationData(res.data)
+        setLocationData(res.data.customers)
 
         setLoading(false)
       })
@@ -428,7 +428,7 @@ const Location = () => {
 
   const indexOfLastPage = page * postPerPage
   const indexOfFirstPage = indexOfLastPage - postPerPage
-  const currentPosts = locationData?.slice(indexOfFirstPage, indexOfLastPage)
+  const currentPosts = locationData &&locationData.slice(indexOfFirstPage, indexOfLastPage)
   const onShowSizeChange = (current, pageSize) => {
     setPostPerPage(pageSize)
   }
