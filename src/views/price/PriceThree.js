@@ -430,7 +430,7 @@ const PriceThree = () => {
     setisAdminShow((current) => !current)
   }
   const deleteLocated = (id) => {
-    alert('ok')
+    
     setisAdminDelete((current) => !current)
   }
   const cancelDeleteLocation = () => {
@@ -446,9 +446,9 @@ const PriceThree = () => {
         setDeleted((data) => !data)
         setUserDelete(true)
         setLoading(false)
-        // setTimeout(() => {
-        //   setUserDelete(false)
-        // }, 2000)
+        setTimeout(() => {
+          setUserDelete(false)
+        }, 2000)
       })
       .catch((err) => console.log(err))
   }
