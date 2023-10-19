@@ -18,6 +18,8 @@ import { BiSolidMessageSquareAdd } from 'react-icons/bi'
 import { MdDeleteForever } from 'react-icons/md'
 import { BsEyeFill } from 'react-icons/bs'
 import { IoMdClose } from 'react-icons/io'
+import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
+import Redcircle from '../../assets/images/Redcircle.svg'
 
 const Splash = () => {
   const [startDateTime, setStartDateTime] = useState(null)
@@ -385,91 +387,91 @@ const Splash = () => {
 
             <div>
 
-        <div className="modal-backdrop" ></div>
-            <div
-              className="add_message_modal"
-            >
+              <div className="modal-backdrop" ></div>
               <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-                  padding: '30px',
-                  backgroundColor: 'white',
-                  borderRadius: '6px',
-                }}
+                className="add_message_modal"
               >
-                <div className="messagemodal_heading">
-                  <h5>Add Message </h5>
-                  <IoMdClose
-                    className="crossicon"
-                    onClick={() => {
-                      setMessageModal(false), setUpdateModal(false)
-                      //setInputText('')
-                    }}
-                  />
-                </div>
-                <hr className="cretaecustomerline"></hr>
+                <div
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                    padding: '30px',
+                    backgroundColor: 'white',
+                    borderRadius: '6px',
+                  }}
+                >
+                  <div className="messagemodal_heading">
+                    <h5>Add Message </h5>
+                    <IoMdClose
+                      className="crossicon"
+                      onClick={() => {
+                        setMessageModal(false), setUpdateModal(false)
+                        //setInputText('')
+                      }}
+                    />
+                  </div>
+                  <hr className="cretaecustomerline"></hr>
 
-                <TextArea
-                  size="sm"
-                  className="modaltextarea"
-                  rows={6}
-                  cols={3}
-                  name="Solid"
-                  placeholder="Try to put text minimum than 1000 words."
-                  variant="outlined"
-                  value={inputText}
-                  style={{ borderRadius: '6px' }}
-                  onChange={(e) => handleInputChange(e)}
-                />
-                <p className="word_renamings">
-                  Words remaining: {1000 - inputText?.length + '/' + '1000'}
-                </p>
-                <div className="modal_btn_wrap">
-                  <button
-                    className="preview_btn"
-                    onClick={() => {
-                      setMobileSplash(true), setMessageModal(false)
-                    }}
-                  >
-                    <BsEyeFill />
-                    <span> Preview</span>
-                  </button>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '16px',
-                      flexDirection: 'row-reverse',
-                    }}
-                  >
+                  <TextArea
+                    size="sm"
+                    className="modaltextarea"
+                    rows={6}
+                    cols={3}
+                    name="Solid"
+                    placeholder="Try to put text minimum than 1000 words."
+                    variant="outlined"
+                    value={inputText}
+                    style={{ borderRadius: '6px' }}
+                    onChange={(e) => handleInputChange(e)}
+                  />
+                  <p className="word_renamings">
+                    Words remaining: {1000 - inputText?.length + '/' + '1000'}
+                  </p>
+                  <div className="modal_btn_wrap">
                     <button
-                      // id="universalButton"
-                      className="modal_send_message"
+                      className="preview_btn"
                       onClick={() => {
-                        setMessageModal(false),
-                          addSplahFunction(),
-                          setClearDateTime((data) => !data),
-                          setInputText('')
+                        setMobileSplash(true), setMessageModal(false)
                       }}
                     >
-                      <span>Send Message</span>
+                      <BsEyeFill />
+                      <span> Preview</span>
                     </button>
-                    <button
-                      // id="universalButton"
-                      className="modal_cancel_btn hovercolor "
-                      onClick={() => {
-                        setMessageModal(false), setInputText('')
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '16px',
+                        flexDirection: 'row-reverse',
                       }}
                     >
-                      <span> Cancel</span>
-                    </button>
+                      <button
+                        // id="universalButton"
+                        className="modal_send_message"
+                        onClick={() => {
+                          setMessageModal(false),
+                            addSplahFunction(),
+                            setClearDateTime((data) => !data),
+                            setInputText('')
+                        }}
+                      >
+                        <span>Send Message</span>
+                      </button>
+                      <button
+                        // id="universalButton"
+                        className="modal_cancel_btn hovercolor "
+                        onClick={() => {
+                          setMessageModal(false), setInputText('')
+                        }}
+                      >
+                        <span> Cancel</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </div>
 
           ) : (
@@ -477,79 +479,79 @@ const Splash = () => {
           )}
           {updateModal ? (
 
-<div>
+            <div>
 
-        <div className="modal-backdrop" ></div>
+              <div className="modal-backdrop" ></div>
 
-            <div
-              className='edit_message_modal'
-            >
               <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-                  padding: '30px',
-                  backgroundColor: 'white',
-                  borderRadius: '6px',
-                }}
+                className='edit_message_modal'
               >
-                <div className="messagemodal_heading">
-                  <h5>Add Message </h5>
-                  <IoMdClose
-                    className="crossicon"
-                    onClick={() => {
-                      setMessageModal(false), setUpdateModal(false)
-                      //setInputText('')
-                    }}
+                <div
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+                    padding: '30px',
+                    backgroundColor: 'white',
+                    borderRadius: '6px',
+                  }}
+                >
+                  <div className="messagemodal_heading">
+                    <h5>Add Message </h5>
+                    <IoMdClose
+                      className="crossicon"
+                      onClick={() => {
+                        setMessageModal(false), setUpdateModal(false)
+                        //setInputText('')
+                      }}
+                    />
+                  </div>
+                  <hr className="cretaecustomerline"></hr>
+                  <TextArea
+                    className="modaltextarea"
+                    size="sm"
+                    rows={6}
+                    cols={3}
+                    name="Solid"
+                    placeholder="Try to put text minimum than 1000 words."
+                    variant="outlined"
+                    value={inputText}
+                    style={{ borderRadius: '6px' }}
+                    onChange={(e) => handleInputChangeForUpdate(e)}
                   />
-                </div>
-                <hr className="cretaecustomerline"></hr>
-                <TextArea
-                  className="modaltextarea"
-                  size="sm"
-                  rows={6}
-                  cols={3}
-                  name="Solid"
-                  placeholder="Try to put text minimum than 1000 words."
-                  variant="outlined"
-                  value={inputText}
-                  style={{ borderRadius: '6px' }}
-                  onChange={(e) => handleInputChangeForUpdate(e)}
-                />
-                <p className="word_renamings">
-                  Words remaining: {1000 - inputText?.length + '/' + '1000'}
-                </p>
-                <div className="modal_btn_wrap">
-                  <button
-                    className="preview_btn"
-                    onClick={() => {
-                      setMobileSplash(true), setMessageModal(false), setUpdateModal(false)
-                    }}
-                  >
-                    <BsEyeFill />
-                    <span> Preview</span>
-                  </button>
-                  <button
-                    className="modal_cancel_btn hovercolor"
-                    onClick={() => {
-                      setMessageModal(false), setUpdateModal(false)
-                      //setInputText('')
-                    }}
-                  >
-                    <span>Close</span>
-                  </button>
+                  <p className="word_renamings">
+                    Words remaining: {1000 - inputText?.length + '/' + '1000'}
+                  </p>
+                  <div className="modal_btn_wrap">
+                    <button
+                      className="preview_btn"
+                      onClick={() => {
+                        setMobileSplash(true), setMessageModal(false), setUpdateModal(false)
+                      }}
+                    >
+                      <BsEyeFill />
+                      <span> Preview</span>
+                    </button>
+                    <button
+                      className="modal_cancel_btn hovercolor"
+                      onClick={() => {
+                        setMessageModal(false), setUpdateModal(false)
+                        //setInputText('')
+                      }}
+                    >
+                      <span>Close</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
 
             </div>
           ) : (
             ''
           )}
         </div>
-        <div  className='table_parent'>
+        <div className='table_parent'>
           <div className="table_wrapper">
             <table className="table table-hover" style={{ position: 'relative' }}>
               <thead className="splash__information">
@@ -690,66 +692,52 @@ const Splash = () => {
           </div>
         </div>
         <div
-          className="global__popup__div"
+          className=" user__detail__popup__Customer_noti"
           style={{
             display: addedSplash ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={partnerrate}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                height: '15px',
-                objectFit: 'contain',
-              }}
-            />
-            <p className="global_popup__text">Splash Screen added successfully.</p>
+
+
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Customer Added Successfully.</span>{' '}
+            </p>
           </div>
+
         </div>
         <div
-          className="global__popup__div"
+          className=" user__detail__popup__Customer_noti"
           style={{
             display: updatedSplash ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={partnerrate}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                objectFit: 'contain',
-                height: '15px',
-              }}
-            />
-            <p className="global_popup__text">Splash Screen updated.</p>
+
+
+          <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Customer Added Successfully.</span>{' '}
+            </p>
           </div>
         </div>
         <div
-          className="global__popup__div"
+          className=" user__detail__popup__Admin userdeletmodal"
           style={{
             display: deleteSplash ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            />
-            <p className="global_popup__text">Splash Data has been deleted.</p>
+
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin "> Splash Data has been deleted. </span>
           </div>
+
         </div>
       </div>
     </>
