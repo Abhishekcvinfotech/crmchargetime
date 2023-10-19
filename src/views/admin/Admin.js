@@ -861,25 +861,19 @@ const Admin = () => {
           </div>
           </div>
           <div
-            className="user__detail__popup__Admin"
+            className="user__detail__popup__Customer_noti"
             style={{
               display: userUpdate ? 'block' : 'none',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img
-                src={adminAccount}
-                alt="logo"
-                style={{
-                  paddingRight: '10px',
-                  display: 'block',
-                  marginTop: '-5px',
-                  objectFit: 'contain',
-                  height: '15px',
-                }}
-              />
-              <p className="admin_registerd__pop">Admin details have been updated.</p>
-            </div>
+           
+             <div>
+            <p className="admin_registerd__pop_noti">
+              {' '}
+              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+              <span> Admin details have been updated. </span>{' '}
+            </p>
+          </div>
           </div>
           <div
             className="user__detail__popup__Admin userdeletmodal"

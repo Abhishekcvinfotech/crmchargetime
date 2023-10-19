@@ -94,6 +94,7 @@ form select {
   font-style: normal;
   font-weight: 500;
   line-height: 21px;
+  cursor :pointer;
 }
 
 .create_new__admin:hover {

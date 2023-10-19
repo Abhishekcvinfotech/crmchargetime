@@ -746,6 +746,7 @@ const Location = () => {
                         options={(partnerData || []).map((d) => ({
                           value: d.id,
                           label: d.name,
+                          style: { },
                         }))}
                       />
                     </div>
