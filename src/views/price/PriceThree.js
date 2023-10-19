@@ -739,40 +739,35 @@ const PriceThree = () => {
         </div>
       </div>
       <div>
-        {isadminDelete && (
-          
-          <div>
-            <div
-              className=""
-              style={{
-                display: isadminDelete ? 'block' : 'none',
-              }}
-            >
+{ isadminDelete &&(
+              <div>
+              
+              <div className="modal-backdrop" onClick={deleteLocated} >
+              
+              </div>
 
-              <div className="create_Location__packag">
+          <div
+            className="show__notShow_delete"
+            style={{
+              display: isadminDelete ? 'block' : 'none',
+            }}
+          >
+            
+              <div className='create_Location__packag'>
                 <label>Confirm Delete</label>
                 <IoMdClose className="crossicon" onClick={deleteLocated} />
               </div>
-              <div style={{ textAlign: 'left', marginTop: '23px' }}>
-                <p>
-                  Are you sure you want to delete the location
-                  <span style={{ fontWeight: 'bolder' }}> {RowData.location}</span>. &nbsp;This
-                  process is Irreversible
-                </p>{' '}
-              </div>
-              <div id="handle_Admin_Delete_cancel">
-                <button onClick={deleteLocated} className="cancel__confirm" type="submit">
-                  Cancel
-                </button>
+              <div style={{textAlign:'left',marginTop:"23px"}}>
+              <p>Are you sure you want to delete the location
 
-                <button
-                  onClick={() => deleteLocation(RowData.id)}
-                  type="submit"
-                  className="delete_new__admin"
-                >
-                  Delete
-                </button>
-              </div>
+                 <span style={{ fontWeight: 'bolder' }}> {RowData.location}</span>.
+                &nbsp;This process is Irreversible</p> </div>
+          
+<div class="delete_warp">
+  <button class="  cancel__confirm" type="submit" onClick={deleteLocated} >Cancel</button>
+<button type="submit" class="delete_new__admin" onClick={() => deleteLocation(id)} >Delete</button>
+
+</div>
             </div>
           </div>
         )}
@@ -817,7 +812,7 @@ const PriceThree = () => {
                 value={location_id}
               />
 
-              <p style={{ color: 'red' }}>{errorlocation}</p>
+              <p style={{ color: 'red' , position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0}}>{errorlocation}</p>
               <label className="nameEmail__Price">Product Name</label>
               <input
                 className="locate__input"
@@ -827,7 +822,7 @@ const PriceThree = () => {
                 placeholder="Eg. Base Package - 4"
                 onChange={(e) => setPackgagename(e.target.value)}
               />
-              <p style={{ color: 'red' }}>{errorpackage}</p>
+              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' }}>{errorpackage}</p>
 
               <label className="nameEmail__Price">Stripe Product ID </label>
               <input
@@ -838,7 +833,7 @@ const PriceThree = () => {
                 placeholder="Product Description"
                 onChange={(e) => setPriceStripeId(e.target.value)}
               />
-              <p style={{ color: 'red' }}>{priceStripeError}</p>
+              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{priceStripeError}</p>
 
               <label className="nameEmail__Price">Coupon Promotion Code</label>
               <input
@@ -858,7 +853,7 @@ const PriceThree = () => {
                 placeholder="kWh"
                 onChange={(e) => setKwh(e.target.value)}
               />
-              <p style={{ color: 'red', paddingLeft: '11px' }}>{errorkwh}</p>
+              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errorkwh}</p>
 
               <label className="nameEmail__Price">Mi Eq</label>
               <input
@@ -869,7 +864,7 @@ const PriceThree = () => {
                 placeholder="Eg. 2000"
                 onChange={(e) => setMieq(e.target.value)}
               />
-              <p style={{ color: 'red', paddingLeft: '11px' }}>{errormiq}</p>
+              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errormiq}</p>
 
               <label className="nameEmail__Price">$/Mi</label>
               <input
@@ -880,7 +875,7 @@ const PriceThree = () => {
                 placeholder="Eg. 2000"
                 onChange={(e) => setDollar(e.target.value)}
               />
-              <p style={{ color: 'red', paddingLeft: '11px' }}>{errordollar}</p>
+              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errordollar}</p>
               <label className="nameEmail__Price">Price ($)</label>
               <input
                 className="locate__input"
@@ -918,7 +913,7 @@ const PriceThree = () => {
                 value={totalSalesPrice}
               /> */}
               <span
-                style={{ color: 'red', paddingLeft: '11px', display: 'block', marginTop: '-10px' }}
+                style={{ color: 'red', position:'relative' , top:'-10px' , left:'13px' ,margin:0, padding:0 }}
               >
                 {errorprice}
               </span>
@@ -973,7 +968,7 @@ const PriceThree = () => {
               value={location}
               className="locate__input"
             />
-            <span style={{ color: 'red', paddingLeft: '11px' }}>{errorlocation}</span>
+            <span style={{ color: 'red',position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errorlocation}</span>
             <label className="nameEmail__Price">Package Name</label>
             <input
               className="locate__input"
