@@ -219,13 +219,7 @@ if(requestData !== ''){
   return (
     <>
       <div
-        // style={{
-        //   display: 'flex',
-        //   justifyContent:'space-between',
-        //   alignItems: 'center',
-        //   marginBottom: '24px',
-        // }}
-
+        
         className='finance_btn_wrap'
       >
         <p className="finance_bold_text">Partner Invoice Report</p>
@@ -439,20 +433,11 @@ if(requestData !== ''){
             display: reportGeneratePopup ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              src={partnerd}
-              alt="logo"
-              style={{
-                paddingRight: '10px',
-                display: 'block',
-                marginTop: '-5px',
-                objectFit: 'contain',
-                height: '15px',
-              }}
-            />
+           <div className='redcircle'>
+            <img src={Redcircle} alt="Cyber Vision infotech " />
             <p className="dleted_text">Partner Invoice Report has been Downloaded.</p>
           </div>
+
         </div>
 
 
