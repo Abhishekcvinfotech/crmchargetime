@@ -920,8 +920,8 @@ const Partner = () => {
             </div>
             <div id="delete__partner">
               <p>Are you sure you want to delete location </p>
-              <p> <span style={{ fontWeight: 'bolder', color: 'black' }}>{name}</span></p>
-              <p>This process is Irreversible</p>
+              <p style={{ fontWeight: 'bolder', color: 'black' }} > {name}</p>
+              <p style={{marginBottom:'24px'}}>This process is Irreversible</p>
               <div className='delete_modal_buttons'>
                 <button
                   onClick={cancelDeleteModalPopup}
