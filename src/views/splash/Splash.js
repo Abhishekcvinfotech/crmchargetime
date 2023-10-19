@@ -119,6 +119,7 @@ const Splash = () => {
         const res = await result.json()
         if (res.message == 'Splash Screen Add Successfully') {
           setUpdatedSplah(true)
+          setInputText('')
           setTimeout(() => {
             setUpdatedSplah(false)
           }, 2000)
@@ -193,6 +194,7 @@ const Splash = () => {
 
       if (res.message == 'Splash Screen Update Successfully') {
         setUpdatedSplah(true)
+        setInputText('')
         setTimeout(() => {
           setUpdatedSplah(false)
         }, 2000)
@@ -720,7 +722,7 @@ const Splash = () => {
             <p className="admin_registerd__pop_noti">
               {' '}
               <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
-              <span> Customer Added Successfully.</span>{' '}
+              <span> Customer Updated Successfully.</span>{' '}
             </p>
           </div>
         </div>
