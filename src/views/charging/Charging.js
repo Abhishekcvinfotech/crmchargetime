@@ -549,103 +549,22 @@ const Charging = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* <DeleteOutlined
-              style={{
-                display: 'block',
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            /> */}
+           
 
 
-            <p className="admin_registerd__pop_noti">  <span>     <img src={Redcircle} alt="Cyber Vision infotech " /> </span><span> Rate has been deleted.  </span></p>
+            <p className="admin_registerd__pop_noti">  <span>  
+             <img src={Redcircle} alt="Cyber Vision infotech " />
+             </span><span> Rate has been deleted.  </span></p>
           </div>
         </div>
-        {/* //edit code */}
-
-        {/* <Drawer
-          title="Update Rate"
-          placement="right"
-          onClose={onEditClose}
-          open={editOpen}
-          style={{ zIndex: '9991' }}
-          className="drawer"
-        > 
-           <div className="modal_form">
-            <form className="form" onSubmit={(e) => onSub(e)}>
-              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
-                Installation
-              </label>
-              <input type="text" value={installation} readOnly />
-              <label className="htmlFor_respn" style={{ marginRight: '10px', fontWeight: '600' }}>
-                Partner
-              </label>
-              <input type="text" value={partner} readOnly />
-              <label htmlFor="startDate" style={{ fontWeight: '600' }}>
-                kWh
-              </label>
-              <input
-                type="number"
-                value={kwh}
-                required
-                onChange={(e) => setKWh(e.target.value)}
-                placeholder="Enter kWh"
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
-                }
-              />
-              <label htmlFor="endDate" style={{ fontWeight: '600' }}>
-                ($) Rate
-              </label>
-              <input
-                type="number"
-                value={rate}
-                required
-                onChange={(e) => setRate(e.target.value)}
-                placeholder="Enter ($) Rate"
-                onKeyDown={(evt) =>
-                  (evt.key === '-' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()
-                }
-              />
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  paddingBottom: '10px',
-                  borderTop: '2px dotted darkgrey',
-                  paddingTop: '10px',
-                  gap: '10px',
-                }}
-              >
-                <button className="btn2" required>
-                  Update Rate
-                </button>
-                <button className="btn_cancel" type="button" onClick={Editback}>
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div> 
-       </Drawer>  */}
-
-
-
-
+        
         <Modal
           title="Update Rate"
           centered
-          // open={modal21pen}
-
+          width={400}
           onClose={onEditClose}
           open={editOpen}
-
-        // onOk={() => setModal21pen(false)}
-        // onCancel={() => setModal21pen(false)}
         >
-
           <div className="modal_form">
             <form className="form" onSubmit={(e) => onSub(e)}>
               <label className="htmlFor_respn" >
@@ -720,16 +639,7 @@ const Charging = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            {/* <UserSwitchOutlined
-              style={{
-                display: 'block',air
-                color: '#fff',
-                fontWeight: 'bolder',
-                paddingRight: '10px',
-                marginTop: '-5px',
-                fontSize: '18px',
-              }}
-            /> */}
+           
             <p className="admin_registerd__pop_noti">  <span><img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span><span> Rate Updated Successfully.  </span></p>
           </div>
         </div>
