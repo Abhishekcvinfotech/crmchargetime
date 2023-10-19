@@ -27,7 +27,7 @@ const PriceThree = () => {
   const [errorpackage, setPackageError] = useState('')
   const [errorprice, setPriceError] = useState('')
   const [errordollar, setDollarError] = useState('')
-  const [priceStripeError,setPriceStripeError] = useState('')
+  const [priceStripeError, setPriceStripeError] = useState('')
   const [isadminDelete, setisAdminDelete] = useState(false)
   const [deleted, setDeleted] = useState(false)
   const [package_name, setPackgagename] = useState('')
@@ -296,7 +296,7 @@ const PriceThree = () => {
     if (package_name == '') setPackageError('Please enter value')
     if (total_price == '') setPriceError('Please enter value')
     if (dollar_mi == '') setDollarError('Please enter value')
-    if(price_stripe_id == '')  setPriceStripeError("Please enter value")
+    if (price_stripe_id == '') setPriceStripeError('Please enter value')
     const item = {
       location,
       package_name,
@@ -314,7 +314,15 @@ const PriceThree = () => {
     }
 
     if (
-      (package_name && dollar_mi && mi_eq && kwh && total_price && location && price_stripe_id &&totalSalexTax&&salesTax)
+      package_name &&
+      dollar_mi &&
+      mi_eq &&
+      kwh &&
+      total_price &&
+      location &&
+      price_stripe_id &&
+      totalSalexTax &&
+      salesTax
     ) {
       let result = await fetch(`${troesAPi}/price`, {
         method: 'POST',
@@ -421,7 +429,8 @@ const PriceThree = () => {
   const cancelCreateAdmin = (e) => {
     setisAdminShow((current) => !current)
   }
-  const deleteLocated = () => {
+  const deleteLocated = (id) => {
+    alert('ok')
     setisAdminDelete((current) => !current)
   }
   const cancelDeleteLocation = () => {
@@ -437,16 +446,16 @@ const PriceThree = () => {
         setDeleted((data) => !data)
         setUserDelete(true)
         setLoading(false)
-        setTimeout(() => {
-          setUserDelete(false)
-        }, 2000)
+        // setTimeout(() => {
+        //   setUserDelete(false)
+        // }, 2000)
       })
       .catch((err) => console.log(err))
   }
 
   const totalPrice = (decimalPlaces = 0) => {
     let pr = (total_price / 100) * salesTax
-    // let numAll = +pr + +total_price
+    
     var p = Math.pow(10, decimalPlaces)
     let numAll = Math.round(pr * p) / p
     setSalesTaxTwo(numAll)
@@ -465,7 +474,7 @@ const PriceThree = () => {
           ''
         )}
 
-        <Modal title="Coupon" open={isModalOpen}  onCancel={handleCancel} >
+        <Modal title="Coupon" open={isModalOpen} onCancel={handleCancel}>
           {loading ? (
             <div className="loading_part">
               <Spin size="large" />
@@ -474,7 +483,7 @@ const PriceThree = () => {
             ''
           )}
 
-          <button  className='add_coupen' onClick={handleUIModal}>
+          <button className="add_coupen" onClick={handleUIModal}>
             Add Coupon
           </button>
           {showInputField && (
@@ -606,7 +615,7 @@ const PriceThree = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="3"  className="text-center border-bottom-0">
+                  <td colSpan="3" className="text-center border-bottom-0">
                     No data
                   </td>
                 </tr>
@@ -678,48 +687,33 @@ const PriceThree = () => {
             </div>
           </div>
           <div className="fileimport_btn">
-                        <button
-                          type="button"
-                          className="fileimport_cancel"
-                         onClick={handleCancel}
-                        >
-                          {' '}
-                          <span>Cancel</span>{' '}
-                        </button>
+            <button type="button" className="fileimport_cancel" onClick={handleCancel}>
+              {' '}
+              <span>Cancel</span>{' '}
+            </button>
 
-                        <button type="submit" className="fileimportok_btn" onClick={() =>handleOk()}>
-                          {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
-                          <span> Add </span>
-                        </button>
-                      </div>
+            <button type="submit" className="fileimportok_btn" onClick={() => handleOk()}>
+              {/* <BsCloudDownload className="cloud_downlaod_icon" /> */}
+              <span> Add </span>
+            </button>
+          </div>
         </Modal>
-        <div>     
-        <h2 className="pr_text">Price Management</h2>
-
         <div>
-              {disabled ? (
-                <p  className='only_three_package'>
-                  Only three packages per location are allowed.
-                </p>
-              ) : (
-                ''
-              )
-              }
-            </div>
+          <h2 className="pr_text">Price Management</h2>
+
+          <div>
+            {disabled ? (
+              <p className="only_three_package">Only three packages per location are allowed.</p>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
-        
-       
 
-         
-            <Button disabled={disabled} onClick={handleClicked}  className="customer_add_button">
-            <span className="plusicon">+</span>
+        <Button disabled={disabled} onClick={handleClicked} className="customer_add_button">
+          <span className="plusicon">+</span>
           <span>Add New Plan</span>
-             
-            </Button>
-
-           
-
-        
+        </Button>
       </div>
 
       <div className="splash_middle_div">
@@ -745,42 +739,44 @@ const PriceThree = () => {
         </div>
       </div>
       <div>
-{ isadminDelete &&(
-              <div>
-              
-          <div
-            className="show__notShow"
-            style={{
-              display: isadminDelete ? 'block' : 'none',
-            }}
-          >
-            
-              <div className='create_Location__packag'>
+        {isadminDelete && (
+          
+          <div>
+            <div
+              className=""
+              style={{
+                display: isadminDelete ? 'block' : 'none',
+              }}
+            >
+
+              <div className="create_Location__packag">
                 <label>Confirm Delete</label>
                 <IoMdClose className="crossicon" onClick={deleteLocated} />
               </div>
-              <div style={{textAlign:'left',marginTop:"23px"}}>
-              <p>Are you sure you want to delete the location
-
-                 <span style={{ fontWeight: 'bolder' }}> {RowData.location}</span>.
-                &nbsp;This process is Irreversible</p> </div>
+              <div style={{ textAlign: 'left', marginTop: '23px' }}>
+                <p>
+                  Are you sure you want to delete the location
+                  <span style={{ fontWeight: 'bolder' }}> {RowData.location}</span>. &nbsp;This
+                  process is Irreversible
+                </p>{' '}
+              </div>
               <div id="handle_Admin_Delete_cancel">
-
-                <button onClick={deleteLocated}   className='cancel__confirm' type="submit">
+                <button onClick={deleteLocated} className="cancel__confirm" type="submit">
                   Cancel
                 </button>
 
-                <button onClick={() => deleteLocation(id)} type="submit" className="delete_new__admin">
+                <button
+                  onClick={() => deleteLocation(RowData.id)}
+                  type="submit"
+                  className="delete_new__admin"
+                >
                   Delete
                 </button>
-
               </div>
             </div>
           </div>
-  
-)}
-
-          </div>
+        )}
+      </div>
       <div>
         {isShown && (
           <div className="modal-backdrop" onClick={() => setIsShown(false)}>
@@ -953,25 +949,18 @@ const PriceThree = () => {
           </form>
         </div>
       </div>
-      <div>  
+      <div>
+        {isadminShow && <div className="modal-backdrop" onClick={cancelCreateAdmin}></div>}
 
-
-
-      {isadminShow && (
-            <div className="modal-backdrop" onClick={cancelCreateAdmin}>
-              
-            </div>
-          )}
-
-      <div
+        <div
           className="show__notShow"
           style={{
             display: isadminShow ? 'block' : 'none',
           }}
         >
           <div className="create_Location__packag">
-          <label>Edit Package</label>
-              <IoMdClose className="crossicon" onClick={cancelCreateAdmin} />
+            <label>Edit Package</label>
+            <IoMdClose className="crossicon" onClick={cancelCreateAdmin} />
           </div>
 
           <div id="form__admin_update">
@@ -1006,7 +995,7 @@ const PriceThree = () => {
             <div
               style={{
                 display: 'flex',
-                 justifyContent: 'flex-start',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
                 gap: '10px',
                 // paddingTop: '12px',
@@ -1014,7 +1003,7 @@ const PriceThree = () => {
             >
               <label className="coupan_name">Coupon</label>
               <button className="plus_out_line" onClick={() => showModal(package_name)}>
-                <PlusOutlined style={{ display: 'block', }} />
+                <PlusOutlined style={{ display: 'block' }} />
               </button>
             </div>
             {/* <label className="nameEmail__Price">Coupon ID</label>
@@ -1036,11 +1025,7 @@ const PriceThree = () => {
               onChange={(e) => setVoucherName(e.target.value)}
             /> */}
 
-            <label
-              
-            >
-              kWh
-            </label>
+            <label>kWh</label>
             <input
               className="locate__input"
               type="number"
@@ -1095,12 +1080,13 @@ const PriceThree = () => {
               </p>
               <p className="ttl__ssl_tx">${totalSalexTax}</p>
             </div>
-            <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                }}>
-              
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
               <button
                 onClick={cancelCreateAdmin}
                 className="cancel__create__location"
@@ -1112,15 +1098,14 @@ const PriceThree = () => {
                 type="submit"
                 className="create_new__location"
                 onClick={() => updateAdmin(id)}
-              // disabled={disabled}
+                // disabled={disabled}
               >
                 Update
               </button>
             </div>
           </div>
         </div>
-
-        </div>
+      </div>
       <div className="main_kwh_mieq_div">
         {plans &&
           plans.map((item, index) => {
@@ -1206,14 +1191,73 @@ const PriceThree = () => {
                     </div>
                   </div>
                 </div>
-
-
-                
               </div>
             )
           })}
         ;
       </div>
+      <div
+          className="user__detail__popup__Price"
+          style={{
+            display: userAdmit ? 'block' : 'none',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              // src={ep_pricetag}
+              alt="logo"
+              style={{
+                paddingRight: '10px',
+                display: 'block',
+                marginTop: '-5px',
+                height: '15px',
+                objectFit: 'contain',
+              }}
+            />
+            <p className="admin_registerd__pop">New package added successfully.</p>
+          </div>
+        </div>
+        <div
+          className="user__detail__popup__Price"
+          style={{
+            display: userUpdate ? 'block' : 'none',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              // src={ep_pricetag}
+              alt="logo"
+              style={{
+                paddingRight: '10px',
+                display: 'block',
+                marginTop: '-5px',
+                objectFit: 'contain',
+                height: '15px',
+              }}
+            />
+            <p className="admin_registerd__pop">Package information updated.</p>
+          </div>
+        </div>
+        <div
+          className=""
+          style={{
+            display: userDelete ? 'block' : 'none',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <DeleteOutlined
+              style={{
+                display: 'block',
+                color: '#fff',
+                fontWeight: 'bolder',
+                paddingRight: '10px',
+                marginTop: '-5px',
+                fontSize: '18px',
+              }}
+            />
+            <p className="admin_registerd__pop">Package has been deleted.</p>
+          </div>
+        </div>
     </>
   )
 }
