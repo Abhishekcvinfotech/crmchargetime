@@ -382,8 +382,8 @@ const PriceThree = () => {
           totalSalexTax,
           salesTaxTwo,
           price_stripe_id,
-          voucher_name,
-          stripe_voucher_id,
+          location_id
+          
         }),
       })
       await result.json()
