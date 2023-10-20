@@ -103,7 +103,7 @@ const Splash = () => {
     getAllSplashData()
   }, [resetDateTime, deleted])
   const addSplahFunction = async (e) => {
-    setHardRefresh(true)
+    setHardRefresh((data) => !data)
     const formData = new FormData()
     formData.append('startDate', startDateTime)
     formData.append('location_id', location_id)
@@ -118,7 +118,7 @@ const Splash = () => {
         })
         const res = await result.json()
         if (res.message == 'Splash Screen Add Successfully') {
-          setAddedSplash(true)
+          setAddedSplash((data) => !data)
           setInputText('')
           setTimeout(() => {
             setAddedSplash(false)
