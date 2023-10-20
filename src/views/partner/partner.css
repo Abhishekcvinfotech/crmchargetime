@@ -141,7 +141,9 @@ line-height: normal;
   height: 500px;
   padding: 24px;
 }
-
+.ant-pagination{
+  width: 100%;
+}
 .show__notShow_partner_delete{
   position: fixed;
   right: 0;

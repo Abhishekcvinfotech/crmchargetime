@@ -429,7 +429,7 @@ const Splash = () => {
                     onChange={(e) => handleInputChange(e)}
                   />
                   <p className="word_renamings">
-                    Words remaining: {1000 - inputText?.length + '/' + '1000'}
+                    Words Limit: {1000 - inputText?.length + '/' + '1000'}
                   </p>
                   <div className="modal_btn_wrap">
                     <button
@@ -523,7 +523,7 @@ const Splash = () => {
                     onChange={(e) => handleInputChangeForUpdate(e)}
                   />
                   <p className="word_renamings">
-                    Words remaining: {1000 - inputText?.length + '/' + '1000'}
+                    Words Limit: {1000 - inputText?.length + '/' + '1000'}
                   </p>
                   <div className="modal_btn_wrap">
                     <button

@@ -226,10 +226,15 @@ tr:hover tr {
   /* left: 32%; */
   color: grey;
   right: 2%;
-  width: 20px;
+  width: 17px;
   height: 20px;
 
 }
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item{
+  padding-left: 10px !important;
+}
+
 .table_wrap .ant-select-selector{
 padding: 5px !important;
 }

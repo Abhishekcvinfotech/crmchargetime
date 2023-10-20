@@ -1076,7 +1076,7 @@ const Notification = () => {
                 <div
                   className="forChanging_color"
                   style={{
-                    background: 'red',
+                    background: '#935CED',
                     
                   }}
                 ></div>
@@ -1984,7 +1984,7 @@ const Notification = () => {
 
         {/* troes table */}
         <div className="tores_notificationsecond">
-          <p className="emporia_troes">TROes Notification</p>
+          <p className="emporia_troes">TROes Notifications</p>
 
           <div>
             <button

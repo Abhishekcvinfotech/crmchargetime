@@ -301,7 +301,7 @@ const _nav = [
       },
       {
         component: CNavItem,
-        name: 'App Notification',
+        name: 'App Notifications',
         to: '/notification',
         icon: <BiSolidMobileVibration className='faiconsdashboard' />,
       },
