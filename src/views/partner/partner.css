@@ -126,7 +126,8 @@ line-height: normal;
 /* Modal Popup start */
 
 .show__notShow_partner {
-  position: absolute;
+  position: fixed;
+  border-radius: 6px;
   right: 0;
   top: 50%;
   left: 50%;
@@ -142,8 +143,9 @@ line-height: normal;
 }
 
 .show__notShow_partner_delete{
-  position: absolute;
+  position: fixed;
   right: 0;
+  border-radius: 6px;
   top: 50%;
   left: 50%;
   transform: translate(-50% , -50%);
@@ -528,7 +530,7 @@ border-radius: 6px;
 }
 @media  (max-width: 1540px) {
   .show__notShow_partner{
-    position: absolute;
+    position: fixed;
     border-radius: 6px;
     right: 0;
     top: 50%;
@@ -542,7 +544,7 @@ border-radius: 6px;
 
 
   .show__notShow_partner_delete{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     border-radius: 6px;

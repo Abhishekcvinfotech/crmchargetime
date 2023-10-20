@@ -247,7 +247,7 @@ const Notification = () => {
   }
 
   const clearFilter = () => {
-    console.log(" hello world");
+   
     setStatusfilter(false)
     setInstallation(false)
     setPlanData(false)
@@ -258,6 +258,7 @@ const Notification = () => {
     setPlanValue(0)
     setValue(0)
     setstatusValue(0)
+    setIsShown((data) => !data)
     // document.getElementById('location').style.backgroundColor = '#1890ff'
     document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
     document.getElementById('price_handle').style.backgroundColor = '#1890ff'
@@ -1193,10 +1194,10 @@ const Notification = () => {
               >
                 <form onSubmit={applyFilter}>
                   <div className="add__one">
-                    <div className="filterwrap">
+                    <div onClick={clearFilter} className="filterwrap"  >
                       <span className="add_filter_1">Add Filter</span>
                       {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
-                       <span>  <IoMdClose className="crossicon"  /></span>
+                       <span >  <IoMdClose className="crossicon"  /></span>
                     </div>
                     <br />
                     <div className="add__three">
@@ -1383,7 +1384,7 @@ const Notification = () => {
                         <FilterFilled className="filter_outlined" />
                         Apply Filter
                       </button>
-                      <button onClick={clearFilter} className="subdivision_claer_filter">
+                      <button  className="subdivision_claer_filter">
                         <ClearOutlined className="delete_outlinedd" />
                         Clear Filter
                       </button>
