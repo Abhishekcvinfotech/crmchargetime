@@ -297,7 +297,7 @@ const Admin = () => {
     //homeApi}/update/${id}
     setisAdminShow((current) => !current)
 
-    if (name && email && password || password === c_password) {
+    if (name && email && password && password === c_password) {
       let result = await fetch(`${troesAPi}/update/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
