@@ -2034,6 +2034,9 @@ const Notification = () => {
                   } else {
                     color = 'yellow'
                   }
+                  {/* const apiTime12Hour = moment(editableValuesTroes[index].message_time, 'HH:mm:ss').format('h:mm A');
+                  console.log(apiTime12Hour,'apiTime12Hour') */}
+                  
                   return (
                     <React.Fragment key={index}>
                       <tr className="trSelect" style={{ position: 'relative' }}>
@@ -2353,7 +2356,7 @@ const Notification = () => {
                             </Space>
                           )}
                         </td>
-                        <td className="px-2">
+                        
                           {/* <input
                             type="time"
                             value={editableValuesTroes[index].message_time}
@@ -2368,9 +2371,12 @@ const Notification = () => {
                             style={{ border: 'none', padding: '4px' }}
                             className="inputRender"
                           /> */}
-                          <td className="px-2">
+                          <td className="px-5
+                          ">
+                          
                             {editableValuesTroes[index].notification_type === 0 ||
                             editableValuesTroes[index].notification_type === 2 ? (
+                              <>
                               <input
                                 type="time"
                                 value={editableValuesTroes[index].message_time}
@@ -2378,7 +2384,11 @@ const Notification = () => {
                                 style={{ border: 'none' }}
                                 className="inputRender"
                               />
+                              
+                                 {/* <TimePicker  use12Hours format="h:mm a" onChange={(time,timeString) => console.log(time, timeString)} style={{width: "100px"}} readOnly/> */}
+                              </>
                             ) : (
+                              <>
                               <input
                                 type="time"
                                 value={editableValuesTroes[index].message_time}
@@ -2393,8 +2403,19 @@ const Notification = () => {
                                 style={{ border: 'none' }}
                                 className="inputRender"
                               />
+
+                              {/* <TimePicker value={apiTime12Hour}  use12Hours format="h:mm a" onChange={(time,timeString) =>  {const updatedValues = [...editableValuesTroes]
+                              const timeString24Hour = moment(timeString, 'h:mm a').format('HH:mm');
+                            console.log(timeString24Hour,'ttt')
+                                  updatedValues[index].message_time = timeString24Hour
+                                  updatedValues[index].update = true
+                                  setEditableValuesTroes(updatedValues)
+                                  setmessage_time(timeString24Hour)
+                                  setInputid('1')} } style={{width: "100px"}}/> */}
+                            </>
                             )}
-                          </td>
+                            
+                          
                         </td>
                         <td className="px-2">
                           {editableValuesTroes[index].update ? (

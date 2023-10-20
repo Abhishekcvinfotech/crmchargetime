@@ -118,10 +118,10 @@ const Splash = () => {
         })
         const res = await result.json()
         if (res.message == 'Splash Screen Add Successfully') {
-          setUpdatedSplah(true)
+          setAddedSplash(true)
           setInputText('')
           setTimeout(() => {
-            setUpdatedSplah(false)
+            setAddedSplash(false)
           }, 2000)
         } else {
           alert(res.message)

@@ -66,7 +66,7 @@ const DateTimePickerEnd = ({data,formSubmitted}) => {
           format="YYYY-MM-DD HH:mm:ss"
           onChange={handleDateTimeChange}
           value={selectedEndDateTime ? moment(selectedEndDateTime) : null}
-          placeholder="Select Date and Time"
+          placeholder="Select End Date and Time"
            disabledDate={disabledDateEnd}
            disabledTime={disabledDateTimeEnd}
         />
