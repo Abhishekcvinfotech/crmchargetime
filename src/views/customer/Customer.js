@@ -1523,7 +1523,7 @@ console.log(offset,'off');
             <h5 className="linktotalcustomer">
               {' '}
               <span className="arrow_customers">
-                <Link to="/"> Total Customer </Link>
+                <Link to="/"> Total Customers </Link>
               </span>{' '}
               <span>
                 {' '}
