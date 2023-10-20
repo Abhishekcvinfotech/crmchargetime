@@ -248,17 +248,17 @@ console.log(offset,'off');
     notification.open({
       description: '❌ Please upload a valid file format!!',
       onClick: () => {
-        console.log('Notification Clicked!')
+        console.log('Notification Clicked !')
       },
     })
   }
   const validateEmail = () => {
     if (validator.isEmail(email)) {
       setColorGreen('green')
-      setEmailError('Valid Email!')
+      setEmailError('Valid Email !')
     } else {
       setColorGreen('red')
-      setEmailError('Enter valid Email!')
+      setEmailError('Enter valid Email !')
     }
   }
   const handleChange = (e) => {
@@ -448,7 +448,7 @@ console.log(offset,'off');
   }
   const onDeleteUser = async (id) => {
     setLoading(true)
-    if (window.confirm('Are you sure? The Account will get deleted permanently!!')) {
+    if (window.confirm('Are you sure? The Account will get deleted permanently !!')) {
       const response = axios
         .delete(`${troesAPi}/pwa_user/${id}`)
         .then(() => {
@@ -2983,7 +2983,7 @@ console.log(offset,'off');
           <div id="addModalsecond">
             <div className="modal_heading ">
               <div className="modal_hedaing_customer">
-                <h2>Create User Customer</h2>
+                <h2>Create New  Customer</h2>
                 <IoMdClose className="crossicon" onClick={empty} />
               </div>
             </div>

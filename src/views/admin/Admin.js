@@ -377,7 +377,7 @@ const Admin = () => {
       <div className="admin_account_wrap">
         <div className="admin_Parent_wrap">
           <p className="admin__acount">
-            <span> Admin Account </span>{' '}
+            <span> Admin Accounts </span>{' '}
             <span className="registration_length"> ({registerData.length})</span>
           </p>
           <p className="toatl_adminss">
