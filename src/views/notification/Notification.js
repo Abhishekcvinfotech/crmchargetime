@@ -936,7 +936,7 @@ const Notification = () => {
       <div style={{ position: 'relative' }}>
         <div className="tnotification_wrap">
 
-          <h2 className="all_customer_of_page"><span className='notifica'> Notifications</span>  <span className='notification_count'> ({notificationCount}) </span></h2>
+          <h2 className="all_customer_of_page"><span className='notifica'>  App Notifications</span>  <span className='notification_count'> ({notificationCount}) </span></h2>
 
           <p className="totalnotification" >
             <span>Total Notifications </span> <span><img src={Rightarrow} alt=" right arrow" /> </span>
@@ -1417,7 +1417,7 @@ const Notification = () => {
                   />
                   Add  Emporia Notification */}
               <span className="plusicon">+</span>
-              <span>Add Emporia Notification</span>
+              <span>Add Emporia Notifications</span>
             </button>
           </div>
         </div>
@@ -1998,7 +1998,7 @@ const Notification = () => {
               Add New TROes Notification */}
 
               <span className="plusicon">+</span>
-              <span>Add Emporia Notification</span>
+              <span>Add Emporia Notifications</span>
             </button>
           </div>
         </div>
