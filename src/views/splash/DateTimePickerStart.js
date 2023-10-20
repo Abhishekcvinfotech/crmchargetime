@@ -70,7 +70,7 @@ const DateTimePickerStart = ({ data, formSubmitted }) => {
           value={selectedStartDateTime ? moment(selectedStartDateTime) : null}
           disabledDate={disabledDate}
           disabledTime={disabledDateTime}
-          placeholder="Select Date and Time"
+          placeholder="Select Start Date and Time "
         />
       </div>
     </>
