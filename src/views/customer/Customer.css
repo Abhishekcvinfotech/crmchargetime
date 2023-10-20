@@ -19,6 +19,8 @@ form select {
   /* left: 32%; */
   color: grey;
   right: 16px;
+  width: 20px;
+  height: 20px;
 }
 .table-responsive{
 margin-bottom: 48px;

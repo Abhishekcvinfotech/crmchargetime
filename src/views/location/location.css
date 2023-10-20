@@ -312,7 +312,7 @@ margin-top: 6px;
 }
 
 .show__notShow {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -325,9 +325,9 @@ margin-top: 6px;
   padding: 24px;
 }
 .deletemodal{
-  position: absolute;
+  position: fixed;
   left: 50%;
-  top: 25%;
+  top: 50%;
   transform: translate(-50%, -50%);
   max-width: 550px;
   border-radius: 6px;

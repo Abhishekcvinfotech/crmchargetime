@@ -226,6 +226,8 @@ tr:hover tr {
   /* left: 32%; */
   color: grey;
   right: 2%;
+  width: 20px;
+  height: 20px;
 
 }
 .table_wrap .ant-select-selector{

@@ -2303,6 +2303,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
+                          width:'200px',
                         }}
                       >
                         <span style={{}}>Name</span>
@@ -2311,6 +2312,7 @@ console.log(offset,'off');
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
+                            
                           }}
                         >
                           {sortingState['pwa_name'] === 'ASC' ? (
@@ -2363,6 +2365,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
+                          width:'300px',
                         }}
                       >
                         <span>Address</span>
@@ -2393,7 +2396,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '100px',
+                          width: '150px',
                         }}
                       >
                         <span>State</span>
@@ -2424,7 +2427,7 @@ console.log(offset,'off');
                           display: 'flex',
                           justifyContent: 'flex-start',
                           alignItems: 'center',
-                          width: '200px',
+                          width: '250px',
                         }}
                       >
                         <span>Installation</span>
@@ -2454,7 +2457,7 @@ console.log(offset,'off');
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
-                        width: '200px',
+                        width: '150px',
                       }}
                     >
                       <span>Plan</span>
@@ -2483,7 +2486,7 @@ console.log(offset,'off');
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
-                        width: '200px',
+                        width: '150px',
                       }}
                     >
                       <span>Price</span>
@@ -2513,7 +2516,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '200px',
+                          width: '150px',
                         }}
                       >
                         <span>Mobile</span>
@@ -2527,7 +2530,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '200px',
+                          width: '150px',
                         }}
                       >
                         <span>Date</span>
@@ -2541,7 +2544,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width: '200px',
+                          width: '150px',
                         }}
                       >
                         <span>Time</span>
