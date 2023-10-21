@@ -1521,7 +1521,7 @@ console.log(offset,'off');
               <span className="customer_first_span"> Customers </span>{' '}
               <span className="totalcustomer"> ({totalUsers}) </span>{' '}
             </h2>
-            <h5 className="linktotalcustomer">
+            {/* <h5 className="linktotalcustomer">
               {' '}
               <span className="arrow_customers">
                 <Link to="/"> Total Customers </Link>
@@ -1530,7 +1530,7 @@ console.log(offset,'off');
                 {' '}
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
-            </h5>
+            </h5> */}
 
            
           </div>
@@ -2590,7 +2590,7 @@ console.log(offset,'off');
                     } else if (item.pwa_status === 1) {
                       color = '#3CB72C'
                     } else if (item.pwa_status === 2) {
-                      color = 'yellow'
+                      color = '#935CED'
                     } else if (item.pwa_status === 6) {
                       color = '#5A5A5A'
                     } else {

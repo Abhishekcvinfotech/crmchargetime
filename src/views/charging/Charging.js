@@ -353,7 +353,7 @@ const Charging = () => {
                       value={partner}
                       onChange={(e) => setPartner(e.target.value)}
                       required
-
+                      readOnly
                     />
                     <input
                       type="hidden"

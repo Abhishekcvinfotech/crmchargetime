@@ -938,9 +938,9 @@ const Notification = () => {
 
           <h2 className="all_customer_of_page"><span className='notifica'>  App Notifications</span>  <span className='notification_count'> ({notificationCount}) </span></h2>
 
-          <p className="totalnotification" >
+          {/* <p className="totalnotification" >
             <span>Total Notifications </span> <span><img src={Rightarrow} alt=" right arrow" /> </span>
-          </p>
+          </p> */}
           
         </div>
 

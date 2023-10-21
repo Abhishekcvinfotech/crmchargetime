@@ -228,9 +228,9 @@ if(requestData !== ''){
             type="primary"
             id='generate_report_btn'
             onClick={handleFileDownload}
-            style={{height:'40px', display:'flex',  alignItems: 'center'}}
+            style={{height:'48px', display:'flex',  alignItems: 'center',gap:'16px'}}
           >
-          <img src={right_arrow} alt="edit"  style={{width:"22px",height:"15px",paddingRight:"4px"}} />
+          <img src={right_arrow} alt="edit"  style={{width:"18px",height:"21px",}} />
             Generate Report
           </Button>
 

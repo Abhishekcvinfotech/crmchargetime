@@ -556,12 +556,12 @@ const Location = () => {
               <span className="total__location"> ({locationData?.length})</span>
             </div>
 
-            <div className="total_installation_wrap">
+            {/* <div className="total_installation_wrap">
               <span className="arrow_customers">Total Installation</span>
               <span>
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
-            </div>
+            </div> */}
           </div>
 
           <button onClick={handleClicked} className="customer_add_button">

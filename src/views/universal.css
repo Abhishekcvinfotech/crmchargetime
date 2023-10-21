@@ -446,10 +446,7 @@ input[type='file']::file-selector-button {
   box-shadow: none;
 }
 
-/* .global_th {
-  font-size: 16px;
-  font-weight: bolder;
-} */
+
 
 .editn_btn_global {
   width: 15px;
@@ -473,12 +470,10 @@ td {
   font-size: 13px;
  
 }
-
 thead th {
-
-  font-size: 14px  !important;
-  
+  font-size: 15px  !important;
 }
+
 }
 @media only screen and (max-width: 1240px) {
   /* pagination css  start*/

@@ -223,9 +223,9 @@ const Trash = () => {
           <h2 className="all_customer_of_page" >
             <span>Deleted Notifications</span> <span className='total_notification'>({totTrashNotification}) </span>
           </h2>
-          <p className='total_notification'>
+          {/* <p className='total_notification'>
             <span className='tnotification'> Total Notifications </span> <span>  <img src={Rightarrow} alt=" right arrow" />  </span>
-          </p>
+          </p> */}
         </div>
         <div className='back_to_app_notification' >
           <div style={{ display: 'flex' }}>

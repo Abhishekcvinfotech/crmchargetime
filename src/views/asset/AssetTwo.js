@@ -1258,7 +1258,8 @@ const AssetTwo = () => {
               <button
                 style={{
                   display: 'flex',
-                  gap: '5px',
+                  alignItems:'center',
+                  gap: '16px',
                   padding: '8px 10px',
                   border: '1px solid #ccc',
                   borderRadius: '6px',
@@ -1266,7 +1267,7 @@ const AssetTwo = () => {
                 onClick={() => multipleCsv()}
               >
                 <img src={Excelicon} alt="" style={{ width: '22px' }} />
-                Report
+              <span className='reportname'>  Report</span>
               </button>
             </div>
           </div>
@@ -1276,7 +1277,7 @@ const AssetTwo = () => {
 
               <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                 <BsCloudDownload className="cloud_downlaod_icon" />
-                <span className="downlaodtext"> Import CSV File </span>
+                <span className="downlaodtext"> Import  </span>
               </button>
 
               <Modal

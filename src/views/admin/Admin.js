@@ -380,13 +380,13 @@ const Admin = () => {
             <span> Admin Accounts </span>{' '}
             <span className="registration_length"> ({registerData.length})</span>
           </p>
-          <p className="toatl_adminss">
+          {/* <p className="toatl_adminss">
             <span> Total Admins </span>{' '}
             <span>
               {' '}
               <img src={Rightarrow} alt=" right arrow" />{' '}
             </span>
-          </p>
+          </p> */}
         </div>
 
         <div>
