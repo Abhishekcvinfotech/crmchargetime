@@ -814,7 +814,7 @@ const PriceThree = () => {
                 value={location_id}
               />
 
-              <p style={{ color: 'red' , position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0}}>{errorlocation}</p>
+              <p style={{ color: 'red' , fontSize:'12px', position:'relative' , top:'-21px' , left:'5px' ,margin:'0', padding:'0'}}>{errorlocation}</p>
               <label className="nameEmail__Price">Product Name</label>
               <input
                 className="locate__input"
@@ -824,7 +824,7 @@ const PriceThree = () => {
                 placeholder="Eg. Base Package - 4"
                 onChange={(e) => setPackgagename(e.target.value)}
               />
-              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' }}>{errorpackage}</p>
+              <p style={{ color: 'red', fontSize:'12px', position:'relative' , top:'-21px' , left:'5px' }}>{errorpackage}</p>
 
               <label className="nameEmail__Price">Stripe Product ID </label>
               <input
@@ -835,7 +835,7 @@ const PriceThree = () => {
                 placeholder="Product Description"
                 onChange={(e) => setPriceStripeId(e.target.value)}
               />
-              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{priceStripeError}</p>
+              <p style={{ color: 'red', position:'relative' , fontSize:'12px',  top:'-21px' , left:'5px' ,margin:'0', padding:'0' }}>{priceStripeError}</p>
 
               <label className="nameEmail__Price">Coupon Promotion Code</label>
               <input
@@ -855,7 +855,7 @@ const PriceThree = () => {
                 placeholder="kWh"
                 onChange={(e) => setKwh(e.target.value)}
               />
-              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errorkwh}</p>
+              <p style={{ color: 'red', position:'relative' , top:'-21px' ,  fontSize:'12px',  left:'5px' ,margin:'0', padding:'0' }}>{errorkwh}</p>
 
               <label className="nameEmail__Price">Mi Eq</label>
               <input
@@ -866,7 +866,7 @@ const PriceThree = () => {
                 placeholder="Eg. 2000"
                 onChange={(e) => setMieq(e.target.value)}
               />
-              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errormiq}</p>
+              <p style={{ color: 'red', position:'relative' , fontSize:'12px',  top:'-21px' , left:'5px' ,margin:'0', padding:'0' }}>{errormiq}</p>
 
               <label className="nameEmail__Price">$/Mi</label>
               <input
@@ -877,7 +877,7 @@ const PriceThree = () => {
                 placeholder="Eg. 2000"
                 onChange={(e) => setDollar(e.target.value)}
               />
-              <p style={{ color: 'red', position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errordollar}</p>
+              <p style={{ color: 'red', position:'relative' , fontSize:'12px', top:'-21px' , left:'5px' ,margin:'0', padding:'0' }}>{errordollar}</p>
               <label className="nameEmail__Price">Price ($)</label>
               <input
                 className="locate__input"
@@ -915,7 +915,7 @@ const PriceThree = () => {
                 value={totalSalesPrice}
               /> */}
               <span
-                style={{ color: 'red', position:'relative' , top:'-10px' , left:'13px' ,margin:0, padding:0 }}
+                style={{ color: 'red', position:'relative' , fontSize:'12px',  top:'-14px' , left:'5px' ,margin:'0', padding:'0' }}
               >
                 {errorprice}
               </span>
@@ -970,7 +970,7 @@ const PriceThree = () => {
               value={location}
               className="locate__input"
             />
-            <span style={{ color: 'red',position:'relative' , top:'-21px' , left:'5px' ,margin:0, padding:0 }}>{errorlocation}</span>
+            <span style={{ color: 'red',position:'relative' , fontSize:'12px',  top:'-21px' , left:'5px' ,margin:'0', padding:'0' }}>{errorlocation}</span>
             <label className="nameEmail__Price">Package Name</label>
             <input
               className="locate__input"
@@ -1073,7 +1073,7 @@ const PriceThree = () => {
             <input type="hidden" className="locate__input" value={salesTaxTwo} />
             <div className="total_pr_local">
               <p className="functioned_p" onClick={() => totalPrice(2)}>
-                Check Total Price
+                Check Total Pricee
               </p>
               <p className="ttl__ssl_tx">${totalSalexTax}</p>
             </div>

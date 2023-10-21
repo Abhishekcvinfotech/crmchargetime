@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { AutoComplete, Button, Checkbox, Spin, Pagination } from 'antd'
+import { AutoComplete, Button, Checkbox, Spin, Pagination , Input } from 'antd'
 import './admin.css'
 import '../universal.css'
 import { DeleteOutlined } from '@ant-design/icons'
@@ -16,6 +16,8 @@ import { IoMdClose } from 'react-icons/io'
 import Rightarrow from '../../assets/images/Rightarrow.svg'
 import CheckgreenCircle from '../../assets/images/CheckgreenCircle.svg'
 import Redcircle from '../../assets/images/Redcircle.svg'
+import {   EyeInvisibleOutlined,
+  EyeTwoTone, } from '@ant-design/icons'
 // import { useNavigate, Link } from 'react-router-dom'
 
 const Admin = () => {
@@ -426,7 +428,7 @@ const Admin = () => {
               </div>
             )}
             <div
-              className="show__notShow modalscroll"
+              className="show__notShow modalscroll modaleye"
               style={{
                 display: isShown ? 'block' : 'none',
               }}
@@ -494,7 +496,7 @@ const Admin = () => {
                   )}
                   <div>  
                   <label className="nameEmail__admin">Password</label>
-                  <input
+                  <Input.Password
                     className="admin__input"
                     type="password"
                     name="password"
@@ -502,6 +504,7 @@ const Admin = () => {
                     required
                     placeholder=" password"
                     onChange={handleChangeed}
+                    iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                   />
 
                   {errorMessage ? (
@@ -526,7 +529,7 @@ const Admin = () => {
                   </div>
                   <div> 
                   <label className="nameEmail__admin">Confirm Password</label>
-                  <input
+                  <Input.Password
                     className="admin__input"
                     type="password"
                     name="c_password"
@@ -534,6 +537,9 @@ const Admin = () => {
                     required
                     placeholder="confirm password"
                     onChange={handleConPassword}
+
+                    iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                  
                   />
 
                   {handleConPassword ? (
@@ -650,11 +656,12 @@ const Admin = () => {
                     </div>
                     <div>
                     <label className="nameEmail__admin">Password</label>
-                    <input
-                      className="admin__input"
+                    <Input.Password
+                      // className="admin__input"
                       type="password"
                       defaultValue={password}
                       onChange={handleChangeed}
+                      iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                       placeholder="Generate a new password"
                     />
                     {errorMessage ? (
@@ -676,14 +683,15 @@ const Admin = () => {
                     </div>
                     <div>
                     <label className="nameEmail__admin">Confirm Password</label>
-                    <input
+                    <Input.Password
                       id="conFirm_password"
-                      className="admin__input"
+                      // className="admin__input"
                       type="password"
                       placeholder="Retype new password to confirm"
                       name="c_password"
                       defaultValue={c_password}
                       onChange={handleConPassword}
+                      iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     />
                     {handleConPassword ? (
                       <span

@@ -519,6 +519,7 @@ const Location = () => {
           open={isModalOpenForAddress}
           onOk={handleOked}
           onCancel={handleCanceled}
+          style={{height:'550px' , overflowX:'auto'}}
         >
           <p style={{ fontSize: '15px', fontWeight: 'bold' }}>Device Addresses</p>
           {dataforAddress &&
@@ -622,7 +623,7 @@ const Location = () => {
               <div>
                 <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                   <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import Device Address </span>
+                  <span className="downlaodtext"> Import  </span>
                 </button>
                 {
 
@@ -634,12 +635,10 @@ const Location = () => {
                     onCancel={() => setModal2Open(false)}
                     width={1000}
                   >
-
                     <div>
                       <form
                         className="import_csv_class"
                         onSubmit={handleSubmit}
-
                       >
                         <input
                           className="w-55 input_type_file"
@@ -659,7 +658,6 @@ const Location = () => {
                   <img src={import_one} alt="edit" style={{ width: '22px', height: '15px' }} />
                   Import Device Address
                 </button> */}
-
                           <button
                             type="button"
                             className="fileimport_cancel"
@@ -668,24 +666,13 @@ const Location = () => {
                             {' '}
                             <span>Cancel</span>{' '}
                           </button>
-
                           <button type="submit" className="fileimportok_btn">
-
                             <span> Import </span>
                           </button>
-
-
-
                         </div>
                       </form>
-
-
                     </div>
-
-
-
                   </Modal>
-
                 }
               </div>
             </div>

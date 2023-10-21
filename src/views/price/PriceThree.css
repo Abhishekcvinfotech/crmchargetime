@@ -522,9 +522,11 @@ line-height: normal;
   font-weight: 500;
   color: #fff;
   background-color: #1890ff;
-  padding: 7px;
+  padding: 8px;
   border-radius: 6px;
   cursor: pointer;
+  
+  
 }
 .delete_warp {
   display: flex;
@@ -567,17 +569,16 @@ line-height: normal;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
-  padding-top: 10px;
+  
 }
 .ttl__ssl_tx {
   font-size: 14px;
   font-weight: 500;
-  padding: 8px;
-  margin-right: 10px;
+  padding: 8px 16px;
   background-color: #e8e9ee;
   border-radius: 6px;
 }
+
 .locate__input {
   padding: 5px 15px;
   margin: 3px 0px 10px 0px;

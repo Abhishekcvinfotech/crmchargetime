@@ -1127,7 +1127,7 @@ const AssetTwo = () => {
               alignItems: 'center',
               cursor: 'pointer',
               gap: '16px',
-              marginRight: '24px'
+              
 
             }}
           >
@@ -1413,19 +1413,17 @@ const AssetTwo = () => {
               <table className="table table-hover">
                 <thead>
                   <tr className="asset__acount">
-                    {/* <th className="th_style">
-                  <img
-                    src={Excelicon}
-                    alt="upload_img"
-                    style={{
-                      width: '20px',
-                      marginTop: '-7px',
-                      // marginLeft: '4px',
-                      cursor: 'pointer',
-                    }}
-                  />
-                </th> */}
-                    <th className="th_style">S.No.</th>
+                  <th className="th_style">
+                      <Tooltip title="Select All">
+                        <input
+                          type="checkbox"
+                          checked={selectAll}
+                          onChange={handleSelectAllChange}
+                        />
+                      </Tooltip>
+                    </th>
+                    
+                    <th className="th_style"> <div style={{width:'40px'}}> S.No. </div>   </th>
                     <th className="th_style">
                       {/* <input
                     type="checkbox"
@@ -1443,15 +1441,7 @@ const AssetTwo = () => {
 
                     <th className="th_style">{/* <Radio></Radio> */}</th>
                     <th className="th_style">{/* <input type="radio" /> */}</th>
-                    <th className="th_style">
-                      <Tooltip title="Select All">
-                        <input
-                          type="checkbox"
-                          checked={selectAll}
-                          onChange={handleSelectAllChange}
-                        />
-                      </Tooltip>
-                    </th>
+                   
                     <th className="th_style">Device ID</th>
                     <th className="th_style">Unique ID</th>
                     <th className="th_style">Device Address</th>
@@ -1506,7 +1496,19 @@ const AssetTwo = () => {
                           }
                           className="bg-prmary tr_class"
                         >
-                          <td className="px-3">{displayedIndex}</td>
+                          <td className="td_style">
+                          <div >
+                            <Tooltip title="Select to on/off device(s) or to generate a report">
+                              <input
+                                type="checkbox"
+                                checked={checkedItems.includes(item.device_id)}
+                                onChange={(event) => handleCheckboxChange(event, item.device_id)}
+                              />
+                            </Tooltip>
+                            </div>
+                          </td>
+
+                          <td className="px-3" >    {displayedIndex} </td>
                           {/* <td>
                         <div onClick={() =>csvExport(item.id,item?.device_id)}>
                             <img
@@ -1566,30 +1568,21 @@ const AssetTwo = () => {
                               />
                             </Tooltip>
                           </td>
-                          <td className="td_style">
-                            <Tooltip title="Select to on/off device(s) or to generate a report">
-                              <input
-                                type="checkbox"
-                                checked={checkedItems.includes(item.device_id)}
-                                onChange={(event) => handleCheckboxChange(event, item.device_id)}
-                              />
-                            </Tooltip>
-                          </td>
-
                           <td
                             className="td_style"
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer' , textAlign:'left'}}
                             onClick={() => {
                               setShow(true)
                               setSelectedData(item?.device_id)
                             }}
                           >
-                            <Tooltip placement="bottom" title={textFour}>
+                            <div style={{width:'220px'}}>   <Tooltip placement="bottom" title={textFour}>
                               {item.device_id}
-                            </Tooltip>
+                            </Tooltip>  </div>
+                           
                           </td>
 
-                          <td className="td_style">{item.unique_id}</td>
+                          <td className="td_style" style={{textAlign:'left'}}> <div style={{width:'100px'}}> {item.unique_id} </div></td>
                           <td
                             className={`td_style td_style_${ind}`}
                             style={{ display: 'flex', alignItems: 'center', border: 'none' }}
@@ -1612,7 +1605,7 @@ const AssetTwo = () => {
                               }))}
                             />
                             {item?.device_address[0]?.fill ? (
-                              <div>
+                              <div style={{width:'100px' , display:'flex' ,justifyContent:'center' , alignItems:'center' , gap:'16px'}}>
                                 <div
                                   className="minus_circle_css"
                                   onClick={
@@ -1663,7 +1656,8 @@ const AssetTwo = () => {
                             <Select
                               showSearch
                               style={{
-                                width: 300,
+                                width: '150px',
+                                textAlign: 'left'
                               }}
                               value={
                                 `td_style_${ind}` === autoFillIndexForCustomer ||
@@ -1804,7 +1798,7 @@ const AssetTwo = () => {
                               </button>
                             )}
                           </td>
-                          <td className={`td_style td_style_${ind}`}>
+                          <td className={`td_style td_style_${ind}`} style={{textAlign:'center'}}>
                             <button
                               onClick={() => {
                                 openDeleteModal(setId(item.id), setName(item.device_id))

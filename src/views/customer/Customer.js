@@ -1531,12 +1531,7 @@ console.log(offset,'off');
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
             </h5> */}
-
-           
           </div>
-
-        
-          
           <button onClick={() => setAddUserModal(true)} className="customer_add_button">
             <span className="plusicon">+</span>
             <span>Add Customer</span>
@@ -1632,7 +1627,7 @@ console.log(offset,'off');
               <div id="file_uplaoder_modal">
                 <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                   <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import CSV File </span>
+                  <span className="downlaodtext"> Import  </span>
                 </button>
 
                 <Modal
@@ -3056,7 +3051,7 @@ console.log(offset,'off');
                         color: `${colorGreen}`,
                         fontSize: '12px',
                         position:'relative',
-                        top:'-12px',
+                        top:'-21px',
                         left:'5px',
                       }}
                     >
@@ -3103,7 +3098,7 @@ console.log(offset,'off');
                         color: `${colorGreen}`,
                         fontSize: '12px',
                         position:'relative',
-                        top:'-12px',
+                        top:'-21px',
                         left:'5px',
                       }}
                     >
@@ -3140,6 +3135,7 @@ console.log(offset,'off');
                     placeholder="Create a strong password"
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
+                    
                   />
                   {errorMessage ? (
                     <span
@@ -3149,8 +3145,9 @@ console.log(offset,'off');
                         width: '235px',
                         fontSize: '12px',
                         position:'relative',
-                        top:'-12px',
+                        top:'-21px',
                         left:'5px',
+                        zIndex:'99999',
                       }}
                     >
                       {errorMessage}
@@ -3187,11 +3184,14 @@ console.log(offset,'off');
                     minLength={8}
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
+                    
                   />
                   <p style={{ color: 'red', display: display, fontSize: '12px' ,  position:'relative',
-                        top:'-12px',
-                        left:'5px',  }}>
-                    Password did not match❗
+                        top:'-21px',
+                        left:'5px', 
+                        zIndex:'99999',
+                         }}>
+                    Password did not match !
                   </p>
 
                   <span
@@ -3204,8 +3204,6 @@ console.log(offset,'off');
                       color: '#3378FF',
                       textDecoration: 'underline',
                       paddingBottom: '1px',
-
-                    
                     }}
                   >
                     Generate Password

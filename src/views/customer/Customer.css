@@ -161,7 +161,7 @@ margin-bottom: 48px;
   display: inline-block;
   color: #8f9fbc;
   font-family: DM Sans;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -1254,7 +1254,7 @@ line-height: normal;
     left: 50% !important;
     transform: translate(-50% ,-50%) !important;
 
-    height: 500px!important;
+    max-height: 500px!important;
     overflow-x: auto!important;
     max-width: 540px !important;
   }
@@ -1267,11 +1267,11 @@ line-height: normal;
 
   }
   .add__one {
-    padding: 15px !important;
+    /* padding: 15px !important; */
    }
 
    #addModalsecond{
-    padding: 15px !important;
+    /* padding: 15px !important; */
     width: 700px !important;
     height: 500px !important;
     overflow-x: auto !important;
@@ -1282,8 +1282,8 @@ line-height: normal;
    }
 
    #addModalsecond input{
-    margin-bottom: 15px !important;
-    height: 35px !important;
+    /* margin-bottom: 15px !important;
+    height: 35px !important; */
    }
 
    .addcustomerform_cancel{
@@ -1307,11 +1307,13 @@ line-height: normal;
    }
 
    .ant-input-suffix{
-    top: 11px !important;
+    /* top: 11px !important; */
    }
 
    form select {
-    height: 35px !important;
+
+    /* height: 40px !important; */
+
    }
 
    .fileimport_cancel{
@@ -1795,6 +1797,17 @@ form label {
   /* gap: 12px 0; */
 }
 
+input[type=password]{
+
+  padding: 5px 15px !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  border: 1px solid #f1f1f1 !important;
+  background: #fff !important;
+
+}
+
+
 #addModalsecond input,
 select {
   padding: 5px 15px;
@@ -1803,7 +1816,7 @@ select {
   border: none;
   width: 100%;
   border-radius: 6px;
-  border: 1px solid var(--border-border-secondary, #f1f1f1);
+  border: 1px solid  #f1f1f1;
   background: #fff;
   margin-bottom: 24px;
 }
