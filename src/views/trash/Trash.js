@@ -175,7 +175,7 @@ const Trash = () => {
 
   const onDeleteNotification = async (id) => {
     setLoading(true)
-    if (window.confirm('Do you really want to delete this notification permanently!')) {
+    if (window.confirm('Do you really want to delete this notification Permanently!')) {
       const response = axios
         .delete(`${troesAPi}/deletenotification/${id}`)
         .then(() => {
@@ -303,7 +303,7 @@ const Trash = () => {
                           <td className="px-2">{item.endDate}</td>
                           <td className="px-2">{item.message_time}</td>
                           <td className="px-2">
-                            <div style={{display:'flex', alignItems:'center',gap:'16px' , justifyContent:'center' }}> 
+                            <div style={{display:'flex', alignItems:'center',gap:'8px' , justifyContent:'center' }}> 
                             <Tooltip title="Restore">
                               <button
                                 className="actionbtn"
@@ -444,7 +444,7 @@ const Trash = () => {
                         <td className="px-2">{item.message_time}</td>
                         <td className="px-2">
 
-                          <div style={{ display:'flex', alignItems:'center',gap:'16px', justifyContent:'center' }}>  
+                          <div style={{ display:'flex', alignItems:'center',gap:'8px', justifyContent:'center' }}>  
                           <Tooltip title="Restore">
                             <button
                               className="actionbtn"
@@ -525,7 +525,7 @@ const Trash = () => {
           >
             <div  className='notification_image'>
             <span>  <img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span> 
-              <span className="admin_registerd__pop">Notification Deleted permanently.</span>
+              <span className="admin_registerd__pop">Notification Deleted Permanently.</span>
             </div>
           </div>
 

@@ -214,7 +214,7 @@ const Splash = () => {
   }
   const deleteSplashData = (id) => {
     setLoading(true)
-    if (window.confirm('Are you sure? Message is deleted permanently? ')) {
+    if (window.confirm('Are you sure? Message is deleted Permanently? ')) {
       axios
         .delete(`${troesAPi}/deletesplash/${id}`)
         .then((res) => {

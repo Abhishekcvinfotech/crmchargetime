@@ -137,7 +137,7 @@ if(requestData !== ''){
   }, [deleted])
   const deleteFinance = async (id) => {
     setLoading(true)
-    if (window.confirm('Are you sure? Partner Invoice Report will be deleted permanently? ')) {
+    if (window.confirm('Are you sure? Partner Invoice Report will be deleted Permanently? ')) {
      await axios
         .delete(`${troesAPi}/reportdelete/${id}`)
         .then((res) => {
