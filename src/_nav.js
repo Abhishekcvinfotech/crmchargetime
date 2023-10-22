@@ -306,14 +306,21 @@ const _nav = [
         icon: <BiSolidMobileVibration className='faiconsdashboard' />,
       },
 
-      {
-        component: CNavItem,
-        name: 'Trash',
-        to: '/Trash',
-        icon: <FaTrashCan className='faiconsdashboard' />,
-      },
+      // {
+      //   component: CNavItem,
+      //   name: 'Trash',
+      //   to: '/Trash',
+      //   icon: <FaTrashCan className='faiconsdashboard' />,
+      // },
 
     ],
+  },
+  
+  {
+    component: CNavItem,
+    name: 'Trash',
+    to: '/Trash',
+    icon: <FaTrashCan className='faiconsdashboard' />,
   },
 
   {
