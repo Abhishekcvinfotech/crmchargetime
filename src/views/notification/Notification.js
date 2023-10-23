@@ -1199,7 +1199,7 @@ const Notification = () => {
                       {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
                        <span >  <IoMdClose className="crossicon"  /></span>
                     </div>
-                    <br />
+                    
                     <div className="add__three">
                       {/* <p>Find the Users you are looking for : </p> */}
                       <div className="for__marginn  right_alignment">
@@ -1381,12 +1381,12 @@ const Notification = () => {
                     )}
                     <div className="mainDivOf_apply">
                       <button className="sub_divOf_Applifilter" id="apply__filter">
-                        <FilterFilled className="filter_outlined" />
+                        {/* <FilterFilled className="filter_outlined" /> */}
                         Apply Filter
                       </button>
                       <button  className="subdivision_claer_filter">
-                        <ClearOutlined className="delete_outlinedd" />
-                        Clear Filter
+                        {/* <ClearOutlined className="delete_outlinedd" /> */}
+                        Clear All
                       </button>
                     </div>
                   </div>
