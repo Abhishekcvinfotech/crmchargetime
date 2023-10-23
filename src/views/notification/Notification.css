@@ -186,8 +186,8 @@ border-radius: 6px;
     transform: translate(-50%,-50%);
     width: 100%;
     z-index: 999;
-    max-height: 500px;
-    overflow-x: auto;
+    max-height: 500px !important;
+    overflow-x: auto !important;
 
   }
 
@@ -209,6 +209,9 @@ border-radius: 6px;
     z-index: 999;
   }
 
+  .margen_broom{
+    margin-bottom: 2px;
+  }
 
 /* paination css start  */
 /* .ant-pagination-item {
@@ -587,6 +590,29 @@ tr input {
   text-align: left;
 }
 
+.for_Filter_Clear{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px !important;
+}
+.filter_wrap #searchBox{
+   width: 360px !important;
+}
+
+.add_nine .for_Filter_Clear {
+  height: 42px !important;
+}
+
+.for_Filter_Clear span {
+  color: black !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  display: inline-block !important;
+  line-height: 20px !important;
+  
+}
+
 
 @media (max-width: 1540px)
 {
@@ -606,7 +632,7 @@ tr input {
   width: 100%;
   z-index: 999; */
 
-  top: 50% !important;
+     top: 40% !important;
     left: 50% !important;
     transform: translate(-50% ,-50%) !important;
     max-height: 500px!important;
