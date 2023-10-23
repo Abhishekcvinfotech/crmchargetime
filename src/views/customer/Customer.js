@@ -2056,7 +2056,7 @@ const Customer = () => {
                             )
                           })}
                         </Radio.Group>
-                        <div className="for__margin__two" style={{ zIndex: '2' }}>
+                        <div className="for__margin__two" style={{ zIndex: '9999999' }}>
                           <Modal
                             title="Add Plan"
                             open={isModalOpen}

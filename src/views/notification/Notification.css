@@ -188,6 +188,14 @@ border-radius: 6px;
 
   }
 
+  .right_alignment{
+ 
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   width: 100%;
+
+  }
   .modal-backdrop {
     position: fixed;
     top: 0;
