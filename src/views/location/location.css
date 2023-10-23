@@ -13,6 +13,22 @@ td {
 .plusicon {
   font-size: 20px;
 }
+.add_plan_btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+.cancel_btn{
+  background-color: #8f9fbc;
+  color: #ffffff;
+
+
+}
+.ok_btn{
+  background-color: #3378ff;
+  color: #ffffff;
+}
 
 .installation_base_warp {
   display: flex;

@@ -516,6 +516,22 @@ const Location = () => {
               )}
             </tbody>
           </table>
+          <div className='add_plan_btn'>
+          <Button
+              key="submit"
+              type="primary"
+              loading={loading}
+              onClick={() => fetchDataOfInstallation()}
+              style={{ borderRadius: '9px' }}
+            >
+              Export Report
+            </Button>,
+                              <button onClick={handleCancel}  type="button" className='cancel_btn'>
+                                <span>Cancel</span>
+                              </button>
+                              <button onClick={handleOk} type="button" className='ok_btn'  >
+                                <span>Ok</span></button>
+                            </div>
         </Modal>
 
         <Modal
