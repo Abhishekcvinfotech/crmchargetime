@@ -1163,8 +1163,12 @@ console.log(offset,'off');
         .catch((error) => {
           console.error('Error:', error)
         })
-      openNotification()
-      setIsCsvModalOpen(true)
+
+         openNotification()
+         setModal2Open(false)
+         
+        //  setIsCsvModalOpen(true)
+
     } else {
       openNotificationCsvWrong()
     }

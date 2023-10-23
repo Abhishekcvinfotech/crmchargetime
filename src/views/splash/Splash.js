@@ -595,21 +595,22 @@ const Splash = () => {
                             />
                           </div>
                         </td>
-                        <td
-                          className={` ind_${ind} text-left`}
-                          contentEditable
-                          onBlur={(e) => handleCellEdit(e, ind, 'startDate', item.startDate)}
-                          onClick={() => forIndexFunction(ind)}
-                        >
-                          {item.startDate}
+                        <td>
+                          <div className={` ind_${ind} text-left`}
+                            contentEditable
+                            onBlur={(e) => handleCellEdit(e, ind, 'startDate', item.startDate)}
+                            onClick={() => forIndexFunction(ind)} style={{ padding:'5px'}}>
+                            {item.startDate}
+                          </div>
                         </td>
-                        <td
-                          className={` ind_${ind} text-left`}
-                          onClick={() => forIndexFunction(ind)}
-                          contentEditable
-                          onBlur={(e) => handleCellEdit(e, ind, 'endDate', item.endDate)}
-                        >
-                          {item.endDate}
+                        <td>
+                          <div className={` ind_${ind} text-left`}
+                            onClick={() => forIndexFunction(ind)}
+                            contentEditable
+                            onBlur={(e) => handleCellEdit(e, ind, 'endDate', item.endDate)} style={{ padding:'5px'}} >
+                            {item.endDate}
+                          </div>
+
                         </td>
 
                         <td className={` ind_${ind} text-center`}>
@@ -626,11 +627,11 @@ const Splash = () => {
                           </button>
                         </td>
                         <td className={` ind_${ind} text-left`}>
-                          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                          <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', gap: '16px' }}>
                             {indexUpdate == `ind_${ind}` ? (
                               <button
                                 className={`update__table_one  actionbtn td_${ind} `}
-                                style={{ paddingRight: '10px' }}
+                                style={{}}
                                 onClick={() =>
                                   updateSplash(
                                     item.id,
@@ -648,7 +649,7 @@ const Splash = () => {
                               <button
                                 className={`update__table_one  actionbtn td_${ind}  `}
                                 // className={`update__table  actionbtn td_${ind} `}
-                                style={{ visibility: 'hidden', paddingRight: '10px' }}
+                                style={{ visibility: 'hidden', }}
                                 onClick={() =>
                                   updateSplash(
                                     item.id,

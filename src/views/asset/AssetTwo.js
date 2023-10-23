@@ -796,8 +796,10 @@ const AssetTwo = () => {
           console.error('Error:', err)
           openNotification('error', 'An error occurred while uploading the file.')
         })
+        
+        setIsCsvModalOpen(true);
+        setModal2Open(false)
 
-      setIsCsvModalOpen(true)
     } else {
       openNotificationCsvWrong()
     }
