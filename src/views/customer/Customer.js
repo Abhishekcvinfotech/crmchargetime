@@ -123,13 +123,13 @@ const Customer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [forSuspend, setForSuspend] = useState(false)
   const [forUnSuspend, setForUnSuspend] = useState(false)
-  
+
   const [forRemaining, setForRemaining] = useState([])
   // himanshu code
   const [show, setShow] = useState(false)
-  
+
   const [selectedData, setSelectedData] = useState()
-  
+
   const [updateModal, setUpdateModal] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -283,13 +283,13 @@ const Customer = () => {
   }, [])
   const handleClicked = (event) => {
     setIsShown((current) => !current)
-    if (statusfilter ==true) {
+    if (statusfilter == true) {
       setStatusfilter(true)
-    } else if (installation ==true) {
+    } else if (installation == true) {
       setInstallation(true)
-    } else if (planData ==true) {
+    } else if (planData == true) {
       setPlanData(true)
-    } else if (priceData ==true) {
+    } else if (priceData == true) {
       setPriceData(true)
     }
   }
@@ -362,11 +362,11 @@ const Customer = () => {
     }
   }
   const onChangeed = (e) => {
-   
+
     const newValue = parseInt(e.target.value, 10)
     setBasePrice(newValue)
   }
-  
+
 
   const getUsers = () => {
     setLoading(true)
@@ -578,8 +578,8 @@ const Customer = () => {
             ? 1
             : -1
           : a[col]?.toLowerCase() < b[col]?.toLowerCase()
-          ? 1
-          : -1
+            ? 1
+            : -1
       }
     })
 
@@ -605,11 +605,11 @@ const Customer = () => {
     setValue(e.target.value)
   }
 
-  
+
   const onChangeBase = (e) => {
     setPlanValue(e.target.value)
   }
- 
+
 
   const deviceAssigned = () => {
     setLoading(true)
@@ -964,7 +964,7 @@ const Customer = () => {
     }
   }
 
-  
+
 
   useEffect(() => {
     axios
@@ -1150,15 +1150,15 @@ const Customer = () => {
         body: formData,
       })
         .then((response) => response.json())
-        .then((data) => {})
+        .then((data) => { })
         .catch((error) => {
           console.error('Error:', error)
         })
 
-         openNotification()
-         setModal2Open(false)
-         
-        //  setIsCsvModalOpen(true)
+      openNotification()
+      setModal2Open(false)
+
+      //  setIsCsvModalOpen(true)
 
     } else {
       openNotificationCsvWrong()
@@ -1451,8 +1451,8 @@ const Customer = () => {
           ''
         )}
         {item?.pwa_status == 1 ||
-        item.pwa_status == 5 ||
-        (item.pwa_status == 4 && item.pause_resume == 0) ? (
+          item.pwa_status == 5 ||
+          (item.pwa_status == 4 && item.pause_resume == 0) ? (
           <Tooltip title="Pause">
             <button
               style={{ border: 'none', backgroundColor: '#fff', width: '15px' }}
@@ -1940,7 +1940,7 @@ const Customer = () => {
                     marginBottom: '12px',
                   }}
                 />
-                
+
                 {statusfilter && (
                   <div className="add_five">
                     <div className="add__eleven">
@@ -1980,7 +1980,7 @@ const Customer = () => {
                       </Radio.Group>
                     </div>
                   </div>
-                ) }
+                )}
                 {statusfilter && (
                   <div>
                     <hr
@@ -1992,7 +1992,7 @@ const Customer = () => {
                       }}
                     />
                   </div>
-                ) }
+                )}
                 {installation && (
                   <div className="add_five">
                     <div className="add__eleven">
@@ -2016,7 +2016,7 @@ const Customer = () => {
                     <CloseOutlined />
                   </span> */}
                   </div>
-                ) }
+                )}
                 {installation == true && (
                   <div>
                     <hr
@@ -2029,7 +2029,7 @@ const Customer = () => {
                     />
                   </div>
                 )}
-                {planData ==true && (
+                {planData == true && (
                   <div className="add__eight">
                     <div className="add_twelve">
                       <h6 className="add__sixx">Plan</h6>
@@ -2062,6 +2062,7 @@ const Customer = () => {
                             open={isModalOpen}
                             onOk={handleOk}
                             onCancel={handleCancel}
+                            id="addPlan_modal"
                           >
                             <input
                               onChange={(e) => setPackagePlan(e.target.value)}
@@ -2072,6 +2073,17 @@ const Customer = () => {
                               className="package__plan"
                               placeholder="Add a Package"
                             />
+
+
+                            <div className='add_plan_btn'>
+                              <button type="button" className='cancel_btn'>
+                                <span>Cancel</span>
+                              </button>
+                              <button type="button" className='ok_btn'  >
+                                <span>Ok</span></button>
+                            </div>
+
+
                           </Modal>
                           <button className="dynamic__button" onClick={showModal}>
                             <PlusOutlined className="plus__outlined" />
@@ -2083,7 +2095,7 @@ const Customer = () => {
                       </div>
                     </div>
                   </div>
-                ) }
+                )}
                 {planData == true && (
                   <div>
                     <hr
@@ -2095,7 +2107,7 @@ const Customer = () => {
                       }}
                     />
                   </div>
-                ) }
+                )}
                 {priceData == true && (
                   <div className="price__div">
                     <span className="main_div_of_pric">Price</span>
@@ -2111,24 +2123,24 @@ const Customer = () => {
                     />
                   </div>
                 )}
-                
-                {statusfilter ||installation || planData ||priceData ?(
-                <div className="mainDivOf_apply">
-                  <button className="sub_divOf_Appli" id="apply__filter">
-                    {/* <FilterFilled className="filter_outlined" /> */}
-                    Apply Filters
-                  </button>
-                  <button onClick={() => clearFilter()} className="claer_filter">
-                    {/* <ClearOutlined className="delete_outlinedd" /> */}
-                    Clear All
-                  </button>
-                </div> ) :<div className="add__four">
-                    <p>
-                      <MinusOutlined className="minus_outlined_one" />
-                      No Filters applied
-                    </p>
-                    <p>Add one of the above filters to narrow down your User list</p>
-                  </div>}
+
+                {statusfilter || installation || planData || priceData ? (
+                  <div className="mainDivOf_apply">
+                    <button className="sub_divOf_Appli" id="apply__filter">
+                      {/* <FilterFilled className="filter_outlined" /> */}
+                      Apply Filters
+                    </button>
+                    <button onClick={() => clearFilter()} className="claer_filter">
+                      {/* <ClearOutlined className="delete_outlinedd" /> */}
+                      Clear All
+                    </button>
+                  </div>) : <div className="add__four">
+                  <p>
+                    <MinusOutlined className="minus_outlined_one" />
+                    No Filters applied
+                  </p>
+                  <p>Add one of the above filters to narrow down your User list</p>
+                </div>}
               </div>
             </form>
           </div>
@@ -2565,8 +2577,8 @@ const Customer = () => {
                         </td>
                         <td>
                           {item?.energy_plan !== null &&
-                          item?.Device_Id == null &&
-                          item?.flag_status !== '1' ? (
+                            item?.Device_Id == null &&
+                            item?.flag_status !== '1' ? (
                             <div>
                               {/* <AiFillInfoCircle id="notificationicon" />{' '} */}
 
@@ -3004,9 +3016,9 @@ const Customer = () => {
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
-                        position:'relative',
-                        top:'-21px',
-                        left:'5px',
+                        position: 'relative',
+                        top: '-21px',
+                        left: '5px',
                       }}
                     >
                       {phoneError}
@@ -3051,9 +3063,9 @@ const Customer = () => {
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
-                        position:'relative',
-                        top:'-21px',
-                        left:'5px',
+                        position: 'relative',
+                        top: '-21px',
+                        left: '5px',
                       }}
                     >
                       {emailError}
@@ -3089,7 +3101,7 @@ const Customer = () => {
                     placeholder="Create a strong password"
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
-                    
+
                   />
                   {errorMessage ? (
                     <span
@@ -3098,10 +3110,10 @@ const Customer = () => {
                         color: `${colorRed}`,
                         width: '235px',
                         fontSize: '12px',
-                        position:'relative',
-                        top:'-21px',
-                        left:'5px',
-                        zIndex:'99999',
+                        position: 'relative',
+                        top: '-21px',
+                        left: '5px',
+                        zIndex: '99999',
                       }}
                     >
                       {errorMessage}
@@ -3138,13 +3150,14 @@ const Customer = () => {
                     minLength={8}
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
-                    
+
                   />
-                  <p style={{ color: 'red', display: display, fontSize: '12px' ,  position:'relative',
-                        top:'-21px',
-                        left:'5px', 
-                        zIndex:'99999',
-                         }}>
+                  <p style={{
+                    color: 'red', display: display, fontSize: '12px', position: 'relative',
+                    top: '-21px',
+                    left: '5px',
+                    zIndex: '99999',
+                  }}>
                     Password did not match !
                   </p>
 

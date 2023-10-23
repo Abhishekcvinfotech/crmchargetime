@@ -712,6 +712,34 @@ p {
   box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.16);
 }
 
+#addPlan_modal .ant-modal-footer{
+ display: block !important;
+}
+.add_plan_btn{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.add_plan_btn button{
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+
+}
+.cancel_btn{
+  background-color: #8f9fbc;
+  color: #ffffff;
+
+
+}
+.ok_btn{
+  background-color: #3378ff;
+  color: #ffffff;
+}
+
 .for_respon__modal_first_third {
   left: 791px;
   position: absolute;
@@ -1142,6 +1170,7 @@ input[type='file']::before {
   outline: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .plus__outlined {
