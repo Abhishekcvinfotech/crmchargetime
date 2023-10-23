@@ -9,6 +9,9 @@ tr:hover .actionbtn {
 .container-lg {
   padding: 0 24px !important;
 }
+.anticon-clear .clear_otline{
+  color: black !important;
+}
 
 .emporia_troes {
   color:  #324253;
@@ -183,8 +186,8 @@ border-radius: 6px;
     transform: translate(-50%,-50%);
     width: 100%;
     z-index: 999;
-    max-height: 500px;
-    overflow-x: auto;
+    max-height: 500px !important;
+    overflow-x: auto !important;
 
   }
 
@@ -206,6 +209,9 @@ border-radius: 6px;
     z-index: 999;
   }
 
+  .margen_broom{
+    margin-bottom: 2px;
+  }
 
 /* paination css start  */
 /* .ant-pagination-item {
@@ -626,7 +632,7 @@ tr input {
   width: 100%;
   z-index: 999; */
 
-     top: 30% !important;
+     top: 40% !important;
     left: 50% !important;
     transform: translate(-50% ,-50%) !important;
     max-height: 500px!important;

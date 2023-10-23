@@ -571,7 +571,7 @@ const Notification = () => {
       setLoading(false)
     }
   }
-  useEffect(() => {}, [isShown])
+  
 
   async function createNewTroesNotification() {
     setLoading(true)
@@ -614,7 +614,7 @@ const Notification = () => {
       setLoading(false)
     }
   }
-  useEffect(() => {}, [isShown])
+
 
   const onDeleteNotification = async (id) => {
     setLoading(true)
@@ -978,12 +978,12 @@ const Notification = () => {
                   <HiFilter />
                 </button>
 
-                {clearData ? (
+                {clearData && (
                   <Button
-                    className="for_Filter_Clear"
+                     className="for_Filter_Clear"
                     style={{
-                      background: 'white',
-                      color: 'red',
+                       background: 'white',
+                      
                       display: 'flex',
                       alignItems: 'center',
                       padding: '8px 15px',
@@ -991,48 +991,15 @@ const Notification = () => {
                     }}
                     onClick={clearFiltererd}
                   >
-                    <span>  <ClearOutlined  /> </span>
+                    <span>  <ClearOutlined  className='margen_broom' /> </span>
                     <span> Clear Filter </span>
                     
                   </Button>
-                ) : (
-                  ''
                 )}
               </div>
             </div>
-            {/* <div
-              style={{
-                display: 'flex',
-                gap: '10px',
-              }}
-            >
-
-                <Link to="/Trash">
-                  <button id="button" style={{ gap: '10px', marginTop: '-13px' }}>
-                    <img src={Trash} alt="frame" style={{ width: '22px', height: '15px' }} />
-                    Trash
-                  </button>
-                </Link>
-
-              <div style={{ marginTop: '-13px' }}>
-                <Button
-                  type="primary"
-                  id="button"
-                  className="btncsv"
-                  onClick={() => createNewNotification()}
-                  style={{ display: 'flex', gap: '10px' }}
-                >
-                  <img
-                    src={AddNotification}
-                    alt="frame"
-                    style={{ width: '22px', height: '15px' }}
-                  />
-                  Add New Emporia Notification
-                </BuStton>
-              </div>
-            </div> */}
-
-<div style={{ display: 'flex', gap: '24px' ,alignItems:'center' }}>
+            
+            <div style={{ display: 'flex', gap: '24px' ,alignItems:'center' }}>
              
              <div className="forAlignment_Account" style={{
                padding: clickedButton === 'Active' ? btnpadding : 0,
@@ -1122,65 +1089,7 @@ const Notification = () => {
            </div>
            
           </div>
-          <div>
-            {/* <div className="test">
-              <Link to="/Trash">
-                <span className="trash recycleBin">
-                  <span className="span"></span>
-                  <i></i>
-                </span>
-                <p className="trashp">Go to Trash Page</p>
-              </Link>
-            </div> */}
-            {/* <div style={{ display: 'flex' ,  }}>
-              <div className="forAlignment_Account">
-                <div
-                  className="forChanging_color"
-                  style={{
-                    background: 'green',
-                  }}
-                ></div>
-                <button
-                  className="btn_for_Link"
-                  style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
-                  onClick={activeNotification}
-                >
-                  Active
-                </button>
-              </div>
-              <div className="forAlignment_Account">
-                <div
-                  className="forChanging_color"
-                  style={{
-                    background: 'red',
-                  }}
-                ></div>
-                <button
-                  className="btn_for_Link"
-                  style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
-                  onClick={inActivee}
-                >
-                  In-active
-                </button>
-              </div>
-
-              <div className="forAlignment_Account">
-                <div
-                  className="forChanging_color"
-                  style={{
-                    background: 'blue',
-                  }}
-                ></div>
-                <button
-                  className="btn_for_Link"
-                  style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
-                  onClick={scheduledNotification}
-                >
-                  Scheduled
-                </button>
-              </div>
-            </div> */}
-          </div>
+          
         </div>
         {/* filter modal code starts */}
 
@@ -1214,30 +1123,9 @@ const Notification = () => {
                           <img src={FrameTwo} alt="frame" className="for_img_two" />
                           <span>Location</span>
                         </Button>
-                        {/* <Button
-                    id="status_filter"
-                    onClick={statusFilter}
-                    className="for_campaign_act"
-                    style={{ alignItems: 'center', display: 'flex' }}
-                  >
-                    <img
-                      src={user}
-                      alt="frame"
-                      className="for_img_two"
-                      style={{ width: '26px', height: '23px' }}
-                    />
-                    User
-                  </Button> */}
+                        
 
-                        {/* <Button id="location" onClick={location} className="for_campaign_act">
-                    <img
-                      src={Source}
-                      alt="frame"
-                      className="for__plan_hand"
-                      style={{ width: '28px', height: '23px' }}
-                    />
-                    Source Trigger
-                  </Button> */}
+
                         <Button
                           id="price_handle"
                           onClick={priceHandle}
@@ -1299,60 +1187,9 @@ const Notification = () => {
                       ''
                     )}
 
-                    {statusfilter ? (
-                      <div>
-                        <hr className='filter_Line' />
-                      </div>
-                    ) : (
-                      ''
-                    )}
+                   
 
-                    {planData ? (
-                      <div
-                        className="add__eight"
-                        style={{ justifyContent: 'space-between', alignItems: 'center' }}
-                      >
-                        <div className="add_twelve">
-                          <span className="add__sixx">Trigger</span>
-                          <div className="add_twenty">
-                            <Radio.Group
-                              onChange={onChangeBase}
-                              value={planValue}
-                              className="base_yy2"
-                              style={{ paddingLeft: '40px' }}
-                            >
-                              <Radio value={'Emporia'} id="amul">
-                                <div
-                                  style={{
-                                    display: 'flex',
-                                  }}
-                                >
-                                  <p id="">Emporia</p>
-                                </div>
-                              </Radio>
-                              <Radio value={'TROes'} id="amul">
-                                <div
-                                  style={{
-                                    display: 'flex',
-                                  }}
-                                >
-                                  <p id="">TROes</p>
-                                </div>
-                              </Radio>
-                            </Radio.Group>
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      ''
-                    )}
-                    {planData ? (
-                      <div>
-                        <hr className='filter_Line' />
-                      </div>
-                    ) : (
-                      ''
-                    )}
+                   
                     {priceData ? (
                       <div className="price__div" style={{ gap: '20px' }}>
                         {/* <p className="main_div_of_pric">Start Date: </p> */}
@@ -1387,7 +1224,17 @@ const Notification = () => {
                         {/* <FilterFilled className="filter_outlined" /> */}
                         Apply Filter
                       </button>
-                      <button  className="subdivision_claer_filter">
+                      <button onClick={()=>{
+                        setclearData(false)
+    setValue(0)
+    setPriceData(false)
+    setInstallation(false)
+    setstatusValue(0)
+    setPlanValue(0)
+    setBasePrice(0)
+    getUsers()
+
+                      } }  className="subdivision_claer_filter">
                         {/* <ClearOutlined className="delete_outlinedd" /> */}
                         Clear All
                       </button>
