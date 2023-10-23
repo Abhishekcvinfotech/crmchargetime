@@ -216,7 +216,7 @@ const Customer = () => {
   const onDeleteUser = async (id) => {
     setLoading(true)
 
-    if (window.confirm('Are you sure? The Account will get deleted permanently!!')) {
+    if (window.confirm('Are you sure? The Account will get deleted Permanently!!')) {
       const response = axios
         .delete(`${troesAPi}/pwa_user/${id}`)
         .then(() => {
@@ -491,7 +491,7 @@ const Customer = () => {
     let subscription_package_id = null
     let subscription_latest_invoice_id = null
     let subscription_item_id = null
-    if (window.confirm('Are you sure? The Account will get suspended permanently!!')) {
+    if (window.confirm('Are you sure? The Account will get suspended Permanently!!')) {
       axios
         .put(`https://www.troes.io/suspend_user.php?user_id=${id}`)
         .then((res) => console.log(res, 're'))
@@ -520,7 +520,7 @@ const Customer = () => {
   }
   const onUnSuspendUser = async (id) => {
     let pwa_status = 0
-    if (window.confirm('Are you sure? The Account will remove from suspended permanently!!')) {
+    if (window.confirm('Are you sure? The Account will remove from suspended Permanently!!')) {
       let result = await fetch(`${troesAPi}/unsuspend/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },

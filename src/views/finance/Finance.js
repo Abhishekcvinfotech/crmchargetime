@@ -137,7 +137,7 @@ if(requestData !== ''){
   }, [deleted])
   const deleteFinance = async (id) => {
     setLoading(true)
-    if (window.confirm('Are you sure? Partner Invoice Report will be deleted permanently? ')) {
+    if (window.confirm('Are you sure? Partner Invoice Report will be deleted Permanently? ')) {
      await axios
         .delete(`${troesAPi}/reportdelete/${id}`)
         .then((res) => {
@@ -228,9 +228,9 @@ if(requestData !== ''){
             type="primary"
             id='generate_report_btn'
             onClick={handleFileDownload}
-            style={{height:'40px', display:'flex',  alignItems: 'center'}}
+            style={{height:'48px', display:'flex',  alignItems: 'center',gap:'16px'}}
           >
-          <img src={right_arrow} alt="edit"  style={{width:"22px",height:"15px",paddingRight:"4px"}} />
+          <img src={right_arrow} alt="edit"  style={{width:"18px",height:"21px",}} />
             Generate Report
           </Button>
 

@@ -375,11 +375,15 @@ const Location = () => {
           // error()
         })
       openNotification()
+      setModal2Open(false);
+
     } else {
       openNotificationCsvWrong()
     }
     filereplace()
   }
+
+
   const text = <span>Addresses in this Installation</span>
   const textTwo = <span>Devices in this Installation</span>
   const textOne = <span>Installation Report</span>
@@ -428,7 +432,7 @@ const Location = () => {
 
   const indexOfLastPage = page * postPerPage
   const indexOfFirstPage = indexOfLastPage - postPerPage
-  const currentPosts = locationData &&locationData.slice(indexOfFirstPage, indexOfLastPage)
+  const currentPosts = locationData && locationData.slice(indexOfFirstPage, indexOfLastPage)
   const onShowSizeChange = (current, pageSize) => {
     setPostPerPage(pageSize)
   }
@@ -519,6 +523,7 @@ const Location = () => {
           open={isModalOpenForAddress}
           onOk={handleOked}
           onCancel={handleCanceled}
+          style={{ height: '550px', overflowX: 'auto' }}
         >
           <p style={{ fontSize: '15px', fontWeight: 'bold' }}>Device Addresses</p>
           {dataforAddress &&
@@ -556,12 +561,12 @@ const Location = () => {
               <span className="total__location"> ({locationData?.length})</span>
             </div>
 
-            <div className="total_installation_wrap">
+            {/* <div className="total_installation_wrap">
               <span className="arrow_customers">Total Installation</span>
               <span>
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
-            </div>
+            </div> */}
           </div>
 
           <button onClick={handleClicked} className="customer_add_button">
@@ -622,7 +627,7 @@ const Location = () => {
               <div>
                 <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                   <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import Device Address </span>
+                  <span className="downlaodtext"> Import  </span>
                 </button>
                 {
 
@@ -634,15 +639,12 @@ const Location = () => {
                     onCancel={() => setModal2Open(false)}
                     width={1000}
                   >
-
                     <div>
                       <form
-                        className="import_csv_class"
                         onSubmit={handleSubmit}
-
+                        className="import_csv_class"
                       >
                         <input
-                          className="w-55 input_type_file"
                           ref={inputRef}
                           style={{ width: csvwidth, color: csvTextColor }}
                           accept=".csv"
@@ -651,41 +653,25 @@ const Location = () => {
                           required
                         />
                         <div className="fileimport_btn">
-                          {/* <button
-                  className="import_report"
-                  style={bgColor ? { backgroundColor: '#1890ff' } : { backgroundColor: '#cc9ceb' }}
-                  type="submit"
-                >
-                  <img src={import_one} alt="edit" style={{ width: '22px', height: '15px' }} />
-                  Import Device Address
-                </button> */}
 
                           <button
                             type="button"
                             className="fileimport_cancel"
                             onClick={() => setModal2Open(false)}
                           >
-                            {' '}
-                            <span>Cancel</span>{' '}
+                            <span>Cancel</span>
                           </button>
 
                           <button type="submit" className="fileimportok_btn">
-
                             <span> Import </span>
                           </button>
-
-
 
                         </div>
                       </form>
 
 
                     </div>
-
-
-
                   </Modal>
-
                 }
               </div>
             </div>
@@ -953,9 +939,6 @@ const Location = () => {
           </div>
 
         )}
-
-
-
         </div>
 
         <div className="table_wrap">
@@ -1086,8 +1069,6 @@ const Location = () => {
               }}
             />
           </div>
-
-
         </div>
         <div
           className="user__detail__popup__Customer_noti"
@@ -1095,8 +1076,6 @@ const Location = () => {
             display: userAdmit ? 'block' : 'none',
           }}
         >
-
-
           <div>
             <p className="admin_registerd__pop_noti">
               {' '}
@@ -1104,8 +1083,6 @@ const Location = () => {
               <span> New location added successfully.</span>{' '}
             </p>
           </div>
-
-
         </div>
         <div
           className="user__detail__popup__Customer_noti"
@@ -1120,9 +1097,6 @@ const Location = () => {
               <span> Location information updated. </span>{' '}
             </p>
           </div>
-
-
-
         </div>
         <div
           className="user__detail__popup__location userdeletmodal"

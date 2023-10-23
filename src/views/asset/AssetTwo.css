@@ -178,6 +178,10 @@ line-height: normal;
 
 }
 
+.play__button{
+border-right: 1px solid #8F9FBC !important;
+border-width: 1.5px !important;
+}
 
 
 .emporia_data_class {
@@ -199,10 +203,11 @@ line-height: normal;
 .minus_circle_css {
   cursor: pointer;
   display: inline-block;
-  margin-left: 5px;
+  /* margin-left: 5px;
   margin-right: 5px;
-  margin-top: 4px;
+  margin-top: 4px; */
   background: none;
+ 
 }
 
 
@@ -347,7 +352,7 @@ height: 40px !important;
   display: inline-block;
   color: #8f9fbc;
   font-family: DM Sans;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -554,6 +559,15 @@ color:#3378FF;
   align-items: center;
   padding: 8px 20px !important;
 }
+.reportname{
+  color:  #213446;
+  display: inline-block;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  
+}
+
 
 .play__button {
   border: none;
@@ -587,6 +601,9 @@ color:#3378FF;
   padding-left: 7px;
   margin-top: -5px;
 }
+ /* .table td{
+  text-align: left !important;
+} */
 
 /* Modal Popup start */
 

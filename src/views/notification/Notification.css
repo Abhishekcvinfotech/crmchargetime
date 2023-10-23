@@ -177,9 +177,14 @@ border-radius: 6px;
     left: 504px;
     top: 135px;
     max-width: 721px;
-    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     width: 100%;
     z-index: 999;
+    max-height: 500px;
+    overflow-x: auto;
 
   }
 
@@ -579,7 +584,10 @@ tr input {
   left:0;
   top: 135px;
   max-width: 721px;
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   width: 100%;
   z-index: 999;
 }

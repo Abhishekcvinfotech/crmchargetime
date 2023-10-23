@@ -461,7 +461,7 @@ const Customer = () => {
   }
   const onDeleteUser = async (id) => {
     setLoading(true)
-    if (window.confirm('Are you sure? The Account will get deleted permanently !!')) {
+    if (window.confirm('Are you sure? The Account will get deleted Permanently !!')) {
       const response = axios
         .delete(`${troesAPi}/pwa_user/${id}`)
         .then(() => {
@@ -920,7 +920,7 @@ const Customer = () => {
     let subscription_package_id = null
     let subscription_latest_invoice_id = null
     let subscription_item_id = null
-    if (window.confirm('Are you sure? The Account will get suspended permanently!!')) {
+    if (window.confirm('Are you sure? The Account will get suspended Permanently!!')) {
       let result = await fetch(`${troesAPi}/suspend/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
@@ -945,7 +945,7 @@ const Customer = () => {
   }
   const onUnSuspendUser = async (id) => {
     let pwa_status = 0
-    if (window.confirm('Are you sure? The Account will remove from suspended permanently!!')) {
+    if (window.confirm('Are you sure? The Account will remove from suspended Permanently!!')) {
       let result = await fetch(`${troesAPi}/unsuspend/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
@@ -1149,8 +1149,12 @@ const Customer = () => {
         .catch((error) => {
           console.error('Error:', error)
         })
-      openNotification()
-      setIsCsvModalOpen(true)
+
+         openNotification()
+         setModal2Open(false)
+         
+        //  setIsCsvModalOpen(true)
+
     } else {
       openNotificationCsvWrong()
     }
@@ -1505,7 +1509,7 @@ const Customer = () => {
               <span className="customer_first_span"> Customers </span>{' '}
               <span className="totalcustomer"> ({totalUsers}) </span>{' '}
             </h2>
-            <h5 className="linktotalcustomer">
+            {/* <h5 className="linktotalcustomer">
               {' '}
               <span className="arrow_customers">
                 <Link to="/"> Total Customers </Link>
@@ -1515,8 +1519,12 @@ const Customer = () => {
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
             </h5>
+
+           
           </div>
 
+        
+          
           <button onClick={() => setAddUserModal(true)} className="customer_add_button">
             <span className="plusicon">+</span>
             <span>Add Customer</span>
@@ -1581,7 +1589,7 @@ const Customer = () => {
               <div id="file_uplaoder_modal">
                 <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                   <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import CSV File </span>
+                  <span className="downlaodtext"> Import  </span>
                 </button>
 
                 <Modal
@@ -1856,7 +1864,7 @@ const Customer = () => {
               )}
             </div>
           </div>
-        </div>
+     
         {loading ? (
           <div className="loading_part">
             <Spin size="large" />
@@ -2534,7 +2542,7 @@ const Customer = () => {
                     } else if (item.pwa_status === 1) {
                       color = '#3CB72C'
                     } else if (item.pwa_status === 2) {
-                      color = 'yellow'
+                      color = '#935CED'
                     } else if (item.pwa_status === 6) {
                       color = '#5A5A5A'
                     } else {
@@ -2917,7 +2925,7 @@ const Customer = () => {
             </p>
           </div>
         </div>
-      </div>
+      
       {/* // himanshu code starts */}
       {/* add user modal starts */}
       {addUserModal ? (
@@ -2996,9 +3004,9 @@ const Customer = () => {
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
-                        position: 'relative',
-                        top: '-12px',
-                        left: '5px',
+                        position:'relative',
+                        top:'-12px',
+                        left:'5px',
                       }}
                     >
                       {phoneError}
@@ -3043,9 +3051,9 @@ const Customer = () => {
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
-                        position: 'relative',
-                        top: '-12px',
-                        left: '5px',
+                        position:'relative',
+                        top:'-12px',
+                        left:'5px',
                       }}
                     >
                       {emailError}
@@ -3081,6 +3089,7 @@ const Customer = () => {
                     placeholder="Create a strong password"
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
+                    
                   />
                   {errorMessage ? (
                     <span
@@ -3089,9 +3098,9 @@ const Customer = () => {
                         color: `${colorRed}`,
                         width: '235px',
                         fontSize: '12px',
-                        position: 'relative',
-                        top: '-12px',
-                        left: '5px',
+                        position:'relative',
+                        top:'-12px',
+                        left:'5px',
                       }}
                     >
                       {errorMessage}
@@ -3128,17 +3137,11 @@ const Customer = () => {
                     minLength={8}
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
+                    
                   />
-                  <p
-                    style={{
-                      color: 'red',
-                      display: display,
-                      fontSize: '12px',
-                      position: 'relative',
-                      top: '-12px',
-                      left: '5px',
-                    }}
-                  >
+                  <p style={{ color: 'red', display: display, fontSize: '12px' ,  position:'relative',
+                        top:'-12px',
+                        left:'5px',  }}>
                     Password did not match❗
                   </p>
 

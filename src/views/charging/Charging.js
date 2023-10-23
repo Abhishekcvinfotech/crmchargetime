@@ -107,7 +107,7 @@ const Charging = () => {
 
   const onDeleteUser = async (id) => {
     setLoading(true)
-    if (window.confirm('Are you sure? The charging rate will get deleted permanently!!')) {
+    if (window.confirm('Are you sure? The charging rate will get deleted Permanently!!')) {
       const response = axios
         .delete(`${troesAPi}/partner_charge_rate_delete/${id}`)
         .then(() => {
@@ -353,7 +353,7 @@ const Charging = () => {
                       value={partner}
                       onChange={(e) => setPartner(e.target.value)}
                       required
-
+                      readOnly
                     />
                     <input
                       type="hidden"

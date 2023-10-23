@@ -175,7 +175,7 @@ const Trash = () => {
 
   const onDeleteNotification = async (id) => {
     setLoading(true)
-    if (window.confirm('Do you really want to delete this notification permanently!')) {
+    if (window.confirm('Do you really want to delete this notification Permanently!')) {
       const response = axios
         .delete(`${troesAPi}/deletenotification/${id}`)
         .then(() => {
@@ -223,9 +223,9 @@ const Trash = () => {
           <h2 className="all_customer_of_page" >
             <span>Deleted Notifications</span> <span className='total_notification'>({totTrashNotification}) </span>
           </h2>
-          <p className='total_notification'>
+          {/* <p className='total_notification'>
             <span className='tnotification'> Total Notifications </span> <span>  <img src={Rightarrow} alt=" right arrow" />  </span>
-          </p>
+          </p> */}
         </div>
         <div className='back_to_app_notification' >
           <div style={{ display: 'flex' }}>
@@ -244,8 +244,6 @@ const Trash = () => {
         >
 
           <p className="text">Emporia Notifications</p>
-
-
           <div className="table_wrapper">
             <table className="table table-hover">
               <thead className="">
@@ -305,10 +303,11 @@ const Trash = () => {
                           <td className="px-2">{item.endDate}</td>
                           <td className="px-2">{item.message_time}</td>
                           <td className="px-2">
+                            <div style={{display:'flex', alignItems:'center',gap:'8px' , justifyContent:'center' }}> 
                             <Tooltip title="Restore">
                               <button
                                 className="actionbtn"
-                                style={{ paddingLeft: '5px', color: 'red', padding: '1px' }}
+                                style={{ paddingLeft: '5px', color: 'red', padding: '1px'  , }}
                                 onClick={() => restoreNotification(item.id)}
                               >
                                 <img
@@ -323,12 +322,13 @@ const Trash = () => {
                             <Tooltip title="Delete">
                               <button
                                 className="actionbtn"
-                                style={{ paddingLeft: '10px', color: 'red', padding: '4px' }}
+                                style={{  color: 'red', width:'16px' , height:'16px' }}
                                 onClick={() => onDeleteNotification(item.id)}
                               >
                                 <DeleteOutlined className='delete_btn_global' />
                               </button>
                             </Tooltip>
+                            </div>
                           </td>
                         </tr>
                         {openRowIndex === index && showMessage ? (
@@ -362,7 +362,7 @@ const Trash = () => {
 
 
             </table>
-            <div className='pagination_wrap'>
+            {/* <div className='pagination_wrap'>
               <Pagination
                 onChange={handlePagination}
                 pageSize={postPerPage}
@@ -373,7 +373,7 @@ const Trash = () => {
                 onShowSizeChange={onShowSizeChange}
                 itemRender={itemRender}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <p className="text">TROes Notifications</p>
@@ -443,10 +443,12 @@ const Trash = () => {
                         <td className="px-2">{item.endDate === '1895-01-01 00:00:00' ? '24/7' : item.endDate}</td>
                         <td className="px-2">{item.message_time}</td>
                         <td className="px-2">
+
+                          <div style={{ display:'flex', alignItems:'center',gap:'8px', justifyContent:'center' }}>  
                           <Tooltip title="Restore">
                             <button
                               className="actionbtn"
-                              style={{ paddingLeft: '5px', color: 'red', padding: '1px' }}
+                              style={{  color: 'red', padding: '1px'  }}
                               onClick={() => restoreNotification(item.id)}
                             >
                               <img
@@ -461,12 +463,14 @@ const Trash = () => {
                           <Tooltip title="Delete">
                             <button
                               className="actionbtn"
-                              style={{ paddingLeft: '10px', color: 'red', padding: '4px' }}
+                              style={{  color: 'red',   width:'16px' , height:'16px' }}
                               onClick={() => onDeleteNotification(item.id)}
                             >
                               <DeleteOutlined className='delete_btn_global' />
                             </button>
                           </Tooltip>
+                          </div>
+
                         </td>
                       </tr>
                       {openRowIndexTroes === index && showMessageTroes ? (
@@ -521,12 +525,12 @@ const Trash = () => {
           >
             <div  className='notification_image'>
             <span>  <img src={CheckgreenCircle} alt="Cyber Vision infotech" /> </span> 
-              <span className="admin_registerd__pop">Notification Deleted permanently.</span>
+              <span className="admin_registerd__pop">Notification Deleted Permanently.</span>
             </div>
           </div>
 
 
-
+{/* 
           <div className='pagination_wrap'>
             <Pagination
               onChange={handlePaginationEmporia}
@@ -539,7 +543,7 @@ const Trash = () => {
               itemRender={itemRenderEmporia}
               style={{ paddingLeft: '12px', display: 'flex', justifyContent: 'flex-start' }}
             />
-          </div>
+          </div> */}
 
         </div>
       </div>

@@ -274,12 +274,25 @@ form select {
   padding-right: 10px;
 }
 
+#addModalsecond input{
+  padding: 5px 15px;
+  margin: 3px 0px 10px 0px;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  background: #fff;
+  margin-top: 0;
+  margin-bottom: 24px;
+
+}
+
 
 .user__detail__popup__Customer_noti {
   z-index: 1;
   border-radius: 6px;
   height: 60px;
- 
   position:fixed;
   top:80px;
   border-radius: 6px;
@@ -440,6 +453,22 @@ td {
   justify-content: space-between;
 }
 
+input[type=password]{
+
+  padding: 5px 15px !important;
+  outline: none !important;
+  border: none !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  border: 1px solid #f1f1f1 !important;
+  background: #fff !important;
+
+}
+
+form input {
+  height: 48px !important;
+}
+
 .admin__input {
   padding: 5px 15px;
   margin: 3px 0px 10px 0px;
@@ -451,6 +480,25 @@ td {
   background: #fff;
   margin-top: 0;
   margin-bottom: 24px;
+
+}
+
+
+.modalscroll .ant-input-suffix{
+
+  margin: 0px !important;
+  position: absolute;
+  right: 10px;
+  top: 28px;
+  
+
+}
+
+.modaleye .ant-input-suffix{
+  margin: 0px !important;
+  position: absolute;
+  right: 10px;
+  top: 16px;
 }
 
 #form__admin_Edit label {
@@ -461,10 +509,27 @@ td {
   font-weight: 700;
   line-height: normal;
 }
+
 #form__admin_Edit input {
-  margin-top: 12px;
-  margin-bottom: 24px;
+ 
+  margin-top: 12px !important;
+  margin-bottom: 24px !important;
+  height: 48px !important;
+  border: 1px solid #f1f1f1 !important;
+  border-radius: 6px !important;
+  padding-left: 15px !important;
 }
+  
+.modalscroll input[type=text]{
+
+  padding: 5px 15px !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  border: 1px solid #f1f1f1 !important;
+  background: #fff !important;
+
+}
+
 #confirm__delete_Admin {
   display: flex;
   align-items: center;

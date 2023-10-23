@@ -26,11 +26,12 @@ table {
   border-spacing: 100px;
 }
 
+.ant-picker-conten table 
 
 #searchBox::placeholder{
   color:  #6C757D;
 font-family: DM Sans;
-font-size: 16px;
+font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -446,10 +447,7 @@ input[type='file']::file-selector-button {
   box-shadow: none;
 }
 
-/* .global_th {
-  font-size: 16px;
-  font-weight: bolder;
-} */
+
 
 .editn_btn_global {
   width: 15px;
@@ -466,19 +464,38 @@ input[type='file']::file-selector-button {
 .trindicator {
   height: 45px;
 }
+
 td {
 
-  height: 60px;
+  height: 60px !important;
   font-size: 14px;
   font-size: 13px;
  
 }
+.ant-picker-content td{
+  height: unset !important;
+}
+.ant-picker-input{
+padding-left: 10px;
+
+}
+
+
+input[type=password]{
+
+  padding: 5px 15px !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  border: 1px solid #f1f1f1 !important;
+  background: #fff !important;
+
+}
+
 
 thead th {
-
-  font-size: 14px  !important;
-  
+  font-size: 15px  !important;
 }
+
 }
 @media only screen and (max-width: 1240px) {
   /* pagination css  start*/
