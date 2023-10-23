@@ -1201,8 +1201,8 @@ const Notification = () => {
                     </div>
                     <br />
                     <div className="add__three">
-                      <p>Find the Users you are looking for : </p>
-                      <div className="for__marginn">
+                      {/* <p>Find the Users you are looking for : </p> */}
+                      <div className="for__marginn  right_alignment">
                         <Button
                           id="campaign_activity"
                           onClick={campaignActivity}

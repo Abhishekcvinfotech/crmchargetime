@@ -700,7 +700,7 @@ p {
 
 .for_respon__modal_first {
   left: 791px;
-  z-index: 99999 !important;
+  z-index: 999 !important;
   position: absolute;
   top: 265px;
   max-width: 721px;
@@ -830,6 +830,9 @@ p {
   color: #fff;
 }
 
+.for__margin__two{
+  z-index: 999999 !important;
+}
 /* .for__margin__two {
   display: flex;
   padding-left: 53px;
