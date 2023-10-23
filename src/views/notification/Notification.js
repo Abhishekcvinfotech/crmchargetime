@@ -232,9 +232,11 @@ const Notification = () => {
     return {}
   }
   const onChangeed = (value) => {
+   
     setBasePrice(1)
     setStartDate(moment(value).format('YYYY-MM-DD HH:mm:ss'))
   }
+ 
 
   const onChangeedTwo = (value) => {
     // alert('test')
@@ -1194,7 +1196,7 @@ const Notification = () => {
                             format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
                             onChange={onChangeed}
                             onOk={onOk}
-                           
+                           value={startDate ? moment(startDate) : null}
                             disabledDate={disabledDateEnd}
                             disabledTime={disabledDateTimeEnd}
                           />
@@ -1207,7 +1209,7 @@ const Notification = () => {
                             format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
                             onChange={onChangeedTwo}
                             onOk={onOk}
-                            
+                            value={stopDate ? moment(stopDate) : null}
                             disabledDate={disabledDateEnd}
                             disabledTime={disabledDateTimeEnd}
                           />
