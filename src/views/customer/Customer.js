@@ -123,18 +123,13 @@ const Customer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [forSuspend, setForSuspend] = useState(false)
   const [forUnSuspend, setForUnSuspend] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
-  const [sevenUsuage, setSevenUsuage] = useState([])
-  const [dailyUsusage, setdailyUsusage] = useState('')
-  const [monthUsuage, setMonthUsusage] = useState([])
-  const [threeMonUsuage, setThreeMonUsusage] = useState([])
-  const [yearlyUsuage, setYearlyUsusage] = useState([])
+  
   const [forRemaining, setForRemaining] = useState([])
   // himanshu code
   const [show, setShow] = useState(false)
-  const [rowData, SetrowData] = useState([])
+  
   const [selectedData, setSelectedData] = useState()
-  const [RowData, SetRowData] = useState([])
+  
   const [updateModal, setUpdateModal] = useState(false)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -218,7 +213,7 @@ const Customer = () => {
   const [paddingcolor, setPaddingcolor] = useState('none')
   const [borderRadius, setBorderRadius] = useState('')
   const [clickedButton, setClickedButton] = useState(null)
-  
+
   const [modal2Open, setModal2Open] = useState(false)
   const handleIconPaddingClick = (buttonId) => {
     setClickedButton(buttonId)
@@ -226,11 +221,8 @@ const Customer = () => {
     setPaddingcolor('#F1F1F1')
     setBorderRadius('6px')
     setShowCrossIcon(true)
-
   }
 
-  var offset = new Date().toString().match(/([A-Z]+[\+-][0-9]+)/)[1];
-console.log(offset,'off');
   const openNotification = () => {
     notification.open({
       // message: 'Notification Title',
@@ -270,6 +262,11 @@ console.log(offset,'off');
       validateEmail(email)
     }
   }, [email])
+  useEffect(() => {
+    if (email == '') {
+      setEmailError('')
+    }
+  }, [email])
 
   // console.log(locateData)
   // himanshu code ends
@@ -279,6 +276,18 @@ console.log(offset,'off');
       navigate('/login')
     }
   }, [])
+  const handleClicked = (event) => {
+    setIsShown((current) => !current)
+    if (statusfilter ==true) {
+      setStatusfilter(true)
+    } else if (installation ==true) {
+      setInstallation(true)
+    } else if (planData ==true) {
+      setPlanData(true)
+    } else if (priceData ==true) {
+      setPriceData(true)
+    }
+  }
   const showModal = () => {
     setIsModalOpen(true)
     setIsShown((current) => !current)
@@ -309,7 +318,7 @@ console.log(offset,'off');
     document.getElementById('location').style.backgroundColor = '#1890ff'
     document.getElementById('price_handle').style.backgroundColor = '#1890ff'
     document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
-    setStatusfilter(!statusfilter)
+    setStatusfilter((data) => !data)
     if (statusfilter === true) {
       document.getElementById('status_filter').style.backgroundColor = '#1890ff'
     }
@@ -320,7 +329,7 @@ console.log(offset,'off');
     document.getElementById('location').style.backgroundColor = '#1890ff'
     document.getElementById('price_handle').style.backgroundColor = '#1890ff'
     document.getElementById('status_filter').style.backgroundColor = '#1890ff'
-    setInstallation(!installation)
+    setInstallation((data) => !data)
     if (installation === true) {
       document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
     }
@@ -331,7 +340,7 @@ console.log(offset,'off');
     document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
     document.getElementById('price_handle').style.backgroundColor = '#1890ff'
     document.getElementById('status_filter').style.backgroundColor = '#1890ff'
-    setPlanData(!planData)
+    setPlanData((data) => !data)
     if (planData === true) {
       document.getElementById('location').style.backgroundColor = '#1890ff'
     }
@@ -342,19 +351,17 @@ console.log(offset,'off');
     document.getElementById('location').style.backgroundColor = '#1890ff'
     document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
     document.getElementById('status_filter').style.backgroundColor = '#1890ff'
-    setPriceData(!priceData)
+    setPriceData((data) => !data)
     if (priceData === true) {
       document.getElementById('price_handle').style.backgroundColor = '#1890ff'
     }
   }
   const onChangeed = (e) => {
-    console.log('value sof proice is ', e)
+   
     const newValue = parseInt(e.target.value, 10)
     setBasePrice(newValue)
   }
-  const handleClicked = (event) => {
-    setIsShown((current) => !current)
-  }
+  
 
   const getUsers = () => {
     setLoading(true)
@@ -410,7 +417,6 @@ console.log(offset,'off');
     setClickedButton(null)
   }
 
-
   const clearFilter = () => {
     setStatusfilter(false)
     setInstallation(false)
@@ -422,6 +428,13 @@ console.log(offset,'off');
     setPlanValue(0)
     setValue(0)
     setstatusValue(0)
+
+    // jj
+    setclearData(false)
+
+    getUsers()
+
+    // mm
     document.getElementById('location').style.backgroundColor = '#1890ff'
     document.getElementById('campaign_activity').style.backgroundColor = '#1890ff'
     document.getElementById('price_handle').style.backgroundColor = '#1890ff'
@@ -430,7 +443,7 @@ console.log(offset,'off');
   useEffect(() => {
     getUsers()
   }, [forSuspend, forUnSuspend, deleted])
-  
+
   const indexOfLastPage = page * postPerPage
   const indexOfFirstPage = indexOfLastPage - postPerPage
   const currentPosts = data?.slice(indexOfFirstPage, indexOfLastPage)
@@ -494,10 +507,10 @@ console.log(offset,'off');
     })
       .then(function (response) {
         setData(response.data)
-        
+
         setTotal(response.data?.length)
-          setLoading(false)
-          handlePagination((value) => setPage(1))
+        setLoading(false)
+        handlePagination((value) => setPage(1))
       })
       .catch(function (error) {
         console.log(error)
@@ -523,9 +536,7 @@ console.log(offset,'off');
       if (basePrice !== 0) {
         valueToPush['energy_price'] = basePrice
       }
-      // document.getElementById('handle__addFilter').style.background = '#1890ff';
-      // document.getElementById('handle__addFilter').style.color = '#fff';
-      // document.getElementById('handle__addFilter').style.background = 'red'
+
       setclearData(true)
       axios({
         url: `${troesAPi}/filter1`,
@@ -533,7 +544,6 @@ console.log(offset,'off');
         data: valueToPush,
       })
         .then(function (response) {
-          
           setData(response.data)
           setTotal(response.data?.length)
           setLoading(false)
@@ -547,8 +557,6 @@ console.log(offset,'off');
     }
   }
   const totalUsers = activeData?.length
-
-  
 
   const sorting = (col) => {
     const sortOrder = sortingState[col] === 'ASC' ? 'DSC' : 'ASC'
@@ -575,7 +583,7 @@ console.log(offset,'off');
 
   const clearFiltererd = () => {
     document.getElementById('handle__addFilter').style.background = '#f1f1f1'
-   
+
     // document.getElementById('handle__addFilter').style.background = 'red'
     setclearData(false)
     setValue(0)
@@ -592,23 +600,12 @@ console.log(offset,'off');
     setValue(e.target.value)
   }
 
-  const statuscut = (e) => {
-    setstatusValue(!e.target.checked)
-    setstatusValue(false)
-  }
-  const RadioPlan = (e) => {
-    setValue(!e.target.checked)
-    setValue(false)
-  }
+  
   const onChangeBase = (e) => {
     setPlanValue(e.target.value)
   }
-  const RadioBase = (e) => {
-    setclearData(false)
-    setPlanValue(!e.target.checked)
-    setPlanValue(false)
-  }
-  // himanshu code starts
+ 
+
   const deviceAssigned = () => {
     setLoading(true)
     setFontWeight(700)
@@ -907,7 +904,7 @@ console.log(offset,'off');
         })
     }
   }
- 
+
   useEffect(() => {
     viewsPlan()
   }, [forRefreshing, forRadioDelete])
@@ -962,18 +959,7 @@ console.log(offset,'off');
     }
   }
 
-  const showModaled = () => {
-    setIsOpen(true)
-  }
-  const showModaledFalse = () => {
-    setIsOpen(false)
-  }
-  const handleOkay = () => {
-    setIsOpen(false)
-  }
-  const handleCan = () => {
-    setIsOpen(false)
-  }
+  
 
   useEffect(() => {
     axios
@@ -1214,7 +1200,7 @@ console.log(offset,'off');
     setAddress('')
     setAddress2('')
     setMobile('')
-    setInstallation('')
+    // setInstallation('')
     setZipcode('')
     setState('')
     setPassword('')
@@ -1242,7 +1228,7 @@ console.log(offset,'off');
       })
 
       let res = await result.json()
-      
+
       if (res.error) {
         setUserAdded('none')
         alert(res.message)
@@ -1290,7 +1276,7 @@ console.log(offset,'off');
     setAddress('')
     setAddress2('')
     setMobile('')
-    setInstallation('')
+    // setInstallation('')
     setNewZipcode('')
     setNewState('')
     setPassword('')
@@ -1299,12 +1285,11 @@ console.log(offset,'off');
     setErrorMessage('')
   }
   const handleSelect = (e) => {
-    
     setLocationId(e.target.selectedOptions[0].getAttribute('data-name'))
     axios
       .get(`${troesAPi}/installation/${e.target.selectedOptions[0].getAttribute('data-name')}`)
       .then((res) => {
-        console.log(res.data,'res')
+        console.log(res.data, 'res')
         setNewZipcode(res.data[0].ZIP_code)
         setNewState(res.data[0].state)
         // setLocationId('')
@@ -1423,7 +1408,7 @@ console.log(offset,'off');
       setLoading(false)
     }
   }
-  
+
   const content = (item) => {
     return (
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
@@ -1513,7 +1498,6 @@ console.log(offset,'off');
   return (
     <>
       <div className="container-fluid customer_information">
-       
         <div className="customer_addbutton_wrap">
           <div className="tcount">
             <h2 className="all_customer_of_page">
@@ -1531,12 +1515,8 @@ console.log(offset,'off');
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
             </h5>
-
-           
           </div>
 
-        
-          
           <button onClick={() => setAddUserModal(true)} className="customer_add_button">
             <span className="plusicon">+</span>
             <span>Add Customer</span>
@@ -1545,7 +1525,6 @@ console.log(offset,'off');
 
         <CSVLink
           data={csvdata}
-          
           filename={`${csvName}_Report.csv`}
           target="_blank"
           ref={csvDownloadRef}
@@ -1598,37 +1577,7 @@ console.log(offset,'off');
                 )}
               </div>
             </div>
-            <div
-              // style={{
-              //   alignItems: 'center',
-              //   position: 'absolute',
-              //   right: '20px',
-              //   display: 'flex',
-              //   gap: '10px',
-              //   flexWrap: 'wrap',
-              //   marginTop: '-15px',
-              // }}
-              className="csv_box"
-            >
-              {/* <form
-                onSubmit={handleSubmit}
-                style={{ display: 'flex', gap: '6px', alignItems: 'center' }}
-                className="csv_form"
-              >
-                <input
-                  ref={inputRef}
-                  type="file"
-                  style={{ width: csvwidth, color: csvTextColor }}
-                  onChange={handleFileChange}
-                  accept=".csv"
-                  required
-                />
-
-                <button type="submit" className="import_report">
-                  <BsCloudDownload className="cloud_downlaod_icon" />
-                  <span className="downlaodtext"> Import CSV File </span>
-                </button>
-              </form> */}
+            <div className="csv_box">
               <div id="file_uplaoder_modal">
                 <button type="submit" className="import_report" onClick={() => setModal2Open(true)}>
                   <BsCloudDownload className="cloud_downlaod_icon" />
@@ -1707,7 +1656,9 @@ console.log(offset,'off');
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#DB7E06' }}></span>
-                <span style={{ borderBottom: borderred }} className='border_bottom'>Assigned</span>
+                <span style={{ borderBottom: borderred }} className="border_bottom">
+                  Assigned
+                </span>
               </button>
               {clickedButton === 'Assigned' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1735,7 +1686,10 @@ console.log(offset,'off');
                   }}
                 >
                   <span className="forChanging_color" style={{ background: '#19B3B3' }}></span>
-                  <span style={{ borderBottom: borderred1 }} className='border_bottom'> Un-assigned</span>
+                  <span style={{ borderBottom: borderred1 }} className="border_bottom">
+                    {' '}
+                    Un-assigned
+                  </span>
                 </button>
                 {clickedButton === 'Un-assigned' && (
                   <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1763,7 +1717,10 @@ console.log(offset,'off');
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#3378FF' }}></span>
-                <span style={{ borderBottom: borderred2 }} className='border_bottom'> Registered</span>
+                <span style={{ borderBottom: borderred2 }} className="border_bottom">
+                  {' '}
+                  Registered
+                </span>
               </button>
               {clickedButton === 'Registered' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1795,7 +1752,10 @@ console.log(offset,'off');
                     background: '#3CB72C',
                   }}
                 ></span>
-                <span style={{ borderBottom: borderred3 }} className='border_bottom'> Active</span>
+                <span style={{ borderBottom: borderred3 }} className="border_bottom">
+                  {' '}
+                  Active
+                </span>
               </button>
               {clickedButton === 'Active' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1827,7 +1787,9 @@ console.log(offset,'off');
                     background: '#935CED ',
                   }}
                 ></span>
-                <span style={{ borderBottom: borderred4 }} className='border_bottom'>In-active</span>
+                <span style={{ borderBottom: borderred4 }} className="border_bottom">
+                  In-active
+                </span>
               </button>
               {clickedButton === 'In-active' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1854,7 +1816,10 @@ console.log(offset,'off');
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#8F9FBC' }}></span>
-                <span style={{ borderBottom: borderred5 }} className='border_bottom'> Paused</span>
+                <span style={{ borderBottom: borderred5 }} className="border_bottom">
+                  {' '}
+                  Paused
+                </span>
               </button>
               {clickedButton === 'Paused' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1881,7 +1846,10 @@ console.log(offset,'off');
                 }}
               >
                 <span className="forChanging_color" style={{ background: '#F42B3D' }}></span>
-                <span style={{ borderBottom: borderred6 }} className='border_bottom'> Suspended</span>
+                <span style={{ borderBottom: borderred6 }} className="border_bottom">
+                  {' '}
+                  Suspended
+                </span>
               </button>
               {clickedButton === 'Suspended' && (
                 <IoIosClose className="sortcross" onClick={sortedDate} />
@@ -1898,11 +1866,7 @@ console.log(offset,'off');
         )}
 
         <div>
-          {isShown && (
-            <div className="modal-backdrop" onClick={() => setIsShown(false)}>
-              
-            </div>
-          )}
+          {isShown && <div className="modal-backdrop" onClick={() => setIsShown(false)}></div>}
           <div
             className={`for_respon__modal_first ${isShown ? 'modal-open' : ''}`}
             style={{
@@ -1914,13 +1878,10 @@ console.log(offset,'off');
                 <div className="add_filter1wrap_cross">
                   <div className="add_filter1wrap">
                     <span className="add_filter_1">Add Filter</span>
-
-                    {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
                   </div>
                   <div onClick={() => setIsShown(false)}>
                     <IoMdClose className="crossicon" />
                   </div>
-                  {/* <IoMdClose className="crossicon"  onClick={() => clearFilter()}    /> */}
                 </div>
 
                 <div className="add__three">
@@ -1971,18 +1932,8 @@ console.log(offset,'off');
                     marginBottom: '12px',
                   }}
                 />
-                {statusfilter || installation || planData || priceData ? (
-                  ''
-                ) : (
-                  <div className="add__four">
-                    <p>
-                      <MinusOutlined className="minus_outlined_one" />
-                      No Filters applied
-                    </p>
-                    <p>Add one of the above filters to narrow down your User list</p>
-                  </div>
-                )}
-                {statusfilter ? (
+                
+                {statusfilter && (
                   <div className="add_five">
                     <div className="add__eleven">
                       <span className="add__forteen">Status</span>
@@ -2021,10 +1972,8 @@ console.log(offset,'off');
                       </Radio.Group>
                     </div>
                   </div>
-                ) : (
-                  ''
-                )}
-                {statusfilter ? (
+                ) }
+                {statusfilter && (
                   <div>
                     <hr
                       style={{
@@ -2035,10 +1984,8 @@ console.log(offset,'off');
                       }}
                     />
                   </div>
-                ) : (
-                  ''
-                )}
-                {installation ? (
+                ) }
+                {installation && (
                   <div className="add_five">
                     <div className="add__eleven">
                       <span className="add__forteen">Location</span>
@@ -2061,10 +2008,8 @@ console.log(offset,'off');
                     <CloseOutlined />
                   </span> */}
                   </div>
-                ) : (
-                  ''
-                )}
-                {installation ? (
+                ) }
+                {installation == true && (
                   <div>
                     <hr
                       style={{
@@ -2075,10 +2020,8 @@ console.log(offset,'off');
                       }}
                     />
                   </div>
-                ) : (
-                  ''
                 )}
-                {planData ? (
+                {planData ==true && (
                   <div className="add__eight">
                     <div className="add_twelve">
                       <h6 className="add__sixx">Plan</h6>
@@ -2132,10 +2075,8 @@ console.log(offset,'off');
                       </div>
                     </div>
                   </div>
-                ) : (
-                  ''
-                )}
-                {planData ? (
+                ) }
+                {planData == true && (
                   <div>
                     <hr
                       style={{
@@ -2146,10 +2087,8 @@ console.log(offset,'off');
                       }}
                     />
                   </div>
-                ) : (
-                  ''
-                )}
-                {priceData ? (
+                ) }
+                {priceData == true && (
                   <div className="price__div">
                     <span className="main_div_of_pric">Price</span>
                     <input
@@ -2163,9 +2102,9 @@ console.log(offset,'off');
                       onChange={onChangeed}
                     />
                   </div>
-                ) : (
-                  ''
                 )}
+                
+                {statusfilter ||installation || planData ||priceData ?(
                 <div className="mainDivOf_apply">
                   <button className="sub_divOf_Appli" id="apply__filter">
                     {/* <FilterFilled className="filter_outlined" /> */}
@@ -2175,7 +2114,13 @@ console.log(offset,'off');
                     {/* <ClearOutlined className="delete_outlinedd" /> */}
                     Clear All
                   </button>
-                </div>
+                </div> ) :<div className="add__four">
+                    <p>
+                      <MinusOutlined className="minus_outlined_one" />
+                      No Filters applied
+                    </p>
+                    <p>Add one of the above filters to narrow down your User list</p>
+                  </div>}
               </div>
             </form>
           </div>
@@ -2304,7 +2249,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width:'200px',
+                          width: '200px',
                         }}
                       >
                         <span style={{}}>Name</span>
@@ -2313,7 +2258,6 @@ console.log(offset,'off');
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            
                           }}
                         >
                           {sortingState['pwa_name'] === 'ASC' ? (
@@ -2366,7 +2310,7 @@ console.log(offset,'off');
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'flex-start',
-                          width:'300px',
+                          width: '300px',
                         }}
                       >
                         <span>Address</span>
@@ -2831,7 +2775,8 @@ console.log(offset,'off');
                   <p style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
                     {' '}
                     Unique ID :
-                  </p> &nbsp;
+                  </p>{' '}
+                  &nbsp;
                   <p
                     style={{
                       color: 'white',
@@ -2896,10 +2841,11 @@ console.log(offset,'off');
             display: userDelete ? 'block' : 'none',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center' ,gap:'16px' }}>
-            
-             <img src={Redcircle} alt="Cyber Vision infotech " />
-            <span className="admin_registerd__pop userdeletmodal_margin  ">User has been deleted.</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <img src={Redcircle} alt="Cyber Vision infotech " />
+            <span className="admin_registerd__pop userdeletmodal_margin  ">
+              User has been deleted.
+            </span>
           </div>
         </div>
         <div
@@ -2908,7 +2854,6 @@ console.log(offset,'off');
             display: userPlay ? 'block' : 'none',
           }}
         >
-          
           <div>
             <p className="admin_registerd__pop_noti ">
               {' '}
@@ -2923,9 +2868,7 @@ console.log(offset,'off');
             display: userPause ? 'block' : 'none',
           }}
         >
-        
-
-<div>
+          <div>
             <p className="admin_registerd__pop_noti ">
               {' '}
               <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
@@ -2939,8 +2882,7 @@ console.log(offset,'off');
             display: userSuspend ? 'block' : 'none',
           }}
         >
-         
-           <div>
+          <div>
             <p className="admin_registerd__pop_noti">
               {' '}
               <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
@@ -2967,7 +2909,7 @@ console.log(offset,'off');
             />
             <p className="admin_registerd__pop">A User has been UnSuspended.</p>
           </div> */}
-           <div>
+          <div>
             <p className="admin_registerd__pop_noti">
               {' '}
               <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
@@ -2980,11 +2922,10 @@ console.log(offset,'off');
       {/* add user modal starts */}
       {addUserModal ? (
         <div className="modal-backdrop">
-        
           <div id="addModalsecond">
             <div className="modal_heading ">
               <div className="modal_hedaing_customer">
-                <h2>Create New  Customer</h2>
+                <h2>Create New Customer</h2>
                 <IoMdClose className="crossicon" onClick={empty} />
               </div>
             </div>
@@ -3055,9 +2996,9 @@ console.log(offset,'off');
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
-                        position:'relative',
-                        top:'-12px',
-                        left:'5px',
+                        position: 'relative',
+                        top: '-12px',
+                        left: '5px',
                       }}
                     >
                       {phoneError}
@@ -3102,9 +3043,9 @@ console.log(offset,'off');
                         fontWeight: '400',
                         color: `${colorGreen}`,
                         fontSize: '12px',
-                        position:'relative',
-                        top:'-12px',
-                        left:'5px',
+                        position: 'relative',
+                        top: '-12px',
+                        left: '5px',
                       }}
                     >
                       {emailError}
@@ -3148,9 +3089,9 @@ console.log(offset,'off');
                         color: `${colorRed}`,
                         width: '235px',
                         fontSize: '12px',
-                        position:'relative',
-                        top:'-12px',
-                        left:'5px',
+                        position: 'relative',
+                        top: '-12px',
+                        left: '5px',
                       }}
                     >
                       {errorMessage}
@@ -3188,9 +3129,16 @@ console.log(offset,'off');
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
                     required
                   />
-                  <p style={{ color: 'red', display: display, fontSize: '12px' ,  position:'relative',
-                        top:'-12px',
-                        left:'5px',  }}>
+                  <p
+                    style={{
+                      color: 'red',
+                      display: display,
+                      fontSize: '12px',
+                      position: 'relative',
+                      top: '-12px',
+                      left: '5px',
+                    }}
+                  >
                     Password did not match❗
                   </p>
 
@@ -3198,14 +3146,12 @@ console.log(offset,'off');
                     onClick={generatePassword}
                     style={{
                       cursor: 'pointer',
-                    
+
                       display: 'flex',
                       justifyContent: 'flex-end',
                       color: '#3378FF',
                       textDecoration: 'underline',
                       paddingBottom: '1px',
-
-                    
                     }}
                   >
                     Generate Password
@@ -3240,14 +3186,13 @@ console.log(offset,'off');
           display: userAdded,
         }}
       >
-      
-          <div>
-            <p className="admin_registerd__pop_noti">
-              {' '}
-              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
-              <span> Customer Added Successfully.</span>{' '}
-            </p>
-          </div>
+        <div>
+          <p className="admin_registerd__pop_noti">
+            {' '}
+            <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+            <span> Customer Added Successfully.</span>{' '}
+          </p>
+        </div>
 
         {/* </div> */}
       </div>
@@ -3383,14 +3328,13 @@ console.log(offset,'off');
           display: userUpdated,
         }}
       >
-     
         <div>
-            <p className="admin_registerd__pop_noti">
-              {' '}
-              <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
-              <span> Customer Updated Successfully.</span>{' '}
-            </p>
-          </div>
+          <p className="admin_registerd__pop_noti">
+            {' '}
+            <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
+            <span> Customer Updated Successfully.</span>{' '}
+          </p>
+        </div>
       </div>
 
       {/* update modal ends */}
@@ -3449,62 +3393,3 @@ console.log(offset,'off');
 }
 
 export default Customer
-
-// action code
-// <td>
-//                         {item.pwa_status === 3 ? (
-//                           ''
-//                         ) : (
-//                           <button
-//                             className="for_suspend_hover"
-//                             style={{ paddingLeft: '9px', color: 'red' }}
-//                             onClick={() => onSuspendUser(item.id)}
-//                             title="Suspend"
-//                           >
-//                             <StopOutlined />
-//                           </button>
-//                         )}
-
-//                         {item.pwa_status === 3 ? (
-//                           <button
-//                             className="for_suspend_hover"
-//                             style={{ paddingLeft: '9px', color: 'red' }}
-//                             onClick={() => onUnSuspendUser(item.id)}
-//                             title="UnSuspend"
-//                           >
-//                             <PlusOutlined />
-//                           </button>
-//                         ) : (
-//                           ''
-//                         )}
-//                         <button
-//                           className=""
-//                           style={{ paddingLeft: '8px', color: 'red' }}
-//                           onClick={() => onDeleteUser(item.id)}
-//                         >
-//                           <DeleteOutlined />
-//                         </button>
-
-//                         <button
-//                           onClick={() => {
-//                             setName(item.pwa_name)
-//                             setEmail(item.pwa_email)
-//                             setAddress(item.pwa_add1)
-//                             setAddress2(item.pwa_add2)
-//                             setMobile(item.pwa_mobile)
-//                             // setLocationId(item.pwa_choice)
-//                             // setNewZipcode(item.pwa_zip)
-//                             // setNewState(item.pwa_state)
-//                             setId(item.id)
-//                             setUpdateModal(true)
-//                             //updateAdmin(SetRowData(item), setId(item.id))
-//                           }}
-//                         >
-//                           <img
-//                             src={editPen}
-//                             alt="edit"
-//                             style={{ width: '20px', paddingLeft: '8px', color: 'red' }}
-//                           />
-//                         </button>
-
-//                       </td>
