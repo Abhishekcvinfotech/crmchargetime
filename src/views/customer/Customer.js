@@ -1518,13 +1518,8 @@ const Customer = () => {
                 {' '}
                 <img src={Rightarrow} alt=" right arrow" />{' '}
               </span>
-            </h5>
-
-           
+            </h5> */}
           </div>
-
-        
-          
           <button onClick={() => setAddUserModal(true)} className="customer_add_button">
             <span className="plusicon">+</span>
             <span>Add Customer</span>
@@ -1864,7 +1859,7 @@ const Customer = () => {
               )}
             </div>
           </div>
-     
+        </div>
         {loading ? (
           <div className="loading_part">
             <Spin size="large" />
@@ -2925,7 +2920,7 @@ const Customer = () => {
             </p>
           </div>
         </div>
-      
+      </div>
       {/* // himanshu code starts */}
       {/* add user modal starts */}
       {addUserModal ? (
@@ -3005,7 +3000,7 @@ const Customer = () => {
                         color: `${colorGreen}`,
                         fontSize: '12px',
                         position:'relative',
-                        top:'-12px',
+                        top:'-21px',
                         left:'5px',
                       }}
                     >
@@ -3052,7 +3047,7 @@ const Customer = () => {
                         color: `${colorGreen}`,
                         fontSize: '12px',
                         position:'relative',
-                        top:'-12px',
+                        top:'-21px',
                         left:'5px',
                       }}
                     >
@@ -3099,8 +3094,9 @@ const Customer = () => {
                         width: '235px',
                         fontSize: '12px',
                         position:'relative',
-                        top:'-12px',
+                        top:'-21px',
                         left:'5px',
+                        zIndex:'99999',
                       }}
                     >
                       {errorMessage}
@@ -3140,9 +3136,11 @@ const Customer = () => {
                     
                   />
                   <p style={{ color: 'red', display: display, fontSize: '12px' ,  position:'relative',
-                        top:'-12px',
-                        left:'5px',  }}>
-                    Password did not match❗
+                        top:'-21px',
+                        left:'5px', 
+                        zIndex:'99999',
+                         }}>
+                    Password did not match !
                   </p>
 
                   <span
