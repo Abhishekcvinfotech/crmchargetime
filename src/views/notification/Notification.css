@@ -9,6 +9,9 @@ tr:hover .actionbtn {
 .container-lg {
   padding: 0 24px !important;
 }
+.anticon-clear .clear_otline{
+  color: black !important;
+}
 
 .emporia_troes {
   color:  #324253;
