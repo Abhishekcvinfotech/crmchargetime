@@ -267,6 +267,11 @@ const Customer = () => {
       setEmailError('')
     }
   }, [email])
+  useEffect(() => {
+    if (password == '') {
+      setErrorMessage('')
+    }
+  }, [password])
 
   // console.log(locateData)
   // himanshu code ends
