@@ -433,6 +433,7 @@ const Customer = () => {
     setPlanValue(0)
     setValue(0)
     setstatusValue(0)
+    setIsShown((data) => !data)
 
     // jj
     setclearData(false)
