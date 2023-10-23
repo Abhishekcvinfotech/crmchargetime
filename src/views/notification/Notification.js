@@ -114,15 +114,11 @@ const Notification = () => {
   const [filterColor, setFilterColor] = useState('green')
   const [update, setUpdate] = useState('0')
 
-
   const [showCrossIcon, setShowCrossIcon] = useState(false)
   const [btnpadding, setBtnpadding] = useState('0px')
   const [paddingcolor, setPaddingcolor] = useState('none')
   const [borderRadius, setBorderRadius] = useState('')
   const [clickedButton, setClickedButton] = useState(null)
-
-  
-
 
   const format = 'HH:mm'
   const [editableValues, setEditableValues] = useState(
@@ -247,7 +243,6 @@ const Notification = () => {
   }
 
   const clearFilter = () => {
-   
     setStatusfilter(false)
     setInstallation(false)
     setPlanData(false)
@@ -304,18 +299,15 @@ const Notification = () => {
     getUsers()
   }, [])
 
-
-
   const sortedDate = () => {
-    getUsers();  
-    setShowCrossIcon(false)  
-    setBtnpadding('0px')  
-    setPaddingcolor('white') 
-    setClickedButton(null) 
+    getUsers()
+    setShowCrossIcon(false)
+    setBtnpadding('0px')
+    setPaddingcolor('white')
+    setClickedButton(null)
   }
 
-
-   const handleIconPaddingClick = (buttonId) =>{
+  const handleIconPaddingClick = (buttonId) => {
     setClickedButton(buttonId)
     setBtnpadding('7px 8px')
     setPaddingcolor('#F1F1F1')
@@ -505,6 +497,12 @@ const Notification = () => {
 
   const handleClicked = (event) => {
     setIsShown((current) => !current)
+      if (installation == true) {
+      setInstallation(true)
+    
+    } else if (priceData == true) {
+      setPriceData(true)
+    }
     // setclearData(true)
   }
 
@@ -571,7 +569,6 @@ const Notification = () => {
       setLoading(false)
     }
   }
-  
 
   async function createNewTroesNotification() {
     setLoading(true)
@@ -614,7 +611,6 @@ const Notification = () => {
       setLoading(false)
     }
   }
-
 
   const onDeleteNotification = async (id) => {
     setLoading(true)
@@ -744,7 +740,7 @@ const Notification = () => {
         valueToPush['endDate'] = stopDate
       }
       // document.getElementById('handle__addFilter').style.background = '#0c2556'
-      setclearData(true)
+       setclearData(true)
       axios({
         url: `${troesAPi}/filterdata`,
         method: 'POST',
@@ -935,13 +931,14 @@ const Notification = () => {
       )}
       <div style={{ position: 'relative' }}>
         <div className="tnotification_wrap">
-
-          <h2 className="all_customer_of_page"><span className='notifica'>  App Notifications</span>  <span className='notification_count'> ({notificationCount}) </span></h2>
+          <h2 className="all_customer_of_page">
+            <span className="notifica"> App Notifications</span>{' '}
+            <span className="notification_count"> ({notificationCount}) </span>
+          </h2>
 
           {/* <p className="totalnotification" >
             <span>Total Notifications </span> <span><img src={Rightarrow} alt=" right arrow" /> </span>
           </p> */}
-          
         </div>
 
         <div className="filter_wrap">
@@ -980,10 +977,10 @@ const Notification = () => {
 
                 {clearData && (
                   <Button
-                     className="for_Filter_Clear"
+                    className="for_Filter_Clear"
                     style={{
-                       background: 'white',
-                      
+                      background: 'white',
+
                       display: 'flex',
                       alignItems: 'center',
                       padding: '8px 15px',
@@ -991,102 +988,110 @@ const Notification = () => {
                     }}
                     onClick={clearFiltererd}
                   >
-                    <ClearOutlined className='clear_otline'  />
+                    <ClearOutlined className="clear_otline" />
                   </Button>
                 )}
               </div>
             </div>
-            
-            <div style={{ display: 'flex', gap: '24px' ,alignItems:'center' }}>
-             
-              <div className="forAlignment_Account" style={{
-                padding: clickedButton === 'Active' ? btnpadding : 0,
-                backgroundColor: clickedButton === 'Active' ? paddingcolor : 'transparent',
-                borderRadius: borderRadius,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '5px',
-                boxSizing: 'border-box',
 
-              }}>
+            <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+              <div
+                className="forAlignment_Account"
+                style={{
+                  padding: clickedButton === 'Active' ? btnpadding : 0,
+                  backgroundColor: clickedButton === 'Active' ? paddingcolor : 'transparent',
+                  borderRadius: borderRadius,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  boxSizing: 'border-box',
+                }}
+              >
                 <div
                   className="forChanging_color"
                   style={{
                     background: 'green',
-                    
                   }}
                 ></div>
                 <button
                   className="btn_for_Link"
                   style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
-                  onClick={() => {activeNotification() ; handleIconPaddingClick('Active');}}
+                  onClick={() => {
+                    activeNotification()
+                    handleIconPaddingClick('Active')
+                  }}
                 >
                   Active
                 </button>
                 {clickedButton === 'Active' && (
-                <IoIosClose className="sortcross"  onClick={sortedDate}  /> 
+                  <IoIosClose className="sortcross" onClick={sortedDate} />
                 )}
-
               </div>
 
-              <div className="forAlignment_Account" style={{
-                
-                // padding:  btnpadding ,
-                //     backgroundColor:  paddingcolor,
-                //     borderRadius: borderRadius,
-                padding: clickedButton === 'In-active' ? btnpadding : 0,
-                backgroundColor: clickedButton === 'In-active' ? paddingcolor : 'transparent',
-                borderRadius: borderRadius,
-                  
-                    
-                    }}>
+              <div
+                className="forAlignment_Account"
+                style={{
+                  // padding:  btnpadding ,
+                  //     backgroundColor:  paddingcolor,
+                  //     borderRadius: borderRadius,
+                  padding: clickedButton === 'In-active' ? btnpadding : 0,
+                  backgroundColor: clickedButton === 'In-active' ? paddingcolor : 'transparent',
+                  borderRadius: borderRadius,
+                }}
+              >
                 <div
                   className="forChanging_color"
                   style={{
                     background: '#935CED',
-                    
                   }}
                 ></div>
                 <button
                   className="btn_for_Link"
                   style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
-                  onClick={()=> {inActivee() ; handleIconPaddingClick('In-active');}}
+                  onClick={() => {
+                    inActivee()
+                    handleIconPaddingClick('In-active')
+                  }}
                 >
                   In-active
                 </button>
                 {clickedButton === 'In-active' && (
-                <IoIosClose className="sortcross"  onClick={sortedDate}  />
-                 )}
+                  <IoIosClose className="sortcross" onClick={sortedDate} />
+                )}
               </div>
 
-              <div className="forAlignment_Account" style={{padding:  btnpadding ,
-                  
-                    padding: clickedButton === 'Scheduled' ? btnpadding : 0,
-                    backgroundColor: clickedButton === 'Scheduled' ? paddingcolor : 'transparent',
-                    borderRadius: borderRadius,
-                    
-                    }}>
+              <div
+                className="forAlignment_Account"
+                style={{
+                  padding: btnpadding,
+
+                  padding: clickedButton === 'Scheduled' ? btnpadding : 0,
+                  backgroundColor: clickedButton === 'Scheduled' ? paddingcolor : 'transparent',
+                  borderRadius: borderRadius,
+                }}
+              >
                 <div
                   className="forChanging_color"
                   style={{
-                    background:'blue',
-                    
+                    background: 'blue',
                   }}
                 ></div>
                 <button
                   className="btn_for_Link"
                   style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
-                  onClick={() => { scheduledNotification() ; handleIconPaddingClick('Scheduled'); } }
+                  onClick={() => {
+                    scheduledNotification()
+                    handleIconPaddingClick('Scheduled')
+                  }}
                 >
                   Scheduled
                 </button>
                 {clickedButton === 'Scheduled' && (
-                <IoIosClose className="sortcross"  onClick={sortedDate}  /> )}
+                  <IoIosClose className="sortcross" onClick={sortedDate} />
+                )}
               </div>
-
             </div>
           </div>
-          
         </div>
         {/* filter modal code starts */}
 
@@ -1103,12 +1108,15 @@ const Notification = () => {
               >
                 <form onSubmit={applyFilter}>
                   <div className="add__one">
-                    <div onClick={clearFilter} className="filterwrap"  >
+                    <div onClick={clearFilter} className="filterwrap">
                       <span className="add_filter_1">Add Filter</span>
                       {/* <ArrowRightOutlined style={{ fontSize: '16px', marginTop: '5px' }} /> */}
-                       <span >  <IoMdClose className="crossicon"  /></span>
+                      <span>
+                        {' '}
+                        <IoMdClose className="crossicon" />
+                      </span>
                     </div>
-                    
+
                     <div className="add__three">
                       {/* <p>Find the Users you are looking for : </p> */}
                       <div className="for__marginn  right_alignment">
@@ -1120,8 +1128,6 @@ const Notification = () => {
                           <img src={FrameTwo} alt="frame" className="for_img_two" />
                           <span>Location</span>
                         </Button>
-                        
-
 
                         <Button
                           id="price_handle"
@@ -1139,7 +1145,7 @@ const Notification = () => {
                         </Button>
                       </div>
                     </div>
-                    <hr className='filter_Line' />
+                    <hr className="filter_Line" />
                     {statusfilter || installation || priceData ? (
                       ''
                     ) : (
@@ -1158,6 +1164,7 @@ const Notification = () => {
                           <Radio.Group
                             onChange={onChangePlan}
                             className="base_PP2"
+                            value={value}
                             // style={{ paddingLeft: '28px' }}
                           >
                             {locateData.map((item, index) => {
@@ -1178,15 +1185,12 @@ const Notification = () => {
                     )}
                     {installation ? (
                       <div>
-                        <hr className='filter_Line'/>
+                        <hr className="filter_Line" />
                       </div>
                     ) : (
                       ''
                     )}
 
-                   
-
-                   
                     {priceData ? (
                       <div className="price__div" style={{ gap: '20px' }}>
                         {/* <p className="main_div_of_pric">Start Date: </p> */}
@@ -1196,6 +1200,7 @@ const Notification = () => {
                             format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
                             onChange={onChangeed}
                             onOk={onOk}
+                           
                             disabledDate={disabledDateEnd}
                             disabledTime={disabledDateTimeEnd}
                           />
@@ -1208,6 +1213,7 @@ const Notification = () => {
                             format="YYYY-MM-DD hh:mm:ss" // Use 'A' for AM/PM indicator
                             onChange={onChangeedTwo}
                             onOk={onOk}
+                            
                             disabledDate={disabledDateEnd}
                             disabledTime={disabledDateTimeEnd}
                           />
@@ -1221,17 +1227,19 @@ const Notification = () => {
                         {/* <FilterFilled className="filter_outlined" /> */}
                         Apply Filter
                       </button>
-                      <button onClick={()=>{
-                        setclearData(false)
-    setValue(0)
-    setPriceData(false)
-    setInstallation(false)
-    setstatusValue(0)
-    setPlanValue(0)
-    setBasePrice(0)
-    getUsers()
-
-                      } }  className="subdivision_claer_filter">
+                      <button
+                        onClick={() => {
+                          setclearData(false)
+                          setValue(0)
+                          setPriceData(false)
+                          setInstallation(false)
+                          setstatusValue(0)
+                          setPlanValue(0)
+                          setBasePrice(0)
+                          getUsers()
+                        }}
+                        className="subdivision_claer_filter"
+                      >
                         {/* <ClearOutlined className="delete_outlinedd" /> */}
                         Clear All
                       </button>
@@ -1350,7 +1358,7 @@ const Notification = () => {
                                 setNotificationId(e.target.value)
                                 setInputid('0')
                               }}
-                              style={{ border: 'none', padding: '4px', }}
+                              style={{ border: 'none', padding: '4px' }}
                               className="inputRender"
                             />
                           ) : (
@@ -1358,7 +1366,7 @@ const Notification = () => {
                               placeholder="Notification Id"
                               value={item.notification_id}
                               readOnly
-                              style={{ border: 'none', padding: '4px',  }}
+                              style={{ border: 'none', padding: '4px' }}
                               className="inputRender"
                             />
                           )}
@@ -1776,7 +1784,7 @@ const Notification = () => {
               {' '}
               <span>
                 {' '}
-                <img src={CheckgreenCircle} alt="Cyber Vision infotech" />   {' '}
+                <img src={CheckgreenCircle} alt="Cyber Vision infotech" />{' '}
               </span>{' '}
               <span> Notification has been added successfully.</span>
             </p>
@@ -1881,9 +1889,11 @@ const Notification = () => {
                   } else {
                     color = 'yellow'
                   }
-                  {/* const apiTime12Hour = moment(editableValuesTroes[index].message_time, 'HH:mm:ss').format('h:mm A');
-                  console.log(apiTime12Hour,'apiTime12Hour') */}
-                  
+                  {
+                    /* const apiTime12Hour = moment(editableValuesTroes[index].message_time, 'HH:mm:ss').format('h:mm A');
+                  console.log(apiTime12Hour,'apiTime12Hour') */
+                  }
+
                   return (
                     <React.Fragment key={index}>
                       <tr className="trSelect" style={{ position: 'relative' }}>
@@ -1928,7 +1938,7 @@ const Notification = () => {
                                 setNotificationId(e.target.value)
                                 setInputid('0')
                               }}
-                              style={{ border: 'none', padding: '4px', }}
+                              style={{ border: 'none', padding: '4px' }}
                               className="inputRender"
                             />
                           ) : (
@@ -2135,10 +2145,10 @@ const Notification = () => {
                                 showTime
                                 format="YYYY-MM-DD HH:mm:ss" // Use 'A' for AM/PM indicator
                                 onChange={(value) => {
-                                  console.log(value,'value')
+                                  console.log(value, 'value')
                                   if (value) {
                                     setStartDate(value.format('YYYY-MM-DD HH:mm:ss '))
-                                    
+
                                     const updatedValues = [...editableValuesTroes]
                                     updatedValues[index].startDate =
                                       value.format('YYYY-MM-DD HH:mm:ss')
@@ -2203,8 +2213,8 @@ const Notification = () => {
                             </Space>
                           )}
                         </td>
-                        
-                          {/* <input
+
+                        {/* <input
                             type="time"
                             value={editableValuesTroes[index].message_time}
                             onChange={(e) => {
@@ -2218,12 +2228,13 @@ const Notification = () => {
                             style={{ border: 'none', padding: '4px' }}
                             className="inputRender"
                           /> */}
-                          <td className="px-5
-                          ">
-                          
-                            {editableValuesTroes[index].notification_type === 0 ||
-                            editableValuesTroes[index].notification_type === 2 ? (
-                              <>
+                        <td
+                          className="px-5
+                          "
+                        >
+                          {editableValuesTroes[index].notification_type === 0 ||
+                          editableValuesTroes[index].notification_type === 2 ? (
+                            <>
                               <input
                                 type="time"
                                 value={editableValuesTroes[index].message_time}
@@ -2231,11 +2242,11 @@ const Notification = () => {
                                 style={{ border: 'none' }}
                                 className="inputRender"
                               />
-                              
-                                 {/* <TimePicker  use12Hours format="h:mm a" onChange={(time,timeString) => console.log(time, timeString)} style={{width: "100px"}} readOnly/> */}
-                              </>
-                            ) : (
-                              <>
+
+                              {/* <TimePicker  use12Hours format="h:mm a" onChange={(time,timeString) => console.log(time, timeString)} style={{width: "100px"}} readOnly/> */}
+                            </>
+                          ) : (
+                            <>
                               <input
                                 type="time"
                                 value={editableValuesTroes[index].message_time}
@@ -2260,9 +2271,7 @@ const Notification = () => {
                                   setmessage_time(timeString24Hour)
                                   setInputid('1')} } style={{width: "100px"}}/> */}
                             </>
-                            )}
-                            
-                          
+                          )}
                         </td>
                         <td className="px-2">
                           {editableValuesTroes[index].update ? (
