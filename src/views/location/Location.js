@@ -517,15 +517,16 @@ const Location = () => {
             </tbody>
           </table>
           <div className='add_plan_btn'>
-          <Button
+          <button
               key="submit"
               type="primary"
               loading={loading}
               onClick={() => fetchDataOfInstallation()}
-              style={{ borderRadius: '9px' }}
+              style={{ borderRadius: '6px' }}
+              className='ok_btn'
             >
               Export Report
-            </Button>,
+            </button>
                               <button onClick={handleCancel}  type="button" className='cancel_btn'>
                                 <span>Cancel</span>
                               </button>
@@ -541,18 +542,18 @@ const Location = () => {
           onCancel={handleCanceled}
           style={{ height: '550px', overflowX: 'auto' }}
         >
-          <p style={{ fontSize: '15px', fontWeight: 'bold' }}>Device Addresses</p>
+          <p style={{ fontSize: '17px', fontWeight: '500', marginBottom:'24px' }}>Device Addresses</p>
           {dataforAddress &&
             dataforAddress.map((item, ind) => {
               return (
                 <div key={ind}>
-                  <p>
+                  <p  className='device_para'>
                     <span style={{ paddingRight: '5px' }}>{ind + 1}.</span>
                     {item.device_address}
                   </p>
-                  <p>
+                  {/* <p>
                     <hr style={{ width: '99%', margin: 'auto' }} />
-                  </p>
+                  </p> */}
                 </div>
               )
             })}
@@ -563,10 +564,10 @@ const Location = () => {
           onOk={handleOkedFor}
           onCancel={handleCanceledFor}
         >
-          <p style={{ fontSize: '15px', fontWeight: 'bold' }}>Device information</p>
+          <p style={{fontSize: '17px', fontWeight: '500', marginBottom:'24px' }}>Device information</p>
           <div>
-            <p>Devices in Inventory : {inventryCount}</p>
-            <p>Number of Active Devices : {deviceInfo}</p>
+            <p  className='device_para'>Devices in Inventory : {inventryCount}</p>
+            <p  className='device_para'>Number of Active Devices : {deviceInfo}</p>
           </div>
         </Modal>
 

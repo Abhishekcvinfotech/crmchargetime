@@ -530,33 +530,11 @@ const Partner = () => {
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}
-          footer={[
-            <Button
-              style={{ borderRadius: '9px' }}
-              key="submit"
-              type="primary"
-              loading={loading}
-              onClick={() => fetchData()}
-            >
-              Export Report
-            </Button>,
-            <Button style={{ borderRadius: '9px' }} key="back" onClick={handleCancel}>
-              Cancel
-            </Button>,
-            <Button
-              style={{ borderRadius: '9px' }}
-              key=""
-              type="primary"
-              loading={loading}
-              onClick={handleOk}
-            >
-              OK
-            </Button>,
-          ]}
+          
         >
           <p className="partner_name">Partner Name : {Object.keys(modalGetData)}</p>
           <table className="table theadPadding_remove">
-            <thead className="">
+            <thead className="" style={{paddingLeft : '10px'}}>
               <th>Device ID</th>
               <th style={{ textAlign: 'center' }}>Device Usage</th>
               <th style={{ textAlign: 'center' }}>User Name</th>
@@ -576,27 +554,29 @@ const Partner = () => {
             </tbody>
 
           </table>
+          <div className='pricingbutton_wrap'> 
           <Button
-              style={{ borderRadius: '9px' }}
+              style={{ borderRadius: '6px' }}
               key="submit"
               type="primary"
               loading={loading}
               onClick={() => fetchData()}
             >
               Export Report
-            </Button>,
-            <Button style={{ borderRadius: '9px' }} key="back" onClick={handleCancel}>
+            </Button>
+            <Button style={{ borderRadius: '6px' }} key="back" onClick={handleCancel}>
               Cancel
-            </Button>,
+            </Button>
             <Button
-              style={{ borderRadius: '9px' }}
+              style={{ borderRadius: '6px' }}
               key=""
               type="primary"
               loading={loading}
               onClick={handleOk}
             >
               OK
-            </Button>,
+            </Button>
+            </div>
         </Modal>
         <div
           style={{

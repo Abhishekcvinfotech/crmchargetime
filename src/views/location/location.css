@@ -677,8 +677,13 @@ p {
 }
 
 .partner_name {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
+}
+.device_para{
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .add_new_location {

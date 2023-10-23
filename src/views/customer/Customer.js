@@ -3407,15 +3407,16 @@ const Customer = () => {
           </tbody>
         </table>
         <div className='add_plan_btn'>
-        <Button
+        <button
             key="submit"
             type="primary"
             loading={loading}
             onClick={() => fetchDataOfCustomer()}
-            style={{ borderRadius: '9px' }}
+            style={{ borderRadius: '6px' }}
+            className='ok_btn'
           >
             Export Report
-          </Button>,
+          </button>
                               <button onClick={handleC}  type="button" className='cancel_btn'>
                                 <span>Cancel</span>
                               </button>
