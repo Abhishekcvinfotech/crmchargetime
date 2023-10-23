@@ -2076,10 +2076,10 @@ const Customer = () => {
 
 
                             <div className='add_plan_btn'>
-                              <button type="button" className='cancel_btn'>
+                              <button onClick={handleCancel}  type="button" className='cancel_btn'>
                                 <span>Cancel</span>
                               </button>
-                              <button type="button" className='ok_btn'  >
+                              <button onClick={handleOk} type="button" className='ok_btn'  >
                                 <span>Ok</span></button>
                             </div>
 
@@ -3405,6 +3405,22 @@ const Customer = () => {
             })}
           </tbody>
         </table>
+        <div className='add_plan_btn'>
+        <Button
+            key="submit"
+            type="primary"
+            loading={loading}
+            onClick={() => fetchDataOfCustomer()}
+            style={{ borderRadius: '9px' }}
+          >
+            Export Report
+          </Button>,
+                              <button onClick={handleC}  type="button" className='cancel_btn'>
+                                <span>Cancel</span>
+                              </button>
+                              <button onClick={handleO} type="button" className='ok_btn'  >
+                                <span>Ok</span></button>
+                            </div>
       </Modal>
       {/*   // himanshu code ends */}
     </>

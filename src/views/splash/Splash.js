@@ -143,6 +143,7 @@ const Splash = () => {
   }
   const handleCellEdit = (e, ind, property, data) => {
     const newText = e.target.innerText || data
+    
     if (property === 'location') {
       setLocation_id(newText)
     } else if (property === '') {

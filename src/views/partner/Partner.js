@@ -574,7 +574,29 @@ const Partner = () => {
                 }),
               )}
             </tbody>
+
           </table>
+          <Button
+              style={{ borderRadius: '9px' }}
+              key="submit"
+              type="primary"
+              loading={loading}
+              onClick={() => fetchData()}
+            >
+              Export Report
+            </Button>,
+            <Button style={{ borderRadius: '9px' }} key="back" onClick={handleCancel}>
+              Cancel
+            </Button>,
+            <Button
+              style={{ borderRadius: '9px' }}
+              key=""
+              type="primary"
+              loading={loading}
+              onClick={handleOk}
+            >
+              OK
+            </Button>,
         </Modal>
         <div
           style={{
