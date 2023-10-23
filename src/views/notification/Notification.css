@@ -456,8 +456,12 @@ border-radius: 6px;
   display: flex;
   justify-content:space-evenly;
 
+  
 }
-/* .ant-space-item{
+.ant-picker-input input{
+  height: 32px !important;
+}
+ /* .ant-space-item{
   height: 48px;
 } */
 

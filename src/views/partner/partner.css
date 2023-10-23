@@ -57,7 +57,8 @@ border-radius: 6px;
   font-weight: bolder;
 }
 .partner_name {
-  font-size: 16px;
+  font-size: 17px;
+  margin-bottom: 16px;
   font-weight: 600;
 }
 .theadPadding_remove > :not(caption) > * > * {
@@ -144,6 +145,12 @@ line-height: normal;
 .ant-pagination{
   width: 100%;
 }
+.pricingbutton_wrap{
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
 .show__notShow_partner_delete{
   position: fixed;
   right: 0;
