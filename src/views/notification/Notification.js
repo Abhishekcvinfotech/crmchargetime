@@ -991,7 +991,9 @@ const Notification = () => {
                     }}
                     onClick={clearFiltererd}
                   >
-                    <ClearOutlined />
+                    <span>  <ClearOutlined  /> </span>
+                    <span> Clear Filter </span>
+                    
                   </Button>
                 ) : (
                   ''
@@ -1030,94 +1032,95 @@ const Notification = () => {
               </div>
             </div> */}
 
-            <div style={{ display: 'flex', gap: '24px' ,alignItems:'center' }}>
+<div style={{ display: 'flex', gap: '24px' ,alignItems:'center' }}>
              
-              <div className="forAlignment_Account" style={{
-                padding: clickedButton === 'Active' ? btnpadding : 0,
-                backgroundColor: clickedButton === 'Active' ? paddingcolor : 'transparent',
-                borderRadius: borderRadius,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '5px',
-                boxSizing: 'border-box',
+             <div className="forAlignment_Account" style={{
+               padding: clickedButton === 'Active' ? btnpadding : 0,
+               backgroundColor: clickedButton === 'Active' ? paddingcolor : 'transparent',
+               borderRadius: borderRadius,
+               display: 'flex',
+               alignItems: 'center',
+               gap: '5px',
+               boxSizing: 'border-box',
 
-              }}>
-                <div
-                  className="forChanging_color"
-                  style={{
-                    background: 'green',
-                    
-                  }}
-                ></div>
-                <button
-                  className="btn_for_Link"
-                  style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
-                  onClick={() => {activeNotification() ; handleIconPaddingClick('Active');}}
-                >
-                  Active
-                </button>
-                {clickedButton === 'Active' && (
-                <IoIosClose className="sortcross"  onClick={sortedDate}  /> 
+             }}>
+               <div
+                 className="forChanging_color"
+                 style={{
+                   background: 'green',
+                   
+                 }}
+               ></div>
+               <button
+                 className="btn_for_Link"
+                 style={{ fontWeight: fontWeight1, color: fontred1, borderBottom: borderred1 }}
+                 onClick={() => {activeNotification() ; handleIconPaddingClick('Active');}}
+               >
+                 Active
+               </button>
+               {clickedButton === 'Active' && (
+               <IoIosClose className="sortcross"  onClick={sortedDate}  /> 
+               )}
+
+             </div>
+
+             <div className="forAlignment_Account" style={{
+               
+               // padding:  btnpadding ,
+               //     backgroundColor:  paddingcolor,
+               //     borderRadius: borderRadius,
+               padding: clickedButton === 'In-active' ? btnpadding : 0,
+               backgroundColor: clickedButton === 'In-active' ? paddingcolor : 'transparent',
+               borderRadius: borderRadius,
+                 
+                   
+                   }}>
+               <div
+                 className="forChanging_color"
+                 style={{
+                   background: '#935CED',
+                   
+                 }}
+               ></div>
+               <button
+                 className="btn_for_Link"
+                 style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
+                 onClick={()=> {inActivee() ; handleIconPaddingClick('In-active');}}
+               >
+                 In-active
+               </button>
+               {clickedButton === 'In-active' && (
+               <IoIosClose className="sortcross"  onClick={sortedDate}  />
                 )}
+             </div>
 
-              </div>
+             <div className="forAlignment_Account" style={{padding:  btnpadding ,
+                 
+                   padding: clickedButton === 'Scheduled' ? btnpadding : 0,
+                   backgroundColor: clickedButton === 'Scheduled' ? paddingcolor : 'transparent',
+                   borderRadius: borderRadius,
+                   
+                   }}>
+               <div
+                 className="forChanging_color"
+                 style={{
+                   background:'blue',
+                   
+                 }}
+               ></div>
+               <button
+                 className="btn_for_Link"
+                 style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
+                 onClick={() => { scheduledNotification() ; handleIconPaddingClick('Scheduled'); } }
+               >
+                 Scheduled
+               </button>
+               {clickedButton === 'Scheduled' && (
+               <IoIosClose className="sortcross"  onClick={sortedDate}  /> )}
+             </div>
 
-              <div className="forAlignment_Account" style={{
-                
-                // padding:  btnpadding ,
-                //     backgroundColor:  paddingcolor,
-                //     borderRadius: borderRadius,
-                padding: clickedButton === 'In-active' ? btnpadding : 0,
-                backgroundColor: clickedButton === 'In-active' ? paddingcolor : 'transparent',
-                borderRadius: borderRadius,
-                  
-                    
-                    }}>
-                <div
-                  className="forChanging_color"
-                  style={{
-                    background: '#935CED',
-                    
-                  }}
-                ></div>
-                <button
-                  className="btn_for_Link"
-                  style={{ fontWeight: fontWeight2, color: fontred2, borderBottom: borderred2 }}
-                  onClick={()=> {inActivee() ; handleIconPaddingClick('In-active');}}
-                >
-                  In-active
-                </button>
-                {clickedButton === 'In-active' && (
-                <IoIosClose className="sortcross"  onClick={sortedDate}  />
-                 )}
-              </div>
-
-              <div className="forAlignment_Account" style={{padding:  btnpadding ,
-                  
-                    padding: clickedButton === 'Scheduled' ? btnpadding : 0,
-                    backgroundColor: clickedButton === 'Scheduled' ? paddingcolor : 'transparent',
-                    borderRadius: borderRadius,
-                    
-                    }}>
-                <div
-                  className="forChanging_color"
-                  style={{
-                    background:'blue',
-                    
-                  }}
-                ></div>
-                <button
-                  className="btn_for_Link"
-                  style={{ fontWeight: fontWeight3, color: fontred3, borderBottom: borderred3 }}
-                  onClick={() => { scheduledNotification() ; handleIconPaddingClick('Scheduled'); } }
-                >
-                  Scheduled
-                </button>
-                {clickedButton === 'Scheduled' && (
-                <IoIosClose className="sortcross"  onClick={sortedDate}  /> )}
-              </div>
-
-            </div>
+           </div>
+           
           </div>
           <div>
             {/* <div className="test">
