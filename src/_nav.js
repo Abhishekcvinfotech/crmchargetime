@@ -40,19 +40,19 @@ import splash from '../src/assets/images/splashicon.svg'
 // react icons start
 import { FaUsers } from 'react-icons/fa';
 import { BiSolidUser } from 'react-icons/bi';
-import {HiLocationMarker} from 'react-icons/hi';
-import {FaBuildingShield} from 'react-icons/fa6';
-import {IoNotifications} from 'react-icons/io5';
-import {FaMobileScreenButton } from 'react-icons/fa6';
-import {BiSolidMobileVibration} from 'react-icons/bi' ;
-import {FaUserGroup} from 'react-icons/fa6';
-import {ImPriceTags} from 'react-icons/im' ;
-import {RiHandCoinFill} from 'react-icons/ri';
-import {FaMoneyBills}  from 'react-icons/fa6';
-import {BiSolidUserVoice} from  'react-icons/bi';
-import {FaChargingStation } from 'react-icons/fa';
-import {FaTrashCan } from 'react-icons/fa6'
- // import { LiaUserSolid} from 'react-icons/li';
+import { HiLocationMarker } from 'react-icons/hi';
+import { FaBuildingShield } from 'react-icons/fa6';
+import { IoNotifications } from 'react-icons/io5';
+import { FaMobileScreenButton } from 'react-icons/fa6';
+import { BiSolidMobileVibration } from 'react-icons/bi';
+import { FaUserGroup } from 'react-icons/fa6';
+import { ImPriceTags } from 'react-icons/im';
+import { RiHandCoinFill } from 'react-icons/ri';
+import { FaMoneyBills } from 'react-icons/fa6';
+import { BiSolidUserVoice } from 'react-icons/bi';
+import { FaChargingStation } from 'react-icons/fa';
+import { FaTrashCan } from 'react-icons/fa6'
+// import { LiaUserSolid} from 'react-icons/li';
 // import LiaUserSolidIcon from './LiaUserSolidIcon';
 
 //  react js icons end
@@ -259,13 +259,13 @@ const _nav = [
   // },
   ...(userRole === 'admin'
     ? [
-        {
-          component: CNavItem,
-          name: 'Admin Accounts',
-          to: '/admin',
-          icon:  <BiSolidUser className='faiconsdashboard' />,
-        },
-      ]
+      {
+        component: CNavItem,
+        name: 'Admin Accounts',
+        to: '/admin',
+        icon: <BiSolidUser className='faiconsdashboard' />,
+      },
+    ]
     : []),
 
   {
@@ -276,13 +276,13 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'Installation',
-    icon: <HiLocationMarker  className='faiconsdashboard' />,
+    icon: <HiLocationMarker className='faiconsdashboard' />,
     items: [
       {
         component: CNavItem,
         name: 'Installation Base',
         to: '/location',
-        icon: <FaBuildingShield  className='faiconsdashboard' />,
+        icon: <FaBuildingShield className='faiconsdashboard' />,
       },
 
     ],
@@ -291,7 +291,7 @@ const _nav = [
   {
     component: CNavGroup,
     name: 'Notifications',
-    icon: <IoNotifications  className='faiconsdashboard'  />,
+    icon: <IoNotifications className='faiconsdashboard' />,
     items: [
       {
         component: CNavItem,
@@ -299,12 +299,19 @@ const _nav = [
         to: '/splash',
         icon: <FaMobileScreenButton className='faiconsdashboard' />,
       },
+
       {
         component: CNavItem,
         name: 'App Notifications',
         to: '/notification',
         icon: <BiSolidMobileVibration className='faiconsdashboard' />,
       },
+          {
+            component: CNavItem,
+            name: 'Trash',
+            to: '/Trash',
+            icon: <FaTrashCan className='faiconsdashboard' />,
+          },
 
       // {
       //   component: CNavItem,
@@ -314,13 +321,6 @@ const _nav = [
       // },
 
     ],
-  },
-  
-  {
-    component: CNavItem,
-    name: 'Trash',
-    to: '/Trash',
-    icon: <FaTrashCan className='faiconsdashboard' />,
   },
 
   {
@@ -351,7 +351,7 @@ const _nav = [
     component: CNavItem,
     name: 'Assets Management',
     to: '/assets',
-    icon: <RiHandCoinFill  className='faiconsdashboard' />,
+    icon: <RiHandCoinFill className='faiconsdashboard' />,
   },
 
 
@@ -400,26 +400,26 @@ const _nav = [
 
   ...(userRole === 'admin'
     ? [
-        {
-          component: CNavGroup,
-          name: 'Finance',
-          icon: <FaMoneyBills className='faiconsdashboard' />,
-          items: [
-            {
-              component: CNavItem,
-              name: 'Partner Invoice',
-              to: '/finance',
-              icon: <BiSolidUserVoice  className='faiconsdashboard' />,
-            },
-            {
-              component: CNavItem,
-              name: 'Charging Rate',
-              to: '/charging',
-              icon: <FaChargingStation className='faiconsdashboard'  />,
-            },
-          ],
-        },
-      ]
+      {
+        component: CNavGroup,
+        name: 'Finance',
+        icon: <FaMoneyBills className='faiconsdashboard' />,
+        items: [
+          {
+            component: CNavItem,
+            name: 'Partner Invoice',
+            to: '/finance',
+            icon: <BiSolidUserVoice className='faiconsdashboard' />,
+          },
+          {
+            component: CNavItem,
+            name: 'Charging Rate',
+            to: '/charging',
+            icon: <FaChargingStation className='faiconsdashboard' />,
+          },
+        ],
+      },
+    ]
     : []),
   // {
   //   component: CNavGroup,
