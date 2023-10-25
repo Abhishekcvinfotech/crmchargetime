@@ -109,6 +109,21 @@ p {
     align-items: center;
     gap: 16px;
 }
+.rollback_btn{
+    display: inline-flex;
+    height: 48px;
+    padding: 0px 24px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #3378ff;
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
 
 .admin_registerd__pop{
     color: #FFFFFF;

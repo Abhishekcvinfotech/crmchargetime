@@ -53,7 +53,7 @@ html:not([dir='rtl']) .sidebar-nav .nav-group-items .nav-link {
   padding-left: 8px !important;
 }
 .nav-group {
-  padding: 0px 8px !important;
+  /* padding: 0px 8px !important; */
   border-radius: 6px !important;
   background-color: #0c2556 !important;
 }

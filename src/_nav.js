@@ -296,19 +296,31 @@ const _nav = [
             icon: <FaMobileScreenButton className='faiconsdashboard' />,
           },
 
+
+           
+
+
           {
             component: CNavItem,
             name: 'App Notifications',
             to: '/notification',
             icon: <BiSolidMobileVibration className='faiconsdashboard' />,
           },
-          
+
               {
-                component: CNavItem,
-                name: 'Trash',
-                to: '/Trash',
+                component: CNavGroup,
+                name: 'Deleted Notification ',
                 icon: <FaTrashCan className='faiconsdashboard' />,
+                items:[{
+                  
+                    component: CNavItem,
+                    name: 'Trash',
+                    to: '/Trash',
+                    icon: <FaTrashCan className='faiconsdashboard' />,
+                } ,]
               },
+
+              
     
           // {
           //   component: CNavItem,

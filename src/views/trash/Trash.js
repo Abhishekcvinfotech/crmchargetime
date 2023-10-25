@@ -230,7 +230,7 @@ const Trash = () => {
         <div className='back_to_app_notification' >
           <div style={{ display: 'flex' }}>
             <Link to="/notification" style={{ paddingLeft: '40px !important' }}>
-              <button id="button" style={{ gap: '10px' }}>
+              <button className='rollback_btn' style={{ gap: '10px' }}>
                 <RollbackOutlined />
                 Back to App Notifications
               </button>
