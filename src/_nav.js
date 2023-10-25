@@ -284,36 +284,78 @@ const _nav = [
         to: '/location',
         icon: <FaBuildingShield className='faiconsdashboard' />,
       },
-
-    ],
-  },
-
-  {
-    component: CNavGroup,
-    name: 'Notifications',
-    icon: <IoNotifications className='faiconsdashboard' />,
-    items: [
       {
-        component: CNavItem,
-        name: 'Splash Screen',
-        to: '/splash',
-        icon: <FaMobileScreenButton className='faiconsdashboard' />,
-      },
-
-      {
-        component: CNavItem,
-        name: 'App Notifications',
-        to: '/notification',
-        icon: <BiSolidMobileVibration className='faiconsdashboard' />,
-      },
+        component: CNavGroup,
+        name: 'Notifications',
+        icon: <IoNotifications className='faiconsdashboard' />,
+        items: [
           {
             component: CNavItem,
-            name: 'Trash',
-            to: '/Trash',
-            icon: <FaTrashCan className='faiconsdashboard' />,
+            name: 'Splash Screen',
+            to: '/splash',
+            icon: <FaMobileScreenButton className='faiconsdashboard' />,
           },
+    
+          {
+            component: CNavItem,
+            name: 'App Notifications',
+            to: '/notification',
+            icon: <BiSolidMobileVibration className='faiconsdashboard' />,
+          },
+              {
+                component: CNavItem,
+                name: 'Trash',
+                to: '/Trash',
+                icon: <FaTrashCan className='faiconsdashboard' />,
+              },
+    
+          // {
+          //   component: CNavItem,
+          //   name: 'Trash',
+          //   to: '/Trash',
+          //   icon: <FaTrashCan className='faiconsdashboard' />,
+          // },
+    
+        ],
+      },
+
     ],
   },
+
+  // {
+  //   component: CNavGroup,
+  //   name: 'Notifications',
+  //   icon: <IoNotifications className='faiconsdashboard' />,
+  //   items: [
+  //     {
+  //       component: CNavItem,
+  //       name: 'Splash Screen',
+  //       to: '/splash',
+  //       icon: <FaMobileScreenButton className='faiconsdashboard' />,
+  //     },
+
+  //     {
+  //       component: CNavItem,
+  //       name: 'App Notifications',
+  //       to: '/notification',
+  //       icon: <BiSolidMobileVibration className='faiconsdashboard' />,
+  //     },
+  //         {
+  //           component: CNavItem,
+  //           name: 'Trash',
+  //           to: '/Trash',
+  //           icon: <FaTrashCan className='faiconsdashboard' />,
+  //         },
+
+  //     // {
+  //     //   component: CNavItem,
+  //     //   name: 'Trash',
+  //     //   to: '/Trash',
+  //     //   icon: <FaTrashCan className='faiconsdashboard' />,
+  //     // },
+
+  //   ],
+  // },
 
   {
     component: CNavItem,

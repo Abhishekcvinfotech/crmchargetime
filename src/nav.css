@@ -46,7 +46,7 @@ html:not([dir='rtl']) .sidebar-nav .nav-group-items .nav-link {
   border-radius: 6px !important; */
 }
 .nav-item {
-  padding: 0px 16px !important;
+  /* padding: 0px 16px !important; */
   border-radius: 6px !important;
 }
 .nav-group {
