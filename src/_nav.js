@@ -295,13 +295,14 @@ const _nav = [
             to: '/splash',
             icon: <FaMobileScreenButton className='faiconsdashboard' />,
           },
-    
+
           {
             component: CNavItem,
             name: 'App Notifications',
             to: '/notification',
             icon: <BiSolidMobileVibration className='faiconsdashboard' />,
           },
+          
               {
                 component: CNavItem,
                 name: 'Trash',
@@ -363,18 +364,7 @@ const _nav = [
     to: '/partner',
     icon: <FaUserGroup className='faiconsdashboard' />,
   },
-  // {
-  //   component: CNavItem,
-  //   name: 'Installation',
-  //   to: '/location',
-  //   icon: <img src={location} style={{ paddingRight: '15px', paddingLeft: '20px' }} />,
-  // },
-  // {
-  //   component: CNavItem,
-  //   name: 'Voucher ',
-  //   to: '/Voucher',
-  //   icon: <img src={partners_icon} style={{ paddingRight: '15px', paddingLeft: '20px' }} />,
-  // },
+  
   {
     component: CNavItem,
     name: 'Price Management',
@@ -455,6 +445,12 @@ const _nav = [
       },
     ]
     : []),
+    {
+      component: CNavItem,
+      name: 'Log File ',
+      to: '/logfile',
+      icon: <FaUserGroup className='faiconsdashboard' />,
+    },
   // {
   //   component: CNavGroup,
   //   name: 'Notifications',

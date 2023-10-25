@@ -12,6 +12,7 @@ const Finance = React.lazy(() => import('./views/finance/Finance'))
 const Notification = React.lazy(() => import('./views/notification/Notification'))
 const Splash = React.lazy(() => import('./views/splash/Splash'))
 const Trash = React.lazy(() => import('./views/trash/Trash'))
+const LogFile = React.lazy(() => import('./views/log/LogFile'))
 
 //const Graph = React.lazy(() => import('./views/graph/Graph'))
 // const Charts = React.lazy(() => import('./views/charts/Charts'))
@@ -33,6 +34,7 @@ const routes = [
   { path: '/notification', name: 'Notification', element: Notification },
   { path: '/splash', name: 'Splash', element: Splash },
   { path: '/Trash', name: 'Trash', element: Trash },
+  { path: '/logfile', name: 'LogFile', element: LogFile },
 
 
   // { path: '/trasactiondetails/:id', name: 'Graph', element: Graph },
