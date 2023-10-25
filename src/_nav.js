@@ -52,6 +52,7 @@ import { FaMoneyBills } from 'react-icons/fa6';
 import { BiSolidUserVoice } from 'react-icons/bi';
 import { FaChargingStation } from 'react-icons/fa';
 import { FaTrashCan } from 'react-icons/fa6'
+import {FaTrashCanArrowUp} from 'react-icons/fa6'
 // import { LiaUserSolid} from 'react-icons/li';
 // import LiaUserSolidIcon from './LiaUserSolidIcon';
 
@@ -316,7 +317,7 @@ const _nav = [
                     component: CNavItem,
                     name: 'Trash',
                     to: '/Trash',
-                    icon: <FaTrashCan className='faiconsdashboard' />,
+                    icon: <FaTrashCanArrowUp className='faiconsdashboard' />, 
                 } ,]
               },
 
