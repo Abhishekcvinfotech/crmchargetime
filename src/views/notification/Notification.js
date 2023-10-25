@@ -1247,26 +1247,19 @@ const Notification = () => {
           )}
         </div>
 
-        {/* filter modal code ends */}
-
-        {/* hero content */}
+        
 
         <div className="emporia_wrap">
           <p className="emporia_troes"> Emporia Notifications</p>
 
           <div>
             <button
-              // id="button"
+              
               className="btncsv"
               onClick={() => createNewNotification()}
-              // style={{ display: 'flex', gap: '10px' }}
+              
             >
-              {/* <img
-                    src={AddNotification}
-                    alt="frame"
-                    style={{ width: '22px', height: '15px' }}
-                  />
-                  Add  Emporia Notification */}
+             
               <span className="plusicon">+</span>
               <span>Add Emporia Notifications</span>
             </button>

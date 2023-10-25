@@ -2476,7 +2476,7 @@ const Customer = () => {
                     </div>
                   </th>
                   <th scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    
                       <div
                         style={{
                           display: 'flex',
@@ -2487,10 +2487,10 @@ const Customer = () => {
                       >
                         <span>Mobile</span>
                       </div>
-                    </Tooltip>
+                    
                   </th>
                   <th scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    
                       <div
                         style={{
                           display: 'flex',
@@ -2501,10 +2501,10 @@ const Customer = () => {
                       >
                         <span>Date</span>
                       </div>
-                    </Tooltip>
+                    
                   </th>
                   <th scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    
                       <div
                         style={{
                           display: 'flex',
@@ -2515,7 +2515,7 @@ const Customer = () => {
                       >
                         <span>Time</span>
                       </div>
-                    </Tooltip>
+                    
                   </th>
                   <th scope="col" className="global_th">
                     <div
