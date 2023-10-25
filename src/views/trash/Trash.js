@@ -237,10 +237,8 @@ const Trash = () => {
             </Link>
           </div>
         </div>
-
-
+        
         <div
-
         >
 
           <p className="text">Emporia Notifications</p>

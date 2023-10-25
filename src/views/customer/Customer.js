@@ -2168,7 +2168,7 @@ const Customer = () => {
                   <th></th>
 
                   <th scope="col" className="global_th" onClick={() => sorting('Device_Id')}>
-                    <Tooltip title="Click To Sort">
+                    <Tooltip >
                       <div
                         style={{
                           display: 'flex',
@@ -2207,7 +2207,7 @@ const Customer = () => {
                           justifyContent: 'flex-start',
                           width: '150px',
                         }}
-                      > <Tooltip title="Click To Sort">
+                      > <Tooltip >
                         <span>Unique Id</span>
                         </Tooltip>
                         <span
@@ -2265,7 +2265,7 @@ const Customer = () => {
                     scope="col"
                     className="global_th text-center"
                   >
-                    <Tooltip title="Click To Sort">
+                    <Tooltip >
                       <div
                         style={{
                           display: 'flex',
@@ -2296,7 +2296,7 @@ const Customer = () => {
                     </Tooltip>
                   </th>
                   <th onClick={() => sorting('pwa_email')} scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    <Tooltip>
                       <div
                         style={{
                           display: 'flex',
@@ -2326,7 +2326,7 @@ const Customer = () => {
                     </Tooltip>
                   </th>
                   <th onClick={() => sorting('pwa_add1')} scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    <Tooltip >
                       <div
                         style={{
                           display: 'flex',
@@ -2357,7 +2357,7 @@ const Customer = () => {
                     </Tooltip>
                   </th>
                   <th onClick={() => sorting('pwa_state')} scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    <Tooltip >
                       <div
                         style={{
                           display: 'flex',
@@ -2388,7 +2388,7 @@ const Customer = () => {
                     </Tooltip>
                   </th>
                   <th onClick={() => sorting('pwa_choice')} scope="col" className="global_th">
-                    <Tooltip title="Click To Sort">
+                    <Tooltip >
                       <div
                         style={{
                           display: 'flex',
