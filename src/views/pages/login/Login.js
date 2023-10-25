@@ -22,7 +22,6 @@ import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
 import chargeLogo from '../../../assets/images/chargeLogo.svg'
 import bottomImage from '../../../assets/images/bottomImage.svg'
 import { Spin } from 'antd'
@@ -89,21 +88,22 @@ const Login = () => {
   //   withCredentials: true,
   //   crossdomain: true,
   // };
+
   const login = (e) => {
     e.preventDefault();
     setLoading(true);
     axios
       .post(`${troesAPi}/login`, user)
       .then((res) => {
-        localStorage.setItem('token', res.data.success.token);
+          localStorage.setItem('token', res.data.success.token);
           navigate('/customer', { replace: true });
-        window.location.reload()
-        setLoading(false);
+          window.location.reload()
+          setLoading(false);
       })
       .catch((err) => {
         setLoading(false);
-       alert('Invalid details');
-       console.log(err,'err');
+        alert('Invalid details');
+        console.log(err,'err');
 
       });
   };
