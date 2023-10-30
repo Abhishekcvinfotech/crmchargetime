@@ -189,7 +189,7 @@ const Charging = () => {
         setOpen(false)
       }
     } else {
-      alert('Please select Installation and create charging rate again. ')
+      alert('No Partner is allocated for this location, please add a partner from the installation tab. ')
       setLoading(false)
     }
   }
