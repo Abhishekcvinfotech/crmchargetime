@@ -773,7 +773,7 @@ const Location = () => {
                       type="number"
                       name="ZIP_code"
                       value={ZIP_code}
-                      placeholder=" 111222"
+                      placeholder="Ex. 111222"
                       onChange={(e) => setZipCode(e.target.value)}
                       required
                     />
@@ -783,7 +783,7 @@ const Location = () => {
                       type="number"
                       name="salesTax"
                       value={salesTax}
-                      placeholder=" 7%"
+                      placeholder="Ex. 7%"
                       onChange={(e) => setSalesTax(e.target.value)}
                       required
                     />

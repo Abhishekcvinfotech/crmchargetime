@@ -711,7 +711,7 @@ const AssetTwo = () => {
             alignItems: 'center',
           }}
         >
-          <p className="asset__management">Asset Management</p>
+          <p className="asset__management">Asset Managementtttttt</p>
           <div
             style={{
               display: 'flex',

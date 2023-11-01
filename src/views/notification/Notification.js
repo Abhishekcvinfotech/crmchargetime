@@ -1295,7 +1295,7 @@ const Notification = () => {
                   if (item.status === 1) {
                     color = 'green'
                   } else if (item.status === 0) {
-                    color = 'red'
+                    color = '#935CEC'
                   } else if (item.status === 2) {
                     color = 'blue'
                   } else {

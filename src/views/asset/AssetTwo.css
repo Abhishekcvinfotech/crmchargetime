@@ -14,6 +14,9 @@
 .deviceflag_div:hover + .device_hover {
   display: block;
 }
+.table > :not(caption) > * > * {
+  background-color: unset!important;
+}
 .asset__management {
   font-size: 24px;
   line-height: 31px;

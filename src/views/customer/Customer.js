@@ -2548,9 +2548,9 @@ const Customer = () => {
                     let numOfDaata = formatDate(new Date(item.pwa_date))
                     let color
                     if (item.pwa_status === 5) {
-                      color = 'pink'
+                      color = '#DB7E06'
                     } else if (item.pwa_status === 4) {
-                      color = '#0081a7'
+                      color = '#19B3B3'
                     } else if (item.pwa_status === 0) {
                       color = '#3378FF'
                     } else if (item.pwa_status === 1) {
@@ -2558,7 +2558,7 @@ const Customer = () => {
                     } else if (item.pwa_status === 2) {
                       color = '#935CED'
                     } else if (item.pwa_status === 6) {
-                      color = '#5A5A5A'
+                      color = '#8F9FBC'
                     } else {
                       color = 'red'
                     }

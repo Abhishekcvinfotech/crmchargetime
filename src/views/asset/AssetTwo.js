@@ -1511,20 +1511,7 @@ const AssetTwo = () => {
                           </td>
 
                           <td className="px-3" >    {displayedIndex} </td>
-                          {/* <td>
-                        <div onClick={() =>csvExport(item.id,item?.device_id)}>
-                            <img
-                              src={Excelicon}
-                              alt="upload_img"
-                              style={{
-                                width: '20px',
-                                marginTop: '-7px',
-                                marginLeft: '8px',
-                                cursor: 'pointer',
-                              }}
-                            />
-                        </div>
-                      </td> */}
+                          
                           <th className="td_style">
                             <Tooltip title={item.filestatus === 8 ? emporiaColor : csvcolor}>
                               <input
