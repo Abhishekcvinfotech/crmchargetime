@@ -701,7 +701,7 @@ const PriceThree = () => {
           </div>
         </Modal>
         <div>
-          <h2 className="pr_text">Price Management</h2>
+          <h2 className="pr_text">Price Management    </h2>
 
           <div>
             {disabled ? (
