@@ -187,6 +187,7 @@ const AssetTwo = () => {
 
   const handleCheckboxChange = (event, itemId) => {
     const isChecked = event.target.checked
+    console.log("checked value" ,isChecked);
     if (isChecked) {
       setCheckedItems([...checkedItems, itemId])
     } else {
@@ -197,6 +198,7 @@ const AssetTwo = () => {
 
   const handleSelectAllChange = (event) => {
     const isChecked = event.target.checked
+    console.log(" all checked value", isChecked);
     setSelectAll(isChecked)
 
     if (isChecked) {
@@ -225,9 +227,15 @@ const AssetTwo = () => {
   const playData = async (e) => {
     e.preventDefault()
     setLoading(true)
+    const formData = new FormData()
+    formData.append('device_ids[]', checkedItems)
+    
+    if (checkedItems.length === 0) {
+      alert('Please Select Device ID(s)!')
+      setLoading(false)
+    } else{
     try {
-      const formData = new FormData()
-      formData.append('device_ids[]', checkedItems)
+     
       let result = await fetch(`${troesAPi}/device_charger_multipleON`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
@@ -245,14 +253,20 @@ const AssetTwo = () => {
       console.log(err)
       setLoading(false)
     }
-  }
+  }}
 
   const pauseData = async (e) => {
     e.preventDefault()
     setLoading(true)
+    const formData = new FormData()
+    formData.append('device_ids[]', checkedItems)
+
+    if(checkedItems.length === 0){
+      alert('Please Select Device ID(s)!')
+      setLoading(false)
+    } else{
     try {
-      const formData = new FormData()
-      formData.append('device_ids[]', checkedItems)
+      
 
       let result = await fetch(`${troesAPi}/device_charger_multipleOFF`, {
         method: 'POST',
@@ -273,7 +287,7 @@ const AssetTwo = () => {
       console.log(err)
       setLoading(false)
     }
-  }
+  }}
 
   const openNotification = () => {
     notification.open({
@@ -1121,7 +1135,7 @@ const AssetTwo = () => {
             marginBottom: '24px',
           }}
         >
-          <p className="asset__management">Asset Management</p>
+          <p className="asset__management">Asset Management </p>
 
           <div
             style={{
