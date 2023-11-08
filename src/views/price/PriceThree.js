@@ -86,55 +86,101 @@ const PriceThree = () => {
     setIsModalOpen(true)
     setisAdminShow((current) => !current)
   }
+
+
+  // const handleOk = () => {
+  
+  //   setLoading(true)
+  //   let errorOccurred = false
+
+  //   if (coupon_name === '') {
+  //     setMessageCouponId('Please select Coupon ID')
+  //     errorOccurred = true
+  //   } else {
+  //     setMessageCouponId('')
+  //   }
+
+  //   if (stripe_coupon_id === '') {
+  //     setMessageCouponPromotion('Please select Coupon Promotion Code')
+  //     errorOccurred = true
+  //   } else {
+  //     setMessageCouponPromotion('')
+  //   }
+
+  //   if (errorOccurred) {
+  //     return
+  //   }
+  
+
+  //   axios
+  //     .post(`${troesAPi}/addcoupon`, postData)
+  //     .then((res) => {
+  //       console.log(res.data.success)
+  //       if (res.data.success === 'Your Coupon is successfully added') {
+  //         setCouponDelete((data) => !data)
+  //         setCoupanName('')
+  //         setCouponId('')
+  //         setLoading(false)
+  //         setAddSplash(true)
+  //         setTimeout(() => {
+  //           setAddSplash(false)
+  //         }, 2000)
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //       setLoading(false)
+  //     })
+  // }
+
   const postData = {
     coupon_name: coupon_name,
     getLocationId: getLocationId,
     stripe_coupon_id: stripe_coupon_id,
+    price_stripe_id:price_stripe_id,
     package_name: package_name,
   }
 
+  console.log("Price Stripe ID:", postData.price_stripe_id);
+  
   const handleOk = () => {
-    setLoading(true)
-    let errorOccurred = false
-
-    if (coupon_name === '') {
-      setMessageCouponId('Please select Coupon ID')
-      errorOccurred = true
-    } else {
-      setMessageCouponId('')
+    setLoading(true);
+  
+    if (coupon_name === '' || stripe_coupon_id === '') {
+      alert('Please fill Coupen Id and Coupon Promotion Code');
+      setLoading(false);
+      return;
     }
-
-    if (stripe_coupon_id === '') {
-      setMessageCouponPromotion('Please select Coupon Promotion Code')
-      errorOccurred = true
-    } else {
-      setMessageCouponPromotion('')
-    }
-
-    if (errorOccurred) {
-      return
-    }
-
+  
+    setMessageCouponId('');
+    setMessageCouponPromotion('');
+  
     axios
       .post(`${troesAPi}/addcoupon`, postData)
       .then((res) => {
-        console.log(res.data.success)
+        console.log(res.data.success);
         if (res.data.success === 'Your Coupon is successfully added') {
-          setCouponDelete((data) => !data)
-          setCoupanName('')
-          setCouponId('')
-          setLoading(false)
-          setAddSplash(true)
+          setCouponDelete((data) => !data);
+          setCoupanName('');
+          setCouponId('');
+          setLoading(false);
+          setAddSplash(true);
           setTimeout(() => {
-            setAddSplash(false)
-          }, 2000)
+            setAddSplash(false);
+          }, 2000);
+          // Add success alert here
+          // alert('Coupon successfully added!');
         }
       })
       .catch((err) => {
-        console.log(err)
-        setLoading(false)
-      })
-  }
+        console.log(err);
+        setLoading(false);
+        // Add error alert here if needed
+        alert('An error occurred while adding the coupon. Please try again.');
+      });
+  };
+  
+ 
 
   const handleCancel = () => {
     setIsModalOpen(false)
@@ -153,6 +199,11 @@ const PriceThree = () => {
         setTimeout(() => {
           setDeleteSplash(false)
         }, 2000)
+
+
+
+
+
       })
       .catch((err) => {
         console.log(err)
@@ -476,7 +527,9 @@ const PriceThree = () => {
           ''
         )}
 
-        <Modal title="Coupon" open={isModalOpen} onCancel={handleCancel}>
+        <Modal title="Coupon" open={isModalOpen} onCancel={handleCancel}
+         style={{height:'500px' , overflowX:'auto'}}
+       >
           {loading ? (
             <div className="loading_part">
               <Spin size="large" />
@@ -552,6 +605,7 @@ const PriceThree = () => {
             </thead>
             <tbody>
               {coupanData && coupanData.length > 0 ? (
+              
                 coupanData.map((res, ind) => (
                   <tr key={ind}>
                     {res.coupon_id !== null && res.coupon_promotion_code !== null && (
@@ -701,7 +755,7 @@ const PriceThree = () => {
           </div>
         </Modal>
         <div>
-          <h2 className="pr_text">Price Management    </h2>
+          <h2 className="pr_text">Price Management   </h2>
 
           <div>
             {disabled ? (
@@ -1149,12 +1203,8 @@ const PriceThree = () => {
                   </div>
                   <div className="edit_delete_btn">
                     <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        cursor: 'pointer',
-                      }}
+                    
+                      className='edithover'
                       onClick={() => {
                         setGetLocationId(item.location_id)
                         // setLocation(item.location)
@@ -1175,13 +1225,9 @@ const PriceThree = () => {
                       <p className="edit_p">Edit</p>
                     </div>
                     <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        cursor: 'pointer',
-                      }}
+                     
                       onClick={() => deleteLocated(SetRowData(item), setId(item.id))}
+                      className='delete_hover'
                     >
                       <img src={Trash} alt="delete" />
                       <p className="delete_p">Delete</p>

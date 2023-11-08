@@ -68,7 +68,7 @@ const PriceTwo = () => {
   const [updateSplash, setUpdateSplash] = useState(false)
   const [deleteSplash, setDeleteSplash] = useState(false)
 
-
+console.log(price_stripe_id," price_stripe_id  valkue is here");
 
   const forIndexFunction = (ind) => {
     setIndexUpdate(`ind_${ind}`)
@@ -102,9 +102,11 @@ const PriceTwo = () => {
     coupon_name: coupon_name,
     getLocationId: getLocationId,
     stripe_coupon_id: stripe_coupon_id,
+    price_stripe_id:price_stripe_id,
     package_name: package_name,
   }
 
+  console.log("Price Stripe ID:", postData.price_stripe_id);
   const handleOk = () => {
     setLoading(true)
     let errorOccurred = false
@@ -375,6 +377,7 @@ const PriceTwo = () => {
     if (package_name == '') setPackageError('Please enter value')
     if (total_price == '') setPriceError('Please enter value')
     if (dollar_mi == '') setDollarError('Please enter value')
+    
 
     const item = {
       location,
@@ -801,7 +804,7 @@ const PriceTwo = () => {
             alignItems: 'center',
           }}
         >
-          <p className="price__acount">Price Management</p>
+          <p className="price__acount">Price Management </p>
 
           <div style={{ padding: '20px 20px', display: 'flex', flexDirection: 'column', alignItems: 'end', }}>
             <Button disabled={disabled} onClick={handleClicked} id="universalButton">

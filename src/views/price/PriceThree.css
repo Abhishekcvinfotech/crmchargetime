@@ -14,6 +14,31 @@ h1 {
 
 }
 
+.delete_hover{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 3px 5px;
+}
+.delete_hover:hover{
+  border: 1px solid #A8CF37;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+.edithover{
+  display: flex;
+ align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 3px 5px;
+}
+.edithover:hover{
+  border: 1px solid #A8CF37;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
 .only_three_package{
   color:  #F42B3D;
 font-family: DM Sans;
@@ -113,9 +138,17 @@ padding: 0;
   border: 1px solid #fff, #f1f1f1;
   background: #fff;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
  
   
 }
+.kwh_row:hover {
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
+  transform: scale(1.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  
+}
+
 .kwh_row_one {
   display: flex;
   justify-content: space-between;

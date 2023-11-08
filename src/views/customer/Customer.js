@@ -1168,24 +1168,46 @@ const Customer = () => {
   }
 
   // add user starts
-  const validatephone = () => {
-    if (mobile.length == 9) {
-      setColorGreen('green')
-      setPhoneError('Valid phone number')
-    } else if (mobile.length < 9) {
-      setColorGreen('red')
-      setPhoneError('Enter a valid 10 digit number!')
+  // const validatephone = (mobile) => {
+  //   if (mobile.length == 10) {
+  //     setColorGreen('green')
+  //     setPhoneError('Valid phone number')
+  //   } else if (mobile.length <= 9) {
+  //     setColorGreen('red')
+  //     setPhoneError('Enter a valid 10 digit number!')
+  //   } else {
+  //     setColorGreen('green')
+  //     setPhoneError('Valid phone number')
+  //   }
+  // }
+
+  // const handleMobile = (e) => {
+  //   const limit = 10
+  //   setMobile(e.target.value.slice(0, limit))
+  //   validatephone(mobile)
+  // }
+
+  const validatePhone = (mobile) => {
+    if (mobile.length === 10) {
+      setColorGreen('green');
+      setPhoneError('Valid phone number');
+    } else if (mobile.length < 10) {
+      setColorGreen('red');
+      setPhoneError('Enter a valid 10 digit number!');
     } else {
-      setColorGreen('green')
-      setPhoneError('Valid phone number')
+      setColorGreen('green');
+      setPhoneError('Valid phone number');
     }
-  }
+  };
 
   const handleMobile = (e) => {
-    const limit = 10
-    setMobile(e.target.value.slice(0, limit))
-    validatephone(mobile)
-  }
+    const limit = 10;
+    const updatedMobile = e.target.value.slice(0, limit);
+    setMobile(updatedMobile);
+    validatePhone(updatedMobile);
+  };
+
+  
   const handleAdd1 = (e) => {
     setAddress(e.target.value)
   }
@@ -2999,12 +3021,13 @@ const Customer = () => {
                     Phone Number
                   </label>
                   <input
-                    type="number"
+                    type="tel"
                     placeholder="Eg.99xxxxxxxx"
                     value={mobile}
                     name="name"
                     required
                     onChange={handleMobile}
+                    pattern="[0-9]{10}"
                     onKeyDown={(evt) =>
                       (evt.key === '-' || evt.key === 'e' || evt.key === 'E' || evt.key === '.') &&
                       evt.preventDefault()
@@ -3265,8 +3288,9 @@ const Customer = () => {
                   <label htmlFor="mobile" style={{ fontWeight: '600' }}>
                     Phone Number
                   </label>
+
                   <input
-                    type="number"
+                    type="tel"
                     placeholder="Eg.99xxxxxxxx"
                     value={mobile}
                     name="mobile"
@@ -3276,8 +3300,10 @@ const Customer = () => {
                       evt.preventDefault()
                     }
                     required
+                    pattern="[0-9]{10}"
                     autoComplete="off"
                   />
+
                   {phoneError ? (
                     <span
                       id="email__error"
