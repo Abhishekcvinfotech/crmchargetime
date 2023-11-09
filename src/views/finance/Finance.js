@@ -23,6 +23,8 @@ const Finance = () => {
   const [allDataOfPartnerInvoice, setAllDataOfPartnerInvoice] = useState([])
   const [getDataOfPartnerInvoice, setDataOfPartnerInvoice] = useState([])
   const [loading, setLoading] = useState(false)
+
+  const [filterrate , setFilterRate]= useState('');
   const [deleted, setDeleted] = useState(false)
   const [onSelectPartner, setOnSelectPartner] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -73,6 +75,12 @@ const Finance = () => {
       .then((res) => {
         setOnSelectPartner(res?.data)
         setLoading(false)
+        const slecetRates = res.data.map((item) => item.rate);
+
+        console.log(" extractedRates extractedRates" , slecetRates );
+
+        setFilterRate(slecetRates);
+
       })
       .catch((err) => {
         console.log(err)
@@ -86,16 +94,32 @@ const Finance = () => {
      }
 
   const downloadEndpoint = `${troesAPi}/partnerexport/${getIdOfPartner}`
+  console.log("filterrate", filterrate);
+
   const handleFileDownload = async () => {
-    
     
     const requestData = {
       startdate: startdate,
       enddate: enddate,
     }
-if(requestData !== ''){
-  setLoading(true)
-  setRefreshing(true)
+
+    console.log("startdate:", requestData.startdate);
+console.log("enddate:", requestData.enddate);
+
+
+if (requestData.startdate == '' || requestData.enddate == '') {
+  alert("Please select Partner  and date");
+  return;
+}
+
+    if (filterrate == '') {
+      alert("Please create rate");
+      return;
+    }
+  
+   if(requestData !== ''){
+    setLoading(true)
+   setRefreshing(true)
     await axios
       .post(downloadEndpoint, requestData, {
         responseType: 'blob',
@@ -122,6 +146,8 @@ if(requestData !== ''){
     }
   }
 
+
+  
   const getPartnerInvoiceData = () => {
     axios
       .get(`${troesAPi}/excelreport`)

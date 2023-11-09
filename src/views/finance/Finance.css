@@ -60,6 +60,11 @@
   flex-direction: column;
 }
 
+.ant-picker-cell .ant-picker-cell-inner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 
 
 .dleted_text {
