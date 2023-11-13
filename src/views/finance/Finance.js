@@ -104,16 +104,16 @@ const Finance = () => {
     }
 
     console.log("startdate:", requestData.startdate);
-console.log("enddate:", requestData.enddate);
+    console.log("enddate:", requestData.enddate);
 
 
-if (requestData.startdate == '' || requestData.enddate == '') {
-  alert("Please select Partner  and date");
-  return;
-}
+    if (requestData.startdate == '' || requestData.enddate == '') {
+      alert("Please select Date ");
+      return;
+     }
 
     if (filterrate == '') {
-      alert("Please create rate");
+      alert("Please create  rate");
       return;
     }
   
@@ -318,7 +318,7 @@ if (requestData.startdate == '' || requestData.enddate == '') {
             onCancel={handleCancel}
           >
             {onSelectPartner?.length < 1 ? (
-              <p style={{ textAlign: 'center' }}>No data found</p>
+              <p style={{ textAlign: 'center' }}> Please create rate for Report Generation</p>
             ) : (
               <table className="table">
                 <thead>

@@ -132,6 +132,7 @@ const Customer = () => {
 
   const [updateModal, setUpdateModal] = useState(false)
   const [name, setName] = useState('')
+  const [lastname , setLastName] = useState('');
   const [email, setEmail] = useState('')
   const [add_line1, setAddress] = useState('')
   const [add_line2, setAddress2] = useState('')
@@ -1061,6 +1062,7 @@ const Customer = () => {
   //update starts
   useEffect(() => {
     setName('')
+    setLastName('')
     setEmail('')
     setAddress('')
     setAddress2('')
@@ -1075,7 +1077,7 @@ const Customer = () => {
         method: 'post',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify({ name, email, add_line1, add_line2, mobile }),
+        body: JSON.stringify({ name,lastname, email, add_line1, add_line2, mobile }),
       })
       let res = await result.json()
       getUsers()
@@ -1085,6 +1087,7 @@ const Customer = () => {
       }, 5000)
       setUpdateModal(false)
       setName('')
+      setLastName('')
       setEmail('')
       setAddress('')
       setAddress2('')
@@ -1217,6 +1220,7 @@ const Customer = () => {
   const finalCall = (e) => {
     setLoading(true)
     setName(e.target.value)
+    setLastName(e.target.value)
     setEmail(e.target.value)
     setMobile(e.target.value)
     setAddress(e.target.value)
@@ -1228,6 +1232,7 @@ const Customer = () => {
   }
   useEffect(() => {
     setName('')
+    setLastName('')
     setEmail('')
     setAddress('')
     setAddress2('')
@@ -1248,6 +1253,7 @@ const Customer = () => {
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         body: JSON.stringify({
           name,
+          lastname,
           email,
           mobile,
           locationId,
@@ -1273,6 +1279,7 @@ const Customer = () => {
       getUsers()
       setAddUserModal(false)
       setName('')
+      setLastName('')
       setEmail('')
       setAddress('')
       setAddress2('')
@@ -1290,6 +1297,7 @@ const Customer = () => {
 
   useEffect(() => {
     setName('')
+    setLastName('')
     setEmail('')
     setAddress('')
     setAddress2('')
@@ -1304,6 +1312,7 @@ const Customer = () => {
   const empty = () => {
     setAddUserModal(false)
     setName('')
+    setLastName('')
     setEmail('')
     setAddress('')
     setAddress2('')
@@ -2982,11 +2991,11 @@ const Customer = () => {
               </div> */}
                 <div>
                   <label htmlFor="name" style={{ fontWeight: '600' }}>
-                    Full Name
+                    First Name
                   </label>
                   <input
                     type="text"
-                    placeholder="Eg. John Doe"
+                    placeholder="Eg. John "
                     name="name"
                     value={name}
                     required
@@ -2995,6 +3004,24 @@ const Customer = () => {
                     maxLength={20}
                   />
                 </div>
+
+                <div>
+                  <label htmlFor="name" style={{ fontWeight: '600' }}>
+                   Last Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Eg. Doe "
+                    name="name"
+                    value={lastname}
+                    required
+                    onChange={(e) => setLastName(e.target.value)}
+                    minLength={3}
+                    maxLength={20}
+                  />
+                </div>
+
+
 
                 <div>
                   <label
@@ -3258,7 +3285,7 @@ const Customer = () => {
                     value={name}
                     style={{ fontWeight: '600', marginTop: '0px' }}
                   >
-                    Full Name
+                    First Name
                   </label>
                   <input
                     type="text"
@@ -3270,6 +3297,26 @@ const Customer = () => {
                     minLength={3}
                   />
                 </div>
+
+                <div>
+                  <label
+                    htmlFor="name"
+                    value={lastname}
+                    style={{ fontWeight: '600', marginTop: '0px' }}
+                  >
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Eg. Doe"
+                    name="name"
+                    value={lastname}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
+                    minLength={3}
+                  />
+                </div>
+
                 <div>
                   <label htmlFor="email" style={{ fontWeight: '600' }}>
                     Email
