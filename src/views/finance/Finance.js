@@ -111,6 +111,12 @@ const Finance = () => {
       alert("Please select Date ");
       return;
      }
+     
+     if(!getIdOfPartner){
+      alert("Please select partner");
+      return;
+     }
+   
 
     if (filterrate == '') {
       alert("Please create  rate");

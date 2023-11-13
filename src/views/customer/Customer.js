@@ -514,7 +514,6 @@ const Customer = () => {
     })
       .then(function (response) {
         setData(response.data)
-
         setTotal(response.data?.length)
         setLoading(false)
         handlePagination((value) => setPage(1))
@@ -1077,7 +1076,7 @@ const Customer = () => {
         method: 'post',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-        body: JSON.stringify({ name,lastname, email, add_line1, add_line2, mobile }),
+        body: JSON.stringify({ name, lastname, email, add_line1, add_line2, mobile }),
       })
       let res = await result.json()
       getUsers()
@@ -1110,6 +1109,7 @@ const Customer = () => {
   const updateCancel = () => {
     setUpdateModal(false)
     setName('')
+    setLastName(' ')
     setEmail('')
     setAddress('')
     setAddress2('')
@@ -1460,6 +1460,7 @@ const Customer = () => {
               setName(item.pwa_name)
               setEmail(item.pwa_email)
               setAddress(item.pwa_add1)
+              setLastName(item.pwa_lastname)
               setAddress2(item.pwa_add2)
               setMobile(item.pwa_mobile)
               setId(item.id)
@@ -3217,9 +3218,9 @@ const Customer = () => {
                     onClick={generatePassword}
                     style={{
                       cursor: 'pointer',
-
+                       marginBottom:'5px',
                       display: 'flex',
-                      justifyContent: 'flex-end',
+                      justifyContent: 'flex-start',
                       color: '#3378FF',
                       textDecoration: 'underline',
                       paddingBottom: '1px',
@@ -3300,7 +3301,7 @@ const Customer = () => {
 
                 <div>
                   <label
-                    htmlFor="name"
+                    htmlFor="lastname"
                     value={lastname}
                     style={{ fontWeight: '600', marginTop: '0px' }}
                   >
@@ -3309,7 +3310,7 @@ const Customer = () => {
                   <input
                     type="text"
                     placeholder="Eg. Doe"
-                    name="name"
+                    name="lastname"
                     value={lastname}
                     onChange={(e) => setLastName(e.target.value)}
                     required
