@@ -593,10 +593,10 @@ const Customer = () => {
     // document.getElementById('handle__addFilter').style.background = 'red'
     setclearData(false)
     setValue(0)
-    setstatusValue(0)
-    setPlanValue(0)
+    setstaValue(0)
     setBasePrice(0)
-    getUsers()
+    getUstusValue(0)
+    setPlaners()
   }
 
   const onstatusChange = (e) => {

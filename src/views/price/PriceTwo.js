@@ -804,7 +804,7 @@ console.log(price_stripe_id," price_stripe_id  valkue is here");
             alignItems: 'center',
           }}
         >
-          <p className="price__acount">Price Management </p>
+          <p className="price__acount">Price Management  </p>
 
           <div style={{ padding: '20px 20px', display: 'flex', flexDirection: 'column', alignItems: 'end', }}>
             <Button disabled={disabled} onClick={handleClicked} id="universalButton">

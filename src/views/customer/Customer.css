@@ -194,7 +194,8 @@ tbody {
 .notification_dropdowncontent {
   display: none;
   position: absolute;
-  top: 58px;
+  top: -60px;
+  left: 50px;
   border-radius: 6px;
   border: 1px solid #f1f1f1;
   padding: 24px;
