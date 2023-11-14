@@ -1460,7 +1460,7 @@ const Customer = () => {
               setName(item.pwa_name)
               setEmail(item.pwa_email)
               setAddress(item.pwa_add1)
-              setLastName(item.pwa_lastname)
+              setLastName(item.pwa_lname)
               setAddress2(item.pwa_add2)
               setMobile(item.pwa_mobile)
               setId(item.id)
@@ -3303,7 +3303,7 @@ const Customer = () => {
                   <label
                     htmlFor="lastname"
                     value={lastname}
-                    style={{ fontWeight: '600', marginTop: '0px' }}
+                    style={{ fontWeight: '600',  }}
                   >
                     Last Name
                   </label>

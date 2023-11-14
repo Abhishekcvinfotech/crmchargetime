@@ -23,7 +23,7 @@ h1 {
 }
 .delete_hover:hover{
   border: 1px solid #A8CF37;
-  padding: 3px 5px;
+  /* padding: 3px 5px; */
   border-radius: 3px;
 }
 .edithover{
@@ -35,7 +35,7 @@ h1 {
 }
 .edithover:hover{
   border: 1px solid #A8CF37;
-  padding: 3px 5px;
+  /* padding: 3px 5px; */
   border-radius: 3px;
 }
 
