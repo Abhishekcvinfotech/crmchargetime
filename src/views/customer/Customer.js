@@ -2306,7 +2306,7 @@ const Customer = () => {
                           width: '200px',
                         }}
                       >
-                        <span style={{}}>Name</span>
+                        <span style={{}}>First Name</span>
                         <span
                           style={{
                             display: 'flex',
@@ -2327,6 +2327,42 @@ const Customer = () => {
                       </div>
                     </Tooltip>
                   </th>
+                  <th
+                    // onClick={() => sorting('pwa_name')}
+                    scope="col"
+                    className="global_th text-center"
+                  >
+                    {/* <Tooltip > */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'flex-start',
+                          width: '200px',
+                        }}
+                      >
+                        <span style={{}}>Last Name</span>
+                        <span
+                            style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}
+                        >
+                          {/* {sortingState['pwa_name'] === 'ASC' ? (
+                            <ArrowUpOutlined
+                              style={{ color: '#918d8d', paddingTop: '1px', paddingLeft: '5px' }}
+                            />
+                          ) : (
+                            <ArrowDownOutlined
+                              style={{ color: '#918d8d', paddingTop: '1px', paddingLeft: '5px' }}
+                            />
+                          )} */}
+                        </span>
+                      </div>
+                    {/* </Tooltip> */}
+                  </th>
+
                   <th onClick={() => sorting('pwa_email')} scope="col" className="global_th">
                     <Tooltip>
                       <div
@@ -2696,6 +2732,7 @@ const Customer = () => {
 
                         <td style={{ textAlign: 'left' }}>{item?.id}</td>
                         <td>{item?.pwa_name}</td>
+                        <td>{item?.pwa_lname} </td>
                         <td>{item?.pwa_email}</td>
                         <td>
                           {item?.pwa_add1},{item?.pwa_add2} {item?.pwa_zip}
@@ -3012,7 +3049,7 @@ const Customer = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Eg. Doe "
+                    placeholder="Eg. Doe"
                     name="name"
                     value={lastname}
                     required
@@ -3218,7 +3255,7 @@ const Customer = () => {
                     onClick={generatePassword}
                     style={{
                       cursor: 'pointer',
-                       marginBottom:'5px',
+                       marginBottom:'10px',
                       display: 'flex',
                       justifyContent: 'flex-start',
                       color: '#3378FF',

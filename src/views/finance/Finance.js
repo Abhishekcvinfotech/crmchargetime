@@ -309,7 +309,7 @@ const Finance = () => {
           </select>
 
 
-          <div style={{marginLeft:"5px"}} onMouseEnter={showPartnerData}>
+          <div style={{marginLeft:"5px" , cursor:'pointer'}} onMouseEnter={showPartnerData}>
             <img src={italic_img} alt="edit" style={{width:'16px'}} />
           </div>
 
